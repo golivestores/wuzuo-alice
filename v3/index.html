@@ -397,10 +397,12 @@
       </div>
     </div>
     <div class="product-card reveal reveal-d3">
-      <a href="#" class="product-card__image">
+      <a href="#" class="product-card__image product-card__image--video">
         <span class="product-card__tag">Wealth</span>
         <img src="../Public/_DSC3942.JPG" alt="Fortune Bag Candle" loading="lazy">
-        <img src="../Public/_DSC3935.JPG" alt="" loading="lazy">
+        <video class="product-card__hover-video" muted loop playsinline preload="none">
+          <source src="../Public/a-fortune-teller-performs-a-ritual-with-crystals-b-2026-01-22-07-12-22-utc.mp4" type="video/mp4">
+        </video>
         <span class="product-card__quick">Quick View</span>
       </a>
       <div class="product-card__info">
@@ -445,10 +447,12 @@
       </div>
     </div>
     <div class="product-card reveal reveal-d3">
-      <a href="#" class="product-card__image">
+      <a href="#" class="product-card__image product-card__image--video">
         <span class="product-card__tag">Wealth</span>
         <img src="../Public/_DSC3954.JPG" alt="Dragon Fortune Candle" loading="lazy">
-        <img src="../Public/_DSC3953.JPG" alt="" loading="lazy">
+        <video class="product-card__hover-video" muted loop playsinline preload="none">
+          <source src="../Public/a-fortune-teller-performs-a-ritual-with-crystals-b-2026-01-22-07-12-22-utc.mp4" type="video/mp4">
+        </video>
         <span class="product-card__quick">Quick View</span>
       </a>
       <div class="product-card__info">
@@ -1022,6 +1026,17 @@
 
   startAuto();
 })();
+
+/* --- Product card video hover --- */
+(function() {
+  document.querySelectorAll('.product-card__image--video').forEach(function(card) {
+    var video = card.querySelector('.product-card__hover-video');
+    if (!video) return;
+    card.addEventListener('mouseenter', function() { video.play(); });
+    card.addEventListener('mouseleave', function() { video.pause(); video.currentTime = 0; });
+  });
+})();
+
 </script>
 
 </body>

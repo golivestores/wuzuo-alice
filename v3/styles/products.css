@@ -144,6 +144,19 @@
 .product-card__image img:last-of-type   { z-index: 2; opacity: 0; transition: opacity var(--t-mid); }
 .product-card__image:hover img:last-of-type { opacity: 1; }
 
+/* Video hover card — override last-of-type rules so the single primary img stays visible.
+   Use chained classes (specificity 0,2,1) to beat img:last-of-type (also 0,2,1) via source order. */
+.product-card__image--video.product-card__image img,
+.product-card__image--video.product-card__image:hover img { z-index: 1; opacity: 1; }
+
+.product-card__hover-video {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%; object-fit: cover;
+  z-index: 2; opacity: 0;
+  transition: opacity var(--t-mid);
+}
+.product-card__image--video:hover .product-card__hover-video { opacity: 1; }
+
 /* Tag badge */
 .product-card__tag {
   position: absolute; top: var(--s2); left: var(--s2); z-index: 3;
