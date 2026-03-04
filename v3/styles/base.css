@@ -1,0 +1,127 @@
+/* =============================================================
+   WuZuo Alice V3 — Base: Reset · Grain · Canvas · Ghosts · Utilities
+   ============================================================= */
+
+/* --- Reset --- */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-size: 10px; scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-body);
+  font-size: 1.6rem;
+  line-height: 1.65;
+  overflow-x: hidden;
+  min-height: 100vh;
+}
+img { display: block; max-width: 100%; height: auto; }
+a { color: inherit; text-decoration: none; }
+button { cursor: pointer; border: none; background: none; font: inherit; color: inherit; padding: 0; }
+ul, ol { list-style: none; }
+svg { display: block; }
+
+/* --- Grain Overlay --- */
+.grain {
+  position: fixed; inset: 0; z-index: 9000;
+  pointer-events: none;
+  opacity: 0.028;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='256' height='256'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+}
+
+/* --- Star Canvas --- */
+#starCanvas {
+  position: fixed; inset: 0; z-index: 0;
+  pointer-events: none;
+  width: 100vw; height: 100vh;
+}
+
+/* --- Background Ghost Images --- */
+.bg-ghosts {
+  position: fixed; inset: 0; z-index: 1;
+  pointer-events: none; overflow: hidden;
+}
+.bg-ghost {
+  position: absolute;
+  opacity: 0.1;
+  filter: blur(0.3px) grayscale(15%);
+  border-radius: 3px;
+  will-change: transform;
+  transition: opacity 1s ease;
+}
+
+/* --- Scroll Reveal --- */
+.reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity var(--t-mid), transform var(--t-mid);
+}
+.reveal.visible       { opacity: 1; transform: none; }
+.reveal-d1            { transition-delay: 0.08s; }
+.reveal-d2            { transition-delay: 0.16s; }
+.reveal-d3            { transition-delay: 0.24s; }
+.reveal-d4            { transition-delay: 0.32s; }
+
+/* clip-path reveal variant */
+.clip-reveal {
+  clip-path: inset(100% 0 0 0);
+  transition: clip-path var(--t-reveal);
+}
+.clip-reveal.visible { clip-path: inset(0% 0 0 0); }
+
+/* --- Section Heading --- */
+.section-heading {
+  text-align: center;
+  padding: var(--s8) var(--s4) var(--s4);
+  position: relative; z-index: 10;
+}
+.section-heading__label {
+  font-family: var(--font-mono);
+  font-size: 1.05rem;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--gold);
+  display: block;
+  margin-bottom: var(--s2);
+}
+.section-heading__title {
+  font-family: var(--font-display);
+  font-size: clamp(3.2rem, 5vw, 5.2rem);
+  font-weight: 400;
+  color: var(--text);
+  line-height: 1.1;
+}
+.section-heading__line {
+  width: 40px; height: 1px;
+  background: var(--gold);
+  margin: var(--s3) auto 0;
+  opacity: 0.6;
+}
+
+/* --- Utilities --- */
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 var(--s4);
+}
+
+.gold-line {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--gold-hi), transparent);
+  opacity: 0.4;
+}
+.gold-line--wide { margin: var(--s4) var(--s4); }
+
+/* Lazy image load */
+img[loading="lazy"] { opacity: 0; transition: opacity var(--t-mid); }
+img[loading="lazy"].img-loaded { opacity: 1; }
+
+/* --- Responsive --- */
+@media (max-width: 749px) {
+  html { font-size: 9px; }
+  .mob-hide { display: none !important; }
+  .section-heading { padding: var(--s4) var(--s3) var(--s2); }
+}
+@media (max-width: 380px) {
+  html { font-size: 8.5px; }
+}

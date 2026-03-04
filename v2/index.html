@@ -1,0 +1,894 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WuZuo Alice | Handcrafted Ritual Candles</title>
+  <meta name="description" content="Hand-poured ritual candles inscribed with ancient symbols. Manifest love, wealth, protection and spiritual growth.">
+  <link rel="stylesheet" href="styles/main.css">
+  <link rel="icon" href="../wecom-temp-1125392-b563a96a377dca72efa8b2ccff82af5b.png" type="image/png">
+</head>
+<body>
+
+<!-- Star Canvas Background -->
+<canvas id="starCanvas"></canvas>
+
+<!-- Background Ghost Product Images -->
+<div class="bg-ghosts" aria-hidden="true">
+  <img src="../Public/_DSC3826.JPG" alt="" class="bg-ghost" style="top:5%;left:-4%;width:320px;transform:rotate(-12deg);">
+  <img src="../Public/_DSC3850.JPG" alt="" class="bg-ghost" style="top:3%;right:-3%;width:280px;transform:rotate(8deg);">
+  <img src="../Public/_DSC3893.JPG" alt="" class="bg-ghost" style="top:18%;right:-5%;width:350px;transform:rotate(-6deg);">
+  <img src="../Public/_DSC3906.JPG" alt="" class="bg-ghost" style="top:16%;left:-6%;width:300px;transform:rotate(10deg);">
+  <img src="../Public/_DSC3929.JPG" alt="" class="bg-ghost" style="top:32%;left:-3%;width:260px;transform:rotate(-8deg);">
+  <img src="../Public/_DSC3942.JPG" alt="" class="bg-ghost" style="top:34%;right:-4%;width:300px;transform:rotate(14deg);">
+  <img src="../Public/_DSC3899.JPG" alt="" class="bg-ghost" style="top:48%;right:-6%;width:340px;transform:rotate(-10deg);">
+  <img src="../Public/_DSC3883.JPG" alt="" class="bg-ghost" style="top:50%;left:-5%;width:280px;transform:rotate(6deg);">
+  <img src="../Public/_DSC3954.JPG" alt="" class="bg-ghost" style="top:64%;left:-4%;width:320px;transform:rotate(-14deg);">
+  <img src="../Public/_DSC3835.JPG" alt="" class="bg-ghost" style="top:66%;right:-3%;width:290px;transform:rotate(9deg);">
+  <img src="../Public/_DSC3838.JPG" alt="" class="bg-ghost" style="top:80%;right:-5%;width:310px;transform:rotate(-7deg);">
+  <img src="../Public/_DSC3836.JPG" alt="" class="bg-ghost" style="top:82%;left:-6%;width:270px;transform:rotate(12deg);">
+</div>
+
+<!-- ======== Announcement Carousel ======== -->
+<div class="announcement" id="announcementBar">
+  <div class="announcement__track" id="announcementTrack">
+    <div class="announcement__slide announcement__slide--active">Free Global Shipping on Orders $89+</div>
+    <div class="announcement__slide"><a href="#">Sign Up for 10% Off Your First Order</a></div>
+    <div class="announcement__slide">Ancient Rituals, Modern Magick — Handcrafted with Intention</div>
+  </div>
+</div>
+
+<!-- ======== Header ======== -->
+<header class="header" id="header">
+  <div class="header__row">
+    <a href="#" class="header__logo">
+      <img src="../wecom-temp-1125392-b563a96a377dca72efa8b2ccff82af5b.png" alt="WuZuo Alice">
+    </a>
+
+    <nav class="header__nav">
+      <div class="header__nav-item header__nav-item--mega">
+        <a href="#" class="header__nav-link">Ritual Candles <svg viewBox="0 0 10 6" class="header__chevron"><path d="M1 1l4 4 4-4" stroke="currentColor" fill="none" stroke-width="1.2"/></svg></a>
+        <!-- Mega Menu: Ritual Candles -->
+        <div class="mega-menu">
+          <div class="mega-menu__inner">
+            <div class="mega-menu__col">
+              <h4 class="mega-menu__heading">By Intention</h4>
+              <a href="#" class="mega-menu__link">Love &amp; Binding</a>
+              <a href="#" class="mega-menu__link">Wealth &amp; Fortune</a>
+              <a href="#" class="mega-menu__link">Protection &amp; Cleanse</a>
+              <a href="#" class="mega-menu__link">Career &amp; Success</a>
+              <a href="#" class="mega-menu__link">Health &amp; Healing</a>
+              <a href="#" class="mega-menu__link mega-menu__link--all">View All &rarr;</a>
+            </div>
+            <div class="mega-menu__col">
+              <h4 class="mega-menu__heading">By Type</h4>
+              <a href="#" class="mega-menu__link">Pyramid Candles</a>
+              <a href="#" class="mega-menu__link">Figurine Candles</a>
+              <a href="#" class="mega-menu__link">Pillar Candles</a>
+              <a href="#" class="mega-menu__link">Zodiac Candles</a>
+              <a href="#" class="mega-menu__link">Chakra Candles</a>
+            </div>
+            <div class="mega-menu__col mega-menu__col--featured">
+              <h4 class="mega-menu__heading">Bestsellers</h4>
+              <div class="mega-menu__products">
+                <a href="#" class="mega-menu__product">
+                  <img src="../Public/_DSC3826.JPG" alt="All-Seeing Eye Pyramid" loading="lazy">
+                  <span>All-Seeing Eye Pyramid</span>
+                  <span class="mega-menu__product-price">$29.99</span>
+                </a>
+                <a href="#" class="mega-menu__product">
+                  <img src="../Public/_DSC3906.JPG" alt="Golden Serpent Egg" loading="lazy">
+                  <span>Golden Serpent Egg</span>
+                  <span class="mega-menu__product-price">$34.99</span>
+                </a>
+                <a href="#" class="mega-menu__product">
+                  <img src="../Public/_DSC3954.JPG" alt="Dragon Fortune" loading="lazy">
+                  <span>Dragon Fortune</span>
+                  <span class="mega-menu__product-price">$28.99</span>
+                </a>
+                <a href="#" class="mega-menu__product">
+                  <img src="../Public/_DSC3850.JPG" alt="Money Tree Vase" loading="lazy">
+                  <span>Money Tree Vase</span>
+                  <span class="mega-menu__product-price">$39.99</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="header__nav-item header__nav-item--mega">
+        <a href="#" class="header__nav-link">Collections <svg viewBox="0 0 10 6" class="header__chevron"><path d="M1 1l4 4 4-4" stroke="currentColor" fill="none" stroke-width="1.2"/></svg></a>
+        <!-- Mega Menu: Collections -->
+        <div class="mega-menu">
+          <div class="mega-menu__inner">
+            <div class="mega-menu__col">
+              <h4 class="mega-menu__heading">Collections</h4>
+              <a href="#" class="mega-menu__link">New Arrivals</a>
+              <a href="#" class="mega-menu__link">Best Sellers</a>
+              <a href="#" class="mega-menu__link">Limited Edition</a>
+              <a href="#" class="mega-menu__link">Gift Sets</a>
+              <a href="#" class="mega-menu__link mega-menu__link--all">View All &rarr;</a>
+            </div>
+            <div class="mega-menu__col">
+              <h4 class="mega-menu__heading">By Intention</h4>
+              <a href="#" class="mega-menu__link">Love &amp; Binding</a>
+              <a href="#" class="mega-menu__link">Wealth &amp; Fortune</a>
+              <a href="#" class="mega-menu__link">Protection &amp; Cleanse</a>
+              <a href="#" class="mega-menu__link">Zodiac &amp; Chakra</a>
+              <a href="#" class="mega-menu__link">Career &amp; Success</a>
+            </div>
+            <div class="mega-menu__col mega-menu__col--featured">
+              <h4 class="mega-menu__heading">Featured</h4>
+              <div class="mega-menu__products">
+                <a href="#" class="mega-menu__product">
+                  <img src="../Public/_DSC3899.JPG" alt="Horseshoe Fortune" loading="lazy">
+                  <span>Horseshoe Fortune</span>
+                  <span class="mega-menu__product-price">$42.99</span>
+                </a>
+                <a href="#" class="mega-menu__product">
+                  <img src="../Public/_DSC3929.JPG" alt="Pentacle Grimoire" loading="lazy">
+                  <span>Pentacle Grimoire</span>
+                  <span class="mega-menu__product-price">$36.99</span>
+                </a>
+                <a href="#" class="mega-menu__product">
+                  <img src="../Public/_DSC3942.JPG" alt="Fortune Bag" loading="lazy">
+                  <span>Fortune Bag</span>
+                  <span class="mega-menu__product-price">$24.99</span>
+                </a>
+                <a href="#" class="mega-menu__product">
+                  <img src="../Public/_DSC3883.JPG" alt="Celestial Horse" loading="lazy">
+                  <span>Celestial Horse</span>
+                  <span class="mega-menu__product-price">$38.99</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="header__nav-item">
+        <a href="#" class="header__nav-link">About</a>
+      </div>
+      <div class="header__nav-item">
+        <a href="#" class="header__nav-link">Ritual Guide</a>
+      </div>
+      <div class="header__nav-item">
+        <a href="#" class="header__nav-link">Blog</a>
+      </div>
+      <div class="header__nav-item">
+        <a href="#" class="header__nav-link">Contact</a>
+      </div>
+    </nav>
+
+    <div class="header__actions">
+      <a href="#" class="header__subscribe-btn">
+        <span class="header__subscribe-glow"></span>
+        <span class="header__subscribe-glow header__subscribe-glow--2"></span>
+        <span class="header__subscribe-text">&#10023; Subscribe</span>
+      </a>
+      <button class="header__action-btn" aria-label="Search">
+        <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.35-4.35"/></svg>
+      </button>
+      <button class="header__action-btn" aria-label="Account">
+        <svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+      </button>
+      <button class="header__action-btn" aria-label="Cart">
+        <svg viewBox="0 0 24 24"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+      </button>
+      <button class="header__menu-btn header__action-btn" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- ======== Hero ======== -->
+<section class="hero">
+  <div class="hero__bg">
+    <video autoplay muted loop playsinline>
+      <source src="../Public/a-fortune-teller-performs-a-ritual-with-crystals-b-2026-01-22-07-12-22-utc.mp4" type="video/mp4">
+    </video>
+  </div>
+  <span class="hero__tagline">Handcrafted with Ancient Intention</span>
+  <h1 class="hero__title">Ritual Candles to Manifest Love, Wealth &amp; Protection</h1>
+  <p class="hero__desc">
+    Each WuZuo Alice candle is hand-poured and inscribed with sacred symbols,
+    channeling centuries of mystical tradition into every flame you light.
+  </p>
+  <a href="#" class="hero__cta">Shop Now</a>
+</section>
+
+<!-- ======== Category Cards ======== -->
+<div class="section-heading reveal">
+  <div class="section-heading__label">Choose Your Path</div>
+  <h2 class="section-heading__title">Ritual Collections</h2>
+  <div class="section-heading__line"></div>
+</div>
+
+<div class="categories">
+  <div class="category-card reveal reveal-d1">
+    <span class="category-card__icon">&#9825;</span>
+    <h3 class="category-card__title">Love &amp; Binding</h3>
+    <p class="category-card__desc">Serpent love candles, Venus heart locks, and sacred binding rituals to deepen romantic connections and attract soulmate energy.</p>
+    <a href="#" class="category-card__btn">
+      Explore
+      <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+    </a>
+  </div>
+  <div class="category-card reveal reveal-d2">
+    <span class="category-card__icon">&#10070;</span>
+    <h3 class="category-card__title">Wealth &amp; Fortune</h3>
+    <p class="category-card__desc">Money tree vases, dragon fortune candles, and prosperity horseshoes to unlock abundance and career breakthroughs.</p>
+    <a href="#" class="category-card__btn">
+      Explore
+      <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+    </a>
+  </div>
+  <div class="category-card reveal reveal-d3">
+    <span class="category-card__icon">&#9764;</span>
+    <h3 class="category-card__title">Protection &amp; Cleanse</h3>
+    <p class="category-card__desc">Evil eye shields, hex reversal candles, and energy cleanse rituals to banish negativity and create sacred boundaries.</p>
+    <a href="#" class="category-card__btn">
+      Explore
+      <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+    </a>
+  </div>
+</div>
+
+<!-- ======== Featured Products ======== -->
+<div class="section-heading reveal">
+  <div class="section-heading__label">New Arrivals</div>
+  <h2 class="section-heading__title">Featured Candles</h2>
+  <div class="section-heading__line"></div>
+</div>
+
+<div class="products">
+  <div class="products__grid">
+    <div class="product-card reveal reveal-d1">
+      <a href="#" class="product-card__image">
+        <span class="product-card__tag product-card__tag--wealth">Wealth</span>
+        <img src="../Public/_DSC3826.JPG" alt="All-Seeing Eye Pyramid" loading="lazy">
+        <img src="../Public/_DSC3827.JPG" alt="" loading="lazy">
+        <span class="product-card__quick">Quick View</span>
+      </a>
+      <div class="product-card__info">
+        <a href="#" class="product-card__name">All-Seeing Eye Pyramid</a>
+        <div class="product-card__price">$29.99 USD</div>
+      </div>
+    </div>
+    <div class="product-card reveal reveal-d2">
+      <a href="#" class="product-card__image">
+        <span class="product-card__tag product-card__tag--love">Love</span>
+        <img src="../Public/_DSC3906.JPG" alt="Golden Serpent Egg" loading="lazy">
+        <img src="../Public/_DSC3900.JPG" alt="" loading="lazy">
+        <span class="product-card__quick">Quick View</span>
+      </a>
+      <div class="product-card__info">
+        <a href="#" class="product-card__name">Golden Serpent Egg</a>
+        <div class="product-card__price">$34.99 USD</div>
+      </div>
+    </div>
+    <div class="product-card reveal reveal-d3">
+      <a href="#" class="product-card__image">
+        <span class="product-card__tag product-card__tag--wealth">Wealth</span>
+        <img src="../Public/_DSC3942.JPG" alt="Fortune Bag Candle" loading="lazy">
+        <img src="../Public/_DSC3935.JPG" alt="" loading="lazy">
+        <span class="product-card__quick">Quick View</span>
+      </a>
+      <div class="product-card__info">
+        <a href="#" class="product-card__name">Fortune Bag Candle</a>
+        <div class="product-card__price">$24.99 USD</div>
+      </div>
+    </div>
+    <div class="product-card reveal reveal-d4">
+      <a href="#" class="product-card__image">
+        <span class="product-card__tag product-card__tag--protection">Protection</span>
+        <img src="../Public/_DSC3929.JPG" alt="Pentacle Grimoire Candle" loading="lazy">
+        <img src="../Public/_DSC3923.JPG" alt="" loading="lazy">
+        <span class="product-card__quick">Quick View</span>
+      </a>
+      <div class="product-card__info">
+        <a href="#" class="product-card__name">Pentacle Grimoire Candle</a>
+        <div class="product-card__price">$36.99 USD</div>
+      </div>
+    </div>
+    <div class="product-card reveal reveal-d1">
+      <a href="#" class="product-card__image">
+        <span class="product-card__tag product-card__tag--wealth">Wealth</span>
+        <img src="../Public/_DSC3899.JPG" alt="Horseshoe Fortune Candle" loading="lazy">
+        <img src="../Public/_DSC3895.JPG" alt="" loading="lazy">
+        <span class="product-card__quick">Quick View</span>
+      </a>
+      <div class="product-card__info">
+        <a href="#" class="product-card__name">Horseshoe Fortune Candle</a>
+        <div class="product-card__price">$42.99 USD</div>
+      </div>
+    </div>
+    <div class="product-card reveal reveal-d2">
+      <a href="#" class="product-card__image">
+        <span class="product-card__tag product-card__tag--wealth">Wealth</span>
+        <img src="../Public/_DSC3883.JPG" alt="Celestial Horse Pillar" loading="lazy">
+        <img src="../Public/_DSC3884.JPG" alt="" loading="lazy">
+        <span class="product-card__quick">Quick View</span>
+      </a>
+      <div class="product-card__info">
+        <a href="#" class="product-card__name">Celestial Horse Pillar</a>
+        <div class="product-card__price">$38.99 USD</div>
+      </div>
+    </div>
+    <div class="product-card reveal reveal-d3">
+      <a href="#" class="product-card__image">
+        <span class="product-card__tag product-card__tag--wealth">Wealth</span>
+        <img src="../Public/_DSC3954.JPG" alt="Dragon Fortune Candle" loading="lazy">
+        <img src="../Public/_DSC3953.JPG" alt="" loading="lazy">
+        <span class="product-card__quick">Quick View</span>
+      </a>
+      <div class="product-card__info">
+        <a href="#" class="product-card__name">Dragon Fortune Candle</a>
+        <div class="product-card__price">$28.99 USD</div>
+      </div>
+    </div>
+    <div class="product-card reveal reveal-d4">
+      <a href="#" class="product-card__image">
+        <span class="product-card__tag product-card__tag--wealth">Wealth</span>
+        <img src="../Public/_DSC3850.JPG" alt="Money Tree Prosperity Vase" loading="lazy">
+        <img src="../Public/_DSC3851.JPG" alt="" loading="lazy">
+        <span class="product-card__quick">Quick View</span>
+      </a>
+      <div class="product-card__info">
+        <a href="#" class="product-card__name">Money Tree Prosperity Vase</a>
+        <div class="product-card__price">$39.99 USD</div>
+      </div>
+    </div>
+  </div>
+  <div class="products__more-wrap">
+    <a href="#" class="products__more">View All Candles</a>
+  </div>
+</div>
+
+<!-- ======== The Ember Covenant — Subscription Box ======== -->
+<section class="ritual-box reveal">
+  <div class="ritual-box__content">
+    <span class="ritual-box__label">Monthly Ritual Subscription</span>
+    <h2 class="ritual-box__title">The Ember Covenant</h2>
+    <div class="ritual-box__sigil">&#10038;</div>
+    <p class="ritual-box__desc">
+      Each new moon, receive a curated altar box of hand-selected ritual candles, sacred herbs,
+      intention cards, and crystals — attuned to the lunar cycle and seasonal energies.
+      Surrender to the flame. Let the covenant guide your path.
+    </p>
+    <ul class="ritual-box__features">
+      <li>&#10023; 2–3 exclusive ritual candles</li>
+      <li>&#9775; Seasonal herbs &amp; incense</li>
+      <li>&#9733; Crystal attuned to the month</li>
+      <li>&#9825; Printed intention card &amp; ritual guide</li>
+    </ul>
+    <a href="#" class="ritual-box__cta">Begin Your Covenant</a>
+    <span class="ritual-box__note">Cancel anytime &middot; Ships worldwide</span>
+  </div>
+  <div class="ritual-box__image">
+    <img src="../Public/_DSC3878.JPG" alt="The Ember Covenant Ritual Box" loading="lazy">
+    <div class="ritual-box__image-badge">
+      <span class="ritual-box__badge-price">$49</span>
+      <span class="ritual-box__badge-period">/month</span>
+    </div>
+  </div>
+</section>
+
+<!-- ======== Full Width Image Band ======== -->
+<section class="image-band reveal">
+  <img src="../Public/_DSC3875.JPG" alt="Ritual Candle Collection" loading="lazy">
+  <div class="image-band__overlay">
+    <h2 class="image-band__title">The Complete<br>Ritual Collection</h2>
+    <a href="#" class="image-band__btn">Shop All</a>
+  </div>
+</section>
+
+<!-- ======== Story / About ======== -->
+<section class="story">
+  <div class="story__image reveal">
+    <img src="../Public/_DSC3893.JPG" alt="WuZuo Alice Craftsmanship" loading="lazy">
+  </div>
+  <div class="story__content reveal reveal-d2">
+    <span class="story__label">Our Story</span>
+    <h2 class="story__title">Ancient Symbols, Modern Magick</h2>
+    <p class="story__desc">
+      For centuries, ritual candles have been used to focus intention and channel spiritual energy.
+      Each WuZuo Alice candle is hand-poured and inscribed with ancient symbols — from the All-Seeing Eye
+      to sacred runes — creating a powerful bridge between your will and the universe.
+    </p>
+    <a href="#" class="story__btn">
+      Read More
+      <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+    </a>
+  </div>
+</section>
+
+<!-- ======== Collections Grid ======== -->
+<div class="section-heading reveal">
+  <div class="section-heading__label">Explore</div>
+  <h2 class="section-heading__title">Shop by Collection</h2>
+  <div class="section-heading__line"></div>
+</div>
+
+<div class="collections-bento">
+  <a href="#" class="coll-hero reveal reveal-d1">
+    <img src="../Public/_DSC3918.JPG" alt="Love & Binding Collection" loading="lazy">
+    <div class="coll-hero__overlay">
+      <span class="coll-hero__label">Featured Collection</span>
+      <h3 class="coll-hero__title">Love &amp; Binding</h3>
+      <p class="coll-hero__desc">Serpent love candles, Venus heart locks, and sacred binding rituals to deepen romantic connections.</p>
+      <span class="coll-hero__btn">Shop Collection</span>
+    </div>
+  </a>
+  <a href="#" class="coll-card reveal reveal-d2">
+    <img src="../Public/_DSC3877.JPG" alt="Wealth & Fortune" loading="lazy">
+    <div class="coll-card__overlay">
+      <span class="coll-card__name">Wealth &amp; Fortune</span>
+      <span class="coll-card__sub">10 Products</span>
+    </div>
+  </a>
+  <a href="#" class="coll-card reveal reveal-d3">
+    <img src="../Public/_DSC3878.JPG" alt="Protection" loading="lazy">
+    <div class="coll-card__overlay">
+      <span class="coll-card__name">Protection</span>
+      <span class="coll-card__sub">8 Products</span>
+    </div>
+  </a>
+  <a href="#" class="coll-card reveal reveal-d2">
+    <img src="../Public/_DSC3876.JPG" alt="Zodiac & Chakra" loading="lazy">
+    <div class="coll-card__overlay">
+      <span class="coll-card__name">Zodiac &amp; Chakra</span>
+      <span class="coll-card__sub">14 Products</span>
+    </div>
+  </a>
+  <a href="#" class="coll-card reveal reveal-d3">
+    <img src="../Public/_DSC3875.JPG" alt="New Arrivals" loading="lazy">
+    <div class="coll-card__overlay">
+      <span class="coll-card__name">New Arrivals</span>
+      <span class="coll-card__sub">6 Products</span>
+    </div>
+  </a>
+</div>
+
+<!-- ======== Protection Products ======== -->
+<div class="section-heading reveal mob-hide">
+  <div class="section-heading__label">Handpicked</div>
+  <h2 class="section-heading__title">Protection Candles</h2>
+  <div class="section-heading__line"></div>
+</div>
+
+<div class="products mob-hide">
+  <div class="products__grid" style="grid-template-columns: repeat(4, 1fr);">
+    <div class="product-card reveal reveal-d1">
+      <a href="#" class="product-card__image">
+        <span class="product-card__tag product-card__tag--protection">Protection</span>
+        <img src="../Public/_DSC3836.JPG" alt="Evil Eye Shield" loading="lazy">
+        <img src="../Public/_DSC3839.JPG" alt="" loading="lazy">
+        <span class="product-card__quick">Quick View</span>
+      </a>
+      <div class="product-card__info">
+        <a href="#" class="product-card__name">Evil Eye Shield</a>
+        <div class="product-card__price">$32.99 USD</div>
+      </div>
+    </div>
+    <div class="product-card reveal reveal-d2">
+      <a href="#" class="product-card__image">
+        <span class="product-card__tag product-card__tag--protection">Protection</span>
+        <img src="../Public/_DSC3837.JPG" alt="Hex Reversal Candle" loading="lazy">
+        <img src="../Public/_DSC3840.JPG" alt="" loading="lazy">
+        <span class="product-card__quick">Quick View</span>
+      </a>
+      <div class="product-card__info">
+        <a href="#" class="product-card__name">Hex Reversal Candle</a>
+        <div class="product-card__price">$36.99 USD</div>
+      </div>
+    </div>
+    <div class="product-card reveal reveal-d3">
+      <a href="#" class="product-card__image">
+        <span class="product-card__tag product-card__tag--protection">Protection</span>
+        <img src="../Public/_DSC3838.JPG" alt="Energy Cleanse Candle" loading="lazy">
+        <img src="../Public/_DSC3841.JPG" alt="" loading="lazy">
+        <span class="product-card__quick">Quick View</span>
+      </a>
+      <div class="product-card__info">
+        <a href="#" class="product-card__name">Energy Cleanse Candle</a>
+        <div class="product-card__price">$29.99 USD</div>
+      </div>
+    </div>
+    <div class="product-card reveal reveal-d4">
+      <a href="#" class="product-card__image">
+        <span class="product-card__tag product-card__tag--protection">Protection</span>
+        <img src="../Public/_DSC3835.JPG" alt="Lunar Guardian Candle" loading="lazy">
+        <img src="../Public/_DSC3834.JPG" alt="" loading="lazy">
+        <span class="product-card__quick">Quick View</span>
+      </a>
+      <div class="product-card__info">
+        <a href="#" class="product-card__name">Lunar Guardian Candle</a>
+        <div class="product-card__price">$32.99 USD</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ======== UGC Video Marquee + Reviews ======== -->
+<div class="section-heading reveal">
+  <div class="section-heading__label">Community</div>
+  <h2 class="section-heading__title">What Our Customers Say</h2>
+  <div class="section-heading__line"></div>
+</div>
+
+<section class="ugc">
+  <div class="ugc__track">
+    <div class="ugc-card">
+      <img src="https://images.unsplash.com/photo-1602607413529-a9bb4dfa3891?w=300&h=533&fit=crop" alt="Ritual candle review">
+      <div class="ugc-card__play"></div>
+      <div class="ugc-card__info"><span class="ugc-card__user">@mystic.rose</span><span class="ugc-card__caption">This candle changed my love life!</span></div>
+    </div>
+    <div class="ugc-card">
+      <img src="https://images.unsplash.com/photo-1551632436-cbf8dd35adfa?w=300&h=533&fit=crop" alt="Crystal ritual">
+      <div class="ugc-card__play"></div>
+      <div class="ugc-card__info"><span class="ugc-card__user">@luna.silver</span><span class="ugc-card__caption">Protection candle energy is unreal</span></div>
+    </div>
+    <div class="ugc-card">
+      <img src="https://images.unsplash.com/photo-1608571423902-eed4a5ad8108?w=300&h=533&fit=crop" alt="Candle altar">
+      <div class="ugc-card__play"></div>
+      <div class="ugc-card__info"><span class="ugc-card__user">@crystal.eve</span><span class="ugc-card__caption">My altar setup with WuZuo Alice</span></div>
+    </div>
+    <div class="ugc-card">
+      <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300&h=533&fit=crop" alt="Fortune ritual">
+      <div class="ugc-card__play"></div>
+      <div class="ugc-card__info"><span class="ugc-card__user">@sage.harper</span><span class="ugc-card__caption">Prosperity vase really works!</span></div>
+    </div>
+    <div class="ugc-card">
+      <img src="https://images.unsplash.com/photo-1573855619003-97b4799dcd8b?w=300&h=533&fit=crop" alt="Mystical candles">
+      <div class="ugc-card__play"></div>
+      <div class="ugc-card__info"><span class="ugc-card__user">@aria.moon</span><span class="ugc-card__caption">Reunited with my partner after burning this</span></div>
+    </div>
+    <div class="ugc-card">
+      <img src="https://images.unsplash.com/photo-1596462502278-27bfdc403348?w=300&h=533&fit=crop" alt="Spiritual practice">
+      <div class="ugc-card__play"></div>
+      <div class="ugc-card__info"><span class="ugc-card__user">@violet.star</span><span class="ugc-card__caption">Dragon candle = career breakthrough</span></div>
+    </div>
+    <div class="ugc-card">
+      <img src="https://images.unsplash.com/photo-1572635148818-ef6fd45eb394?w=300&h=533&fit=crop" alt="Healing ritual">
+      <div class="ugc-card__play"></div>
+      <div class="ugc-card__info"><span class="ugc-card__user">@ember.witch</span><span class="ugc-card__caption">Best ritual candles on the market</span></div>
+    </div>
+    <div class="ugc-card">
+      <img src="https://images.unsplash.com/photo-1543363136-3fdb62e11be5?w=300&h=533&fit=crop" alt="Candle magic">
+      <div class="ugc-card__play"></div>
+      <div class="ugc-card__info"><span class="ugc-card__user">@moonchild</span><span class="ugc-card__caption">Full moon ritual with the pyramid</span></div>
+    </div>
+    <!-- duplicate set for seamless loop -->
+    <div class="ugc-card">
+      <img src="https://images.unsplash.com/photo-1602607413529-a9bb4dfa3891?w=300&h=533&fit=crop" alt="Ritual candle review">
+      <div class="ugc-card__play"></div>
+      <div class="ugc-card__info"><span class="ugc-card__user">@mystic.rose</span><span class="ugc-card__caption">This candle changed my love life!</span></div>
+    </div>
+    <div class="ugc-card">
+      <img src="https://images.unsplash.com/photo-1551632436-cbf8dd35adfa?w=300&h=533&fit=crop" alt="Crystal ritual">
+      <div class="ugc-card__play"></div>
+      <div class="ugc-card__info"><span class="ugc-card__user">@luna.silver</span><span class="ugc-card__caption">Protection candle energy is unreal</span></div>
+    </div>
+    <div class="ugc-card">
+      <img src="https://images.unsplash.com/photo-1608571423902-eed4a5ad8108?w=300&h=533&fit=crop" alt="Candle altar">
+      <div class="ugc-card__play"></div>
+      <div class="ugc-card__info"><span class="ugc-card__user">@crystal.eve</span><span class="ugc-card__caption">My altar setup with WuZuo Alice</span></div>
+    </div>
+    <div class="ugc-card">
+      <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300&h=533&fit=crop" alt="Fortune ritual">
+      <div class="ugc-card__play"></div>
+      <div class="ugc-card__info"><span class="ugc-card__user">@sage.harper</span><span class="ugc-card__caption">Prosperity vase really works!</span></div>
+    </div>
+    <div class="ugc-card">
+      <img src="https://images.unsplash.com/photo-1573855619003-97b4799dcd8b?w=300&h=533&fit=crop" alt="Mystical candles">
+      <div class="ugc-card__play"></div>
+      <div class="ugc-card__info"><span class="ugc-card__user">@aria.moon</span><span class="ugc-card__caption">Reunited with my partner after burning this</span></div>
+    </div>
+    <div class="ugc-card">
+      <img src="https://images.unsplash.com/photo-1596462502278-27bfdc403348?w=300&h=533&fit=crop" alt="Spiritual practice">
+      <div class="ugc-card__play"></div>
+      <div class="ugc-card__info"><span class="ugc-card__user">@violet.star</span><span class="ugc-card__caption">Dragon candle = career breakthrough</span></div>
+    </div>
+    <div class="ugc-card">
+      <img src="https://images.unsplash.com/photo-1572635148818-ef6fd45eb394?w=300&h=533&fit=crop" alt="Healing ritual">
+      <div class="ugc-card__play"></div>
+      <div class="ugc-card__info"><span class="ugc-card__user">@ember.witch</span><span class="ugc-card__caption">Best ritual candles on the market</span></div>
+    </div>
+    <div class="ugc-card">
+      <img src="https://images.unsplash.com/photo-1543363136-3fdb62e11be5?w=300&h=533&fit=crop" alt="Candle magic">
+      <div class="ugc-card__play"></div>
+      <div class="ugc-card__info"><span class="ugc-card__user">@moonchild</span><span class="ugc-card__caption">Full moon ritual with the pyramid</span></div>
+    </div>
+  </div>
+</section>
+
+<div class="reviews">
+  <div class="reviews__grid">
+    <div class="review-card reveal reveal-d1">
+      <span class="review-card__stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+      <p class="review-card__text">"The Venus Heart Lock Candle truly transformed my relationship. The energy is undeniable."</p>
+      <span class="review-card__author">— Mystic Rose</span>
+    </div>
+    <div class="review-card reveal reveal-d2">
+      <span class="review-card__stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+      <p class="review-card__text">"The Evil Eye Shield is incredible. I feel lighter, safer, and more at peace."</p>
+      <span class="review-card__author">— Luna Silver</span>
+    </div>
+    <div class="review-card reveal reveal-d3">
+      <span class="review-card__stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+      <p class="review-card__text">"Money Tree Prosperity Vase — within a month, my sales noticeably increased!"</p>
+      <span class="review-card__author">— Crystal Eve</span>
+    </div>
+  </div>
+</div>
+
+<!-- ======== Important Notes ======== -->
+<div class="notes reveal">
+  <h3 class="notes__title">Important Details &amp; Magickal Notes</h3>
+  <div class="gold-line gold-line--wide" style="margin-bottom: 28px;"></div>
+  <div class="notes__list">
+    <div class="notes__item" data-icon="&#10023;">Each candle is hand-poured and may have slight variations — this is part of its unique magick.</div>
+    <div class="notes__item" data-icon="&#9992;">Orders ship within 3–5 business days. Free shipping on orders over $89.</div>
+    <div class="notes__item" data-icon="&#9775;">Burn candles on a heat-safe surface. Never leave unattended. Trim wick to &frac14; inch before each use.</div>
+    <div class="notes__item" data-icon="&#9733;">Set your intention before lighting. Focus your energy and let the flame carry your wishes.</div>
+    <div class="notes__item" data-icon="&#9825;">All candles are made with natural soy wax blended with essential oils and herbs.</div>
+  </div>
+</div>
+
+<!-- ======== Newsletter + Footer (unified) ======== -->
+<div class="site-bottom">
+<section class="newsletter reveal">
+  <h3 class="newsletter__title">Join the Coven</h3>
+  <p class="newsletter__desc">Sign up for exclusive releases, ritual guides, and lunar calendars delivered to your inbox.</p>
+  <form class="newsletter__form" onsubmit="return false;">
+    <input type="email" placeholder="Enter your email" aria-label="Email address">
+    <button type="submit">Subscribe</button>
+  </form>
+</section>
+
+<!-- ======== Footer ======== -->
+<footer class="footer">
+  <div class="footer__top">
+    <a href="#" class="footer__logo">
+      <img src="../wecom-temp-1125392-b563a96a377dca72efa8b2ccff82af5b.png" alt="WuZuo Alice">
+    </a>
+    <div class="footer__columns">
+      <div class="footer__col">
+        <h4 class="footer__col-title">Shop</h4>
+        <a href="#">All Candles</a>
+        <a href="#">Love &amp; Binding</a>
+        <a href="#">Wealth &amp; Fortune</a>
+        <a href="#">Protection</a>
+      </div>
+      <div class="footer__col">
+        <h4 class="footer__col-title">Help</h4>
+        <a href="#">Shipping</a>
+        <a href="#">Returns</a>
+        <a href="#">Candle Care</a>
+        <a href="#">FAQ</a>
+      </div>
+      <div class="footer__col">
+        <h4 class="footer__col-title">About</h4>
+        <a href="#">Our Story</a>
+        <a href="#">Ritual Guide</a>
+        <a href="#">Blog</a>
+        <a href="#">Contact</a>
+      </div>
+      <div class="footer__col">
+        <h4 class="footer__col-title">Connect</h4>
+        <a href="#">Instagram</a>
+        <a href="#">TikTok</a>
+        <a href="#">Pinterest</a>
+        <a href="#">Facebook</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer__social">
+    <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+    <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="12" cy="12" r="5" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="17.5" cy="6.5" r="1.5"/></svg></a>
+    <a href="#" aria-label="TikTok"><svg viewBox="0 0 24 24"><path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"/></svg></a>
+    <a href="#" aria-label="Pinterest"><svg viewBox="0 0 24 24"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.236 2.636 7.855 6.356 9.312-.088-.791-.167-2.005.035-2.868.181-.78 1.172-4.97 1.172-4.97s-.299-.598-.299-1.482c0-1.388.806-2.425 1.81-2.425.852 0 1.264.64 1.264 1.408 0 .858-.546 2.14-.828 3.33-.236.995.5 1.807 1.48 1.807 1.778 0 3.144-1.874 3.144-4.58 0-2.393-1.72-4.068-4.177-4.068-2.845 0-4.515 2.134-4.515 4.34 0 .859.331 1.781.745 2.281a.3.3 0 0 1 .069.288l-.278 1.133c-.044.183-.145.222-.335.134-1.249-.581-2.03-2.407-2.03-3.874 0-3.154 2.292-6.052 6.608-6.052 3.469 0 6.165 2.473 6.165 5.776 0 3.447-2.173 6.22-5.19 6.22-1.013 0-1.965-.527-2.291-1.148l-.623 2.378c-.226.869-.835 1.958-1.244 2.621.937.29 1.931.446 2.962.446 5.523 0 10-4.477 10-10S17.523 2 12 2z"/></svg></a>
+  </div>
+
+  <div class="footer__bottom">
+    <div class="footer__legal">
+      <a href="#">Privacy Policy</a>
+      <a href="#">Terms of Service</a>
+      <a href="#">Refund Policy</a>
+    </div>
+    <div class="footer__copy">&copy; 2026, WuZuo Alice. Powered by Shopify</div>
+  </div>
+</footer>
+</div><!-- /.site-bottom -->
+
+<!-- ======== Scripts ======== -->
+<script>
+  /* -- Star Canvas -- */
+  (function() {
+    var c = document.getElementById('starCanvas');
+    if (!c) return;
+    var ctx = c.getContext('2d');
+    var stars = [];
+    var count = window.innerWidth < 750 ? 80 : 240;
+    var W, H;
+
+    function resize() {
+      W = window.innerWidth;
+      H = document.documentElement.scrollHeight;
+      c.width = W;
+      c.height = H;
+    }
+    resize();
+    window.addEventListener('resize', resize);
+
+    function makeStar() {
+      return {
+        x: Math.random() * W,
+        y: Math.random() * H,
+        r: Math.random() * 1.8 + 0.4,
+        a: Math.random() * Math.PI * 2,
+        s: Math.random() * 0.03 + 0.01,
+        base: Math.random() * 0.3,
+        life: Math.random() * 400 + 100,
+        age: 0,
+        dx: (Math.random() - 0.5) * 0.15,
+        dy: (Math.random() - 0.5) * 0.1
+      };
+    }
+
+    for (var i = 0; i < count; i++) {
+      var st = makeStar();
+      st.age = Math.random() * st.life;
+      stars.push(st);
+    }
+
+    function draw() {
+      ctx.clearRect(0, 0, c.width, c.height);
+      for (var i = 0; i < stars.length; i++) {
+        var st = stars[i];
+        st.a += st.s;
+        st.age++;
+        st.x += st.dx;
+        st.y += st.dy;
+
+        var lifeRatio = st.age / st.life;
+        var fade = lifeRatio < 0.15 ? lifeRatio / 0.15
+                 : lifeRatio > 0.8 ? (1 - lifeRatio) / 0.2
+                 : 1;
+
+        if (st.age >= st.life) {
+          stars[i] = makeStar();
+          continue;
+        }
+
+        var pulse = Math.sin(st.a);
+        var alpha = (st.base + Math.abs(pulse) * 0.85) * fade;
+
+        ctx.beginPath();
+        ctx.arc(st.x, st.y, st.r, 0, Math.PI * 2);
+        ctx.fillStyle = 'rgba(232, 215, 180, ' + alpha + ')';
+        ctx.fill();
+
+        if (st.r > 1.2 && pulse > 0.7) {
+          ctx.beginPath();
+          ctx.arc(st.x, st.y, st.r * 2.5, 0, Math.PI * 2);
+          ctx.fillStyle = 'rgba(232, 215, 180, ' + (alpha * 0.15) + ')';
+          ctx.fill();
+        }
+      }
+      requestAnimationFrame(draw);
+    }
+    draw();
+  })();
+
+  /* -- Announcement Bar Carousel (3s) -- */
+  (function() {
+    var slides = document.querySelectorAll('.announcement__slide');
+    if (slides.length < 2) return;
+    var idx = 0;
+    setInterval(function() {
+      slides[idx].classList.remove('announcement__slide--active');
+      idx = (idx + 1) % slides.length;
+      slides[idx].classList.add('announcement__slide--active');
+    }, 3000);
+  })();
+
+  /* -- Header: hide on scroll down, show on scroll up -- */
+  (function() {
+    var header = document.getElementById('header');
+    var lastY = 0;
+    var ticking = false;
+
+    window.addEventListener('scroll', function() {
+      if (!ticking) {
+        requestAnimationFrame(function() {
+          var y = window.scrollY;
+          if (y > 120 && y > lastY) {
+            header.classList.add('header--hidden');
+          } else {
+            header.classList.remove('header--hidden');
+          }
+          header.classList.toggle('header--scrolled', y > 60);
+          lastY = y;
+          ticking = false;
+        });
+        ticking = true;
+      }
+    }, { passive: true });
+  })();
+
+  /* -- Mega Menu hover (desktop) -- */
+  (function() {
+    var items = document.querySelectorAll('.header__nav-item--mega');
+    var header = document.querySelector('.header');
+    var timer;
+    var activeItem = null;
+
+    function lockScroll()   { document.body.style.overflow = 'hidden'; }
+    function unlockScroll() { document.body.style.overflow = ''; }
+
+    function openItem(item) {
+      clearTimeout(timer);
+      items.forEach(function(i) { if (i !== item) i.classList.remove('mega-open'); });
+      /* pin menu to actual header bottom — no gap at any scroll position */
+      var bottom = header.getBoundingClientRect().bottom;
+      item.querySelectorAll('.mega-menu').forEach(function(m) { m.style.top = bottom + 'px'; });
+      item.classList.add('mega-open');
+      activeItem = item;
+      lockScroll();
+    }
+
+    function scheduleClose() {
+      timer = setTimeout(function() {
+        if (activeItem) { activeItem.classList.remove('mega-open'); activeItem = null; }
+        unlockScroll();
+      }, 300);
+    }
+
+    items.forEach(function(item) {
+      item.addEventListener('mouseenter', function() { openItem(item); });
+      item.addEventListener('mouseleave', scheduleClose);
+      var panel = item.querySelector('.mega-menu');
+      if (panel) {
+        panel.addEventListener('mouseenter', function() { clearTimeout(timer); });
+        panel.addEventListener('mouseleave', scheduleClose);
+      }
+    });
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape' && activeItem) {
+        clearTimeout(timer);
+        activeItem.classList.remove('mega-open'); activeItem = null; unlockScroll();
+      }
+    });
+    document.addEventListener('click', function(e) {
+      if (activeItem && !e.target.closest('.header__nav-item--mega')) {
+        clearTimeout(timer);
+        activeItem.classList.remove('mega-open'); activeItem = null; unlockScroll();
+      }
+    });
+  })();
+
+  /* -- Scroll Reveal -- */
+  (function() {
+    var els = document.querySelectorAll('.reveal');
+    if ('IntersectionObserver' in window) {
+      var obs = new IntersectionObserver(function(entries) {
+        entries.forEach(function(e) {
+          if (e.isIntersecting) {
+            e.target.classList.add('visible');
+            obs.unobserve(e.target);
+          }
+        });
+      }, { threshold: 0.1, rootMargin: '0px 0px -30px 0px' });
+      els.forEach(function(el) { obs.observe(el); });
+    } else {
+      els.forEach(function(el) { el.classList.add('visible'); });
+    }
+  })();
+</script>
+
+</body>
+</html>

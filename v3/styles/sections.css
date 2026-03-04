@@ -1,0 +1,342 @@
+/* =============================================================
+   WuZuo Alice V3 — Sections: Showcase · Ember Covenant · Image Band · Story · Notes
+   ============================================================= */
+
+/* ---- Bestsellers Showcase (left sticky + right scroll) ---- */
+.showcase {
+  display: flex;
+  align-items: flex-start;
+  position: relative; z-index: 10;
+}
+
+/* Left: sticky large card */
+.showcase__left {
+  position: sticky;
+  top: 0;
+  width: 60%;
+  height: 100vh;
+  flex-shrink: 0;
+  overflow: hidden;
+}
+
+/* Right: 4 small cards stacked, scroll normally */
+.showcase__right {
+  width: 40%;
+  flex-shrink: 0;
+}
+
+/* Card base */
+.showcase__card {
+  display: block;
+  position: relative;
+  overflow: hidden;
+  text-decoration: none;
+}
+.showcase__card--large  { height: 100vh; }
+.showcase__card--small  {
+  height: 50vh;
+  border-top: 2px solid var(--bg);   /* dark hairline separates right cards */
+}
+
+/* Image */
+.showcase__card img {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%;
+  object-fit: cover;
+  transition: transform 0.8s var(--ease-out);
+  will-change: transform;
+}
+.showcase__card:hover img { transform: scale(1.05); }
+
+/* Bottom gradient overlay */
+.showcase__card::before {
+  content: '';
+  position: absolute; inset: 0; z-index: 1;
+  background: linear-gradient(
+    to top,
+    rgba(20,20,20,0.88) 0%,
+    rgba(20,20,20,0.25) 40%,
+    transparent 70%
+  );
+  pointer-events: none;
+}
+
+/* Card text body */
+.showcase__card-body {
+  position: absolute; z-index: 2;
+  bottom: var(--s4); left: var(--s4); right: var(--s4);
+}
+.showcase__card-code {
+  font-family: var(--font-mono);
+  font-size: 1.0rem; letter-spacing: 0.28em;
+  text-transform: uppercase; color: var(--gold);
+  display: block; margin-bottom: var(--s2);
+}
+.showcase__card-name {
+  font-family: var(--font-display);
+  font-weight: 300; color: var(--text); line-height: 1.05;
+  margin-bottom: var(--s3);
+}
+.showcase__card--large .showcase__card-name {
+  font-size: clamp(3.6rem, 4.5vw, 5.6rem);
+}
+.showcase__card--small .showcase__card-name {
+  font-size: clamp(2.2rem, 3vw, 3.4rem);
+}
+.showcase__card-meta {
+  display: flex; align-items: center; gap: var(--s3); flex-wrap: wrap;
+}
+.showcase__card-price {
+  font-family: var(--font-mono); font-size: 1.3rem; color: var(--gold);
+}
+.showcase__card-cta {
+  font-family: var(--font-mono); font-size: 1.05rem;
+  letter-spacing: 0.15em; text-transform: uppercase;
+  color: var(--text);
+  border: 1px solid var(--gold-mid);
+  padding: 0.65rem 1.8rem; border-radius: 2px;
+  transition: background var(--t-fast), color var(--t-fast), border-color var(--t-fast);
+}
+.showcase__card:hover .showcase__card-cta {
+  background: var(--gold); color: var(--bg); border-color: var(--gold);
+}
+
+/* Section label overlay on left card (top-left) */
+.showcase__section-label {
+  position: absolute; top: var(--s4); left: var(--s4); z-index: 3;
+  font-family: var(--font-mono);
+  font-size: 1.0rem; letter-spacing: 0.28em;
+  text-transform: uppercase; color: rgba(240,236,228,0.55);
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  user-select: none;
+}
+
+/* ---- Responsive ---- */
+@media (max-width: 749px) {
+  .showcase { flex-direction: column; }
+  .showcase__left {
+    position: relative;   /* no sticky on mobile */
+    width: 100%; height: 56vw; min-height: 220px;
+  }
+  .showcase__right { width: 100%; }
+  .showcase__card--small { height: 48vw; min-height: 160px; }
+  /* show only first 2 small cards on mobile */
+  .showcase__right .showcase__card--small:nth-child(n+3) { display: none; }
+  .showcase__card-cta { display: none; }
+}
+
+/* ---- Ember Covenant (Subscription Box) ---- */
+.ritual-box {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--s8);
+  align-items: center;
+  max-width: 1280px; margin: 0 auto;
+  padding: var(--s12) var(--s4);
+  position: relative; z-index: 10;
+}
+.ritual-box__content { padding-right: var(--s4); }
+.ritual-box__label {
+  font-family: var(--font-mono);
+  font-size: 1.0rem; letter-spacing: 0.25em;
+  text-transform: uppercase; color: var(--gold);
+  display: block; margin-bottom: var(--s2);
+}
+.ritual-box__title {
+  font-family: var(--font-display);
+  font-size: clamp(3.6rem, 5vw, 5.6rem);
+  font-weight: 300; line-height: 1.05;
+  color: var(--text); margin-bottom: var(--s2);
+}
+.ritual-box__sigil {
+  font-size: 3rem; color: var(--gold);
+  display: block; margin-bottom: var(--s3);
+  animation: sigil-spin 24s linear infinite;
+  opacity: 0.7;
+}
+@keyframes sigil-spin {
+  to { transform: rotate(360deg); }
+}
+.ritual-box__desc {
+  font-size: 1.5rem; color: var(--muted);
+  line-height: 1.8; margin-bottom: var(--s4);
+}
+.ritual-box__features { margin-bottom: var(--s4); }
+.ritual-box__features li {
+  font-family: var(--font-mono);
+  font-size: 1.3rem; color: var(--muted);
+  padding: var(--s1) 0;
+  border-bottom: 1px solid var(--border);
+  display: flex; align-items: center; gap: var(--s2);
+}
+.ritual-box__features li::before {
+  content: '—';
+  color: var(--gold); flex-shrink: 0;
+}
+.ritual-box__cta {
+  display: inline-block;
+  background: var(--gold); color: var(--bg);
+  font-family: var(--font-mono);
+  font-size: 1.15rem; letter-spacing: 0.18em;
+  text-transform: uppercase;
+  padding: 1.4rem 3.2rem; border-radius: 2px;
+  transition: opacity var(--t-fast);
+}
+.ritual-box__cta:hover { opacity: 0.85; }
+.ritual-box__note {
+  display: block; margin-top: var(--s2);
+  font-family: var(--font-mono);
+  font-size: 1.0rem; letter-spacing: 0.1em;
+  color: var(--muted); text-transform: uppercase;
+}
+
+/* Image side */
+.ritual-box__image { position: relative; }
+.ritual-box__image img {
+  width: 100%; aspect-ratio: 3/4;
+  object-fit: cover; border-radius: 2px;
+  display: block;
+}
+.ritual-box__image-badge {
+  position: absolute; bottom: var(--s4); right: var(--s4);
+  background: var(--bg);
+  border: 1px solid var(--gold-mid);
+  padding: var(--s2) var(--s3); text-align: center;
+  border-radius: 2px;
+}
+.ritual-box__badge-price {
+  font-family: var(--font-display);
+  font-size: 4rem; font-weight: 300;
+  color: var(--gold); display: block; line-height: 1;
+}
+.ritual-box__badge-period {
+  font-family: var(--font-mono);
+  font-size: 1.1rem; color: var(--muted);
+}
+
+/* ---- Full-Width Image Band ---- */
+.image-band {
+  position: relative; z-index: 10;
+  height: 58vh; min-height: 360px;
+  overflow: hidden; margin-bottom: 0;
+}
+.image-band img {
+  width: 100%; height: 100%; object-fit: cover;
+  transition: transform 8s var(--ease-out);
+}
+.image-band:hover img { transform: scale(1.03); }
+.image-band__overlay {
+  position: absolute; inset: 0;
+  background: rgba(20, 20, 20, 0.5);
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  text-align: center;
+  padding: var(--s4);
+}
+.image-band__title {
+  font-family: var(--font-display);
+  font-size: clamp(4rem, 7vw, 8rem);
+  font-weight: 300; line-height: 1.05;
+  color: var(--text);
+  margin-bottom: var(--s4);
+  clip-path: inset(100% 0 0 0);
+  transition: clip-path var(--t-reveal);
+}
+.image-band.visible .image-band__title { clip-path: inset(0% 0 0 0); }
+.image-band__btn {
+  font-family: var(--font-mono);
+  font-size: 1.15rem; letter-spacing: 0.2em;
+  text-transform: uppercase; color: var(--gold);
+  border: 1px solid var(--gold-mid);
+  padding: 1.2rem 2.8rem; border-radius: 2px;
+  transition: background var(--t-fast), color var(--t-fast), border-color var(--t-fast);
+}
+.image-band__btn:hover { background: var(--gold); color: var(--bg); border-color: var(--gold); }
+
+/* ---- Story / About ---- */
+.story {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--s8); align-items: center;
+  max-width: 1280px; margin: 0 auto;
+  padding: var(--s12) var(--s4);
+  position: relative; z-index: 10;
+}
+.story__image img {
+  width: 100%; aspect-ratio: 4/5;
+  object-fit: cover; border-radius: 2px;
+  display: block;
+}
+.story__label {
+  font-family: var(--font-mono);
+  font-size: 1.0rem; letter-spacing: 0.25em;
+  text-transform: uppercase; color: var(--gold);
+  display: block; margin-bottom: var(--s2);
+}
+.story__title {
+  font-family: var(--font-display);
+  font-size: clamp(3.2rem, 4vw, 4.8rem);
+  font-weight: 400; line-height: 1.15;
+  color: var(--text); margin-bottom: var(--s3);
+}
+.story__desc {
+  font-size: 1.5rem; color: var(--muted);
+  line-height: 1.8; margin-bottom: var(--s4);
+}
+.story__btn {
+  font-family: var(--font-mono);
+  font-size: 1.1rem; letter-spacing: 0.15em;
+  text-transform: uppercase; color: var(--gold);
+  display: inline-flex; align-items: center; gap: var(--s1);
+}
+.story__btn svg {
+  width: 14px; height: 14px;
+  stroke: currentColor; fill: none; stroke-width: 1.5;
+  transition: transform var(--t-fast);
+}
+.story__btn:hover svg { transform: translateX(4px); }
+
+/* ---- Important Notes ---- */
+.notes {
+  max-width: 960px; margin: 0 auto;
+  padding: var(--s8) var(--s4) var(--s12);
+  position: relative; z-index: 10;
+}
+.notes__title {
+  font-family: var(--font-display);
+  font-size: clamp(2.8rem, 4vw, 3.6rem);
+  font-weight: 400; color: var(--text);
+  margin-bottom: var(--s3);
+}
+.notes__list { margin-top: var(--s3); }
+.notes__item {
+  position: relative;
+  padding: var(--s3) var(--s3) var(--s3) var(--s6);
+  border-bottom: 1px solid var(--border);
+  font-size: 1.4rem; color: var(--muted);
+  line-height: 1.7;
+  transition: color var(--t-fast);
+}
+.notes__item::before {
+  content: attr(data-icon);
+  position: absolute; left: var(--s1); top: var(--s3);
+  color: var(--gold); font-size: 1.6rem;
+}
+.notes__item:hover { color: var(--text); }
+
+/* ---- Responsive ---- */
+@media (max-width: 749px) {
+  .ritual-box {
+    grid-template-columns: 1fr; gap: var(--s4);
+    padding: var(--s6) var(--s3);
+  }
+  .ritual-box__content { padding-right: 0; order: 2; }
+  .ritual-box__image { order: 1; }
+  .story {
+    grid-template-columns: 1fr; gap: var(--s3);
+    padding: var(--s6) var(--s3);
+  }
+  .image-band { height: 38vh; min-height: 220px; }
+  .notes { padding: var(--s4) var(--s3) var(--s5); }
+}

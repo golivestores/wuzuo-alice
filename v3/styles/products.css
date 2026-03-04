@@ -1,0 +1,253 @@
+/* =============================================================
+   WuZuo Alice V3 — Products: Category Cards · Product Grid · Bento Collections
+   ============================================================= */
+
+/* ---- Category Cards (shift5.io solutions grid) ---- */
+.categories {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: var(--border);
+  margin: 0 var(--s4) var(--s8);
+  position: relative; z-index: 10;
+}
+.category-card {
+  background: var(--bg-card);
+  padding: var(--s6) var(--s4);
+  position: relative; overflow: hidden;
+  transition: background var(--t-fast);
+  isolation: isolate;
+}
+
+/* ---- Flame effect on hover ---- */
+/* ::before = rising ember glow from bottom */
+.category-card::before {
+  content: '';
+  position: absolute;
+  bottom: -30px; left: -10%; right: -10%;
+  height: 55%;
+  background:
+    radial-gradient(ellipse 55% 100% at 30% 100%, rgba(255, 90, 10, 0.38) 0%, transparent 65%),
+    radial-gradient(ellipse 45% 80%  at 70% 100%, rgba(255, 150, 30, 0.28) 0%, transparent 60%),
+    radial-gradient(ellipse 70% 60%  at 50% 100%, rgba(201, 168, 76, 0.22) 0%, transparent 70%);
+  filter: blur(14px);
+  opacity: 0;
+  transform: translateY(30%) scaleX(0.8);
+  transition: opacity 0.5s ease, transform 0.5s var(--ease-out);
+  pointer-events: none;
+  z-index: 0;
+}
+/* ::after = gold left accent (keeps previous bar behaviour) */
+.category-card::after {
+  content: '';
+  position: absolute; left: 0; top: 0; bottom: 0;
+  width: 2px;
+  background: linear-gradient(to top, var(--gold), rgba(255,140,30,0.7), var(--gold));
+  transform: scaleY(0); transform-origin: bottom;
+  transition: transform 0.5s var(--ease-out);
+  z-index: 1;
+}
+
+.category-card:hover { background: var(--bg-card-2); }
+
+/* Ignite on hover */
+.category-card:hover::before {
+  opacity: 1;
+  transform: translateY(0) scaleX(1);
+  animation: ember-flicker 2.4s ease-in-out infinite alternate;
+}
+.category-card:hover::after { transform: scaleY(1); }
+
+@keyframes ember-flicker {
+  0%   { transform: scaleX(0.88) translateY(2%);  filter: blur(12px); opacity: 0.75; }
+  20%  { transform: scaleX(1.06) translateY(-3%); filter: blur(16px); opacity: 1.0;  }
+  45%  { transform: scaleX(0.92) translateY(1%);  filter: blur(10px); opacity: 0.8;  }
+  65%  { transform: scaleX(1.04) translateY(-4%); filter: blur(15px); opacity: 0.95; }
+  85%  { transform: scaleX(0.95) translateY(3%);  filter: blur(11px); opacity: 0.7;  }
+  100% { transform: scaleX(1.02) translateY(-1%); filter: blur(13px); opacity: 0.9;  }
+}
+
+.category-card__code {
+  font-family: var(--font-mono);
+  font-size: 0.95rem; letter-spacing: 0.2em;
+  color: var(--muted); text-transform: uppercase;
+  display: block; margin-bottom: var(--s3);
+}
+.category-card__icon {
+  font-size: 2.8rem; color: var(--gold);
+  display: block; margin-bottom: var(--s2);
+  line-height: 1;
+}
+.category-card__title {
+  font-family: var(--font-display);
+  font-size: 2.8rem; font-weight: 400;
+  color: var(--text); margin-bottom: var(--s2);
+  line-height: 1.15;
+}
+.category-card__desc {
+  font-size: 1.4rem; color: var(--muted);
+  line-height: 1.7; margin-bottom: var(--s4);
+}
+.category-card__btn {
+  font-family: var(--font-mono);
+  font-size: 1.05rem; letter-spacing: 0.15em;
+  text-transform: uppercase; color: var(--gold);
+  display: inline-flex; align-items: center; gap: 0.6rem;
+}
+.category-card__btn svg {
+  width: 14px; height: 14px;
+  stroke: currentColor; fill: none; stroke-width: 1.5;
+  transition: transform var(--t-fast);
+}
+.category-card:hover .category-card__btn svg { transform: translateX(4px); }
+
+/* ---- Products Section ---- */
+.products { position: relative; z-index: 10; }
+.products__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--s3);
+  padding: 0 var(--s4);
+  max-width: 1280px; margin: 0 auto;
+}
+.products__more-wrap {
+  text-align: center;
+  padding: var(--s6) var(--s4) var(--s8);
+}
+.products__more {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 1.1rem; letter-spacing: 0.18em;
+  text-transform: uppercase; color: var(--gold);
+  border: 1px solid var(--gold-mid);
+  padding: 1.2rem 3.2rem; border-radius: 2px;
+  transition: background var(--t-fast), color var(--t-fast), border-color var(--t-fast);
+}
+.products__more:hover { background: var(--gold); color: var(--bg); border-color: var(--gold); }
+
+/* ---- Product Card ---- */
+.product-card { position: relative; }
+
+.product-card__image {
+  display: block; position: relative; overflow: hidden;
+  aspect-ratio: 3 / 4;
+  background: var(--bg-card);
+  border-radius: 2px;
+  margin-bottom: var(--s2);
+}
+/* Primary + hover image */
+.product-card__image img {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%; object-fit: cover;
+}
+.product-card__image img:first-of-type  { z-index: 1; }
+.product-card__image img:last-of-type   { z-index: 2; opacity: 0; transition: opacity var(--t-mid); }
+.product-card__image:hover img:last-of-type { opacity: 1; }
+
+/* Tag badge */
+.product-card__tag {
+  position: absolute; top: var(--s2); left: var(--s2); z-index: 3;
+  font-family: var(--font-mono);
+  font-size: 0.9rem; letter-spacing: 0.15em;
+  text-transform: uppercase;
+  background: rgba(20, 20, 20, 0.85);
+  color: var(--gold);
+  padding: 0.3rem 0.8rem; border-radius: 2px;
+  border: 1px solid var(--border);
+}
+
+/* Quick view overlay */
+.product-card__quick {
+  position: absolute; inset: 0; z-index: 4;
+  display: flex; align-items: flex-end; justify-content: center;
+  padding-bottom: var(--s3);
+  font-family: var(--font-mono);
+  font-size: 1.05rem; letter-spacing: 0.18em;
+  text-transform: uppercase; color: var(--text);
+  background: rgba(20,20,20,0);
+  opacity: 0;
+  transition: background var(--t-fast), opacity var(--t-fast);
+}
+.product-card__image:hover .product-card__quick {
+  opacity: 1; background: rgba(20,20,20,0.45);
+}
+
+/* Card info */
+.product-card__info { padding: 0 0.2rem; }
+.product-card__name {
+  display: block;
+  font-size: 1.4rem; color: var(--text);
+  margin-bottom: 0.5rem; line-height: 1.4;
+  transition: color var(--t-fast);
+}
+.product-card__name:hover { color: var(--gold); }
+.product-card__price {
+  font-family: var(--font-mono);
+  font-size: 1.3rem; color: var(--gold);
+}
+
+/* ---- Collections 4-Column Grid (Milk Makeup style) ---- */
+.collections-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--s3);
+  padding: 0 var(--s4) var(--s8);
+  max-width: 1280px; margin: 0 auto;
+  position: relative; z-index: 10;
+}
+
+.coll-item {
+  display: flex; flex-direction: column;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* Tall portrait image */
+.coll-item__image {
+  position: relative; overflow: hidden;
+  aspect-ratio: 2 / 3;
+  border-radius: 2px;
+  margin-bottom: var(--s3);
+}
+.coll-item__image img {
+  width: 100%; height: 100%; object-fit: cover;
+  transition: transform 0.7s var(--ease-out);
+}
+.coll-item:hover .coll-item__image img { transform: scale(1.04); }
+
+/* Gold hairline + text below image */
+.coll-item__label {
+  text-align: center;
+  padding: var(--s2) 0 var(--s3);
+  border-top: 1px solid var(--border);
+  transition: border-color var(--t-fast);
+}
+.coll-item:hover .coll-item__label { border-top-color: var(--gold-mid); }
+
+.coll-item__name {
+  font-family: var(--font-display);
+  font-size: 2.2rem; font-weight: 400; line-height: 1.2;
+  color: var(--text); display: block;
+  margin-bottom: 0.4rem;
+  transition: color var(--t-fast);
+}
+.coll-item:hover .coll-item__name { color: var(--gold); }
+
+.coll-item__count {
+  font-family: var(--font-mono);
+  font-size: 1.0rem; letter-spacing: 0.18em;
+  text-transform: uppercase; color: var(--muted);
+  display: block;
+}
+
+/* ---- Responsive ---- */
+@media (max-width: 1024px) {
+  .products__grid { grid-template-columns: repeat(3, 1fr); }
+}
+@media (max-width: 749px) {
+  .categories { grid-template-columns: 1fr; margin: 0 var(--s2) var(--s5); }
+  .category-card { padding: var(--s4) var(--s3); }
+  .products__grid { grid-template-columns: repeat(2, 1fr); gap: var(--s2); padding: 0 var(--s2); }
+  .products__more-wrap { padding: var(--s4) var(--s2) var(--s5); }
+  .collections-grid { grid-template-columns: repeat(2, 1fr); gap: var(--s2); padding: 0 var(--s2) var(--s5); }
+}
