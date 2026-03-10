@@ -1,0 +1,204 @@
+/* WuZuo Alice V3 — PDP: Product Main (Buy Box) */
+
+/* ── Layout ── */
+.pdp-main {
+  display: grid; grid-template-columns: 55% 45%; gap: var(--s6);
+  max-width: 1280px; margin: 0 auto; padding: var(--s6) var(--s4);
+  position: relative; z-index: 10;
+}
+
+/* ── Gallery ── */
+.pdp-gallery { display: flex; gap: var(--s2); align-self: start; position: sticky; top: 100px; }
+.pdp-gallery__thumbs {
+  display: flex; flex-direction: column; gap: var(--s1);
+  width: 72px; flex-shrink: 0;
+}
+.pdp-gallery__thumb {
+  width: 72px; height: 72px; overflow: hidden; border-radius: 2px;
+  border: 1px solid var(--border); cursor: pointer;
+  background: none; padding: 0; transition: border-color var(--t-fast);
+}
+.pdp-gallery__thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.pdp-gallery__thumb:hover { border-color: var(--gold-mid); }
+.pdp-gallery__thumb--active { border-color: var(--gold); }
+.pdp-gallery__main {
+  position: relative; flex: 1; overflow: hidden;
+  border-radius: 2px; background: var(--bg-card); aspect-ratio: 1 / 1;
+}
+.pdp-gallery__main img {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%; object-fit: cover; display: block;
+}
+.pdp-gallery__prev,
+.pdp-gallery__next {
+  position: absolute; top: 50%; transform: translateY(-50%);
+  width: 36px; height: 36px; border-radius: 50%;
+  background: rgba(20,20,20,0.7); color: var(--text); font-size: 2rem;
+  display: flex; align-items: center; justify-content: center;
+  border: 1px solid var(--border); cursor: pointer; padding: 0;
+  transition: background var(--t-fast), border-color var(--t-fast);
+}
+.pdp-gallery__prev { left: var(--s2); }
+.pdp-gallery__next { right: var(--s2); }
+.pdp-gallery__prev:hover,
+.pdp-gallery__next:hover { background: rgba(20,20,20,0.9); border-color: var(--gold-mid); }
+
+/* ── Product Info ── */
+.pdp-info { align-self: start; position: sticky; top: 100px; }
+.pdp-info__breadcrumb {
+  font-family: var(--font-mono); font-size: 1.1rem;
+  letter-spacing: 0.1em; color: var(--muted); margin-bottom: var(--s2);
+}
+.pdp-info__breadcrumb a { color: var(--muted); text-decoration: none; transition: color var(--t-fast); }
+.pdp-info__breadcrumb a:hover { color: var(--gold); }
+.pdp-info__breadcrumb span { margin: 0 0.5rem; }
+.pdp-info__ritual-tag {
+  font-family: var(--font-mono); font-size: 1.1rem; letter-spacing: 0.2em;
+  text-transform: uppercase; color: var(--gold);
+  border-bottom: 1px solid var(--gold-mid); display: inline-block;
+  padding-bottom: 0.4rem; margin-bottom: var(--s3);
+}
+.pdp-info__title {
+  font-family: var(--font-display); font-size: clamp(4rem, 5vw, 5.6rem);
+  font-weight: 300; color: var(--text); line-height: 1.05; margin-bottom: var(--s2);
+}
+.pdp-info__price {
+  font-family: var(--font-mono); font-size: 2.4rem;
+  color: var(--gold); margin-bottom: var(--s2);
+}
+.pdp-info__price-note { font-size: 1.3rem; color: var(--muted); margin-left: 0.3rem; }
+.pdp-info__rating {
+  display: flex; align-items: center; gap: var(--s2); margin-bottom: var(--s3);
+}
+.pdp-info__stars { color: var(--gold); font-size: 1.6rem; letter-spacing: 0.15em; }
+.pdp-info__rating-count { font-family: var(--font-mono); font-size: 1.2rem; color: var(--muted); }
+.pdp-info__desc {
+  font-size: 1.5rem; color: var(--muted); line-height: 1.8; margin-bottom: var(--s4);
+}
+
+/* ── Actions ── */
+.pdp-info__actions {
+  display: flex; gap: var(--s2); align-items: stretch; margin-bottom: var(--s2);
+}
+.pdp-info__qty {
+  display: flex; align-items: center;
+  border: 1px solid var(--border); border-radius: 2px;
+}
+.pdp-info__qty-btn {
+  width: 40px; height: 48px; font-size: 1.8rem; color: var(--text);
+  display: flex; align-items: center; justify-content: center;
+  background: none; border: none; cursor: pointer; padding: 0;
+  transition: color var(--t-fast);
+}
+.pdp-info__qty-btn:hover { color: var(--gold); }
+.pdp-info__qty-input {
+  width: 48px; text-align: center; background: transparent; border: none;
+  color: var(--text); font-family: var(--font-mono); font-size: 1.4rem;
+  -webkit-appearance: none; -moz-appearance: textfield;
+}
+.pdp-info__qty-input::-webkit-inner-spin-button,
+.pdp-info__qty-input::-webkit-outer-spin-button { -webkit-appearance: none; margin: 0; }
+.pdp-info__add-cart {
+  flex: 1; background: var(--gold); color: var(--bg);
+  font-family: var(--font-mono); font-size: 1.3rem; letter-spacing: 0.18em;
+  text-transform: uppercase; border-radius: 2px; border: none;
+  padding: 0 var(--s4); cursor: pointer; transition: opacity var(--t-fast);
+}
+.pdp-info__add-cart:hover { opacity: 0.85; }
+.pdp-info__buy-now {
+  width: 100%; padding: 1.4rem; border: 1px solid var(--gold-mid);
+  background: none; color: var(--gold);
+  font-family: var(--font-mono); font-size: 1.3rem; letter-spacing: 0.18em;
+  text-transform: uppercase; border-radius: 2px; margin-bottom: var(--s4);
+  cursor: pointer;
+  transition: background var(--t-fast), color var(--t-fast), border-color var(--t-fast);
+}
+.pdp-info__buy-now:hover {
+  background: var(--gold); color: var(--bg); border-color: var(--gold);
+}
+
+/* ── Accordion ── */
+.pdp-accordion { margin-bottom: var(--s4); }
+.pdp-accordion__item { border-bottom: 1px solid var(--border); }
+.pdp-accordion__trigger {
+  width: 100%; display: flex; justify-content: space-between; align-items: center;
+  padding: var(--s2) 0; font-size: 1.5rem; color: var(--text);
+  background: none; border: none; cursor: pointer; transition: color var(--t-fast);
+}
+.pdp-accordion__trigger:hover { color: var(--gold); }
+.pdp-accordion__icon { font-size: 1.8rem; color: var(--gold); transition: transform var(--t-fast); }
+.pdp-accordion__content {
+  max-height: 0; overflow: hidden; transition: max-height 0.4s var(--ease-std);
+  font-size: 1.4rem; color: var(--muted); line-height: 1.8;
+}
+.pdp-accordion__item--open .pdp-accordion__content { max-height: 600px; padding-bottom: var(--s3); }
+
+/* Detail blocks inside accordion */
+.pdp-accordion__detail {
+  margin-bottom: var(--s2);
+}
+.pdp-accordion__detail strong {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 1.1rem;
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  color: var(--gold);
+  margin-bottom: 0.4rem;
+}
+.pdp-accordion__detail p {
+  font-size: 1.3rem;
+  color: var(--muted);
+  line-height: 1.7;
+}
+.pdp-accordion__specs {
+  margin-top: var(--s2);
+  padding-top: var(--s2);
+  border-top: 1px solid var(--border);
+}
+.pdp-accordion__item--open .pdp-accordion__icon { transform: rotate(45deg); }
+.pdp-accordion__content ul { list-style: none; padding: 0; margin: 0; }
+.pdp-accordion__content ul li { padding: 0.4rem 0; padding-left: var(--s3); position: relative; }
+.pdp-accordion__content ul li::before {
+  content: '\2014'; color: var(--gold); position: absolute; left: 0;
+}
+
+/* ── Trust & Share ── */
+.pdp-info__trust {
+  display: flex; flex-direction: column; gap: var(--s2);
+  margin-bottom: var(--s4); padding-top: var(--s3);
+  border-top: 1px solid var(--border);
+}
+.pdp-info__trust-item {
+  display: flex; align-items: center; gap: var(--s2);
+  font-family: var(--font-mono); font-size: 1.2rem;
+  color: var(--muted); letter-spacing: 0.08em;
+}
+.pdp-info__trust-item svg {
+  width: 18px; height: 18px; stroke: var(--gold);
+  fill: none; stroke-width: 1.5; flex-shrink: 0;
+}
+.pdp-info__share {
+  display: flex; align-items: center; gap: var(--s2);
+  font-family: var(--font-mono); font-size: 1.1rem;
+  color: var(--muted); letter-spacing: 0.1em;
+}
+.pdp-info__share a svg {
+  width: 18px; height: 18px; stroke: var(--muted);
+  fill: none; stroke-width: 1.5; transition: stroke var(--t-fast);
+}
+.pdp-info__share a:hover svg { stroke: var(--gold); }
+
+/* ── Responsive: 1024px ── */
+@media (max-width: 1024px) {
+  .pdp-main { gap: var(--s4); }
+}
+
+/* ── Responsive: 749px ── */
+@media (max-width: 749px) {
+  .pdp-main { grid-template-columns: 1fr; padding: var(--s3); }
+  .pdp-gallery { flex-direction: column-reverse; position: static; }
+  .pdp-info { position: static; }
+  .pdp-gallery__thumbs { flex-direction: row; width: 100%; overflow-x: auto; }
+  .pdp-gallery__thumb { width: 56px; height: 56px; flex-shrink: 0; }
+}

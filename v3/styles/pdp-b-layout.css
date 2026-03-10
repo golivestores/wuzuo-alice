@@ -1,0 +1,266 @@
+/* WuZuo Alice V3 — PDP-B: Theater Layout + Immersive Buy Box */
+
+/* ── Theater Container ── */
+.theater {
+  height: 100vh;
+  overflow-y: auto;
+  scroll-snap-type: none;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior-y: contain;
+  position: relative;
+  z-index: 10;
+  scrollbar-width: none;
+}
+.theater::-webkit-scrollbar {
+  display: none;
+}
+
+/* ── Base Screen ── */
+.screen {
+  height: 100vh;
+  scroll-snap-align: start;
+  position: relative;
+  overflow: hidden;
+}
+.screen__bg {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%;
+  object-fit: cover;
+}
+.screen__overlay {
+  position: absolute; inset: 0;
+  background: rgba(20,20,20,0.55);
+  pointer-events: none;
+}
+
+/* ── Screen 0: Buy Box — Ken Burns ── */
+@keyframes ken-burns {
+  from { transform: scale(1); }
+  to   { transform: scale(1.05); }
+}
+.screen--buy .screen__bg {
+  animation: ken-burns 20s ease-in-out infinite alternate;
+}
+
+/* ── Buy Panel ── */
+.buy-panel {
+  position: absolute;
+  right: var(--s8); top: 50%; transform: translateY(-50%);
+  width: 420px; max-height: 85vh; overflow-y: auto;
+  background: rgba(20,20,20,0.88);
+  backdrop-filter: blur(8px);
+  padding: var(--s5);
+  border: 1px solid var(--border);
+  border-radius: 2px;
+  scrollbar-width: none;
+}
+.buy-panel::-webkit-scrollbar { display: none; }
+
+/* Ritual tag */
+.buy-panel__ritual-tag {
+  font-family: var(--font-mono); font-size: 1.1rem;
+  letter-spacing: 0.2em; text-transform: uppercase;
+  color: var(--gold);
+  border-bottom: 1px solid var(--gold-mid);
+  display: inline-block;
+  padding-bottom: 0.4rem; margin-bottom: var(--s3);
+}
+
+/* Title */
+.buy-panel__title {
+  font-family: var(--font-display);
+  font-size: 5.6rem; font-weight: 300;
+  color: var(--text); line-height: 1.05;
+  margin-bottom: var(--s2);
+}
+
+/* Price */
+.buy-panel__price {
+  font-family: var(--font-mono); font-size: 2.4rem;
+  color: var(--gold); margin-bottom: var(--s2);
+}
+.buy-panel__price-note {
+  font-size: 1.3rem; color: var(--muted); margin-left: 0.3rem;
+}
+
+/* Rating */
+.buy-panel__rating {
+  display: flex; align-items: center;
+  gap: var(--s2); margin-bottom: var(--s2);
+}
+.buy-panel__stars {
+  color: var(--gold); font-size: 1.6rem; letter-spacing: 0.15em;
+}
+.buy-panel__rating-count {
+  font-family: var(--font-mono); font-size: 1.2rem; color: var(--muted);
+}
+
+/* Description */
+.buy-panel__desc {
+  font-size: 1.4rem; color: var(--muted);
+  line-height: 1.8; margin-bottom: var(--s3);
+}
+
+/* Actions row */
+.buy-panel__actions {
+  display: flex; gap: var(--s2);
+  align-items: stretch; margin-bottom: var(--s2);
+}
+
+/* Quantity selector */
+.buy-panel__qty {
+  display: flex; align-items: center;
+  border: 1px solid var(--border); border-radius: 2px;
+}
+.buy-panel__qty-btn {
+  width: 36px; height: 44px; font-size: 1.6rem;
+  color: var(--text);
+  display: flex; align-items: center; justify-content: center;
+  background: transparent; border: none; cursor: pointer;
+  transition: color var(--t-fast);
+}
+.buy-panel__qty-btn:hover { color: var(--gold); }
+.buy-panel__qty-input {
+  width: 40px; text-align: center;
+  background: transparent; border: none;
+  color: var(--text); font-family: var(--font-mono); font-size: 1.3rem;
+  -webkit-appearance: none; -moz-appearance: textfield;
+}
+.buy-panel__qty-input::-webkit-inner-spin-button,
+.buy-panel__qty-input::-webkit-outer-spin-button {
+  -webkit-appearance: none; margin: 0;
+}
+
+/* Add to Cart */
+.buy-panel__add-cart {
+  flex: 1;
+  background: var(--gold); color: var(--bg);
+  font-family: var(--font-mono); font-size: 1.2rem;
+  letter-spacing: 0.18em; text-transform: uppercase;
+  border: none; border-radius: 2px;
+  padding: 0 var(--s3); cursor: pointer;
+  transition: opacity var(--t-fast);
+}
+.buy-panel__add-cart:hover { opacity: 0.85; }
+
+/* Buy Now */
+.buy-panel__buy-now {
+  width: 100%; padding: 1.2rem;
+  border: 1px solid var(--gold-mid);
+  background: transparent;
+  color: var(--gold); font-family: var(--font-mono); font-size: 1.2rem;
+  letter-spacing: 0.18em; text-transform: uppercase;
+  border-radius: 2px; cursor: pointer;
+  margin-bottom: var(--s3);
+  transition: background var(--t-fast), color var(--t-fast), border-color var(--t-fast);
+}
+.buy-panel__buy-now:hover {
+  background: var(--gold); color: var(--bg); border-color: var(--gold);
+}
+
+/* ── Accordion ── */
+.buy-panel__accordion { margin-bottom: 0; }
+.buy-panel__acc-item { border-bottom: 1px solid var(--border); }
+
+.buy-panel__acc-trigger {
+  width: 100%; display: flex;
+  justify-content: space-between; align-items: center;
+  padding: var(--s2) 0; font-size: 1.4rem;
+  color: var(--text);
+  background: transparent; border: none; cursor: pointer;
+  transition: color var(--t-fast);
+}
+.buy-panel__acc-trigger:hover { color: var(--gold); }
+.buy-panel__acc-icon { font-size: 1.6rem; color: var(--gold); }
+
+.buy-panel__acc-content {
+  max-height: 0; overflow: hidden;
+  transition: max-height 0.4s var(--ease-std);
+  font-size: 1.3rem; color: var(--muted); line-height: 1.8;
+}
+.buy-panel__acc-item--open .buy-panel__acc-content { max-height: 600px; }
+
+/* Detail blocks inside accordion */
+.buy-panel__detail {
+  margin-bottom: var(--s2);
+}
+.buy-panel__detail strong {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 1.1rem;
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  color: var(--gold);
+  margin-bottom: 0.4rem;
+}
+.buy-panel__detail p {
+  font-size: 1.25rem;
+  color: var(--muted);
+  line-height: 1.7;
+}
+.buy-panel__specs {
+  margin-top: var(--s2);
+  padding-top: var(--s2);
+  border-top: 1px solid var(--border);
+}
+.buy-panel__acc-content ul { padding-bottom: var(--s2); }
+.buy-panel__acc-content li {
+  position: relative;
+  padding: 0.3rem 0 0.3rem var(--s3);
+}
+.buy-panel__acc-content li::before {
+  content: '—'; color: var(--gold);
+  position: absolute; left: 0;
+}
+
+/* ── Scroll Hint ── */
+.screen__scroll-hint {
+  position: absolute;
+  bottom: var(--s6); left: 50%; transform: translateX(-50%);
+  text-align: center; z-index: 5;
+  transition: opacity var(--t-mid);
+}
+.screen__scroll-hint span {
+  display: block;
+  font-family: var(--font-mono); font-size: 1.05rem;
+  letter-spacing: 0.2em; text-transform: uppercase;
+  color: var(--gold); margin-bottom: var(--s1);
+}
+.screen__scroll-hint svg {
+  width: 20px; height: 20px; margin: 0 auto;
+  stroke: var(--gold);
+  animation: bounce 2s ease-in-out infinite;
+}
+.scroll-hint--hidden { opacity: 0; pointer-events: none; }
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(8px); }
+}
+
+/* ── Responsive ≤ 749px ── */
+@media (max-width: 749px) {
+  /* Screens don't need fixed 100vh on mobile */
+  .screen {
+    height: auto;
+    min-height: 100vh;
+  }
+  .screen--buy {
+    height: 100vh;
+    min-height: 100vh;
+  }
+
+  /* Buy panel: bottom sheet */
+  .buy-panel {
+    right: 0; left: 0; top: auto; bottom: 0;
+    transform: none;
+    width: 100%; max-height: 60vh;
+    border-radius: 12px 12px 0 0;
+    padding: var(--s4) var(--s3);
+  }
+  .buy-panel__title { font-size: 4rem; }
+  .buy-panel__price { font-size: 2rem; }
+  .buy-panel__desc { font-size: 1.3rem; }
+  .screen__scroll-hint { display: none; }
+}

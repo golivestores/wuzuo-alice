@@ -1,0 +1,289 @@
+/* WuZuo Alice V3 — PDP Sections: Ritual Hero · Powers · Story · Guide */
+
+/* ─── Section 1: Scroll-Driven Video ─── */
+.video-scroll {
+  position: relative;
+  z-index: 10;
+  height: 400vh;
+}
+.video-scroll__sticky {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow: hidden;
+}
+.video-scroll__bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.video-scroll__overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(20, 20, 20, 0.5);
+  pointer-events: none;
+}
+.video-scroll__content {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.video-scroll__item {
+  position: absolute;
+  width: 100%;
+  max-width: 900px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  padding: 0 var(--s4);
+  opacity: 0;
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.video-scroll__item.is-active {
+  opacity: 1;
+}
+.video-scroll__label {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 1.1rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: var(--s3);
+}
+.video-scroll__headline {
+  font-family: var(--font-display);
+  font-size: clamp(3rem, 4.5vw, 5.4rem);
+  font-weight: 300;
+  line-height: 1.2;
+  color: var(--text);
+  max-width: 14em;
+  margin: 0 auto;
+}
+
+/* ─── Section 2: Ritual Powers ─── */
+.ritual-powers {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: var(--border);
+  margin: 0 var(--s4) var(--s8);
+  position: relative;
+  z-index: 10;
+}
+.ritual-power {
+  background: var(--bg-card);
+  padding: var(--s6) var(--s4);
+  position: relative;
+  overflow: hidden;
+  transition: background var(--t-fast);
+  isolation: isolate;
+}
+.ritual-power::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 50% 100%, var(--gold-dim) 0%, transparent 70%);
+  opacity: 0;
+  transition: opacity var(--t-mid);
+  animation: ember-flicker 4s ease-in-out infinite;
+  animation-play-state: paused;
+  z-index: -1;
+}
+.ritual-power::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 2px;
+  height: 100%;
+  background: var(--gold);
+  transform: scaleY(0);
+  transform-origin: top;
+  transition: transform var(--t-mid);
+}
+.ritual-power:hover {
+  background: var(--bg-card-2);
+}
+.ritual-power:hover::before {
+  opacity: 1;
+  animation-play-state: running;
+}
+.ritual-power:hover::after {
+  transform: scaleY(1);
+}
+.ritual-power__code {
+  font-family: var(--font-mono);
+  font-size: 0.95rem;
+  letter-spacing: 0.2em;
+  color: var(--muted);
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: var(--s3);
+}
+.ritual-power__icon {
+  font-size: 2.8rem;
+  color: var(--gold);
+  display: block;
+  margin-bottom: var(--s2);
+  line-height: 1;
+}
+.ritual-power__title {
+  font-family: var(--font-display);
+  font-size: 2.8rem;
+  font-weight: 400;
+  color: var(--text);
+  margin-bottom: var(--s2);
+  line-height: 1.15;
+}
+.ritual-power__desc {
+  font-size: 1.4rem;
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+/* ─── Section 3: Product Story ─── */
+.pdp-story {
+  position: relative;
+  z-index: 10;
+}
+.pdp-story__block {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--s8);
+  align-items: center;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: var(--s10) var(--s4);
+}
+.pdp-story__block--reverse .pdp-story__image { order: 2; }
+.pdp-story__block--reverse .pdp-story__content { order: 1; }
+.pdp-story__image img {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  border-radius: 2px;
+}
+.pdp-story__label {
+  font-family: var(--font-mono);
+  font-size: 1.0rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--gold);
+  display: block;
+  margin-bottom: var(--s2);
+}
+.pdp-story__title {
+  font-family: var(--font-display);
+  font-size: clamp(3.2rem, 4vw, 4.8rem);
+  font-weight: 400;
+  line-height: 1.15;
+  color: var(--text);
+  margin-bottom: var(--s3);
+}
+.pdp-story__desc {
+  font-size: 1.5rem;
+  color: var(--muted);
+  line-height: 1.8;
+}
+
+/* ─── Section 4: Ritual Steps ─── */
+.ritual-steps {
+  position: relative;
+  z-index: 10;
+}
+.ritual-steps__list {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 var(--s4) var(--s10);
+  position: relative;
+}
+.ritual-steps__list::before {
+  content: '';
+  position: absolute;
+  left: calc(var(--s4) + 2.4rem);
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: linear-gradient(to bottom, var(--gold-mid), var(--gold-dim));
+}
+.ritual-step {
+  display: flex;
+  gap: var(--s4);
+  padding: var(--s4) 0;
+  position: relative;
+}
+.ritual-step__num {
+  font-family: var(--font-mono);
+  font-size: 2.4rem;
+  color: var(--gold);
+  flex-shrink: 0;
+  width: 4.8rem;
+  text-align: center;
+  line-height: 1;
+}
+.ritual-step__title {
+  font-family: var(--font-display);
+  font-size: 2.4rem;
+  font-weight: 400;
+  color: var(--text);
+  margin-bottom: var(--s1);
+  line-height: 1.2;
+}
+.ritual-step__desc {
+  font-size: 1.4rem;
+  color: var(--muted);
+  line-height: 1.8;
+}
+
+/* ─── Responsive: 749px ─── */
+@media (max-width: 749px) {
+  .video-scroll {
+    height: 300vh;
+  }
+
+  .video-scroll__headline {
+    font-size: clamp(2.2rem, 5.5vw, 3.2rem);
+  }
+
+  .ritual-powers {
+    grid-template-columns: 1fr;
+    margin: 0 var(--s2) var(--s5);
+  }
+
+  .ritual-power {
+    padding: var(--s4) var(--s3);
+  }
+
+  .pdp-story__block {
+    grid-template-columns: 1fr;
+    gap: var(--s3);
+    padding: var(--s5) var(--s3);
+  }
+
+  .pdp-story__block--reverse .pdp-story__image { order: 0; }
+  .pdp-story__block--reverse .pdp-story__content { order: 0; }
+
+  .ritual-steps__list {
+    padding: 0 var(--s3) var(--s5);
+  }
+
+  .ritual-steps__list::before {
+    left: calc(var(--s3) + 2rem);
+  }
+
+  .ritual-step {
+    gap: var(--s3);
+  }
+
+  .ritual-step__num {
+    font-size: 2rem;
+    width: 4rem;
+  }
+}

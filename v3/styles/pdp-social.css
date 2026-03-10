@@ -1,0 +1,69 @@
+/* WuZuo Alice V3 — PDP Social: YouTube Feature */
+
+/* ── Section 5: YouTube Feature ── */
+
+.yt-feature {
+  position: relative;
+  z-index: 10;
+  padding-bottom: var(--s8);
+}
+
+.yt-feature__wrapper {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 var(--s4);
+}
+
+.yt-feature__player {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  background: #000;
+  border-radius: 2px;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.yt-feature__thumb {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.yt-feature__play {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  transition: opacity var(--t-fast), transform var(--t-fast);
+}
+
+.yt-feature__play svg {
+  width: 68px;
+  height: 48px;
+}
+
+.yt-feature__player:hover .yt-feature__play {
+  opacity: 0.85;
+  transform: translate(-50%, -50%) scale(1.1);
+}
+
+.yt-feature__player iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/* ── Responsive: ≤ 749px ── */
+
+@media (max-width: 749px) {
+  .yt-feature__wrapper {
+    padding: 0 var(--s3);
+  }
+}

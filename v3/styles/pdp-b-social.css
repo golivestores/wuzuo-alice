@@ -1,0 +1,244 @@
+/* WuZuo Alice V3 — PDP-B Social: Screen 5 (Videos + Review) · Screen 6 (Finale) */
+
+/* ─── Screen 5: Social Proof ─── */
+
+.screen--social {
+  display: flex;
+  flex-direction: column;
+}
+
+.social__videos {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  padding: var(--s4) 0;
+}
+
+.social__videos-track {
+  display: flex;
+  gap: var(--s3);
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  padding: 0 var(--s4);
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  cursor: grab;
+}
+
+.social__videos-track::-webkit-scrollbar {
+  display: none;
+}
+
+.social__video-card {
+  flex: 0 0 180px;
+  aspect-ratio: 9 / 16;
+  border-radius: 8px;
+  overflow: hidden;
+  position: relative;
+  scroll-snap-align: start;
+  cursor: pointer;
+  transition: transform var(--t-fast);
+}
+
+.social__video-card:hover {
+  transform: scale(1.03);
+}
+
+.social__video-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.social__video-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(20, 20, 20, 0.85) 0%,
+    rgba(20, 20, 20, 0.1) 40%,
+    transparent 60%
+  );
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.social__video-play {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 2px solid var(--gold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--gold);
+  font-size: 1.4rem;
+  background: rgba(20, 20, 20, 0.5);
+  transition: background var(--t-fast), transform var(--t-fast);
+}
+
+.social__video-card:hover .social__video-play {
+  background: rgba(201, 168, 76, 0.2);
+  transform: scale(1.1);
+}
+
+.social__video-info {
+  position: absolute;
+  bottom: var(--s3);
+  left: var(--s3);
+  right: var(--s3);
+  display: flex;
+  justify-content: space-between;
+  font-family: var(--font-mono);
+  font-size: 1.0rem;
+  color: var(--muted);
+  letter-spacing: 0.05em;
+}
+
+/* ─── Social Review Quote ─── */
+
+.social__review {
+  padding: var(--s4) var(--s4) var(--s6);
+  text-align: center;
+}
+
+.social__review-stars {
+  color: var(--gold);
+  font-size: 1.8rem;
+  letter-spacing: 0.15em;
+  margin-bottom: var(--s2);
+}
+
+.social__review-quote {
+  font-family: var(--font-display);
+  font-size: clamp(2.4rem, 3.5vw, 3.6rem);
+  font-weight: 300;
+  font-style: italic;
+  color: var(--text);
+  max-width: 700px;
+  margin: 0 auto var(--s3);
+  line-height: 1.5;
+  border: none;
+  padding: 0;
+}
+
+.social__review-author {
+  font-family: var(--font-mono);
+  font-size: 1.2rem;
+  color: var(--muted);
+  font-style: normal;
+  letter-spacing: 0.1em;
+}
+
+/* ─── Screen 6: Finale ─── */
+
+.screen--finale {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.finale__products {
+  width: 100%;
+  max-width: 1280px;
+  padding: 0 var(--s4);
+  margin-bottom: var(--s5);
+}
+
+.finale__grid {
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--s3);
+}
+
+.finale__cta {
+  text-align: center;
+  padding: var(--s4);
+}
+
+.finale__cta-title {
+  font-family: var(--font-display);
+  font-size: clamp(3rem, 4vw, 4.8rem);
+  font-weight: 300;
+  color: var(--text);
+  margin-bottom: var(--s3);
+  line-height: 1.15;
+}
+
+.finale__cta-btn {
+  background: var(--gold);
+  color: var(--bg);
+  font-family: var(--font-mono);
+  font-size: 1.3rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  padding: 1.6rem 4.8rem;
+  border: none;
+  border-radius: 2px;
+  cursor: pointer;
+  transition: opacity var(--t-fast);
+}
+
+.finale__cta-btn:hover {
+  opacity: 0.85;
+}
+
+.finale__trust {
+  margin-top: var(--s3);
+  font-family: var(--font-mono);
+  font-size: 1.1rem;
+  color: var(--muted);
+  display: flex;
+  gap: var(--s2);
+  justify-content: center;
+  letter-spacing: 0.08em;
+}
+
+/* ─── Responsive: ≤ 749px ─── */
+
+@media (max-width: 749px) {
+  .social__video-card {
+    flex: 0 0 140px;
+  }
+  .social__video-play {
+    width: 32px;
+    height: 32px;
+    font-size: 1.2rem;
+  }
+
+  .social__review {
+    padding: var(--s3) var(--s3) var(--s4);
+  }
+  .social__review-quote {
+    font-size: clamp(2rem, 5vw, 2.4rem);
+  }
+
+  .finale__products {
+    padding: 0 var(--s3);
+  }
+  .finale__grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--s2);
+  }
+
+  .finale__cta {
+    padding: var(--s3);
+  }
+  .finale__cta-title {
+    font-size: 2.6rem;
+  }
+  .finale__cta-btn {
+    padding: 1.4rem 2.4rem;
+    font-size: 1.1rem;
+    width: 100%;
+  }
+
+  .finale__trust {
+    flex-wrap: wrap;
+    font-size: 1.0rem;
+  }
+}

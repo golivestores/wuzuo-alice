@@ -1,0 +1,392 @@
+/* WuZuo Alice V3 — PDP-B Screens: Opening · Powers · Split · Steps */
+
+/* Screen 1 — Opening */
+.screen--opening {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  scroll-snap-align: none;
+}
+.opening__content {
+  text-align: center;
+  max-width: 700px;
+  padding: var(--s4);
+}
+.opening__protocol {
+  font-family: var(--font-mono);
+  font-size: 1.1rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--gold);
+  display: block;
+  margin-bottom: var(--s4);
+}
+.opening__quote {
+  font-family: var(--font-display);
+  font-size: clamp(3.6rem, 5.5vw, 6.4rem);
+  font-weight: 300;
+  font-style: italic;
+  color: var(--text);
+  line-height: 1.3;
+}
+.opening__quote span {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(12px);
+  margin: 0 0.15em;
+}
+.opening__quote span.word--visible {
+  animation: word-in 0.6s var(--ease-out) forwards;
+}
+@keyframes word-in {
+  to { opacity: 1; transform: translateY(0); }
+}
+.opening__line {
+  width: 60px;
+  height: 1px;
+  background: var(--gold);
+  margin: var(--s4) auto 0;
+  opacity: 0.6;
+}
+
+/* Screen 2 — Powers (sticky + GSAP scrub, no pin) */
+.screen--powers {
+  scroll-snap-align: none;
+  height: 400vh;
+  overflow: visible;
+}
+.powers__sticky {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow: hidden;
+}
+.powers__content {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.powers__item {
+  position: absolute;
+  text-align: center;
+  opacity: 0;
+  will-change: transform, opacity, filter;
+}
+.powers__label {
+  font-family: var(--font-mono);
+  font-size: 1.2rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--gold);
+  display: block;
+  margin-bottom: var(--s2);
+  opacity: 0.7;
+  text-shadow: 0 1px 10px rgba(0,0,0,0.6);
+}
+.powers__headline {
+  font-family: var(--font-display);
+  font-size: clamp(3.2rem, 5vw, 5.6rem);
+  font-weight: 300;
+  font-style: italic;
+  color: var(--text);
+  line-height: 1.3;
+  max-width: 700px;
+  text-shadow: 0 2px 30px rgba(0,0,0,0.8);
+}
+
+/* Screen 3 — Split */
+.screen--split {
+  display: flex;
+}
+.split__image {
+  width: 50%;
+  height: 100%;
+}
+.split__image img,
+.split__image video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.split__divider {
+  width: 1px;
+  background: var(--gold-mid);
+  flex-shrink: 0;
+}
+.split__text {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: var(--s8);
+  background:
+    radial-gradient(ellipse at 30% 40%, rgba(201,168,76,0.06) 0%, transparent 60%),
+    var(--bg);
+}
+.split__label {
+  font-family: var(--font-mono);
+  font-size: 1.0rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--gold);
+  display: block;
+  margin-bottom: var(--s2);
+}
+.split__title {
+  font-family: var(--font-display);
+  font-size: clamp(3.2rem, 4vw, 4.8rem);
+  font-weight: 400;
+  line-height: 1.15;
+  color: var(--text);
+  margin-bottom: var(--s3);
+}
+/* Candle flame glow on title */
+.split__title--flame {
+  color: var(--gold);
+  text-shadow:
+    0 0 8px rgba(201, 168, 76, 0.6),
+    0 0 30px rgba(201, 168, 76, 0.3),
+    0 -4px 40px rgba(255, 140, 50, 0.15);
+  animation: flame-glow 3s ease-in-out infinite alternate;
+}
+@keyframes flame-glow {
+  0%   { text-shadow: 0 0 8px rgba(201,168,76,0.6), 0 0 30px rgba(201,168,76,0.3), 0 -4px 40px rgba(255,140,50,0.15); }
+  50%  { text-shadow: 0 0 12px rgba(201,168,76,0.8), 0 0 40px rgba(201,168,76,0.45), 0 -6px 50px rgba(255,140,50,0.25); }
+  100% { text-shadow: 0 0 6px rgba(201,168,76,0.5), 0 0 25px rgba(201,168,76,0.25), 0 -3px 35px rgba(255,140,50,0.12); }
+}
+.split__desc {
+  font-size: 1.5rem;
+  color: var(--muted);
+  line-height: 1.8;
+  max-width: 480px;
+}
+.split__desc em {
+  color: var(--gold);
+  font-style: italic;
+}
+
+/* Screen 4 — Steps (auto-carousel) */
+.screen--steps {
+  position: relative;
+}
+.steps__header {
+  position: absolute;
+  top: var(--s6);
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 3;
+  text-align: center;
+}
+.steps__header-label {
+  font-family: var(--font-mono);
+  font-size: 1.1rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--gold);
+  display: block;
+  margin-bottom: var(--s1);
+  text-shadow: 0 1px 10px rgba(0,0,0,0.6);
+}
+.steps__header-title {
+  font-family: var(--font-display);
+  font-size: clamp(3rem, 4vw, 4.2rem);
+  font-weight: 300;
+  color: var(--text);
+  text-shadow: 0 2px 20px rgba(0,0,0,0.7);
+}
+.screen__overlay--dark {
+  background: rgba(20, 20, 20, 0.65);
+}
+.steps__slides {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+.steps__slide {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.8s ease;
+  pointer-events: none;
+}
+.steps__slide--active {
+  opacity: 1;
+  pointer-events: auto;
+}
+.steps__body {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  max-width: 600px;
+  padding: var(--s4);
+}
+.steps__title {
+  font-family: var(--font-display);
+  font-size: clamp(3.2rem, 5vw, 5rem);
+  font-weight: 300;
+  color: var(--text);
+  margin-bottom: var(--s3);
+  text-shadow: 0 2px 20px rgba(0,0,0,0.7);
+}
+.steps__desc {
+  font-size: 1.6rem;
+  color: var(--text);
+  line-height: 1.8;
+  opacity: 0.85;
+  text-shadow: 0 1px 12px rgba(0,0,0,0.6);
+}
+
+/* Circular progress nav */
+.steps__nav {
+  position: absolute;
+  bottom: var(--s6);
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  gap: var(--s4);
+}
+.steps__ring {
+  position: relative;
+  width: 44px;
+  height: 44px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+.steps__ring svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  transform: rotate(-90deg);
+}
+.steps__ring-bg {
+  fill: none;
+  stroke: rgba(107, 93, 84, 0.4);
+  stroke-width: 2;
+}
+.steps__ring-progress {
+  fill: none;
+  stroke: var(--gold);
+  stroke-width: 2;
+  stroke-dasharray: 125.66;  /* 2π × 20 */
+  stroke-dashoffset: 125.66; /* fully hidden */
+  stroke-linecap: round;
+  transition: none;
+}
+.steps__ring--active .steps__ring-progress {
+  animation: ring-fill 5s linear forwards;
+}
+@keyframes ring-fill {
+  to { stroke-dashoffset: 0; }
+}
+.steps__ring span {
+  position: relative;
+  z-index: 2;
+  font-family: var(--font-mono);
+  font-size: 1.2rem;
+  color: var(--muted);
+  line-height: 44px;
+  transition: color var(--t-fast);
+}
+.steps__ring--active span {
+  color: var(--gold);
+}
+
+/* Responsive — 749px */
+@media (max-width: 749px) {
+  /* Screen 1: Opening — shorter on mobile */
+  .screen--opening {
+    min-height: 60vh;
+    height: 60vh;
+  }
+  .opening__quote {
+    font-size: clamp(2.8rem, 7vw, 3.6rem);
+  }
+
+  /* Screen 2: Powers — much shorter scroll on mobile */
+  .screen--powers {
+    height: 250vh;
+  }
+  .powers__headline {
+    font-size: clamp(2.4rem, 6vw, 3.6rem);
+  }
+
+  /* Screen 3: Split — stack vertically */
+  .screen--split {
+    flex-direction: column;
+    min-height: auto;
+    height: auto;
+  }
+  .split__image {
+    width: 100%;
+    height: 50vh;
+  }
+  .split__text {
+    width: 100%;
+    height: auto;
+    padding: var(--s4) var(--s3);
+    background: var(--bg);
+  }
+  .split__divider { display: none; }
+  .split__title {
+    font-size: clamp(2.4rem, 5vw, 3.2rem);
+  }
+
+  /* Screen 4: Steps — shorter */
+  .screen--steps {
+    height: 70vh;
+    min-height: 70vh;
+  }
+  .steps__header {
+    top: var(--s4);
+  }
+  .steps__header-title {
+    font-size: 2.6rem;
+  }
+  .steps__title {
+    font-size: 2.8rem;
+  }
+  .steps__desc {
+    font-size: 1.4rem;
+  }
+  .steps__nav {
+    bottom: var(--s4);
+    gap: var(--s3);
+  }
+  .steps__ring {
+    width: 36px;
+    height: 36px;
+  }
+  .steps__ring span {
+    font-size: 1.1rem;
+    line-height: 36px;
+  }
+  .steps__ring-bg,
+  .steps__ring-progress {
+    r: 16;
+  }
+
+  /* Screen 5: Social — auto height */
+  .screen--social {
+    height: auto;
+    min-height: auto;
+    padding: var(--s5) 0;
+  }
+
+  /* Screen 6: Finale — auto height */
+  .screen--finale {
+    height: auto;
+    min-height: auto;
+    padding: var(--s5) 0;
+  }
+}

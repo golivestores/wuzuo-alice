@@ -1,0 +1,906 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cupid — Love & Reunion Ritual Candle | WuZuo Alice</title>
+  <meta name="description" content="Hand-poured ritual candles inscribed with ancient symbols. Manifest love, wealth, protection and spiritual growth.">
+  <link rel="icon" href="../wecom-temp-1125392-b563a96a377dca72efa8b2ccff82af5b.png" type="image/png">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Space+Mono:wght@400;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="styles/tokens.css">
+  <link rel="stylesheet" href="styles/base.css">
+  <link rel="stylesheet" href="styles/nav.css">
+  <link rel="stylesheet" href="styles/hero.css">
+  <link rel="stylesheet" href="styles/products.css">
+  <link rel="stylesheet" href="styles/sections.css">
+  <link rel="stylesheet" href="styles/community.css">
+  <link rel="stylesheet" href="styles/footer.css">
+  <link rel="stylesheet" href="styles/pdp-main.css">
+  <link rel="stylesheet" href="styles/pdp-sections.css">
+  <link rel="stylesheet" href="styles/pdp-social.css">
+</head>
+<body>
+
+<!-- Grain Overlay -->
+<div class="grain" aria-hidden="true"></div>
+
+<!-- Star Canvas -->
+<canvas id="starCanvas" aria-hidden="true"></canvas>
+
+<!-- Background Ghost Images -->
+<div class="bg-ghosts" aria-hidden="true">
+  <img src="candle-1.jpg" alt="" class="bg-ghost" style="top:5%;left:-5%;width:210px;transform:rotate(-5deg);">
+  <img src="candle-3.jpg" alt="" class="bg-ghost" style="top:18%;right:-5%;width:210px;transform:rotate(5deg);">
+  <img src="candle-5.jpg" alt="" class="bg-ghost" style="top:35%;left:-5%;width:210px;transform:rotate(-5deg);">
+  <img src="cupid burn-1.jpg" alt="" class="bg-ghost" style="top:48%;right:-5%;width:210px;transform:rotate(5deg);">
+  <img src="cupid burn-2.jpg" alt="" class="bg-ghost" style="top:60%;left:-5%;width:210px;transform:rotate(-5deg);">
+  <img src="cupid burn-3.jpg" alt="" class="bg-ghost" style="top:72%;right:-5%;width:210px;transform:rotate(5deg);">
+  <img src="cupid burn-4.jpg" alt="" class="bg-ghost" style="top:83%;left:-5%;width:210px;transform:rotate(-5deg);">
+  <img src="cupid resolve.jpg" alt="" class="bg-ghost" style="top:88%;right:-5%;width:210px;transform:rotate(5deg);">
+</div>
+
+<!-- ======== Announcement Bar ======== -->
+<div class="announcement" id="announcementBar">
+  <div class="announcement__track" id="announcementTrack">
+    <div class="announcement__slide announcement__slide--active">Free Global Shipping on Orders $89+</div>
+    <div class="announcement__slide"><a href="#">Sign Up for 10% Off Your First Order</a></div>
+    <div class="announcement__slide">Ancient Rituals, Modern Magick — Handcrafted with Intention</div>
+  </div>
+</div>
+
+<!-- ======== Header ======== -->
+<header class="header" id="header">
+  <div class="header__row">
+    <a href="index.html" class="header__logo">
+      <img src="../wecom-temp-1125392-b563a96a377dca72efa8b2ccff82af5b.png" alt="WuZuo Alice">
+    </a>
+
+    <nav class="header__nav">
+      <!-- Ritual Candles mega -->
+      <div class="header__nav-item header__nav-item--mega">
+        <a href="#" class="header__nav-link">Ritual Candles
+          <svg class="header__chevron" viewBox="0 0 10 6"><path d="M1 1l4 4 4-4" stroke="currentColor" fill="none" stroke-width="1.5"/></svg>
+        </a>
+        <div class="mega-menu">
+          <div class="mega-menu__inner">
+            <div class="mega-menu__col">
+              <h4 class="mega-menu__heading">By Intention</h4>
+              <a href="#" class="mega-menu__link">Love &amp; Binding</a>
+              <a href="#" class="mega-menu__link">Wealth &amp; Fortune</a>
+              <a href="#" class="mega-menu__link">Protection &amp; Cleanse</a>
+              <a href="#" class="mega-menu__link">Career &amp; Success</a>
+              <a href="#" class="mega-menu__link">Health &amp; Healing</a>
+              <a href="#" class="mega-menu__link mega-menu__link--all">View All &rarr;</a>
+            </div>
+            <div class="mega-menu__col">
+              <h4 class="mega-menu__heading">By Type</h4>
+              <a href="#" class="mega-menu__link">Pyramid Candles</a>
+              <a href="#" class="mega-menu__link">Figurine Candles</a>
+              <a href="#" class="mega-menu__link">Pillar Candles</a>
+              <a href="#" class="mega-menu__link">Zodiac Candles</a>
+              <a href="#" class="mega-menu__link">Chakra Candles</a>
+            </div>
+            <div class="mega-menu__col mega-menu__col--featured">
+              <h4 class="mega-menu__heading">Bestsellers</h4>
+              <div class="mega-menu__products">
+                <a href="#" class="mega-menu__product">
+                  <img src="../Public/_DSC3826.JPG" alt="All-Seeing Eye Pyramid" loading="lazy">
+                  <span>All-Seeing Eye Pyramid</span>
+                  <span class="mega-menu__product-price">$29.99</span>
+                </a>
+                <a href="#" class="mega-menu__product">
+                  <img src="../Public/_DSC3906.JPG" alt="Golden Serpent Egg" loading="lazy">
+                  <span>Golden Serpent Egg</span>
+                  <span class="mega-menu__product-price">$34.99</span>
+                </a>
+                <a href="#" class="mega-menu__product">
+                  <img src="../Public/_DSC3954.JPG" alt="Dragon Fortune" loading="lazy">
+                  <span>Dragon Fortune</span>
+                  <span class="mega-menu__product-price">$28.99</span>
+                </a>
+                <a href="#" class="mega-menu__product">
+                  <img src="../Public/_DSC3850.JPG" alt="Money Tree Vase" loading="lazy">
+                  <span>Money Tree Vase</span>
+                  <span class="mega-menu__product-price">$39.99</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Collections mega -->
+      <div class="header__nav-item header__nav-item--mega">
+        <a href="#" class="header__nav-link">Collections
+          <svg class="header__chevron" viewBox="0 0 10 6"><path d="M1 1l4 4 4-4" stroke="currentColor" fill="none" stroke-width="1.5"/></svg>
+        </a>
+        <div class="mega-menu">
+          <div class="mega-menu__inner">
+            <div class="mega-menu__col">
+              <h4 class="mega-menu__heading">Collections</h4>
+              <a href="#" class="mega-menu__link">New Arrivals</a>
+              <a href="#" class="mega-menu__link">Best Sellers</a>
+              <a href="#" class="mega-menu__link">Limited Edition</a>
+              <a href="#" class="mega-menu__link">Gift Sets</a>
+              <a href="#" class="mega-menu__link mega-menu__link--all">View All &rarr;</a>
+            </div>
+            <div class="mega-menu__col mega-menu__col--featured">
+              <h4 class="mega-menu__heading">Featured</h4>
+              <div class="mega-menu__products">
+                <a href="#" class="mega-menu__product">
+                  <img src="../Public/_DSC3899.JPG" alt="Horseshoe Fortune" loading="lazy">
+                  <span>Horseshoe Fortune</span>
+                  <span class="mega-menu__product-price">$42.99</span>
+                </a>
+                <a href="#" class="mega-menu__product">
+                  <img src="../Public/_DSC3929.JPG" alt="Pentacle Grimoire" loading="lazy">
+                  <span>Pentacle Grimoire</span>
+                  <span class="mega-menu__product-price">$36.99</span>
+                </a>
+                <a href="#" class="mega-menu__product">
+                  <img src="../Public/_DSC3942.JPG" alt="Fortune Bag" loading="lazy">
+                  <span>Fortune Bag</span>
+                  <span class="mega-menu__product-price">$24.99</span>
+                </a>
+                <a href="#" class="mega-menu__product">
+                  <img src="../Public/_DSC3883.JPG" alt="Celestial Horse" loading="lazy">
+                  <span>Celestial Horse</span>
+                  <span class="mega-menu__product-price">$38.99</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="header__nav-item"><a href="#" class="header__nav-link">About</a></div>
+      <div class="header__nav-item"><a href="#" class="header__nav-link">Ritual Guide</a></div>
+      <div class="header__nav-item"><a href="#" class="header__nav-link">Blog</a></div>
+      <div class="header__nav-item"><a href="#" class="header__nav-link">Contact</a></div>
+    </nav>
+
+    <div class="header__actions">
+      <a href="#" class="header__subscribe-btn">
+        <span class="header__subscribe-glow"></span>
+        <span class="header__subscribe-glow header__subscribe-glow--2"></span>
+        <span class="header__subscribe-text">&#10023; Subscribe</span>
+      </a>
+      <button class="header__action-btn" aria-label="Search">
+        <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.35-4.35"/></svg>
+      </button>
+      <button class="header__action-btn" aria-label="Account">
+        <svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+      </button>
+      <button class="header__action-btn" aria-label="Cart">
+        <svg viewBox="0 0 24 24"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+      </button>
+      <button class="header__menu-btn header__action-btn" id="menuBtn" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- Mobile menu overlay -->
+<nav class="mobile-menu" id="mobileMenu" aria-hidden="true">
+  <button class="mobile-menu__close" id="menuClose">Close ✕</button>
+  <a href="#" class="mobile-menu__link">Ritual Candles</a>
+  <a href="#" class="mobile-menu__link">Collections</a>
+  <a href="#" class="mobile-menu__link">About</a>
+  <a href="#" class="mobile-menu__link">Ritual Guide</a>
+  <a href="#" class="mobile-menu__link">Blog</a>
+  <a href="#" class="mobile-menu__link">Contact</a>
+</nav>
+
+<main class="pdp">
+
+<!-- ======== Section 0: Product Main ======== -->
+<section class="pdp-main">
+  <!-- Left: Image Gallery -->
+  <div class="pdp-gallery">
+    <div class="pdp-gallery__thumbs">
+      <button class="pdp-gallery__thumb pdp-gallery__thumb--active" data-index="0">
+        <img src="candle-1.jpg" alt="Cupid Candle view 1">
+      </button>
+      <button class="pdp-gallery__thumb" data-index="1">
+        <img src="candle-2.jpg" alt="Cupid Candle view 2">
+      </button>
+      <button class="pdp-gallery__thumb" data-index="2">
+        <img src="candle-3.jpg" alt="Cupid Candle view 3">
+      </button>
+      <button class="pdp-gallery__thumb" data-index="3">
+        <img src="candle-4.jpg" alt="Cupid Candle view 4">
+      </button>
+      <button class="pdp-gallery__thumb" data-index="4">
+        <img src="candle-5.jpg" alt="Cupid Candle view 5">
+      </button>
+    </div>
+    <div class="pdp-gallery__main">
+      <img src="candle-1.jpg" alt="Cupid — Love & Reunion Ritual Candle" id="galleryMainImg">
+      <button class="pdp-gallery__prev" id="galleryPrev" aria-label="Previous image">&#8249;</button>
+      <button class="pdp-gallery__next" id="galleryNext" aria-label="Next image">&#8250;</button>
+    </div>
+  </div>
+
+  <!-- Right: Product Info -->
+  <div class="pdp-info">
+    <nav class="pdp-info__breadcrumb">
+      <a href="index.html">Home</a>
+      <span>/</span>
+      <a href="#">Love &amp; Binding</a>
+      <span>/</span>
+      <span>Cupid</span>
+    </nav>
+
+    <span class="pdp-info__ritual-tag">✦ Love &amp; Reunion Ritual</span>
+
+    <h1 class="pdp-info__title">Cupid</h1>
+
+    <div class="pdp-info__price">$29.99 <span class="pdp-info__price-note">USD</span></div>
+
+    <div class="pdp-info__rating">
+      <span class="pdp-info__stars">★★★★★</span>
+      <span class="pdp-info__rating-count">4.9 (128 reviews)</span>
+    </div>
+
+    <p class="pdp-info__desc">Designed for couples separated by misunderstanding — this Venus-charged figurine candle opens bridges of communication, softens hearts, and guides your love back together.</p>
+
+    <div class="pdp-info__actions">
+      <div class="pdp-info__qty">
+        <button class="pdp-info__qty-btn" id="qtyMinus" aria-label="Decrease quantity">−</button>
+        <input type="number" value="1" min="1" class="pdp-info__qty-input" id="qtyInput" aria-label="Quantity">
+        <button class="pdp-info__qty-btn" id="qtyPlus" aria-label="Increase quantity">+</button>
+      </div>
+      <button class="pdp-info__add-cart">Add to Cart</button>
+    </div>
+    <button class="pdp-info__buy-now">Buy It Now</button>
+
+    <!-- Accordion -->
+    <div class="pdp-accordion">
+      <div class="pdp-accordion__item">
+        <button class="pdp-accordion__trigger" aria-expanded="false">
+          <span>Product Details</span>
+          <span class="pdp-accordion__icon">+</span>
+        </button>
+        <div class="pdp-accordion__content">
+          <div class="pdp-accordion__detail">
+            <strong>&#10022; Resolve &amp; Reconnect</strong>
+            <p>Designed for couples separated by misunderstandings, arguments, or spite. This candle's energy opens bridges of communication, softens attitudes, and facilitates reunion.</p>
+          </div>
+          <div class="pdp-accordion__detail">
+            <strong>&#10022; Rekindle True Love</strong>
+            <p>Still hoping for your previous relationship? This Venus symbol guides your emotional energy, helping repair what's broken and giving both of you a chance to restart.</p>
+          </div>
+          <div class="pdp-accordion__detail">
+            <strong>&#10022; Harmonize &amp; Heal</strong>
+            <p>Venus's unique energy creates a peaceful atmosphere, helping you calmly reflect, refocus, and promote the natural recovery of your relationship.</p>
+          </div>
+          <ul class="pdp-accordion__specs">
+            <li>Hand-poured natural soy wax</li>
+            <li>Inscribed with ancient Venus symbols</li>
+            <li>Infused with rose, jasmine &amp; ylang-ylang essential oils</li>
+            <li>Burn time: approximately 4–6 hours</li>
+            <li>Height: 15cm / 5.9 inches</li>
+          </ul>
+        </div>
+      </div>
+      <div class="pdp-accordion__item">
+        <button class="pdp-accordion__trigger" aria-expanded="false">
+          <span>Shipping &amp; Returns</span>
+          <span class="pdp-accordion__icon">+</span>
+        </button>
+        <div class="pdp-accordion__content">
+          <p>Free shipping on orders over $89. Standard delivery 5–10 business days. 30-day return policy for unused items.</p>
+        </div>
+      </div>
+      <div class="pdp-accordion__item">
+        <button class="pdp-accordion__trigger" aria-expanded="false">
+          <span>Ritual Guide</span>
+          <span class="pdp-accordion__icon">+</span>
+        </button>
+        <div class="pdp-accordion__content">
+          <p>Light at dusk in a quiet space. Focus your intention on reunion. Speak your wish aloud. Let the candle burn completely — do not extinguish.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Trust badges -->
+    <div class="pdp-info__trust">
+      <div class="pdp-info__trust-item">
+        <svg viewBox="0 0 24 24"><path d="M5 12h14"/><circle cx="12" cy="12" r="10"/></svg>
+        <span>Free Global Shipping $89+</span>
+      </div>
+      <div class="pdp-info__trust-item">
+        <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        <span>Handcrafted with Intention</span>
+      </div>
+      <div class="pdp-info__trust-item">
+        <svg viewBox="0 0 24 24"><polyline points="1 4 1 10 7 10"/><path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10"/></svg>
+        <span>30-Day Returns</span>
+      </div>
+    </div>
+
+    <!-- Share -->
+    <div class="pdp-info__share">
+      <span>Share:</span>
+      <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+      <a href="#" aria-label="X / Twitter"><svg viewBox="0 0 24 24"><path d="M4 4l11.733 16h4.267l-11.733-16zM4 20l6.768-6.768M13.232 9.232L20 4"/></svg></a>
+      <a href="#" aria-label="Pinterest"><svg viewBox="0 0 24 24"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.236 2.636 7.855 6.356 9.312-.088-.791-.167-2.005.035-2.868.181-.78 1.172-4.97 1.172-4.97s-.299-.598-.299-1.482c0-1.388.806-2.425 1.81-2.425.852 0 1.264.64 1.264 1.408 0 .858-.546 2.14-.828 3.33-.236.995.5 1.807 1.48 1.807 1.778 0 3.144-1.874 3.144-4.58 0-2.393-1.72-4.068-4.177-4.068-2.845 0-4.515 2.134-4.515 4.34 0 .859.331 1.781.745 2.281a.3.3 0 0 1 .069.288l-.278 1.133c-.044.183-.145.222-.335.134-1.249-.581-2.03-2.407-2.03-3.874 0-3.154 2.292-6.052 6.608-6.052 3.469 0 6.165 2.473 6.165 5.776 0 3.447-2.173 6.22-5.19 6.22-1.013 0-1.965-.527-2.291-1.148l-.623 2.378c-.226.869-.835 1.958-1.244 2.621.937.29 1.931.446 2.962.446 5.523 0 10-4.477 10-10S17.523 2 12 2z"/></svg></a>
+    </div>
+  </div>
+</section>
+
+<!-- ======== Section 1: Scroll-Driven Video ======== -->
+<section class="video-scroll" id="videoScroll">
+  <div class="video-scroll__sticky">
+    <video class="video-scroll__bg" id="scrollVideo" src="landscape candle light up.mp4" muted playsinline preload="auto"></video>
+    <div class="video-scroll__overlay"></div>
+    <div class="video-scroll__content">
+      <div class="video-scroll__item" data-scroll-item="0">
+        <span class="video-scroll__label">Resolve</span>
+        <h2 class="video-scroll__headline">What if one flame could break the silence between you?</h2>
+      </div>
+      <div class="video-scroll__item" data-scroll-item="1">
+        <span class="video-scroll__label">Rekindle</span>
+        <h2 class="video-scroll__headline">You still feel it. So do they. The fire never went out.</h2>
+      </div>
+      <div class="video-scroll__item" data-scroll-item="2">
+        <span class="video-scroll__label">Harmonize</span>
+        <h2 class="video-scroll__headline">Light it tonight. Let Venus carry your name back to them.</h2>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======== Section 2: Ritual Powers ======== -->
+<div class="section-heading reveal">
+  <div class="section-heading__label">Ritual Powers</div>
+  <h2 class="section-heading__title">Three Acts of Venus</h2>
+  <div class="section-heading__line"></div>
+</div>
+
+<div class="categories">
+  <div class="category-card reveal reveal-d1">
+    <span class="category-card__code">RCN-001</span>
+    <span class="category-card__icon">&#9825;</span>
+    <h3 class="category-card__title">Resolve &amp; Reconnect</h3>
+    <p class="category-card__desc">Designed for couples separated by misunderstanding — this candle's energy opens bridges of communication, softens attitudes, and facilitates reunion.</p>
+  </div>
+  <div class="category-card reveal reveal-d2">
+    <span class="category-card__code">RCN-002</span>
+    <span class="category-card__icon">&#10070;</span>
+    <h3 class="category-card__title">Rekindle True Love</h3>
+    <p class="category-card__desc">The star symbol guides your emotional energy — repairing the broken bond and giving both of you a chance to restart your love story.</p>
+  </div>
+  <div class="category-card reveal reveal-d3">
+    <span class="category-card__code">RCN-003</span>
+    <span class="category-card__icon">&#9764;</span>
+    <h3 class="category-card__title">Harmonize &amp; Heal</h3>
+    <p class="category-card__desc">Venus's unique energy creates a harmonious atmosphere — helping you calmly reflect, refocus, and promote the natural recovery of your relationship.</p>
+  </div>
+</div>
+
+<!-- ======== Section 3: Product Story ======== -->
+<section class="pdp-story">
+  <div class="pdp-story__block">
+    <div class="pdp-story__image reveal">
+      <img src="cupid burn-2.jpg" alt="Hand-inscribed Venus symbols" loading="lazy">
+    </div>
+    <div class="pdp-story__content reveal reveal-d2">
+      <span class="pdp-story__label">Material &amp; Craft</span>
+      <h3 class="pdp-story__title">Hand-Inscribed with Ancient Symbols</h3>
+      <p class="pdp-story__desc">Each Cupid candle is hand-poured from natural soy wax and carefully inscribed with Venus sigils and love-binding runes. Infused with rose, jasmine, and ylang-ylang essential oils, every detail is crafted to channel romantic energy and sacred intention.</p>
+    </div>
+  </div>
+  <div class="pdp-story__block pdp-story__block--reverse">
+    <div class="pdp-story__image reveal">
+      <img src="cupid resolve.jpg" alt="Ritual candle in ceremony" loading="lazy">
+    </div>
+    <div class="pdp-story__content reveal reveal-d2">
+      <span class="pdp-story__label">Venus Energy</span>
+      <h3 class="pdp-story__title">Channeling the Star of Love</h3>
+      <p class="pdp-story__desc">Venus — the planet of love, beauty, and harmony — governs this candle's energy. When lit at dusk, the flame activates a connection to Venus's influence, creating a peaceful field that dissolves resentment and reopens the heart to reconciliation.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ======== Section 4: Ritual Guide ======== -->
+<section class="ritual-steps">
+  <div class="section-heading reveal">
+    <div class="section-heading__label">How to Use</div>
+    <h2 class="section-heading__title">Ritual Guide</h2>
+    <div class="section-heading__line"></div>
+  </div>
+  <div class="ritual-steps__list">
+    <div class="ritual-step reveal reveal-d1">
+      <span class="ritual-step__num">01</span>
+      <div class="ritual-step__body">
+        <h4 class="ritual-step__title">Set Your Intention</h4>
+        <p class="ritual-step__desc">Find a quiet space. Hold the candle in both hands and focus on your desire for reunion. Visualize the person you wish to reconnect with.</p>
+      </div>
+    </div>
+    <div class="ritual-step reveal reveal-d2">
+      <span class="ritual-step__num">02</span>
+      <div class="ritual-step__body">
+        <h4 class="ritual-step__title">Light the Flame</h4>
+        <p class="ritual-step__desc">Strike the match at dusk — the hour when Venus rises. As the wick catches fire, feel the energy awaken between you and your beloved.</p>
+      </div>
+    </div>
+    <div class="ritual-step reveal reveal-d3">
+      <span class="ritual-step__num">03</span>
+      <div class="ritual-step__body">
+        <h4 class="ritual-step__title">Speak Your Truth</h4>
+        <p class="ritual-step__desc">Whisper your wish into the flame. Be specific. Be sincere. Let the fire carry your words through the veil to the one who needs to hear them.</p>
+      </div>
+    </div>
+    <div class="ritual-step reveal reveal-d4">
+      <span class="ritual-step__num">04</span>
+      <div class="ritual-step__body">
+        <h4 class="ritual-step__title">Let It Burn</h4>
+        <p class="ritual-step__desc">Allow the candle to burn completely. Do not extinguish — let the ritual complete itself. The wax remnants hold signs of your ritual's outcome.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======== Section 5: YouTube Feature ======== -->
+<section class="yt-feature">
+  <div class="section-heading reveal">
+    <div class="section-heading__label">As Seen On</div>
+    <h2 class="section-heading__title">Ritual in Action</h2>
+    <div class="section-heading__line"></div>
+  </div>
+  <div class="yt-feature__wrapper reveal">
+    <div class="yt-feature__player" id="ytPlayer">
+      <img src="https://img.youtube.com/vi/_li5-LIJN0E/maxresdefault.jpg" alt="YouTube video thumbnail" class="yt-feature__thumb" loading="lazy">
+      <button class="yt-feature__play" id="ytPlayBtn" aria-label="Play video">
+        <svg viewBox="0 0 68 48"><path d="M66.52 7.74c-.78-2.93-2.49-5.41-5.42-6.19C55.79.13 34 0 34 0S12.21.13 6.9 1.55c-2.93.78-4.64 3.26-5.42 6.19C.06 13.05 0 24 0 24s.06 10.95 1.48 16.26c.78 2.93 2.49 5.41 5.42 6.19C12.21 47.87 34 48 34 48s21.79-.13 27.1-1.55c2.93-.78 4.64-3.26 5.42-6.19C67.94 34.95 68 24 68 24s-.06-10.95-1.48-16.26z" fill="red"/><path d="M45 24L27 14v20" fill="#fff"/></svg>
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- ======== Section 7: Related Rituals ======== -->
+<div class="section-heading reveal">
+  <div class="section-heading__label">Complete Your Ritual</div>
+  <h2 class="section-heading__title">Related Rituals</h2>
+  <div class="section-heading__line"></div>
+</div>
+<div class="products">
+  <div class="products__grid">
+    <div class="product-card reveal reveal-d1">
+      <a href="#" class="product-card__image">
+        <span class="product-card__tag">Love</span>
+        <img src="candle-2.jpg" alt="Venus Heart Lock" loading="lazy">
+        <img src="candle-3.jpg" alt="" loading="lazy">
+        <span class="product-card__quick">Quick View</span>
+      </a>
+      <div class="product-card__info">
+        <a href="#" class="product-card__name">Venus Heart Lock</a>
+        <div class="product-card__price">$34.99 USD</div>
+      </div>
+    </div>
+    <div class="product-card reveal reveal-d2">
+      <a href="#" class="product-card__image">
+        <span class="product-card__tag">Love</span>
+        <img src="candle-4.jpg" alt="Serpent Love Candle" loading="lazy">
+        <img src="candle-5.jpg" alt="" loading="lazy">
+        <span class="product-card__quick">Quick View</span>
+      </a>
+      <div class="product-card__info">
+        <a href="#" class="product-card__name">Serpent Love Candle</a>
+        <div class="product-card__price">$28.99 USD</div>
+      </div>
+    </div>
+    <div class="product-card reveal reveal-d3">
+      <a href="#" class="product-card__image">
+        <span class="product-card__tag">Love</span>
+        <img src="cupid burn-1.jpg" alt="Binding Rose Pillar" loading="lazy">
+        <img src="cupid burn-3.jpg" alt="" loading="lazy">
+        <span class="product-card__quick">Quick View</span>
+      </a>
+      <div class="product-card__info">
+        <a href="#" class="product-card__name">Binding Rose Pillar</a>
+        <div class="product-card__price">$32.99 USD</div>
+      </div>
+    </div>
+    <div class="product-card reveal reveal-d4">
+      <a href="#" class="product-card__image">
+        <span class="product-card__tag">Love</span>
+        <img src="cupid burn-4.jpg" alt="Twin Flame Candle" loading="lazy">
+        <img src="cupid hero.jpg" alt="" loading="lazy">
+        <span class="product-card__quick">Quick View</span>
+      </a>
+      <div class="product-card__info">
+        <a href="#" class="product-card__name">Twin Flame Candle</a>
+        <div class="product-card__price">$36.99 USD</div>
+      </div>
+    </div>
+  </div>
+  <div class="products__more-wrap">
+    <a href="#" class="products__more">View All Love Candles</a>
+  </div>
+</div>
+
+</main>
+
+<!-- ======== Newsletter + Footer ======== -->
+<div class="site-bottom">
+  <section class="newsletter reveal">
+    <h3 class="newsletter__title">Join the Coven</h3>
+    <p class="newsletter__desc">Sign up for exclusive releases, ritual guides, and lunar calendars delivered to your inbox.</p>
+    <form class="newsletter__form" onsubmit="return false;">
+      <input type="email" placeholder="Enter your email" aria-label="Email address">
+      <button type="submit">Subscribe</button>
+    </form>
+  </section>
+
+  <footer class="footer">
+    <div class="footer__top">
+      <a href="index.html" class="footer__logo">
+        <img src="../wecom-temp-1125392-b563a96a377dca72efa8b2ccff82af5b.png" alt="WuZuo Alice">
+      </a>
+      <div class="footer__columns">
+        <div class="footer__col footer__col-d1">
+          <span class="footer__col-title">Shop</span>
+          <a href="#">All Candles</a>
+          <a href="#">Love &amp; Binding</a>
+          <a href="#">Wealth &amp; Fortune</a>
+          <a href="#">Protection</a>
+        </div>
+        <div class="footer__col footer__col-d2">
+          <span class="footer__col-title">Help</span>
+          <a href="#">Shipping</a>
+          <a href="#">Returns</a>
+          <a href="#">Candle Care</a>
+          <a href="#">FAQ</a>
+        </div>
+        <div class="footer__col footer__col-d3">
+          <span class="footer__col-title">About</span>
+          <a href="#">Our Story</a>
+          <a href="#">Ritual Guide</a>
+          <a href="#">Blog</a>
+          <a href="#">Contact</a>
+        </div>
+        <div class="footer__col footer__col-d4">
+          <span class="footer__col-title">Connect</span>
+          <a href="#">Instagram</a>
+          <a href="#">TikTok</a>
+          <a href="#">Pinterest</a>
+          <a href="#">Facebook</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer__social">
+      <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+      <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="12" cy="12" r="5" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="17.5" cy="6.5" r="1.5"/></svg></a>
+      <a href="#" aria-label="TikTok"><svg viewBox="0 0 24 24"><path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"/></svg></a>
+      <a href="#" aria-label="Pinterest"><svg viewBox="0 0 24 24"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.236 2.636 7.855 6.356 9.312-.088-.791-.167-2.005.035-2.868.181-.78 1.172-4.97 1.172-4.97s-.299-.598-.299-1.482c0-1.388.806-2.425 1.81-2.425.852 0 1.264.64 1.264 1.408 0 .858-.546 2.14-.828 3.33-.236.995.5 1.807 1.48 1.807 1.778 0 3.144-1.874 3.144-4.58 0-2.393-1.72-4.068-4.177-4.068-2.845 0-4.515 2.134-4.515 4.34 0 .859.331 1.781.745 2.281a.3.3 0 0 1 .069.288l-.278 1.133c-.044.183-.145.222-.335.134-1.249-.581-2.03-2.407-2.03-3.874 0-3.154 2.292-6.052 6.608-6.052 3.469 0 6.165 2.473 6.165 5.776 0 3.447-2.173 6.22-5.19 6.22-1.013 0-1.965-.527-2.291-1.148l-.623 2.378c-.226.869-.835 1.958-1.244 2.621.937.29 1.931.446 2.962.446 5.523 0 10-4.477 10-10S17.523 2 12 2z"/></svg></a>
+    </div>
+
+    <div class="footer__bottom">
+      <div class="footer__legal">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+        <a href="#">Refund Policy</a>
+      </div>
+      <div class="footer__copy">&copy; 2026, WuZuo Alice. Powered by Shopify</div>
+    </div>
+  </footer>
+</div>
+
+<!-- ======== Scripts ======== -->
+<script>
+/* --- Star Canvas --- */
+(function() {
+  var c = document.getElementById('starCanvas');
+  if (!c) return;
+  var ctx = c.getContext('2d');
+  var stars = [];
+  var count = window.innerWidth < 750 ? 24 : 66;
+  var W, H;
+  /* Use innerHeight — NOT scrollHeight. scrollHeight compresses circles into line segments. */
+  function resize() { W = window.innerWidth; H = window.innerHeight; c.width = W; c.height = H; }
+  resize();
+  window.addEventListener('resize', function() { resize(); stars = []; for (var i=0;i<count;i++){var s=makeStar();s.age=Math.random()*s.life;stars.push(s);} });
+  function makeStar() {
+    return { x: Math.random()*W, y: Math.random()*H, r: Math.random()*1.5+0.5, a: Math.random()*Math.PI*2, s: Math.random()*0.018+0.005, base: Math.random()*0.2+0.05, life: Math.random()*700+300, age: 0 };
+  }
+  for (var i = 0; i < count; i++) { var st = makeStar(); st.age = Math.random()*st.life; stars.push(st); }
+  function draw() {
+    ctx.clearRect(0,0,W,H);
+    for (var i = 0; i < stars.length; i++) {
+      var st = stars[i]; st.a += st.s; st.age++;
+      if (st.age >= st.life) { stars[i] = makeStar(); continue; }
+      var lr = st.age/st.life;
+      var fade = lr < 0.15 ? lr/0.15 : lr > 0.8 ? (1-lr)/0.2 : 1;
+      var pulse = Math.sin(st.a);
+      var alpha = (st.base + Math.abs(pulse)*0.65)*fade;
+      /* soft glow halo */
+      ctx.beginPath(); ctx.arc(st.x,st.y,st.r*3,0,Math.PI*2);
+      ctx.fillStyle = 'rgba(232,215,180,'+(alpha*0.12)+')'; ctx.fill();
+      /* core dot */
+      ctx.beginPath(); ctx.arc(st.x,st.y,st.r,0,Math.PI*2);
+      ctx.fillStyle = 'rgba(232,215,180,'+alpha+')'; ctx.fill();
+      /* 4-point sparkle cross for larger stars */
+      if (st.r > 1.1) {
+        var arm = st.r * (3.5 + Math.abs(pulse)*2);
+        ctx.save();
+        ctx.strokeStyle = 'rgba(232,215,180,'+(alpha*0.45)+')';
+        ctx.lineWidth = st.r*0.3; ctx.lineCap = 'round';
+        ctx.beginPath();
+        ctx.moveTo(st.x-arm,st.y); ctx.lineTo(st.x+arm,st.y);
+        ctx.moveTo(st.x,st.y-arm); ctx.lineTo(st.x,st.y+arm);
+        ctx.stroke(); ctx.restore();
+      }
+    }
+    requestAnimationFrame(draw);
+  }
+  draw();
+})();
+
+/* --- Announcement Carousel --- */
+(function() {
+  var slides = document.querySelectorAll('.announcement__slide');
+  if (slides.length < 2) return;
+  var idx = 0;
+  setInterval(function() {
+    slides[idx].classList.remove('announcement__slide--active');
+    idx = (idx+1) % slides.length;
+    slides[idx].classList.add('announcement__slide--active');
+  }, 3000);
+})();
+
+/* --- Header: scroll hide/show --- */
+(function() {
+  var header = document.getElementById('header');
+  var lastY = 0, ticking = false;
+  window.addEventListener('scroll', function() {
+    if (!ticking) {
+      requestAnimationFrame(function() {
+        var y = window.scrollY;
+        if (y > 120 && y > lastY) header.classList.add('header--hidden');
+        else header.classList.remove('header--hidden');
+        header.classList.toggle('header--scrolled', y > 60);
+        lastY = y; ticking = false;
+      });
+      ticking = true;
+    }
+  }, { passive: true });
+})();
+
+/* --- Mega Menu --- */
+(function() {
+  var items = document.querySelectorAll('.header__nav-item--mega');
+  var header = document.getElementById('header');
+  var timer;
+  var activeItem = null;
+
+  function lockScroll() { document.body.style.overflow = 'hidden'; }
+  function unlockScroll() { document.body.style.overflow = ''; }
+
+  function openItem(item) {
+    clearTimeout(timer);
+    /* close any other open item instantly */
+    items.forEach(function(i) { if (i !== item) i.classList.remove('mega-open'); });
+    /* pin mega-menu to actual header bottom so no gap at any scroll position */
+    var bottom = header.getBoundingClientRect().bottom;
+    item.querySelectorAll('.mega-menu').forEach(function(m) { m.style.top = bottom + 'px'; });
+    item.classList.add('mega-open');
+    activeItem = item;
+    lockScroll();
+  }
+
+  function scheduleClose() {
+    timer = setTimeout(function() {
+      if (activeItem) { activeItem.classList.remove('mega-open'); activeItem = null; }
+      unlockScroll();
+    }, 300);
+  }
+
+  items.forEach(function(item) {
+    /* nav-item hover */
+    item.addEventListener('mouseenter', function() { openItem(item); });
+    item.addEventListener('mouseleave', scheduleClose);
+    /* mega-menu panel hover — cancel close when mouse is over the panel */
+    var panel = item.querySelector('.mega-menu');
+    if (panel) {
+      panel.addEventListener('mouseenter', function() { clearTimeout(timer); });
+      panel.addEventListener('mouseleave', scheduleClose);
+    }
+  });
+
+  /* close on Escape or outside click */
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape' && activeItem) {
+      clearTimeout(timer);
+      activeItem.classList.remove('mega-open'); activeItem = null; unlockScroll();
+    }
+  });
+  document.addEventListener('click', function(e) {
+    if (activeItem && !e.target.closest('.header__nav-item--mega')) {
+      clearTimeout(timer);
+      activeItem.classList.remove('mega-open'); activeItem = null; unlockScroll();
+    }
+  });
+})();
+
+/* --- Mobile Menu --- */
+(function() {
+  var btn = document.getElementById('menuBtn');
+  var close = document.getElementById('menuClose');
+  var menu = document.getElementById('mobileMenu');
+  var header = document.getElementById('header');
+  function open() { menu.classList.add('mobile-menu--open'); menu.setAttribute('aria-hidden','false'); header.classList.add('header--menu-open'); }
+  function closeMenu() { menu.classList.remove('mobile-menu--open'); menu.setAttribute('aria-hidden','true'); header.classList.remove('header--menu-open'); }
+  if (btn) btn.addEventListener('click', open);
+  if (close) close.addEventListener('click', closeMenu);
+})();
+
+/* --- Scroll Reveal --- */
+(function() {
+  var els = document.querySelectorAll('.reveal, .clip-reveal');
+  if ('IntersectionObserver' in window) {
+    var obs = new IntersectionObserver(function(entries) {
+      entries.forEach(function(e) { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
+    }, { threshold: 0.08, rootMargin: '0px 0px -24px 0px' });
+    els.forEach(function(el) { obs.observe(el); });
+  } else {
+    els.forEach(function(el) { el.classList.add('visible'); });
+  }
+})();
+
+/* --- Video: play on scroll into view, no loop --- */
+(function() {
+  var section = document.getElementById('videoScroll');
+  var video = document.getElementById('scrollVideo');
+  if (!section || !video) return;
+  var items = section.querySelectorAll('.video-scroll__item');
+  var total = items.length;
+  // 逻辑：进入视口 → 从头播放 | 离开视口 → 暂停 | 再次进入 → 从头重新播放
+  video.pause();
+  var sticky = section.querySelector('.video-scroll__sticky');
+
+  var obs = new IntersectionObserver(function(entries) {
+    entries.forEach(function(e) {
+      if (e.isIntersecting) {
+        video.currentTime = 0;
+        video.play();
+      } else {
+        video.pause();
+      }
+    });
+  }, { threshold: 0.2 });
+  obs.observe(sticky);
+
+  // Text reveal based on scroll progress
+  function update() {
+    var rect = section.getBoundingClientRect();
+    var sectionH = section.offsetHeight;
+    var scrolled = -rect.top;
+    var progress = Math.max(0, Math.min(1, scrolled / (sectionH - window.innerHeight)));
+
+    var step = 1 / total;
+    items.forEach(function(item, i) {
+      var start = i * step;
+      var end = start + step;
+      if (progress >= start && progress < end) {
+        item.classList.add('is-active');
+      } else {
+        item.classList.remove('is-active');
+      }
+    });
+
+    requestAnimationFrame(update);
+  }
+  requestAnimationFrame(update);
+})();
+
+/* --- Footer clip-path reveal --- */
+(function() {
+  var cols = document.querySelectorAll('.footer__col');
+  if ('IntersectionObserver' in window) {
+    var obs = new IntersectionObserver(function(entries) {
+      entries.forEach(function(e) { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
+    }, { threshold: 0.1 });
+    cols.forEach(function(el) { obs.observe(el); });
+  } else {
+    cols.forEach(function(el) { el.classList.add('visible'); });
+  }
+})();
+
+/* --- Lazy image load opacity --- */
+(function() {
+  var imgs = document.querySelectorAll('img[loading="lazy"]');
+  imgs.forEach(function(img) {
+    if (img.complete && img.naturalWidth > 0) { img.classList.add('img-loaded'); return; }
+    img.addEventListener('load', function() { img.classList.add('img-loaded'); });
+  });
+})();
+
+/* --- Product card video hover --- */
+(function() {
+  document.querySelectorAll('.product-card__image--video').forEach(function(card) {
+    var video = card.querySelector('.product-card__hover-video');
+    if (!video) return;
+    card.addEventListener('mouseenter', function() { video.play(); });
+    card.addEventListener('mouseleave', function() { video.pause(); video.currentTime = 0; });
+  });
+})();
+
+/* --- Image Gallery --- */
+(function() {
+  var thumbs = document.querySelectorAll('.pdp-gallery__thumb');
+  var mainImg = document.getElementById('galleryMainImg');
+  var prev = document.getElementById('galleryPrev');
+  var next = document.getElementById('galleryNext');
+  var current = 0;
+  var images = [];
+  thumbs.forEach(function(t) { images.push(t.querySelector('img').src); });
+
+  function goTo(idx) {
+    thumbs[current].classList.remove('pdp-gallery__thumb--active');
+    current = (idx + images.length) % images.length;
+    thumbs[current].classList.add('pdp-gallery__thumb--active');
+    mainImg.src = images[current];
+  }
+
+  thumbs.forEach(function(t) {
+    t.addEventListener('click', function() { goTo(parseInt(t.dataset.index)); });
+  });
+  if (prev) prev.addEventListener('click', function() { goTo(current - 1); });
+  if (next) next.addEventListener('click', function() { goTo(current + 1); });
+})();
+
+/* --- Quantity Selector --- */
+(function() {
+  var input = document.getElementById('qtyInput');
+  var minus = document.getElementById('qtyMinus');
+  var plus = document.getElementById('qtyPlus');
+  if (!input) return;
+  minus.addEventListener('click', function() { var v = parseInt(input.value); if (v > 1) input.value = v - 1; });
+  plus.addEventListener('click', function() { input.value = parseInt(input.value) + 1; });
+})();
+
+/* --- Accordion --- */
+(function() {
+  document.querySelectorAll('.pdp-accordion__trigger').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      var item = btn.parentElement;
+      var isOpen = item.classList.contains('pdp-accordion__item--open');
+      document.querySelectorAll('.pdp-accordion__item').forEach(function(i) { i.classList.remove('pdp-accordion__item--open'); i.querySelector('.pdp-accordion__trigger').setAttribute('aria-expanded','false'); i.querySelector('.pdp-accordion__icon').textContent = '+'; });
+      if (!isOpen) {
+        item.classList.add('pdp-accordion__item--open');
+        btn.setAttribute('aria-expanded','true');
+        btn.querySelector('.pdp-accordion__icon').textContent = '−';
+      }
+    });
+  });
+})();
+
+/* --- YouTube click-to-play --- */
+(function() {
+  var btn = document.getElementById('ytPlayBtn');
+  var player = document.getElementById('ytPlayer');
+  if (!btn || !player) return;
+  player.addEventListener('click', function() {
+    var iframe = document.createElement('iframe');
+    iframe.src = 'https://www.youtube.com/embed/_li5-LIJN0E?autoplay=1&rel=0';
+    iframe.allow = 'autoplay; encrypted-media';
+    iframe.allowFullscreen = true;
+    player.innerHTML = '';
+    player.appendChild(iframe);
+  });
+})();
+
+</script>
+
+</body>
+</html>
