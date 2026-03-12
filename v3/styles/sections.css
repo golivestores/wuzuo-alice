@@ -130,16 +130,41 @@
 
 /* ---- Responsive ---- */
 @media (max-width: 749px) {
-  .showcase { flex-direction: column; }
-  .showcase__left {
-    position: relative;   /* no sticky on mobile */
-    width: 100%; height: 56vw; min-height: 220px;
+  /* Horizontal swipe carousel on mobile */
+  .showcase {
+    flex-direction: row;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    gap: 0;
   }
-  .showcase__right { width: 100%; }
-  .showcase__card--small { height: 48vw; min-height: 160px; }
-  /* show only first 2 small cards on mobile */
-  .showcase__right .showcase__card--small:nth-child(n+3) { display: none; }
+  .showcase::-webkit-scrollbar { display: none; }
+  .showcase__left {
+    position: relative;
+    width: 85vw; min-width: 85vw;
+    height: 65vw; min-height: 220px;
+    flex-shrink: 0;
+    scroll-snap-align: start;
+  }
+  .showcase__section-label { display: none; }
+  .showcase__right {
+    display: flex;
+    flex-direction: row;
+    width: auto;
+    flex-shrink: 0;
+  }
+  .showcase__card--small {
+    width: 75vw; min-width: 75vw;
+    height: 65vw; min-height: 220px;
+    flex-shrink: 0;
+    scroll-snap-align: start;
+    border-top: none;
+    border-left: 2px solid var(--bg);
+  }
+  .showcase__card--large { height: 100%; }
   .showcase__card-cta { display: none; }
+  .showcase__card-name { font-size: clamp(2.2rem, 6vw, 3rem); }
 }
 
 /* ---- Ember Covenant (Subscription Box) ---- */
