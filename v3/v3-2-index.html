@@ -1,0 +1,2077 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WuZuo Alice | Handcrafted Ritual Candles</title>
+  <meta name="description" content="Hand-poured ritual candles inscribed with ancient symbols. Manifest love, wealth, protection and spiritual growth.">
+  <link rel="icon" href="../wecom-temp-1125392-b563a96a377dca72efa8b2ccff82af5b.png" type="image/png">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Space+Mono:wght@400;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="styles/tokens.css">
+  <link rel="stylesheet" href="styles/base.css">
+  <link rel="stylesheet" href="styles/nav.css">
+  <link rel="stylesheet" href="styles/hero.css">
+  <link rel="stylesheet" href="styles/products.css">
+  <link rel="stylesheet" href="styles/sections.css">
+  <link rel="stylesheet" href="styles/community.css">
+  <link rel="stylesheet" href="styles/footer.css">
+  <style>
+    .hero__slides { bottom: 0; }
+    .hero__bottom { display: none; }
+
+    /* ======== Candle Cursor ======== */
+    body {
+      cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='52' viewBox='0 0 32 52'%3E%3Cdefs%3E%3CradialGradient id='fl' cx='50%25' cy='30%25' r='55%25'%3E%3Cstop offset='0%25' stop-color='%23fff8dd'/%3E%3Cstop offset='25%25' stop-color='%23ffe066'/%3E%3Cstop offset='60%25' stop-color='%23f4a830'/%3E%3Cstop offset='100%25' stop-color='%23e85d04' stop-opacity='0'/%3E%3C/radialGradient%3E%3ClinearGradient id='wax' x1='0' y1='0' x2='0' y2='1'%3E%3Cstop offset='0%25' stop-color='%23ede3d0'/%3E%3Cstop offset='50%25' stop-color='%23e0d4bc'/%3E%3Cstop offset='100%25' stop-color='%23d0c0a0'/%3E%3C/linearGradient%3E%3ClinearGradient id='drip' x1='0' y1='0' x2='0' y2='1'%3E%3Cstop offset='0%25' stop-color='%23ede3d0'/%3E%3Cstop offset='100%25' stop-color='%23d8cab0'/%3E%3C/linearGradient%3E%3C/defs%3E%3Cellipse cx='16' cy='8' rx='8' ry='10' fill='%23f4a830' opacity='.15'/%3E%3Cpath d='M16 1c-1 2.5-5.5 6-5.5 10 0 3 2.5 5.2 5.5 5.2s5.5-2.2 5.5-5.2C21.5 7 17 3.5 16 1z' fill='url(%23fl)'/%3E%3Cpath d='M16 5c-0.6 1.5-2.5 3.5-2.5 6 0 1.5 1.1 2.8 2.5 2.8s2.5-1.3 2.5-2.8C18.5 8.5 16.6 6.5 16 5z' fill='%23fff4c2' opacity='.75'/%3E%3Cpath d='M15.5 14.5c0.2 0.8 0.3 2 0.5 3.5' stroke='%2344332a' stroke-width='.9' stroke-linecap='round' fill='none'/%3E%3Cpath d='M15.8 14.8c-0.4 0.3-0.6-0.2-0.3-0.6' stroke='%2366503a' stroke-width='.6' fill='none'/%3E%3Cpath d='M9.5 19.5c0.5-1.2 2.8-2.5 6.5-2.5s6 1.3 6.5 2.5c0.3 0.7-0.2 1.8-1 2.5-1.5-0.5-3.2-0.8-5.5-0.8s-4 0.3-5.5 0.8c-0.8-0.7-1.3-1.8-1-2.5z' fill='%23ede3d0'/%3E%3Cpath d='M9.2 20c0.3 1 0.2 3 0 5c-0.2 1.5 0.3 2.2 0.8 2' fill='url(%23drip)' opacity='.7'/%3E%3Cpath d='M22.3 19.5c0.5 1.5 0.8 4 0.5 6.5c-0.1 1-0.6 1.5-0.8 1' fill='url(%23drip)' opacity='.6'/%3E%3Cpath d='M12.5 18.5c-0.3 2.5-0.8 5-1.2 8c-0.3 2 0.1 3.5 0.5 3' fill='url(%23drip)' opacity='.5'/%3E%3Cpath d='M19.5 18c0.5 3 1 6 1.3 9c0.2 1.5-0.3 2.5-0.6 2' fill='url(%23drip)' opacity='.45'/%3E%3Cpath d='M10 21c0.2 0.5 0.5 4 0.3 8c-0.1 2 0.2 6 0.5 10c0.3 2.5 1.5 3 3 3.2c1.2 0.2 2.8 0.2 4.2 0c1.5-0.2 2.7-0.7 3-3.2c0.3-4 0.6-8 0.5-10c-0.2-4 0.1-7.5 0.3-8c-1.5-0.8-3.5-1.2-5.8-1.2s-4.3 0.4-6 1.2z' fill='url(%23wax)'/%3E%3Cpath d='M10 21c0.2 0.5 0.5 4 0.3 8c-0.1 2 0.2 6 0.5 10c0.3 2.5 1.5 3 3 3.2c1.2 0.2 2.8 0.2 4.2 0c1.5-0.2 2.7-0.7 3-3.2c0.3-4 0.6-8 0.5-10c-0.2-4 0.1-7.5 0.3-8c-1.5-0.8-3.5-1.2-5.8-1.2s-4.3 0.4-6 1.2z' fill='none' stroke='%23c0a878' stroke-width='.4' opacity='.4'/%3E%3Cpath d='M13 24c-0.1 2-0.3 5-0.2 8' stroke='%23d8c8a8' stroke-width='.6' fill='none' opacity='.5'/%3E%3Cpath d='M18.5 23c0.15 2.5 0.1 6 0 9' stroke='%23d8c8a8' stroke-width='.5' fill='none' opacity='.4'/%3E%3Cellipse cx='16' cy='42.5' rx='5.5' ry='1.2' fill='%23c0a878' opacity='.3'/%3E%3C/svg%3E") 16 1, auto;
+    }
+    a, button, [role="button"], input, select, textarea, label, [onclick] {
+      cursor: inherit !important;
+    }
+
+    /* Candle glow following cursor */
+    .cursor-glow {
+      position: fixed;
+      top: 0; left: 0;
+      pointer-events: none;
+      z-index: 99999;
+      width: 160px; height: 160px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(255,228,100,0.12) 0%, rgba(201,168,76,0.05) 40%, transparent 70%);
+      will-change: transform;
+      transition: opacity 0.3s;
+      opacity: 0;
+    }
+    .cursor-glow--visible { opacity: 1; }
+
+    /* Flame sparks */
+    .cursor-spark {
+      position: fixed;
+      top: 0; left: 0;
+      pointer-events: none;
+      z-index: 99998;
+      border-radius: 50%;
+      will-change: transform, opacity;
+      opacity: 0;
+    }
+    @keyframes spark-rise {
+      0%   { opacity: 0.9; }
+      50%  { opacity: 0.5; }
+      100% { opacity: 0; margin-top: -45px; margin-left: var(--sx); }
+    }
+
+    /* ======== Category Card Title — Stone Scatter ======== */
+    .category-card__title .char {
+      display: inline-block;
+      transition: transform 0.45s cubic-bezier(0.6, -0.3, 0.3, 1.4),
+                  opacity 0.45s ease;
+      transform: translate(0, 0) rotate(0deg);
+      opacity: 1;
+    }
+    /* Spaces need width preserved */
+    .category-card__title .char-space {
+      display: inline-block;
+      width: 0.3em;
+    }
+    /* On card hover: scatter out */
+    .category-card:hover .char {
+      opacity: 0;
+      transform: translate(var(--tx), var(--ty)) rotate(var(--tr));
+    }
+    /* Then reassemble with delay */
+    .category-card:hover .char {
+      animation: stone-scatter 0.8s cubic-bezier(0.2, 0, 0.2, 1) forwards;
+      animation-delay: var(--d);
+    }
+    @keyframes stone-scatter {
+      0%   { opacity: 1; transform: translate(0, 0) rotate(0deg); }
+      35%  { opacity: 0.3; transform: translate(var(--tx), var(--ty)) rotate(var(--tr)); }
+      65%  { opacity: 0.3; transform: translate(var(--tx), var(--ty)) rotate(var(--tr)); }
+      100% { opacity: 1; transform: translate(0, 0) rotate(0deg); }
+    }
+
+    /* ======== Ritual Guide (one-screen) ======== */
+    .ritual-guide {
+      position: relative; z-index: 10;
+      min-height: 100vh;
+      display: flex; align-items: center; justify-content: center;
+      background: transparent;
+      padding: 6rem 2.4rem;
+    }
+    .ritual-guide__inner {
+      max-width: 108rem;
+      width: 100%;
+      text-align: center;
+    }
+    .ritual-guide__label {
+      font-family: var(--font-mono);
+      font-size: 1.0rem; letter-spacing: 0.3em;
+      text-transform: uppercase; color: var(--gold);
+      display: block; margin-bottom: 1.2rem;
+    }
+    .ritual-guide__title {
+      font-family: var(--font-display);
+      font-size: clamp(3.2rem, 5vw, 5.6rem);
+      font-weight: 300; color: var(--text);
+      line-height: 1.05; margin-bottom: 1.6rem;
+    }
+    .ritual-guide__intro {
+      font-size: 1.4rem; color: var(--muted);
+      line-height: 1.7; max-width: 62rem;
+      margin: 0 auto 4.8rem;
+    }
+    .ritual-guide__grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 3.2rem 4rem;
+      margin-bottom: 4.8rem;
+      text-align: left;
+    }
+    .ritual-guide__card {
+      border: 1px solid var(--border);
+      border-radius: 2px;
+      overflow: hidden;
+      transition: border-color var(--t-fast), transform var(--t-fast);
+    }
+    .ritual-guide__card:hover {
+      border-color: var(--gold-mid);
+      transform: translateY(-3px);
+    }
+    .ritual-guide__card-title,
+    .ritual-guide__card-desc {
+      padding-left: 2rem; padding-right: 2rem;
+    }
+    .ritual-guide__card-desc { padding-bottom: 2rem; }
+    .ritual-guide__img {
+      width: 100%; aspect-ratio: 1 / 1;
+      overflow: hidden; border-radius: 2px;
+      margin-bottom: 1.6rem;
+    }
+    .ritual-guide__img img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s var(--ease-out);
+    }
+    .ritual-guide__card:hover .ritual-guide__img img {
+      transform: scale(1.06);
+    }
+    .ritual-guide__card-title {
+      font-family: var(--font-display);
+      font-size: 1.8rem; font-weight: 400;
+      color: var(--text); margin-bottom: 0.8rem;
+      padding-top: 0;
+    }
+    .ritual-guide__card-desc {
+      font-size: 1.25rem; color: var(--muted);
+      line-height: 1.65;
+    }
+    .ritual-guide__cta {
+      display: inline-block;
+      font-family: var(--font-mono);
+      font-size: 1.1rem; letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--bg); background: var(--gold);
+      padding: 1.3rem 3.6rem; border-radius: 2px;
+      transition: opacity var(--t-fast);
+    }
+    .ritual-guide__cta:hover { opacity: 0.85; }
+
+    @media (max-width: 749px) {
+      .ritual-guide { padding: 4rem 1.6rem; min-height: auto; }
+      .ritual-guide__grid {
+        grid-template-columns: 1fr;
+        gap: 1.6rem;
+      }
+      .ritual-guide__img { aspect-ratio: 3 / 2; }
+      .ritual-guide__intro { margin-bottom: 3.2rem; }
+    }
+
+    /* ======== Book of Answers (Grimoire) ======== */
+    .grimoire {
+      position: relative;
+      z-index: 10;
+      display: flex;
+      justify-content: center;
+      padding: 8rem 2.4rem;
+      background: transparent;
+    }
+
+    /* Book wrapper — landscape ratio with 3D depth */
+    .grimoire__book {
+      position: relative;
+      width: 100%;
+      max-width: 96rem;
+      aspect-ratio: 16 / 9;
+      perspective: 1800px;
+      animation: grimoire-float 4s ease-in-out infinite; /* #4 floating */
+      animation-play-state: paused; /* only run when visible */
+    }
+    .grimoire--visible .grimoire__book {
+      animation-play-state: running;
+    }
+
+    /* #4 — Floating / levitation */
+    @keyframes grimoire-float {
+      0%, 100% { transform: translateY(0); }
+      50%      { transform: translateY(-10px); }
+    }
+
+
+
+    /* #8 — Rune flicker on cover */
+    .grimoire__runes {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      z-index: 1;
+      overflow: hidden;
+    }
+    .grimoire__rune {
+      position: absolute;
+      font-size: 2rem;
+      color: var(--gold);
+      opacity: 0;
+      animation: rune-flicker 6s ease-in-out infinite;
+      animation-play-state: paused;
+    }
+    .grimoire__rune:nth-child(1) { top: 15%; left: 12%; animation-delay: 0s; }
+    .grimoire__rune:nth-child(2) { top: 25%; right: 15%; animation-delay: 1.5s; }
+    .grimoire__rune:nth-child(3) { bottom: 30%; left: 20%; animation-delay: 3s; }
+    .grimoire__rune:nth-child(4) { bottom: 20%; right: 10%; animation-delay: 4.5s; }
+    .grimoire__rune:nth-child(5) { top: 40%; left: 40%; animation-delay: 2s; }
+    .grimoire__rune:nth-child(6) { top: 60%; right: 25%; animation-delay: 0.8s; }
+    .grimoire__rune:nth-child(7) { bottom: 45%; left: 8%; animation-delay: 3.5s; }
+    @keyframes rune-flicker {
+      0%, 80%, 100% { opacity: 0; transform: scale(0.8); }
+      10%, 30%      { opacity: 0.25; transform: scale(1); }
+      20%           { opacity: 0.15; transform: scale(1.05); }
+    }
+    /* Unpause animations when section visible */
+    .grimoire--visible .grimoire__rune { animation-play-state: running; }
+    .grimoire--visible .grimoire__circle-ring { animation-play-state: running; }
+    /* Hide runes when book is open */
+    .grimoire__book--open .grimoire__runes { display: none; }
+
+    /* #6 — Magic circle on open */
+    .grimoire__circle {
+      position: absolute;
+      bottom: -6rem; left: 50%;
+      width: 50rem; height: 50rem;
+      margin-left: -25rem;
+      pointer-events: none;
+      z-index: -1;
+      opacity: 0;
+      transition: opacity 1s ease 0.2s;
+    }
+    .grimoire__book--open .grimoire__circle {
+      opacity: 1;
+    }
+    .grimoire__circle-ring {
+      position: absolute;
+      inset: 0;
+      border: 1px solid rgba(201,168,76,0.12);
+      border-radius: 50%;
+      animation: circle-spin 30s linear infinite;
+      animation-play-state: paused;
+    }
+    .grimoire__circle-ring:nth-child(2) {
+      inset: 3rem;
+      border-style: dashed;
+      border-color: rgba(201,168,76,0.08);
+      animation-direction: reverse;
+      animation-duration: 45s;
+    }
+    .grimoire__circle-ring:nth-child(3) {
+      inset: 6rem;
+      border-color: rgba(201,168,76,0.06);
+      animation-duration: 60s;
+    }
+    .grimoire__circle-ring::before {
+      content: '✦';
+      position: absolute;
+      top: -0.5rem; left: 50%;
+      transform: translateX(-50%);
+      font-size: 1rem;
+      color: var(--gold);
+      opacity: 0.3;
+    }
+    @keyframes circle-spin {
+      from { transform: rotate(0deg); }
+      to   { transform: rotate(360deg); }
+    }
+
+    /* #3 — Spine flash on page turn */
+    .grimoire__spine-flash {
+      position: absolute;
+      top: 0; bottom: 0;
+      left: 50%;
+      width: 4px;
+      margin-left: -2px;
+      background: linear-gradient(180deg, transparent, var(--gold), transparent);
+      opacity: 0;
+      z-index: 10;
+      pointer-events: none;
+    }
+    .grimoire__spine-flash--active {
+      animation: spine-flash 0.6s ease-out forwards;
+    }
+    @keyframes spine-flash {
+      0%   { opacity: 0.9; transform: scaleX(3); filter: blur(4px); }
+      100% { opacity: 0; transform: scaleX(1); filter: blur(0); }
+    }
+
+
+    /* Book thickness — bottom/right edge */
+    .grimoire__edge {
+      position: absolute;
+      inset: 0;
+      border-radius: 4px;
+      transform: translate(6px, 6px);
+      background: linear-gradient(135deg, #0f0d0a, #1a1610);
+      border: 1px solid rgba(201,168,76,0.08);
+      z-index: 0;
+    }
+    .grimoire__edge::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: 4px;
+      transform: translate(5px, 5px);
+      background: linear-gradient(135deg, #0a0908, #12100d);
+      border: 1px solid rgba(201,168,76,0.04);
+      z-index: -1;
+    }
+
+    /* === COVER STATE === */
+    .grimoire__cover {
+      position: absolute;
+      inset: 0;
+      z-index: 2;
+      border-radius: 4px;
+      background:
+        linear-gradient(135deg, #1e1a14 0%, #28231a 30%, #1e1a14 60%, #24201a 100%);
+      border: 1px solid rgba(201,168,76,0.22);
+      box-shadow:
+        0 4px 40px rgba(0,0,0,0.5),
+        0 0 80px rgba(201,168,76,0.04),
+        inset 0 0 100px rgba(0,0,0,0.3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.5s ease;
+      transform-origin: left center;
+    }
+    /* Gold border inset line */
+    .grimoire__cover::before {
+      content: '';
+      position: absolute;
+      inset: 1.2rem;
+      border: 1px solid rgba(201,168,76,0.12);
+      border-radius: 2px;
+      pointer-events: none;
+    }
+    .grimoire__cover-inner {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding: 4rem;
+    }
+
+    /* Cover flipped open */
+    .grimoire__book--open .grimoire__cover {
+      transform: rotateY(-160deg);
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    .grimoire__seal {
+      font-size: 4rem;
+      color: var(--gold);
+      opacity: 0.3;
+      margin-bottom: 1.6rem;
+      line-height: 1;
+    }
+    .grimoire__label {
+      font-family: var(--font-mono);
+      font-size: 1.1rem;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 2.4rem;
+    }
+    .grimoire__question {
+      font-family: var(--font-display);
+      font-style: italic;
+      font-weight: 300;
+      font-size: clamp(2.2rem, 3.2vw, 3.6rem);
+      line-height: 1.35;
+      color: var(--text);
+      margin-bottom: 3.2rem;
+    }
+    .grimoire__open-btn {
+      font-family: var(--font-mono);
+      font-size: 1.1rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--bg);
+      background: var(--gold);
+      border: 1px solid var(--gold);
+      padding: 1.2rem 4rem;
+      cursor: pointer;
+      transition: background 0.3s, color 0.3s;
+      margin-bottom: 2rem;
+    }
+    .grimoire__open-btn:hover {
+      background: transparent;
+      color: var(--gold);
+    }
+    .grimoire__footer {
+      font-family: var(--font-display);
+      font-style: italic;
+      font-size: 1.4rem;
+      color: var(--muted);
+    }
+
+    /* === SPREAD (detail pages — hidden until TOC item clicked) === */
+    .grimoire__spread {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      border-radius: 4px;
+      background:
+        linear-gradient(135deg, #1c1812 0%, #211d16 50%, #1c1812 100%);
+      border: 1px solid rgba(201,168,76,0.18);
+      box-shadow:
+        0 4px 40px rgba(0,0,0,0.5),
+        inset 0 0 80px rgba(0,0,0,0.25);
+      display: flex;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.4s ease;
+    }
+
+    /* Left page */
+    .grimoire__page-left {
+      flex: 1;
+      padding: 4.8rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      position: relative;
+    }
+    .grimoire__page-corner {
+      position: absolute;
+      top: 1.6rem; right: 1.6rem;
+      font-size: 1rem;
+      color: var(--gold);
+      opacity: 0.2;
+    }
+    .grimoire__ritual-icon {
+      font-size: 4.8rem;
+      color: var(--gold);
+      opacity: 0.6;
+      margin-bottom: 2rem;
+      line-height: 1;
+      transition: opacity 0.4s;
+    }
+    .grimoire__ritual-name {
+      font-family: var(--font-display);
+      font-style: italic;
+      font-weight: 300;
+      font-size: clamp(2.8rem, 3.5vw, 4.2rem);
+      color: var(--text);
+      margin-bottom: 2rem;
+      line-height: 1.15;
+    }
+    .grimoire__ritual-desc {
+      font-family: var(--font-body, 'Inter', sans-serif);
+      font-size: clamp(1.2rem, 1.3vw, 1.5rem);
+      line-height: 1.7;
+      color: var(--text);
+      opacity: 0.65;
+      max-width: 36rem;
+    }
+    .grimoire__page-num {
+      position: absolute;
+      bottom: 2rem;
+      font-family: var(--font-mono);
+      font-size: 1rem;
+      letter-spacing: 0.2em;
+      color: var(--gold);
+      opacity: 0.35;
+    }
+
+    /* Center spine divider */
+    .grimoire__center-spine {
+      width: 2px;
+      background: linear-gradient(180deg, transparent, rgba(201,168,76,0.15) 20%, rgba(201,168,76,0.15) 80%, transparent);
+      flex-shrink: 0;
+      position: relative;
+    }
+    .grimoire__center-spine::before {
+      content: '';
+      position: absolute;
+      left: -6px; top: 0; bottom: 0;
+      width: 14px;
+      background: linear-gradient(90deg, rgba(0,0,0,0.15), transparent 30%, transparent 70%, rgba(0,0,0,0.15));
+      pointer-events: none;
+    }
+
+    /* Right page */
+    .grimoire__page-right {
+      flex: 1;
+      padding: 4.8rem;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: center;
+      position: relative;
+    }
+    .grimoire__page-right .grimoire__page-corner {
+      right: auto; left: 1.6rem;
+    }
+    .grimoire__right-label {
+      font-family: var(--font-mono);
+      font-size: 1.05rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 2rem;
+    }
+    .grimoire__right-text {
+      font-family: var(--font-body, 'Inter', sans-serif);
+      font-size: clamp(1.3rem, 1.4vw, 1.55rem);
+      line-height: 1.75;
+      color: var(--text);
+      opacity: 0.72;
+      margin-bottom: 3.2rem;
+      max-width: 40rem;
+    }
+    .grimoire__right-btn {
+      font-family: var(--font-mono);
+      font-size: 1.1rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--bg);
+      background: var(--gold);
+      border: 1px solid var(--gold);
+      padding: 1.2rem 3.2rem;
+      text-decoration: none;
+      transition: background 0.3s, color 0.3s;
+      margin-bottom: 3.2rem;
+    }
+    .grimoire__right-btn:hover {
+      background: transparent;
+      color: var(--gold);
+    }
+
+    /* Pagination dots */
+    .grimoire__nav {
+      display: flex;
+      gap: 0.8rem;
+    }
+    .grimoire__nav-dot {
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      background: rgba(201,168,76,0.2);
+      border: 1px solid rgba(201,168,76,0.3);
+      cursor: pointer;
+      transition: background 0.3s, width 0.3s;
+      padding: 0;
+    }
+    .grimoire__nav-dot--active {
+      width: 24px;
+      border-radius: 4px;
+      background: var(--gold);
+      border-color: var(--gold);
+    }
+
+    /* === TABLE OF CONTENTS === */
+    .grimoire__toc {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      border-radius: 4px;
+      background:
+        linear-gradient(135deg, #1c1812 0%, #211d16 50%, #1c1812 100%);
+      border: 1px solid rgba(201,168,76,0.18);
+      box-shadow:
+        0 4px 40px rgba(0,0,0,0.5),
+        inset 0 0 80px rgba(0,0,0,0.25);
+      display: flex;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.5s ease 0.3s;
+    }
+    .grimoire__book--open .grimoire__toc {
+      opacity: 1;
+      pointer-events: auto;
+    }
+    .grimoire__toc-left {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 4.8rem;
+      position: relative;
+    }
+    .grimoire__toc-left .grimoire__seal {
+      margin-bottom: 2.4rem;
+    }
+    .grimoire__toc-heading {
+      font-family: var(--font-display);
+      font-style: italic;
+      font-weight: 300;
+      font-size: clamp(3.2rem, 4vw, 5rem);
+      line-height: 1.15;
+      color: var(--text);
+      margin-bottom: 1.6rem;
+    }
+    .grimoire__toc-sub {
+      font-family: var(--font-body, 'Inter', sans-serif);
+      font-size: 1.3rem;
+      line-height: 1.6;
+      color: var(--muted);
+    }
+
+    .grimoire__toc-right {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 4.8rem;
+      position: relative;
+    }
+    .grimoire__toc-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+    .grimoire__toc-item {
+      display: flex;
+      align-items: center;
+      gap: 1.2rem;
+      width: 100%;
+      padding: 1.6rem 0;
+      border-bottom: 1px solid rgba(201,168,76,0.08);
+      background: none;
+      cursor: pointer;
+      transition: background 0.25s;
+      text-align: left;
+      font-size: 1rem;
+    }
+    .grimoire__toc-item:hover {
+      background: rgba(201,168,76,0.05);
+    }
+    .grimoire__toc-num {
+      font-family: var(--font-mono);
+      font-size: 1.0rem;
+      letter-spacing: 0.15em;
+      color: var(--gold);
+      opacity: 0.5;
+      min-width: 3.2rem;
+    }
+    .grimoire__toc-icon {
+      font-size: 1.6rem;
+      color: var(--gold);
+      opacity: 0.6;
+      min-width: 2.4rem;
+      text-align: center;
+    }
+    .grimoire__toc-name {
+      font-family: var(--font-display);
+      font-style: italic;
+      font-size: clamp(1.6rem, 2vw, 2.2rem);
+      color: var(--text);
+      white-space: nowrap;
+    }
+    .grimoire__toc-dots {
+      flex: 1;
+      border-bottom: 1px dotted rgba(201,168,76,0.2);
+      margin: 0 0.8rem;
+      min-width: 2rem;
+      align-self: flex-end;
+      margin-bottom: 0.4rem;
+    }
+    .grimoire__toc-item:hover .grimoire__toc-name {
+      color: var(--gold);
+    }
+
+    /* When --detail: show spread above TOC, hide TOC */
+    .grimoire__book--detail .grimoire__spread {
+      opacity: 1;
+      pointer-events: auto;
+      z-index: 3;
+    }
+    .grimoire__book--detail .grimoire__toc {
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    /* Back button + nav row */
+    .grimoire__nav-row {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+    }
+    .grimoire__back-btn {
+      font-family: var(--font-mono);
+      font-size: 1.0rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--gold);
+      opacity: 0.7;
+      background: none;
+      cursor: pointer;
+      transition: opacity 0.3s;
+      padding: 0;
+    }
+    .grimoire__back-btn:hover { opacity: 1; }
+
+    /* ======== Comprehensive Mobile Optimizations ======== */
+    @media (max-width: 749px) {
+
+      /* --- Disable cursor effects on mobile (no mouse) --- */
+      body { cursor: auto !important; }
+      a, button, [role="button"], input, select, textarea, label, [onclick] {
+        cursor: auto !important;
+      }
+      .cursor-glow, .cursor-spark { display: none !important; }
+
+      /* --- Disable stone scatter on mobile (no hover) --- */
+      .category-card:hover .char { animation: none; opacity: 1; transform: none; }
+
+      /* --- Section heading tighten --- */
+      .section-heading { margin-bottom: var(--s2); }
+
+      /* --- Grimoire Book --- */
+      .grimoire { padding: 3rem 1rem; }
+      .grimoire__book {
+        aspect-ratio: auto; min-height: auto;
+        animation-name: none; /* no float on mobile */
+      }
+      .grimoire__edge { transform: translate(3px, 3px); }
+      .grimoire__edge::before { transform: translate(2px, 2px); }
+      .grimoire__cover-inner { padding: 2.4rem 1.6rem; }
+      .grimoire__seal { font-size: 3rem; margin-bottom: 1rem; }
+      .grimoire__label { font-size: 0.9rem; margin-bottom: 1.6rem; }
+      .grimoire__question { font-size: 1.8rem; margin-bottom: 2rem; }
+      .grimoire__open-btn { padding: 1rem 2.8rem; font-size: 1rem; }
+      .grimoire__footer { font-size: 1.2rem; }
+      .grimoire__toc,
+      .grimoire__spread { flex-direction: column; }
+      .grimoire__center-spine {
+        width: auto; height: 2px;
+        background: linear-gradient(90deg, transparent, rgba(201,168,76,0.15) 20%, rgba(201,168,76,0.15) 80%, transparent);
+      }
+      .grimoire__center-spine::before {
+        left: 0; right: 0; top: -6px; bottom: auto;
+        width: auto; height: 14px;
+        background: linear-gradient(180deg, rgba(0,0,0,0.15), transparent 30%, transparent 70%, rgba(0,0,0,0.15));
+      }
+      .grimoire__toc-left { padding: 2rem 1.6rem; }
+      .grimoire__toc-left .grimoire__seal { margin-bottom: 1.2rem; }
+      .grimoire__toc-heading { font-size: 2.4rem; margin-bottom: 0.8rem; }
+      .grimoire__toc-sub { font-size: 1.1rem; }
+      .grimoire__toc-right { padding: 1.6rem; }
+      .grimoire__toc-item { padding: 1.2rem 0; gap: 0.8rem; }
+      .grimoire__toc-name { font-size: 1.4rem; }
+      .grimoire__page-left,
+      .grimoire__page-right { padding: 2rem 1.6rem; }
+      .grimoire__ritual-icon { font-size: 3.2rem; margin-bottom: 1.2rem; }
+      .grimoire__ritual-name { font-size: 2rem; margin-bottom: 1.2rem; }
+      .grimoire__ritual-desc { font-size: 1.15rem; }
+      .grimoire__page-right { align-items: center; text-align: center; }
+      .grimoire__right-label { font-size: 0.9rem; margin-bottom: 1.2rem; }
+      .grimoire__right-text { font-size: 1.15rem; margin-bottom: 2rem; }
+      .grimoire__right-btn { padding: 1rem 2.4rem; font-size: 1rem; margin-bottom: 2rem; }
+      .grimoire__nav-row { justify-content: center; }
+      .grimoire__circle { width: 24rem; height: 24rem; margin-left: -12rem; bottom: -3rem; }
+      .grimoire__rune { font-size: 1.2rem; }
+
+      /* --- Ritual Guide: 2-col grid to save length --- */
+      .ritual-guide { padding: 3rem 1.2rem; min-height: auto; }
+      .ritual-guide__title { margin-bottom: 1.2rem; }
+      .ritual-guide__intro { font-size: 1.2rem; margin-bottom: 2.4rem; }
+      .ritual-guide__grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.2rem;
+      }
+      .ritual-guide__img { aspect-ratio: 4 / 3; margin-bottom: 1rem; }
+      .ritual-guide__card-title { font-size: 1.4rem; padding-left: 1.2rem; padding-right: 1.2rem; }
+      .ritual-guide__card-desc { font-size: 1.1rem; padding: 0 1.2rem 1.2rem; }
+      .ritual-guide__cta { padding: 1.1rem 2.8rem; font-size: 1rem; }
+
+      /* --- Featured Products: show only 4 on mobile --- */
+      .products__grid .product-card:nth-child(n+5) { display: none; }
+
+      /* --- Ember Covenant tighten --- */
+      .ritual-box { padding: var(--s4) var(--s2); gap: var(--s3); }
+      .ritual-box__title { font-size: 2.8rem; }
+      .ritual-box__desc { font-size: 1.25rem; margin-bottom: var(--s3); }
+      .ritual-box__features li { font-size: 1.15rem; }
+      .ritual-box__cta { padding: 1.1rem 2.4rem; font-size: 1rem; }
+
+      /* --- Image Band tighten --- */
+      .image-band { height: 30vh; min-height: 180px; }
+      .image-band__title { font-size: 3rem; }
+
+      /* --- Story section tighten --- */
+      .story { padding: var(--s4) var(--s2); gap: var(--s2); }
+      .story__title { font-size: 2.4rem; }
+      .story__desc { font-size: 1.2rem; margin-bottom: var(--s2); }
+
+      /* --- Instagram grid tighten --- */
+      .insta__header { padding: var(--s4) var(--s2); }
+      .insta__title { font-size: 2.4rem; }
+
+      /* --- Footer tighten --- */
+      .footer { padding: var(--s4) var(--s2); }
+    }
+
+  </style>
+</head>
+<body>
+
+<!-- Grain Overlay -->
+<div class="grain" aria-hidden="true"></div>
+
+<!-- Star Canvas -->
+<canvas id="starCanvas" aria-hidden="true"></canvas>
+
+<!-- Background Ghost Images -->
+<div class="bg-ghosts" aria-hidden="true">
+  <img src="../Public/_DSC3826.JPG" alt="" class="bg-ghost" style="top:5%;left:-5%;width:210px;transform:rotate(-5deg);">
+  <img src="../Public/_DSC3850.JPG" alt="" class="bg-ghost" style="top:18%;right:-5%;width:210px;transform:rotate(5deg);">
+  <img src="../Public/_DSC3906.JPG" alt="" class="bg-ghost" style="top:35%;left:-5%;width:210px;transform:rotate(-5deg);">
+  <img src="../Public/_DSC3893.JPG" alt="" class="bg-ghost" style="top:48%;right:-5%;width:210px;transform:rotate(5deg);">
+  <img src="../Public/_DSC3929.JPG" alt="" class="bg-ghost" style="top:60%;left:-5%;width:210px;transform:rotate(-5deg);">
+  <img src="../Public/_DSC3942.JPG" alt="" class="bg-ghost" style="top:72%;right:-5%;width:210px;transform:rotate(5deg);">
+  <img src="../Public/_DSC3883.JPG" alt="" class="bg-ghost" style="top:83%;left:-5%;width:210px;transform:rotate(-5deg);">
+  <img src="../Public/_DSC3835.JPG" alt="" class="bg-ghost" style="top:88%;right:-5%;width:210px;transform:rotate(5deg);">
+</div>
+
+<!-- ======== Announcement Bar ======== -->
+<div class="announcement" id="announcementBar">
+  <div class="announcement__track" id="announcementTrack">
+    <div class="announcement__slide announcement__slide--active">Free Global Shipping on Orders $89+</div>
+    <div class="announcement__slide"><a href="#">Sign Up for 10% Off Your First Order</a></div>
+    <div class="announcement__slide">Ancient Rituals, Modern Magick — Handcrafted with Intention</div>
+  </div>
+</div>
+
+<!-- ======== Header ======== -->
+<header class="header" id="header">
+  <div class="header__row">
+    <a href="#" class="header__logo">
+      <img src="../wecom-temp-1125392-b563a96a377dca72efa8b2ccff82af5b.png" alt="WuZuo Alice">
+    </a>
+
+    <nav class="header__nav">
+      <!-- Ritual Candles mega -->
+      <div class="header__nav-item header__nav-item--mega">
+        <a href="#" class="header__nav-link">Ritual Candles
+          <svg class="header__chevron" viewBox="0 0 10 6"><path d="M1 1l4 4 4-4" stroke="currentColor" fill="none" stroke-width="1.5"/></svg>
+        </a>
+        <div class="mega-menu">
+          <div class="mega-menu__inner">
+            <div class="mega-menu__col">
+              <h4 class="mega-menu__heading">By Intention</h4>
+              <a href="#" class="mega-menu__link">Love &amp; Binding</a>
+              <a href="#" class="mega-menu__link">Wealth &amp; Fortune</a>
+              <a href="#" class="mega-menu__link">Protection &amp; Cleanse</a>
+              <a href="#" class="mega-menu__link">Career &amp; Success</a>
+              <a href="#" class="mega-menu__link">Health &amp; Healing</a>
+              <a href="#" class="mega-menu__link mega-menu__link--all">View All &rarr;</a>
+            </div>
+            <div class="mega-menu__col">
+              <h4 class="mega-menu__heading">By Type</h4>
+              <a href="#" class="mega-menu__link">Pyramid Candles</a>
+              <a href="#" class="mega-menu__link">Figurine Candles</a>
+              <a href="#" class="mega-menu__link">Pillar Candles</a>
+              <a href="#" class="mega-menu__link">Zodiac Candles</a>
+              <a href="#" class="mega-menu__link">Chakra Candles</a>
+            </div>
+            <div class="mega-menu__col mega-menu__col--featured">
+              <h4 class="mega-menu__heading">Bestsellers</h4>
+              <div class="mega-menu__products">
+                <a href="#" class="mega-menu__product">
+                  <img src="../Public/_DSC3826.JPG" alt="All-Seeing Eye Pyramid" loading="lazy">
+                  <span>All-Seeing Eye Pyramid</span>
+                  <span class="mega-menu__product-price">$29.99</span>
+                </a>
+                <a href="#" class="mega-menu__product">
+                  <img src="../Public/_DSC3906.JPG" alt="Golden Serpent Egg" loading="lazy">
+                  <span>Golden Serpent Egg</span>
+                  <span class="mega-menu__product-price">$34.99</span>
+                </a>
+                <a href="#" class="mega-menu__product">
+                  <img src="../Public/_DSC3954.JPG" alt="Dragon Fortune" loading="lazy">
+                  <span>Dragon Fortune</span>
+                  <span class="mega-menu__product-price">$28.99</span>
+                </a>
+                <a href="#" class="mega-menu__product">
+                  <img src="../Public/_DSC3850.JPG" alt="Money Tree Vase" loading="lazy">
+                  <span>Money Tree Vase</span>
+                  <span class="mega-menu__product-price">$39.99</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Collections mega -->
+      <div class="header__nav-item header__nav-item--mega">
+        <a href="#" class="header__nav-link">Collections
+          <svg class="header__chevron" viewBox="0 0 10 6"><path d="M1 1l4 4 4-4" stroke="currentColor" fill="none" stroke-width="1.5"/></svg>
+        </a>
+        <div class="mega-menu">
+          <div class="mega-menu__inner">
+            <div class="mega-menu__col">
+              <h4 class="mega-menu__heading">Collections</h4>
+              <a href="#" class="mega-menu__link">New Arrivals</a>
+              <a href="#" class="mega-menu__link">Best Sellers</a>
+              <a href="#" class="mega-menu__link">Limited Edition</a>
+              <a href="#" class="mega-menu__link">Gift Sets</a>
+              <a href="#" class="mega-menu__link mega-menu__link--all">View All &rarr;</a>
+            </div>
+            <div class="mega-menu__col mega-menu__col--featured">
+              <h4 class="mega-menu__heading">Featured</h4>
+              <div class="mega-menu__products">
+                <a href="#" class="mega-menu__product">
+                  <img src="../Public/_DSC3899.JPG" alt="Horseshoe Fortune" loading="lazy">
+                  <span>Horseshoe Fortune</span>
+                  <span class="mega-menu__product-price">$42.99</span>
+                </a>
+                <a href="#" class="mega-menu__product">
+                  <img src="../Public/_DSC3929.JPG" alt="Pentacle Grimoire" loading="lazy">
+                  <span>Pentacle Grimoire</span>
+                  <span class="mega-menu__product-price">$36.99</span>
+                </a>
+                <a href="#" class="mega-menu__product">
+                  <img src="../Public/_DSC3942.JPG" alt="Fortune Bag" loading="lazy">
+                  <span>Fortune Bag</span>
+                  <span class="mega-menu__product-price">$24.99</span>
+                </a>
+                <a href="#" class="mega-menu__product">
+                  <img src="../Public/_DSC3883.JPG" alt="Celestial Horse" loading="lazy">
+                  <span>Celestial Horse</span>
+                  <span class="mega-menu__product-price">$38.99</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="header__nav-item"><a href="#" class="header__nav-link">About</a></div>
+      <div class="header__nav-item"><a href="#" class="header__nav-link">Ritual Guide</a></div>
+      <div class="header__nav-item"><a href="#" class="header__nav-link">Blog</a></div>
+      <div class="header__nav-item"><a href="#" class="header__nav-link">Contact</a></div>
+    </nav>
+
+    <div class="header__actions">
+      <a href="#" class="header__subscribe-btn">
+        <span class="header__subscribe-glow"></span>
+        <span class="header__subscribe-glow header__subscribe-glow--2"></span>
+        <span class="header__subscribe-text">&#10023; Subscribe</span>
+      </a>
+      <button class="header__action-btn" aria-label="Search">
+        <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.35-4.35"/></svg>
+      </button>
+      <button class="header__action-btn" aria-label="Account">
+        <svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+      </button>
+      <button class="header__action-btn" aria-label="Cart">
+        <svg viewBox="0 0 24 24"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+      </button>
+      <button class="header__menu-btn header__action-btn" id="menuBtn" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- Mobile menu overlay -->
+<nav class="mobile-menu" id="mobileMenu" aria-hidden="true">
+  <button class="mobile-menu__close" id="menuClose">Close ✕</button>
+  <a href="#" class="mobile-menu__link">Ritual Candles</a>
+  <a href="#" class="mobile-menu__link">Collections</a>
+  <a href="#" class="mobile-menu__link">About</a>
+  <a href="#" class="mobile-menu__link">Ritual Guide</a>
+  <a href="#" class="mobile-menu__link">Blog</a>
+  <a href="#" class="mobile-menu__link">Contact</a>
+</nav>
+
+<!-- ======== Hero ======== -->
+<section class="hero" id="hero">
+
+  <!-- Slides -->
+  <div class="hero__slides" id="heroSlides">
+
+    <!-- Slide 1: Love & Binding Spells -->
+    <div class="hero__slide hero__slide--active hero__slide--video" data-index="0">
+      <video autoplay muted loop playsinline class="hero__video">
+        <source src="../Public/a-fortune-teller-performs-a-ritual-with-crystals-b-2026-01-22-07-12-22-utc.mp4" type="video/mp4">
+      </video>
+      <div class="hero__video-overlay"></div>
+      <div class="hero__content">
+        <span class="hero__subtitle">ANCIENT LOVE RITUALS</span>
+        <h2 class="hero__title">Love &amp; Binding<br>Spells</h2>
+        <p class="hero__desc">Handcrafted ritual candles inscribed with ancient symbols — attract soulmate energy, deepen romantic bonds, and manifest the love you deserve.</p>
+        <a href="#" class="hero__btn">Explore Love Rituals</a>
+      </div>
+    </div>
+
+    <!-- Slide 2: Fortune & Wealth Spells -->
+    <div class="hero__slide hero__slide--video" data-index="1">
+      <img src="../Public/_DSC3875.JPG" alt="Fortune & Wealth Ritual Candles" class="hero__bg-img">
+      <div class="hero__video-overlay"></div>
+      <div class="hero__content hero__content--center">
+        <span class="hero__subtitle">MANIFEST ABUNDANCE</span>
+        <h2 class="hero__title">Fortune &amp; Wealth<br>Spells</h2>
+        <p class="hero__desc">Not all spell casters are genuine. Many claim mastery over love, lottery, and money spells — but only a rare few possess the authentic knowledge passed down through ancient lineages.</p>
+        <p class="hero__desc">Our ritual candles are crafted by true practitioners who dedicate their craft to a single intention — ensuring every flame carries focused, undiluted power to manifest your financial destiny.</p>
+        <p class="hero__desc">Choose wisely. Choose the strongest. Let the ancient fire guide your path to abundance.</p>
+        <a href="#" class="hero__btn">Discover Fortune Spells</a>
+      </div>
+    </div>
+
+    <!-- Slide 3: Protection & Marriage Spells -->
+    <div class="hero__slide hero__slide--video" data-index="2">
+      <img src="../Public/_DSC3924.JPG" alt="Protection & Marriage Ritual Candles" class="hero__bg-img">
+      <div class="hero__video-overlay"></div>
+      <div class="hero__content">
+        <span class="hero__subtitle">SACRED BONDS &amp; SHIELDS</span>
+        <h2 class="hero__title">Powerful Protection<br>Spells</h2>
+        <p class="hero__desc">The most potent ritual candles for marriage harmony, spiritual shielding, and life transformation — chosen by those who seek only the strongest magick.</p>
+        <a href="#" class="hero__btn">Shop Protection Rituals</a>
+      </div>
+    </div>
+
+  </div><!-- /slides -->
+
+  <!-- Side arrows -->
+  <button class="hero__prev" id="heroPrev" aria-label="Previous slide">&lsaquo;</button>
+  <button class="hero__next" id="heroNext" aria-label="Next slide">&rsaquo;</button>
+
+
+</section>
+
+<!-- ======== Category Cards ======== -->
+<div class="section-heading reveal">
+  <div class="section-heading__label">Choose Your Path</div>
+  <h2 class="section-heading__title">Ritual Collections</h2>
+  <div class="section-heading__line"></div>
+</div>
+
+<div class="categories">
+  <div class="category-card reveal reveal-d1">
+    <span class="category-card__code">COL-001</span>
+    <span class="category-card__icon">&#128367;</span>
+    <h3 class="category-card__title">Intention Candles</h3>
+    <p class="category-card__desc">Hand-poured candles charged with a single focused intention — love, wealth, protection, or healing. Each flame carries your desire into the universe.</p>
+    <a href="#" class="category-card__btn">Explore <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+  </div>
+  <div class="category-card reveal reveal-d2">
+    <span class="category-card__code">COL-002</span>
+    <span class="category-card__icon">&#9956;</span>
+    <h3 class="category-card__title">Witchcraft &mdash; Supreme Energy</h3>
+    <p class="category-card__desc">The most powerful spells in our collection. Ancient witchcraft rituals, hex-breaking candles, and supreme energy work for those who demand the strongest magick.</p>
+    <a href="#" class="category-card__btn">Explore <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+  </div>
+  <div class="category-card reveal reveal-d3">
+    <span class="category-card__code">COL-003</span>
+    <span class="category-card__icon">&#9883;</span>
+    <h3 class="category-card__title">Tarot &amp; Divination</h3>
+    <p class="category-card__desc">Ritual candles designed for tarot readings, crystal scrying, and divination sessions. Illuminate the unknown and let the cards reveal your path forward.</p>
+    <a href="#" class="category-card__btn">Explore <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+  </div>
+</div>
+
+<!-- ======== Client Cases Showcase (sticky scroll) ======== -->
+<section class="showcase" id="showcase">
+
+  <!-- Left: sticky large card — Case 1 -->
+  <div class="showcase__left">
+    <span class="showcase__section-label">Client Cases</span>
+    <a href="#" class="showcase__card showcase__card--large showcase__card--hovervid">
+      <img src="../Public/candle-1.jpg" alt="All-Seeing Eye Pyramid" loading="lazy">
+      <video class="showcase__hover-video" muted loop playsinline preload="none">
+        <source src="landscape candle light up.mp4" type="video/mp4">
+      </video>
+      <div class="showcase__card-body">
+        <span class="showcase__card-code">01 &middot; Wealth</span>
+        <h3 class="showcase__card-name">All-Seeing Eye<br>Pyramid</h3>
+        <div class="showcase__card-meta">
+          <span class="showcase__card-cta">Learn More &rarr;</span>
+        </div>
+      </div>
+    </a>
+  </div>
+
+  <!-- Right: 4 small cards -->
+  <div class="showcase__right">
+
+    <a href="#" class="showcase__card showcase__card--small showcase__card--hovervid">
+      <img src="../Public/candle-2.jpg" alt="Golden Serpent Egg" loading="lazy">
+      <video class="showcase__hover-video" muted loop playsinline preload="none">
+        <source src="square candle light up.mp4" type="video/mp4">
+      </video>
+      <div class="showcase__card-body">
+        <span class="showcase__card-code">02 &middot; Love</span>
+        <h3 class="showcase__card-name">Golden Serpent Egg</h3>
+        <div class="showcase__card-meta">
+          <span class="showcase__card-cta">Learn More &rarr;</span>
+        </div>
+      </div>
+    </a>
+
+    <a href="#" class="showcase__card showcase__card--small showcase__card--hovervid">
+      <img src="../Public/candle-3.jpg" alt="Horseshoe Fortune" loading="lazy">
+      <video class="showcase__hover-video" muted loop playsinline preload="none">
+        <source src="../Public/a-fortune-teller-performs-a-ritual-with-crystals-b-2026-01-22-07-12-22-utc.mp4" type="video/mp4">
+      </video>
+      <div class="showcase__card-body">
+        <span class="showcase__card-code">03 &middot; Wealth</span>
+        <h3 class="showcase__card-name">Horseshoe Fortune</h3>
+        <div class="showcase__card-meta">
+          <span class="showcase__card-cta">Learn More &rarr;</span>
+        </div>
+      </div>
+    </a>
+
+    <a href="#" class="showcase__card showcase__card--small showcase__card--hovervid">
+      <img src="../Public/candle-4.jpg" alt="Pentacle Grimoire Candle" loading="lazy">
+      <video class="showcase__hover-video" muted loop playsinline preload="none">
+        <source src="landscape candle light up.mp4" type="video/mp4">
+      </video>
+      <div class="showcase__card-body">
+        <span class="showcase__card-code">04 &middot; Protection</span>
+        <h3 class="showcase__card-name">Pentacle Grimoire</h3>
+        <div class="showcase__card-meta">
+          <span class="showcase__card-cta">Learn More &rarr;</span>
+        </div>
+      </div>
+    </a>
+
+    <a href="#" class="showcase__card showcase__card--small showcase__card--hovervid">
+      <img src="../Public/candle-5.jpg" alt="Celestial Horse Pillar" loading="lazy">
+      <video class="showcase__hover-video" muted loop playsinline preload="none">
+        <source src="square candle light up.mp4" type="video/mp4">
+      </video>
+      <div class="showcase__card-body">
+        <span class="showcase__card-code">05 &middot; Wealth</span>
+        <h3 class="showcase__card-name">Celestial Horse Pillar</h3>
+        <div class="showcase__card-meta">
+          <span class="showcase__card-cta">Learn More &rarr;</span>
+        </div>
+      </div>
+    </a>
+
+  </div>
+</section>
+
+<!-- ======== Book of Answers ======== -->
+<section class="grimoire reveal" id="grimoire">
+  <div class="grimoire__book" id="grimoireBook">
+
+    <!-- Book thickness (side edge) -->
+    <div class="grimoire__edge"></div>
+
+
+    <!-- #6 Magic circle (appears on open) -->
+    <div class="grimoire__circle" aria-hidden="true">
+      <div class="grimoire__circle-ring"></div>
+      <div class="grimoire__circle-ring"></div>
+      <div class="grimoire__circle-ring"></div>
+    </div>
+
+    <!-- #3 Spine flash (triggered on page turn) -->
+    <div class="grimoire__spine-flash" id="grimoireSpineFlash"></div>
+
+    <!-- === COVER (initial state) === -->
+    <div class="grimoire__cover" id="grimoireCover">
+      <!-- #8 Rune flicker -->
+      <div class="grimoire__runes" aria-hidden="true">
+        <span class="grimoire__rune">&#9737;</span>
+        <span class="grimoire__rune">&#9789;</span>
+        <span class="grimoire__rune">&#10017;</span>
+        <span class="grimoire__rune">&#9764;</span>
+        <span class="grimoire__rune">&#9956;</span>
+        <span class="grimoire__rune">&#10070;</span>
+        <span class="grimoire__rune">&#9883;</span>
+      </div>
+      <div class="grimoire__cover-inner">
+        <div class="grimoire__seal" aria-hidden="true">&#9956;</div>
+        <span class="grimoire__label">Book of Answers</span>
+        <h2 class="grimoire__question">Which aspect of your life<br>do you wish to transform<br>through cosmic energy?</h2>
+        <button class="grimoire__open-btn" id="grimoireOpenBtn">Open the Book</button>
+        <p class="grimoire__footer">The universe is listening.</p>
+      </div>
+    </div>
+
+    <!-- === TABLE OF CONTENTS (after cover opens) === -->
+    <div class="grimoire__toc" id="grimoireToc">
+      <!-- Left: decorative -->
+      <div class="grimoire__toc-left">
+        <div class="grimoire__page-corner" aria-hidden="true">✦</div>
+        <span class="grimoire__seal" aria-hidden="true">&#9956;</span>
+        <h3 class="grimoire__toc-heading">Table of<br>Contents</h3>
+        <p class="grimoire__toc-sub">Six ancient paths await.<br>Choose wisely.</p>
+      </div>
+      <div class="grimoire__center-spine"></div>
+      <!-- Right: clickable list -->
+      <div class="grimoire__toc-right">
+        <div class="grimoire__page-corner" aria-hidden="true">✦</div>
+        <ul class="grimoire__toc-list">
+          <li><button class="grimoire__toc-item" data-idx="0"><span class="grimoire__toc-num">I</span><span class="grimoire__toc-icon">&#9825;</span><span class="grimoire__toc-name">Love &amp; Binding</span><span class="grimoire__toc-dots"></span></button></li>
+          <li><button class="grimoire__toc-item" data-idx="1"><span class="grimoire__toc-num">II</span><span class="grimoire__toc-icon">&#9830;</span><span class="grimoire__toc-name">Wealth &amp; Fortune</span><span class="grimoire__toc-dots"></span></button></li>
+          <li><button class="grimoire__toc-item" data-idx="2"><span class="grimoire__toc-num">III</span><span class="grimoire__toc-icon">&#10016;</span><span class="grimoire__toc-name">Health &amp; Healing</span><span class="grimoire__toc-dots"></span></button></li>
+          <li><button class="grimoire__toc-item" data-idx="3"><span class="grimoire__toc-num">IV</span><span class="grimoire__toc-icon">&#9764;</span><span class="grimoire__toc-name">Protection</span><span class="grimoire__toc-dots"></span></button></li>
+          <li><button class="grimoire__toc-item" data-idx="4"><span class="grimoire__toc-num">V</span><span class="grimoire__toc-icon">&#9760;</span><span class="grimoire__toc-name">Banishment</span><span class="grimoire__toc-dots"></span></button></li>
+          <li><button class="grimoire__toc-item" data-idx="5"><span class="grimoire__toc-num">VI</span><span class="grimoire__toc-icon">&#10035;</span><span class="grimoire__toc-name">Academics</span><span class="grimoire__toc-dots"></span></button></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- === DETAIL SPREAD (individual ritual pages) === -->
+    <div class="grimoire__spread grimoire__spread--hidden" id="grimoireSpread">
+      <!-- Left page: ritual intro -->
+      <div class="grimoire__page-left" id="grimoireLeft">
+        <div class="grimoire__page-corner" aria-hidden="true">✦</div>
+        <span class="grimoire__ritual-icon" id="grimoireIcon">&#9825;</span>
+        <h3 class="grimoire__ritual-name" id="grimoireName">Love &amp; Binding</h3>
+        <p class="grimoire__ritual-desc" id="grimoireDesc">Ancient Venus rituals to attract soulmate energy, heal broken bonds, and deepen romantic connections through sacred flame.</p>
+        <span class="grimoire__page-num" id="grimoirePageNum">I</span>
+      </div>
+      <!-- Center spine -->
+      <div class="grimoire__center-spine"></div>
+      <!-- Right page: text + button -->
+      <div class="grimoire__page-right" id="grimoireRight">
+        <div class="grimoire__page-corner" aria-hidden="true">✦</div>
+        <span class="grimoire__right-label" id="grimoireRightLabel">Ritual Guidance</span>
+        <p class="grimoire__right-text" id="grimoireRightText">Light your candle at midnight under a waxing moon. Focus your intention on the flame and speak your desire three times. The universe aligns with those who dare to ask.</p>
+        <a href="#collection-love" class="grimoire__right-btn" id="grimoireRightBtn">Explore Collection &rarr;</a>
+        <!-- Navigation -->
+        <div class="grimoire__nav-row">
+          <button class="grimoire__back-btn" id="grimoireBackBtn">&larr; Contents</button>
+          <div class="grimoire__nav" id="grimoireNav">
+            <button class="grimoire__nav-dot grimoire__nav-dot--active" data-idx="0"></button>
+            <button class="grimoire__nav-dot" data-idx="1"></button>
+            <button class="grimoire__nav-dot" data-idx="2"></button>
+            <button class="grimoire__nav-dot" data-idx="3"></button>
+            <button class="grimoire__nav-dot" data-idx="4"></button>
+            <button class="grimoire__nav-dot" data-idx="5"></button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ======== Ritual Guide (one-screen) ======== -->
+<section class="ritual-guide">
+  <div class="ritual-guide__inner">
+    <span class="ritual-guide__label">Sacred Practice</span>
+    <h2 class="ritual-guide__title">The Ritual of Flame</h2>
+    <p class="ritual-guide__intro">Each candle is inscribed under the new moon, charged at the peak lunar hour, and sealed with ancient incantations — a bridge between intention and manifestation.</p>
+
+    <div class="ritual-guide__grid">
+      <!-- 1 -->
+      <div class="ritual-guide__card">
+        <div class="ritual-guide__img"><img src="candle-1.jpg" alt="Sacred Energy Field"></div>
+        <h3 class="ritual-guide__card-title">Sacred Energy Field</h3>
+        <p class="ritual-guide__card-desc">Charged during new/full moon peak hours with mantras inscribed into the wax, ensuring the strongest energetic resonance.</p>
+      </div>
+      <!-- 2 -->
+      <div class="ritual-guide__card">
+        <div class="ritual-guide__img"><img src="candle-2.jpg" alt="Energy Transmutation"></div>
+        <h3 class="ritual-guide__card-title">Energy Transmutation</h3>
+        <p class="ritual-guide__card-desc">Lighting activates the "permission state" — visualization merges with flame energy, translating desire into vibrational alignment.</p>
+      </div>
+      <!-- 3 -->
+      <div class="ritual-guide__card">
+        <div class="ritual-guide__img"><img src="candle-3.jpg" alt="Field Purification"></div>
+        <h3 class="ritual-guide__card-title">Field Purification</h3>
+        <p class="ritual-guide__card-desc">Sage and herbal blends cleanse negative energy, crystals amplify the space, creating a protected ritual environment.</p>
+      </div>
+      <!-- 4 -->
+      <div class="ritual-guide__card">
+        <div class="ritual-guide__img"><img src="candle-4.jpg" alt="Signs of Manifestation"></div>
+        <h3 class="ritual-guide__card-title">Signs of Manifestation</h3>
+        <p class="ritual-guide__card-desc">Dreams aligned with intent, synchronistic numbers (111, 222), sudden intuitive "nudges" — the universe confirms your signal.</p>
+      </div>
+      <!-- 5 -->
+      <div class="ritual-guide__card">
+        <div class="ritual-guide__img"><img src="candle-5.jpg" alt="The Alchemy Formula"></div>
+        <h3 class="ritual-guide__card-title">The Alchemy Formula</h3>
+        <p class="ritual-guide__card-desc">Solve → Coagula → Ferment → Project. Dissolve old patterns, rebuild intent, let energy mature, then cast into reality.</p>
+      </div>
+      <!-- 6 -->
+      <div class="ritual-guide__card">
+        <div class="ritual-guide__img"><img src="candle-1.jpg" alt="Complete Ritual Kit"></div>
+        <h3 class="ritual-guide__card-title">Complete Ritual Kit</h3>
+        <p class="ritual-guide__card-desc">Spell candle, sacred herbs, energy crystals, permission scrolls, and wish paper — everything you need for a full ceremony.</p>
+      </div>
+    </div>
+
+    <a href="#" class="ritual-guide__cta">Begin Your Ritual →</a>
+  </div>
+</section>
+
+
+<!-- ======== Featured Products ======== -->
+<div class="section-heading reveal">
+  <div class="section-heading__label">New Arrivals</div>
+  <h2 class="section-heading__title">Featured Candles</h2>
+  <div class="section-heading__line"></div>
+</div>
+
+<div class="products">
+  <div class="products__grid">
+    <div class="product-card reveal reveal-d1">
+      <a href="#" class="product-card__image">
+        <span class="product-card__tag">Wealth</span>
+        <img src="../Public/_DSC3826.JPG" alt="All-Seeing Eye Pyramid" loading="lazy">
+        <img src="../Public/_DSC3827.JPG" alt="" loading="lazy">
+        <span class="product-card__quick">Quick View</span>
+      </a>
+      <div class="product-card__info">
+        <a href="#" class="product-card__name">All-Seeing Eye Pyramid</a>
+        <div class="product-card__price">$29.99 USD</div>
+      </div>
+    </div>
+    <div class="product-card reveal reveal-d2">
+      <a href="#" class="product-card__image">
+        <span class="product-card__tag">Love</span>
+        <img src="../Public/_DSC3906.JPG" alt="Golden Serpent Egg" loading="lazy">
+        <img src="../Public/_DSC3900.JPG" alt="" loading="lazy">
+        <span class="product-card__quick">Quick View</span>
+      </a>
+      <div class="product-card__info">
+        <a href="#" class="product-card__name">Golden Serpent Egg</a>
+        <div class="product-card__price">$34.99 USD</div>
+      </div>
+    </div>
+    <div class="product-card reveal reveal-d3">
+      <a href="#" class="product-card__image product-card__image--video">
+        <span class="product-card__tag">Wealth</span>
+        <img src="../Public/_DSC3942.JPG" alt="Fortune Bag Candle" loading="lazy">
+        <video class="product-card__hover-video" muted loop playsinline preload="none">
+          <source src="../Public/a-fortune-teller-performs-a-ritual-with-crystals-b-2026-01-22-07-12-22-utc.mp4" type="video/mp4">
+        </video>
+        <span class="product-card__quick">Quick View</span>
+      </a>
+      <div class="product-card__info">
+        <a href="#" class="product-card__name">Fortune Bag Candle</a>
+        <div class="product-card__price">$24.99 USD</div>
+      </div>
+    </div>
+    <div class="product-card reveal reveal-d4">
+      <a href="#" class="product-card__image">
+        <span class="product-card__tag">Protection</span>
+        <img src="../Public/_DSC3929.JPG" alt="Pentacle Grimoire Candle" loading="lazy">
+        <img src="../Public/_DSC3923.JPG" alt="" loading="lazy">
+        <span class="product-card__quick">Quick View</span>
+      </a>
+      <div class="product-card__info">
+        <a href="#" class="product-card__name">Pentacle Grimoire Candle</a>
+        <div class="product-card__price">$36.99 USD</div>
+      </div>
+    </div>
+    <div class="product-card reveal reveal-d1">
+      <a href="#" class="product-card__image">
+        <span class="product-card__tag">Wealth</span>
+        <img src="../Public/_DSC3899.JPG" alt="Horseshoe Fortune Candle" loading="lazy">
+        <img src="../Public/_DSC3895.JPG" alt="" loading="lazy">
+        <span class="product-card__quick">Quick View</span>
+      </a>
+      <div class="product-card__info">
+        <a href="#" class="product-card__name">Horseshoe Fortune Candle</a>
+        <div class="product-card__price">$42.99 USD</div>
+      </div>
+    </div>
+    <div class="product-card reveal reveal-d2">
+      <a href="#" class="product-card__image">
+        <span class="product-card__tag">Wealth</span>
+        <img src="../Public/_DSC3883.JPG" alt="Celestial Horse Pillar" loading="lazy">
+        <img src="../Public/_DSC3884.JPG" alt="" loading="lazy">
+        <span class="product-card__quick">Quick View</span>
+      </a>
+      <div class="product-card__info">
+        <a href="#" class="product-card__name">Celestial Horse Pillar</a>
+        <div class="product-card__price">$38.99 USD</div>
+      </div>
+    </div>
+    <div class="product-card reveal reveal-d3">
+      <a href="#" class="product-card__image product-card__image--video">
+        <span class="product-card__tag">Wealth</span>
+        <img src="../Public/_DSC3954.JPG" alt="Dragon Fortune Candle" loading="lazy">
+        <video class="product-card__hover-video" muted loop playsinline preload="none">
+          <source src="../Public/a-fortune-teller-performs-a-ritual-with-crystals-b-2026-01-22-07-12-22-utc.mp4" type="video/mp4">
+        </video>
+        <span class="product-card__quick">Quick View</span>
+      </a>
+      <div class="product-card__info">
+        <a href="#" class="product-card__name">Dragon Fortune Candle</a>
+        <div class="product-card__price">$28.99 USD</div>
+      </div>
+    </div>
+    <div class="product-card reveal reveal-d4">
+      <a href="#" class="product-card__image">
+        <span class="product-card__tag">Wealth</span>
+        <img src="../Public/_DSC3850.JPG" alt="Money Tree Prosperity Vase" loading="lazy">
+        <img src="../Public/_DSC3851.JPG" alt="" loading="lazy">
+        <span class="product-card__quick">Quick View</span>
+      </a>
+      <div class="product-card__info">
+        <a href="#" class="product-card__name">Money Tree Prosperity Vase</a>
+        <div class="product-card__price">$39.99 USD</div>
+      </div>
+    </div>
+  </div>
+  <div class="products__more-wrap">
+    <a href="#" class="products__more">View All Candles</a>
+  </div>
+</div>
+
+<!-- ======== Ember Covenant ======== -->
+<section class="ritual-box reveal">
+  <div class="ritual-box__content">
+    <span class="ritual-box__label">Monthly Ritual Subscription</span>
+    <h2 class="ritual-box__title">The Ember Covenant</h2>
+    <div class="ritual-box__sigil">&#10038;</div>
+    <p class="ritual-box__desc">Each new moon, receive a curated altar box of hand-selected ritual candles, sacred herbs, intention cards, and crystals — attuned to the lunar cycle and seasonal energies.</p>
+    <ul class="ritual-box__features">
+      <li>2–3 exclusive ritual candles</li>
+      <li>Seasonal herbs &amp; incense</li>
+      <li>Crystal attuned to the month</li>
+      <li>Printed intention card &amp; ritual guide</li>
+    </ul>
+    <a href="#" class="ritual-box__cta">Begin Your Covenant</a>
+    <span class="ritual-box__note">Cancel anytime &middot; Ships worldwide</span>
+  </div>
+  <div class="ritual-box__image reveal reveal-d2">
+    <img src="../Public/_DSC3878.JPG" alt="The Ember Covenant Ritual Box" loading="lazy">
+    <div class="ritual-box__image-badge">
+      <span class="ritual-box__badge-price">$49</span>
+      <span class="ritual-box__badge-period">/month</span>
+    </div>
+  </div>
+</section>
+
+<!-- ======== Full-Width Image Band ======== -->
+<section class="image-band reveal">
+  <img src="../Public/_DSC3875.JPG" alt="Ritual Candle Collection" loading="lazy">
+  <div class="image-band__overlay">
+    <h2 class="image-band__title">The Complete<br>Ritual Collection</h2>
+    <a href="#" class="image-band__btn">Shop All</a>
+  </div>
+</section>
+
+<!-- ======== Story / About ======== -->
+<section class="story">
+  <div class="story__image reveal">
+    <img src="../Public/_DSC3893.JPG" alt="WuZuo Alice Craftsmanship" loading="lazy">
+  </div>
+  <div class="story__content reveal reveal-d2">
+    <span class="story__label">Our Story</span>
+    <h2 class="story__title">Ancient Symbols, Modern Magick</h2>
+    <p class="story__desc">For centuries, ritual candles have been used to focus intention and channel spiritual energy. Each WuZuo Alice candle is hand-poured and inscribed with ancient symbols — from the All-Seeing Eye to sacred runes — creating a powerful bridge between your will and the universe.</p>
+    <a href="#" class="story__btn">Read More <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+  </div>
+</section>
+
+<!-- ======== Instagram Grid ======== -->
+<section class="insta">
+  <div class="insta__header reveal">
+    <span class="insta__handle">@wuzuoalice</span>
+    <h2 class="insta__title">Follow Our Ritual</h2>
+    <p class="insta__sub">Candle magick, lunar rituals, and sacred spaces — curated daily.</p>
+    <a href="#" class="insta__follow">
+      <svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+      Follow on Instagram
+    </a>
+  </div>
+  <div class="insta__grid">
+    <div class="insta-photo">
+      <img src="../Public/_DSC3899.JPG" alt="" loading="lazy">
+      <div class="insta-photo__overlay"><span class="insta-photo__icon"><svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></span></div>
+    </div>
+    <div class="insta-photo">
+      <img src="../Public/_DSC3918.JPG" alt="" loading="lazy">
+      <div class="insta-photo__overlay"><span class="insta-photo__icon"><svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></span></div>
+    </div>
+    <div class="insta-photo">
+      <img src="../Public/_DSC3877.JPG" alt="" loading="lazy">
+      <div class="insta-photo__overlay"><span class="insta-photo__icon"><svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></span></div>
+    </div>
+    <div class="insta-photo">
+      <img src="../Public/_DSC3878.JPG" alt="" loading="lazy">
+      <div class="insta-photo__overlay"><span class="insta-photo__icon"><svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></span></div>
+    </div>
+    <div class="insta-photo">
+      <img src="../Public/_DSC3876.JPG" alt="" loading="lazy">
+      <div class="insta-photo__overlay"><span class="insta-photo__icon"><svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></span></div>
+    </div>
+    <div class="insta-photo">
+      <img src="../Public/_DSC3954.JPG" alt="" loading="lazy">
+      <div class="insta-photo__overlay"><span class="insta-photo__icon"><svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ======== Newsletter + Footer ======== -->
+<div class="site-bottom">
+  <section class="newsletter reveal">
+    <h3 class="newsletter__title">Join the Coven</h3>
+    <p class="newsletter__desc">Sign up for exclusive releases, ritual guides, and lunar calendars delivered to your inbox.</p>
+    <form class="newsletter__form" onsubmit="return false;">
+      <input type="email" placeholder="Enter your email" aria-label="Email address">
+      <button type="submit">Subscribe</button>
+    </form>
+  </section>
+
+  <footer class="footer">
+    <div class="footer__top">
+      <a href="#" class="footer__logo">
+        <img src="../wecom-temp-1125392-b563a96a377dca72efa8b2ccff82af5b.png" alt="WuZuo Alice">
+      </a>
+      <div class="footer__columns">
+        <div class="footer__col footer__col-d1">
+          <span class="footer__col-title">Shop</span>
+          <a href="#">All Candles</a>
+          <a href="#">Love &amp; Binding</a>
+          <a href="#">Wealth &amp; Fortune</a>
+          <a href="#">Protection</a>
+        </div>
+        <div class="footer__col footer__col-d2">
+          <span class="footer__col-title">Help</span>
+          <a href="#">Shipping</a>
+          <a href="#">Returns</a>
+          <a href="#">Candle Care</a>
+          <a href="#">FAQ</a>
+        </div>
+        <div class="footer__col footer__col-d3">
+          <span class="footer__col-title">About</span>
+          <a href="#">Our Story</a>
+          <a href="#">Ritual Guide</a>
+          <a href="#">Blog</a>
+          <a href="#">Contact</a>
+        </div>
+        <div class="footer__col footer__col-d4">
+          <span class="footer__col-title">Connect</span>
+          <a href="#">Instagram</a>
+          <a href="#">TikTok</a>
+          <a href="#">Pinterest</a>
+          <a href="#">Facebook</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer__social">
+      <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+      <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="12" cy="12" r="5" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="17.5" cy="6.5" r="1.5"/></svg></a>
+      <a href="#" aria-label="TikTok"><svg viewBox="0 0 24 24"><path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"/></svg></a>
+      <a href="#" aria-label="Pinterest"><svg viewBox="0 0 24 24"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.236 2.636 7.855 6.356 9.312-.088-.791-.167-2.005.035-2.868.181-.78 1.172-4.97 1.172-4.97s-.299-.598-.299-1.482c0-1.388.806-2.425 1.81-2.425.852 0 1.264.64 1.264 1.408 0 .858-.546 2.14-.828 3.33-.236.995.5 1.807 1.48 1.807 1.778 0 3.144-1.874 3.144-4.58 0-2.393-1.72-4.068-4.177-4.068-2.845 0-4.515 2.134-4.515 4.34 0 .859.331 1.781.745 2.281a.3.3 0 0 1 .069.288l-.278 1.133c-.044.183-.145.222-.335.134-1.249-.581-2.03-2.407-2.03-3.874 0-3.154 2.292-6.052 6.608-6.052 3.469 0 6.165 2.473 6.165 5.776 0 3.447-2.173 6.22-5.19 6.22-1.013 0-1.965-.527-2.291-1.148l-.623 2.378c-.226.869-.835 1.958-1.244 2.621.937.29 1.931.446 2.962.446 5.523 0 10-4.477 10-10S17.523 2 12 2z"/></svg></a>
+    </div>
+
+    <div class="footer__bottom">
+      <div class="footer__legal">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+        <a href="#">Refund Policy</a>
+      </div>
+      <div class="footer__copy">&copy; 2026, WuZuo Alice. Powered by Shopify</div>
+    </div>
+  </footer>
+</div>
+
+<!-- ======== Scripts ======== -->
+<script>
+/* --- Star Canvas --- */
+(function() {
+  var c = document.getElementById('starCanvas');
+  if (!c) return;
+  var ctx = c.getContext('2d');
+  var stars = [];
+  var count = window.innerWidth < 750 ? 24 : 66;
+  var W, H;
+  /* Use innerHeight — NOT scrollHeight. scrollHeight compresses circles into line segments. */
+  function resize() { W = window.innerWidth; H = window.innerHeight; c.width = W; c.height = H; }
+  resize();
+  window.addEventListener('resize', function() { resize(); stars = []; for (var i=0;i<count;i++){var s=makeStar();s.age=Math.random()*s.life;stars.push(s);} });
+  function makeStar() {
+    return { x: Math.random()*W, y: Math.random()*H, r: Math.random()*1.5+0.5, a: Math.random()*Math.PI*2, s: Math.random()*0.018+0.005, base: Math.random()*0.2+0.05, life: Math.random()*700+300, age: 0 };
+  }
+  for (var i = 0; i < count; i++) { var st = makeStar(); st.age = Math.random()*st.life; stars.push(st); }
+  function draw() {
+    ctx.clearRect(0,0,W,H);
+    for (var i = 0; i < stars.length; i++) {
+      var st = stars[i]; st.a += st.s; st.age++;
+      if (st.age >= st.life) { stars[i] = makeStar(); continue; }
+      var lr = st.age/st.life;
+      var fade = lr < 0.15 ? lr/0.15 : lr > 0.8 ? (1-lr)/0.2 : 1;
+      var pulse = Math.sin(st.a);
+      var alpha = (st.base + Math.abs(pulse)*0.65)*fade;
+      /* soft glow halo */
+      ctx.beginPath(); ctx.arc(st.x,st.y,st.r*3,0,Math.PI*2);
+      ctx.fillStyle = 'rgba(232,215,180,'+(alpha*0.12)+')'; ctx.fill();
+      /* core dot */
+      ctx.beginPath(); ctx.arc(st.x,st.y,st.r,0,Math.PI*2);
+      ctx.fillStyle = 'rgba(232,215,180,'+alpha+')'; ctx.fill();
+      /* 4-point sparkle cross for larger stars */
+      if (st.r > 1.1) {
+        var arm = st.r * (3.5 + Math.abs(pulse)*2);
+        ctx.save();
+        ctx.strokeStyle = 'rgba(232,215,180,'+(alpha*0.45)+')';
+        ctx.lineWidth = st.r*0.3; ctx.lineCap = 'round';
+        ctx.beginPath();
+        ctx.moveTo(st.x-arm,st.y); ctx.lineTo(st.x+arm,st.y);
+        ctx.moveTo(st.x,st.y-arm); ctx.lineTo(st.x,st.y+arm);
+        ctx.stroke(); ctx.restore();
+      }
+    }
+    requestAnimationFrame(draw);
+  }
+  draw();
+})();
+
+/* --- Announcement Carousel --- */
+(function() {
+  var slides = document.querySelectorAll('.announcement__slide');
+  if (slides.length < 2) return;
+  var idx = 0;
+  setInterval(function() {
+    slides[idx].classList.remove('announcement__slide--active');
+    idx = (idx+1) % slides.length;
+    slides[idx].classList.add('announcement__slide--active');
+  }, 3000);
+})();
+
+/* --- Header: scroll hide/show --- */
+(function() {
+  var header = document.getElementById('header');
+  var lastY = 0, ticking = false;
+  window.addEventListener('scroll', function() {
+    if (!ticking) {
+      requestAnimationFrame(function() {
+        var y = window.scrollY;
+        if (y > 120 && y > lastY) header.classList.add('header--hidden');
+        else header.classList.remove('header--hidden');
+        header.classList.toggle('header--scrolled', y > 60);
+        lastY = y; ticking = false;
+      });
+      ticking = true;
+    }
+  }, { passive: true });
+})();
+
+/* --- Mega Menu --- */
+(function() {
+  var items = document.querySelectorAll('.header__nav-item--mega');
+  var header = document.getElementById('header');
+  var timer;
+  var activeItem = null;
+
+  function lockScroll() { document.body.style.overflow = 'hidden'; }
+  function unlockScroll() { document.body.style.overflow = ''; }
+
+  function openItem(item) {
+    clearTimeout(timer);
+    /* close any other open item instantly */
+    items.forEach(function(i) { if (i !== item) i.classList.remove('mega-open'); });
+    /* pin mega-menu to actual header bottom so no gap at any scroll position */
+    var bottom = header.getBoundingClientRect().bottom;
+    item.querySelectorAll('.mega-menu').forEach(function(m) { m.style.top = bottom + 'px'; });
+    item.classList.add('mega-open');
+    activeItem = item;
+    lockScroll();
+  }
+
+  function scheduleClose() {
+    timer = setTimeout(function() {
+      if (activeItem) { activeItem.classList.remove('mega-open'); activeItem = null; }
+      unlockScroll();
+    }, 300);
+  }
+
+  items.forEach(function(item) {
+    /* nav-item hover */
+    item.addEventListener('mouseenter', function() { openItem(item); });
+    item.addEventListener('mouseleave', scheduleClose);
+    /* mega-menu panel hover — cancel close when mouse is over the panel */
+    var panel = item.querySelector('.mega-menu');
+    if (panel) {
+      panel.addEventListener('mouseenter', function() { clearTimeout(timer); });
+      panel.addEventListener('mouseleave', scheduleClose);
+    }
+  });
+
+  /* close on Escape or outside click */
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape' && activeItem) {
+      clearTimeout(timer);
+      activeItem.classList.remove('mega-open'); activeItem = null; unlockScroll();
+    }
+  });
+  document.addEventListener('click', function(e) {
+    if (activeItem && !e.target.closest('.header__nav-item--mega')) {
+      clearTimeout(timer);
+      activeItem.classList.remove('mega-open'); activeItem = null; unlockScroll();
+    }
+  });
+})();
+
+/* --- Mobile Menu --- */
+(function() {
+  var btn = document.getElementById('menuBtn');
+  var close = document.getElementById('menuClose');
+  var menu = document.getElementById('mobileMenu');
+  var header = document.getElementById('header');
+  function open() { menu.classList.add('mobile-menu--open'); menu.setAttribute('aria-hidden','false'); header.classList.add('header--menu-open'); }
+  function closeMenu() { menu.classList.remove('mobile-menu--open'); menu.setAttribute('aria-hidden','true'); header.classList.remove('header--menu-open'); }
+  if (btn) btn.addEventListener('click', open);
+  if (close) close.addEventListener('click', closeMenu);
+})();
+
+/* --- Scroll Reveal --- */
+(function() {
+  var els = document.querySelectorAll('.reveal');
+  if ('IntersectionObserver' in window) {
+    var obs = new IntersectionObserver(function(entries) {
+      entries.forEach(function(e) { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
+    }, { threshold: 0.08, rootMargin: '0px 0px -24px 0px' });
+    els.forEach(function(el) { obs.observe(el); });
+  } else {
+    els.forEach(function(el) { el.classList.add('visible'); });
+  }
+})();
+
+/* --- Footer clip-path reveal --- */
+(function() {
+  var cols = document.querySelectorAll('.footer__col');
+  if ('IntersectionObserver' in window) {
+    var obs = new IntersectionObserver(function(entries) {
+      entries.forEach(function(e) { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
+    }, { threshold: 0.1 });
+    cols.forEach(function(el) { obs.observe(el); });
+  } else {
+    cols.forEach(function(el) { el.classList.add('visible'); });
+  }
+})();
+
+/* --- Lazy image load opacity --- */
+(function() {
+  var imgs = document.querySelectorAll('img[loading="lazy"]');
+  imgs.forEach(function(img) {
+    if (img.complete && img.naturalWidth > 0) { img.classList.add('img-loaded'); return; }
+    img.addEventListener('load', function() { img.classList.add('img-loaded'); });
+  });
+})();
+
+/* --- Hero Split Slideshow --- */
+(function() {
+  var slides = document.querySelectorAll('.hero__slide');
+  var dots   = document.querySelectorAll('.hero__dot');
+  var prev   = document.getElementById('heroPrev');
+  var next   = document.getElementById('heroNext');
+  var title  = document.getElementById('heroCaptionTitle');
+  var label  = document.getElementById('heroCaptionLabel');
+  var current = 0;
+  var autoTimer;
+
+  var captions = [
+    { label: 'LOVE',       title: 'Love &amp; Binding Spells \u00a0\u2192' },
+    { label: 'FORTUNE',    title: 'Fortune &amp; Wealth Spells \u00a0\u2192' },
+    { label: 'PROTECTION', title: 'Protection &amp; Marriage Spells \u00a0\u2192' }
+  ];
+
+  function goTo(idx) {
+    slides[current].classList.remove('hero__slide--active');
+    if (dots[current]) dots[current].classList.remove('hero__dot--active');
+    current = (idx + slides.length) % slides.length;
+    slides[current].classList.add('hero__slide--active');
+    if (dots[current]) dots[current].classList.add('hero__dot--active');
+    if (title) title.innerHTML = captions[current].title;
+    if (label) label.textContent = captions[current].label;
+  }
+
+  function startAuto() {
+    clearInterval(autoTimer);
+    autoTimer = setInterval(function() { goTo(current + 1); }, 5500);
+  }
+
+  if (prev) prev.addEventListener('click', function() { goTo(current - 1); startAuto(); });
+  if (next) next.addEventListener('click', function() { goTo(current + 1); startAuto(); });
+  dots.forEach(function(dot) {
+    dot.addEventListener('click', function() { goTo(parseInt(dot.dataset.dot)); startAuto(); });
+  });
+
+  startAuto();
+})();
+
+/* --- Product card video hover --- */
+(function() {
+  document.querySelectorAll('.product-card__image--video').forEach(function(card) {
+    var video = card.querySelector('.product-card__hover-video');
+    if (!video) return;
+    card.addEventListener('mouseenter', function() { video.play(); });
+    card.addEventListener('mouseleave', function() { video.pause(); video.currentTime = 0; });
+  });
+})();
+
+/* --- Grimoire: pause animations when off-screen --- */
+(function() {
+  var section = document.querySelector('.grimoire');
+  if (!section) return;
+  var obs = new IntersectionObserver(function(entries) {
+    entries.forEach(function(e) {
+      section.classList.toggle('grimoire--visible', e.isIntersecting);
+    });
+  }, { threshold: 0.05 });
+  obs.observe(section);
+})();
+
+/* --- Grimoire: Book of Answers --- */
+(function() {
+  var book       = document.getElementById('grimoireBook');
+  var openBtn    = document.getElementById('grimoireOpenBtn');
+  var backBtn    = document.getElementById('grimoireBackBtn');
+  var spineFlash = document.getElementById('grimoireSpineFlash');
+  var tocItems   = document.querySelectorAll('.grimoire__toc-item');
+  var dots       = document.querySelectorAll('.grimoire__nav-dot');
+  var icon       = document.getElementById('grimoireIcon');
+  var nameEl     = document.getElementById('grimoireName');
+  var desc       = document.getElementById('grimoireDesc');
+  var pageNum    = document.getElementById('grimoirePageNum');
+  var rLabel     = document.getElementById('grimoireRightLabel');
+  var rText      = document.getElementById('grimoireRightText');
+  var rBtn       = document.getElementById('grimoireRightBtn');
+
+  var pages = [
+    {
+      icon: '\u2661', name: 'Love & Binding',
+      desc: 'Ancient Venus rituals to attract soulmate energy, heal broken bonds, and deepen romantic connections through sacred flame.',
+      label: 'Ritual Guidance', text: 'Light your candle at midnight under a waxing moon. Focus your intention on the flame and speak your desire three times. The universe aligns with those who dare to ask.',
+      btn: 'Explore Collection', href: '#collection-love', num: 'I'
+    },
+    {
+      icon: '\u2666', name: 'Wealth & Fortune',
+      desc: 'Prosperity candles charged with ancient abundance sigils to unlock financial gates and attract career breakthroughs.',
+      label: 'Ritual Guidance', text: 'Place this candle on your desk or altar facing east. Burn every Thursday \u2014 the day of Jupiter \u2014 to align with the frequency of abundance and expansion.',
+      btn: 'Explore Collection', href: '#collection-wealth', num: 'II'
+    },
+    {
+      icon: '\u2720', name: 'Health & Healing',
+      desc: 'Restorative candles infused with herbal essences and healing symbols to cleanse the body, calm the mind, and restore vital energy.',
+      label: 'Ritual Guidance', text: 'Light during meditation or before sleep. Let the soft flame guide your breathing. Visualize golden light flowing through every cell, dissolving pain and restoring balance.',
+      btn: 'Explore Collection', href: '#collection-healing', num: 'III'
+    },
+    {
+      icon: '\u2624', name: 'Protection',
+      desc: 'Powerful shield candles inscribed with ancient ward symbols to banish negativity and create an impenetrable sacred boundary.',
+      label: 'Ritual Guidance', text: 'Place at your doorway or the four corners of your space. The flame builds an invisible barrier \u2014 nothing unwelcome may pass through while the fire holds.',
+      btn: 'Explore Collection', href: '#collection-protection', num: 'IV'
+    },
+    {
+      icon: '\u2620', name: 'Banishment',
+      desc: 'The most potent hex-breaking and curse-removal candles. Crafted for those facing dark energies that demand the strongest countermeasures.',
+      label: 'Ritual Guidance', text: 'Burn this candle during a waning moon. Write what you wish to banish on parchment and let it dissolve in the flame. What the fire consumes cannot return.',
+      btn: 'Explore Collection', href: '#collection-banishment', num: 'V'
+    },
+    {
+      icon: '\u2733', name: 'Academics',
+      desc: 'Wisdom candles charged with Mercury\'s clarity to sharpen focus, boost memory, and open the channels of knowledge and insight.',
+      label: 'Ritual Guidance', text: 'Light before studying or taking exams. The flame of Mercury sharpens the mind and opens pathways of understanding that were previously hidden.',
+      btn: 'Explore Collection', href: '#collection-academics', num: 'VI'
+    }
+  ];
+
+  var current = 0;
+
+  /* #3 — Trigger spine flash */
+  function flashSpine() {
+    if (!spineFlash) return;
+    spineFlash.classList.remove('grimoire__spine-flash--active');
+    void spineFlash.offsetWidth; /* force reflow */
+    spineFlash.classList.add('grimoire__spine-flash--active');
+  }
+
+
+  function goTo(idx) {
+    if (idx === current && book.classList.contains('grimoire__book--detail')) {
+      return; /* same page, no-op */
+    }
+    current = idx;
+    var p = pages[idx];
+    var p = pages[idx];
+    icon.innerHTML      = p.icon;
+    nameEl.innerHTML    = p.name;
+    desc.textContent    = p.desc;
+    pageNum.textContent = p.num;
+    rLabel.textContent  = p.label;
+    rText.textContent   = p.text;
+    rBtn.textContent    = p.btn + ' \u2192';
+    rBtn.href           = p.href;
+    dots.forEach(function(d, i) {
+      d.classList.toggle('grimoire__nav-dot--active', i === idx);
+    });
+    flashSpine();  /* #3 */
+  }
+
+  function showDetail(idx) {
+    goTo(idx);
+    book.classList.add('grimoire__book--detail');
+  }
+
+  function showToc() {
+    book.classList.remove('grimoire__book--detail');
+    flashSpine(); /* #3 */
+  }
+
+  /* Open cover → show TOC */
+  if (openBtn) {
+    openBtn.addEventListener('click', function() {
+      book.classList.add('grimoire__book--open');
+    });
+  }
+
+  /* TOC item → show detail page */
+  tocItems.forEach(function(item) {
+    item.addEventListener('click', function() {
+      showDetail(parseInt(item.dataset.idx));
+    });
+  });
+
+  /* Back button → return to TOC */
+  if (backBtn) {
+    backBtn.addEventListener('click', function() {
+      showToc();
+    });
+  }
+
+  /* Dots → switch between detail pages */
+  dots.forEach(function(dot) {
+    dot.addEventListener('click', function() {
+      goTo(parseInt(dot.dataset.idx));
+    });
+  });
+})();
+
+/* --- Showcase card video hover --- */
+(function() {
+  document.querySelectorAll('.showcase__card--hovervid').forEach(function(card) {
+    var video = card.querySelector('.showcase__hover-video');
+    if (!video) return;
+    card.addEventListener('mouseenter', function() { video.play(); });
+    card.addEventListener('mouseleave', function() { video.pause(); video.currentTime = 0; });
+  });
+})();
+
+/* --- Category Card Title: Stone Scatter (desktop only) --- */
+(function() {
+  if (window.innerWidth < 750) return;
+  document.querySelectorAll('.category-card__title').forEach(function(title) {
+    var text = title.textContent;
+    title.innerHTML = '';
+    for (var i = 0; i < text.length; i++) {
+      var ch = text[i];
+      var span = document.createElement('span');
+      if (ch === ' ') {
+        span.className = 'char-space';
+        span.innerHTML = '&nbsp;';
+      } else {
+        span.className = 'char';
+        span.textContent = ch;
+        // Random scatter direction per letter
+        var tx = (Math.random() - 0.5) * 80;
+        var ty = (Math.random() - 0.5) * 60;
+        var tr = (Math.random() - 0.5) * 90;
+        var delay = i * 0.02;
+        span.style.setProperty('--tx', tx + 'px');
+        span.style.setProperty('--ty', ty + 'px');
+        span.style.setProperty('--tr', tr + 'deg');
+        span.style.setProperty('--d', delay + 's');
+      }
+      title.appendChild(span);
+    }
+  });
+})();
+
+/* --- Candle Cursor: glow + sparks (desktop only) --- */
+(function() {
+  if ('ontouchstart' in window || navigator.maxTouchPoints > 0) return;
+
+  var glow = document.createElement('div');
+  glow.className = 'cursor-glow';
+  document.body.appendChild(glow);
+
+  var POOL = 14;
+  var sparks = [], sIdx = 0;
+  for (var i = 0; i < POOL; i++) {
+    var s = document.createElement('div');
+    s.className = 'cursor-spark';
+    document.body.appendChild(s);
+    sparks.push(s);
+  }
+
+  var colors = ['#ffe88a','#f4a830','#c9a84c','#fff4c2'];
+  var mx = -200, my = -200, dirty = false;
+
+  // Throttle DOM writes to rAF
+  function tick() {
+    if (dirty) {
+      glow.style.transform = 'translate(' + (mx - 80) + 'px,' + (my - 80) + 'px)';
+      dirty = false;
+    }
+    requestAnimationFrame(tick);
+  }
+  requestAnimationFrame(tick);
+
+  var lastSpark = 0;
+  document.addEventListener('mousemove', function(e) {
+    mx = e.clientX; my = e.clientY;
+    dirty = true;
+    glow.classList.add('cursor-glow--visible');
+
+    // Spark every ~80ms instead of every 3rd event
+    var now = e.timeStamp || Date.now();
+    if (now - lastSpark < 80) return;
+    lastSpark = now;
+
+    var sp = sparks[sIdx++ % POOL];
+    sp.style.transform = 'translate(' + (mx + (Math.random() - 0.5) * 6) + 'px,' + (my - 4) + 'px)';
+    sp.style.width = sp.style.height = (1.5 + Math.random() * 3) + 'px';
+    sp.style.background = colors[(sIdx) & 3];
+    sp.style.setProperty('--sx', (Math.random() - 0.5) * 16 + 'px');
+    sp.style.animation = 'none';
+    sp.offsetHeight;
+    sp.style.animation = 'spark-rise 0.6s ease-out forwards';
+  });
+
+  document.addEventListener('mouseleave', function() {
+    glow.classList.remove('cursor-glow--visible');
+  });
+})();
+
+</script>
+
+</body>
+</html>

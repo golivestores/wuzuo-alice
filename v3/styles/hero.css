@@ -72,7 +72,7 @@
   pointer-events: none;
 }
 
-/* ---- Overlay text on left panel ---- */
+/* ---- Overlay text on left panel (legacy) ---- */
 .hero__panel-text {
   position: absolute;
   z-index: 3;
@@ -80,7 +80,6 @@
   left: var(--s4);
   pointer-events: none;
 }
-/* italic Cormorant product name — like "eye switch" in 3CE */
 .hero__panel-name {
   display: block;
   font-family: var(--font-display);
@@ -90,11 +89,8 @@
   color: var(--gold);
   line-height: 1.0;
   letter-spacing: -0.01em;
-  /* 3CE has slight transparency */
   opacity: 0.92;
 }
-
-/* vertical rotated Space Mono label — like "STICK" in 3CE */
 .hero__panel-vert {
   position: absolute;
   right: -1.2rem;
@@ -108,6 +104,99 @@
   writing-mode: vertical-rl;
   text-orientation: mixed;
   transform: rotate(180deg);
+}
+
+/* ---- Slide background image (full-cover like video) ---- */
+.hero__bg-img {
+  position: absolute;
+  inset: 0;
+  width: 100%; height: 100%;
+  object-fit: cover;
+  transition: transform 8s var(--ease-out);
+  will-change: transform;
+}
+.hero__slide--active .hero__bg-img {
+  transform: scale(1.06);
+}
+
+/* ---- Slide content overlay: subtitle / title / paragraph / button ---- */
+.hero__content {
+  position: absolute;
+  z-index: 3;
+  bottom: var(--s6);
+  left: var(--s4);
+  max-width: 56rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+  pointer-events: auto;
+}
+.hero__subtitle {
+  font-family: var(--font-mono);
+  font-size: 1.1rem;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: var(--gold);
+  opacity: 0.85;
+}
+.hero__title {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 300;
+  font-size: clamp(4.2rem, 6.5vw, 8rem);
+  line-height: 1.0;
+  color: var(--text);
+  letter-spacing: -0.01em;
+  opacity: 0.95;
+}
+.hero__desc {
+  font-family: var(--font-body, 'Inter', sans-serif);
+  font-size: clamp(1.3rem, 1.4vw, 1.6rem);
+  line-height: 1.65;
+  color: var(--text);
+  opacity: 0.72;
+  max-width: 48rem;
+}
+.hero__btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.8rem;
+  align-self: flex-start;
+  padding: 1.2rem 3.2rem;
+  font-family: var(--font-mono);
+  font-size: 1.1rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--bg);
+  background: var(--gold);
+  border: 1px solid var(--gold);
+  transition: background var(--t-fast), color var(--t-fast);
+  text-decoration: none;
+  cursor: pointer;
+}
+.hero__btn:hover {
+  background: transparent;
+  color: var(--gold);
+}
+
+/* ---- Centered content variant (slide 2) ---- */
+.hero__content--center {
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  max-width: 64rem;
+  margin: 0 auto;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: var(--s6) var(--s4);
+}
+.hero__content--center .hero__btn {
+  align-self: center;
+}
+.hero__content--center .hero__desc {
+  max-width: 54rem;
 }
 
 /* ---- Bottom caption strip ---- */
@@ -287,4 +376,16 @@
   .hero__next { right: var(--s1); }
   .hero__prev,
   .hero__next { width: 3.6rem; height: 3.6rem; font-size: 2.8rem; }
+
+  /* Slide content overlay mobile */
+  .hero__content {
+    left: var(--s2);
+    right: var(--s2);
+    bottom: var(--s4);
+    gap: 1.2rem;
+  }
+  .hero__subtitle { font-size: 1.0rem; letter-spacing: 0.25em; }
+  .hero__title { font-size: clamp(3rem, 8vw, 4.8rem); }
+  .hero__desc { font-size: 1.2rem; line-height: 1.55; }
+  .hero__btn { padding: 1rem 2.4rem; font-size: 1.0rem; }
 }

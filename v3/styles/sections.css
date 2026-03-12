@@ -48,6 +48,22 @@
 }
 .showcase__card:hover img { transform: scale(1.05); }
 
+/* Hover video overlay */
+.showcase__hover-video {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  z-index: 0;
+}
+.showcase__card--hovervid:hover .showcase__hover-video {
+  opacity: 1;
+}
+.showcase__card--hovervid:hover img {
+  opacity: 0;
+}
+
 /* Bottom gradient overlay */
 .showcase__card::before {
   content: '';
