@@ -249,7 +249,29 @@
       <span class="pdp-info__rating-count">4.9 (128 reviews)</span>
     </div>
 
-    <p class="pdp-info__desc">Designed for couples separated by misunderstanding — this Venus-charged figurine candle opens bridges of communication, softens hearts, and guides your love back together.</p>
+    <div class="pdp-benefits">
+      <div class="pdp-benefit pdp-benefit--active" data-benefit="0">
+        <span class="pdp-benefit__icon">✦</span>
+        <div class="pdp-benefit__text">
+          <strong class="pdp-benefit__title">Resolve &amp; Reconnect</strong>
+          <p class="pdp-benefit__desc">Opens bridges of communication and softens hearts — designed for couples separated by misunderstanding.</p>
+        </div>
+      </div>
+      <div class="pdp-benefit pdp-benefit--active" data-benefit="1">
+        <span class="pdp-benefit__icon">✦</span>
+        <div class="pdp-benefit__text">
+          <strong class="pdp-benefit__title">Rekindle True Love</strong>
+          <p class="pdp-benefit__desc">Venus symbol guides your emotional energy — repairing the broken bond and giving both of you a chance to restart.</p>
+        </div>
+      </div>
+      <div class="pdp-benefit pdp-benefit--active" data-benefit="2">
+        <span class="pdp-benefit__icon">✦</span>
+        <div class="pdp-benefit__text">
+          <strong class="pdp-benefit__title">Harmonize &amp; Heal</strong>
+          <p class="pdp-benefit__desc">Creates a peaceful atmosphere, helping you calmly reflect and promote the natural recovery of your relationship.</p>
+        </div>
+      </div>
+    </div>
 
     <div class="pdp-info__actions">
       <div class="pdp-info__qty">
@@ -835,12 +857,13 @@
   });
 })();
 
-/* --- Image Gallery --- */
+/* --- Image Gallery + Benefits Interaction --- */
 (function() {
   var thumbs = document.querySelectorAll('.pdp-gallery__thumb');
   var mainImg = document.getElementById('galleryMainImg');
   var prev = document.getElementById('galleryPrev');
   var next = document.getElementById('galleryNext');
+  var benefits = document.querySelectorAll('.pdp-benefit');
   var current = 0;
   var images = [];
   thumbs.forEach(function(t) { images.push(t.querySelector('img').src); });
@@ -850,6 +873,11 @@
     current = (idx + images.length) % images.length;
     thumbs[current].classList.add('pdp-gallery__thumb--active');
     mainImg.src = images[current];
+    /* Pulse all benefits on image change */
+    benefits.forEach(function(b) {
+      b.classList.add('pdp-benefit--flash');
+      setTimeout(function() { b.classList.remove('pdp-benefit--flash'); }, 500);
+    });
   }
 
   thumbs.forEach(function(t) {
@@ -857,6 +885,7 @@
   });
   if (prev) prev.addEventListener('click', function() { goTo(current - 1); });
   if (next) next.addEventListener('click', function() { goTo(current + 1); });
+
 })();
 
 /* --- Quantity Selector --- */

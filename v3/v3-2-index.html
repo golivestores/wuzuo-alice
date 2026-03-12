@@ -757,9 +757,10 @@
       .section-heading { margin-bottom: var(--s2); }
 
       /* --- Grimoire Book --- */
-      .grimoire { padding: 3rem 1rem; }
+      .grimoire { padding: 3rem 1rem; overflow: hidden; }
       .grimoire__book {
-        aspect-ratio: auto; min-height: auto;
+        aspect-ratio: 3 / 5;
+        min-height: 520px;
         animation-name: none; /* no float on mobile */
       }
       .grimoire__edge { transform: translate(3px, 3px); }

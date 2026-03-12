@@ -76,6 +76,42 @@
   font-size: 1.5rem; color: var(--muted); line-height: 1.8; margin-bottom: var(--s4);
 }
 
+/* ── Benefits list ── */
+.pdp-benefits {
+  display: flex; flex-direction: column; gap: 0;
+  margin-bottom: var(--s4);
+}
+.pdp-benefit {
+  display: flex; gap: 1.2rem; align-items: flex-start;
+  padding: 1.2rem 1.4rem;
+  border-left: 2px solid rgba(201,168,76,0.2);
+  opacity: 1;
+  transform: translateX(0);
+  transition: opacity 0.45s ease, border-color 0.45s ease, background 0.45s ease, transform 0.45s ease;
+  cursor: default;
+}
+.pdp-benefit__icon {
+  color: var(--gold); font-size: 1.3rem;
+  flex-shrink: 0; margin-top: 0.15rem;
+}
+.pdp-benefit__title {
+  font-family: var(--font-display);
+  font-size: 1.45rem; font-weight: 400;
+  color: var(--text); display: block;
+  margin-bottom: 0.25rem;
+  transition: color 0.3s ease;
+}
+.pdp-benefit__desc {
+  font-size: 1.3rem; color: var(--muted);
+  line-height: 1.65; margin: 0;
+}
+
+/* Flash: brief glow on image switch */
+.pdp-benefit--flash {
+  border-left-color: var(--gold) !important;
+  background: rgba(201,168,76,0.06) !important;
+}
+
 /* ── Actions ── */
 .pdp-info__actions {
   display: flex; gap: var(--s2); align-items: stretch; margin-bottom: var(--s2);
@@ -201,4 +237,7 @@
   .pdp-info { position: static; }
   .pdp-gallery__thumbs { flex-direction: row; width: 100%; overflow-x: auto; }
   .pdp-gallery__thumb { width: 56px; height: 56px; flex-shrink: 0; }
+  .pdp-benefit { padding: 1rem 1.2rem; gap: 1rem; }
+  .pdp-benefit__title { font-size: 1.35rem; }
+  .pdp-benefit__desc { font-size: 1.2rem; }
 }
