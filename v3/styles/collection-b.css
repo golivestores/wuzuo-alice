@@ -1,0 +1,366 @@
+/* =============================================================
+   WuZuo Alice V3 — Collection B: Sidebar Filter + Grid Layout
+   ============================================================= */
+
+/* ─── Collection Hero (reuse from collection.css) ─── */
+.coll-hero {
+  position: relative;
+  z-index: 10;
+  height: 52vh;
+  min-height: 340px;
+  max-height: 560px;
+  margin-top: -6.4rem;
+  overflow: hidden;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+.coll-hero__bg {
+  position: absolute;
+  inset: 0;
+}
+.coll-hero__bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.coll-hero__overlay {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(to top, var(--bg) 0%, rgba(20,20,20,0.6) 40%, rgba(20,20,20,0.3) 100%);
+}
+.coll-hero__content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  padding: 0 var(--s4) var(--s6);
+  max-width: 720px;
+}
+.coll-hero__label {
+  font-family: var(--font-mono);
+  font-size: 1.05rem;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: var(--gold);
+  display: block;
+  margin-bottom: var(--s2);
+}
+.coll-hero__title {
+  font-family: var(--font-display);
+  font-size: clamp(4rem, 6vw, 6.4rem);
+  font-weight: 300;
+  line-height: 1.05;
+  color: var(--text);
+  margin-bottom: var(--s2);
+}
+.coll-hero__desc {
+  font-size: 1.5rem;
+  color: rgba(240,236,228,0.65);
+  line-height: 1.7;
+  max-width: 560px;
+  margin: 0 auto;
+}
+
+/* ─── Sidebar + Grid Layout ─── */
+.coll-layout {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  gap: 0;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 var(--s4);
+}
+
+/* ─── Sidebar ─── */
+.coll-sidebar {
+  position: sticky;
+  top: 6.4rem;
+  align-self: flex-start;
+  width: 240px;
+  flex-shrink: 0;
+  padding: var(--s5) 0 var(--s8) 0;
+  max-height: calc(100vh - 6.4rem);
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: var(--gold-mid) transparent;
+}
+.coll-sidebar::-webkit-scrollbar { width: 3px; }
+.coll-sidebar::-webkit-scrollbar-thumb { background: var(--gold-mid); border-radius: 2px; }
+
+/* Filter group */
+.sidebar-group {
+  margin-bottom: var(--s5);
+}
+.sidebar-group__title {
+  font-family: var(--font-mono);
+  font-size: 1.05rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: var(--s3);
+  padding-bottom: var(--s2);
+  border-bottom: 1px solid var(--border);
+}
+
+/* Filter links */
+.sidebar-filter {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+.sidebar-filter__item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: var(--font-body);
+  font-size: 1.4rem;
+  color: var(--muted);
+  padding: 0.7rem 0;
+  cursor: pointer;
+  transition: color var(--t-fast);
+  border: none;
+  background: none;
+  width: 100%;
+  text-align: left;
+}
+.sidebar-filter__item:hover {
+  color: var(--text);
+}
+.sidebar-filter__item--active {
+  color: var(--gold);
+}
+.sidebar-filter__count {
+  font-family: var(--font-mono);
+  font-size: 1.1rem;
+  color: var(--muted);
+  opacity: 0.6;
+}
+
+/* Price range */
+.sidebar-price {
+  display: flex;
+  gap: var(--s2);
+  align-items: center;
+}
+.sidebar-price__input {
+  width: 100%;
+  font-family: var(--font-mono);
+  font-size: 1.2rem;
+  color: var(--text);
+  background: transparent;
+  border: 1px solid var(--border);
+  border-radius: 2px;
+  padding: 0.7rem 1rem;
+  transition: border-color var(--t-fast);
+}
+.sidebar-price__input:focus {
+  outline: none;
+  border-color: var(--gold-mid);
+}
+.sidebar-price__sep {
+  font-family: var(--font-mono);
+  font-size: 1.2rem;
+  color: var(--muted);
+  flex-shrink: 0;
+}
+
+/* Sort select in sidebar */
+.sidebar-sort {
+  width: 100%;
+  font-family: var(--font-mono);
+  font-size: 1.2rem;
+  letter-spacing: 0.05em;
+  color: var(--text);
+  background: transparent;
+  border: 1px solid var(--border);
+  border-radius: 2px;
+  padding: 0.7rem 1rem;
+  cursor: pointer;
+  -webkit-appearance: none;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M1 1l4 4 4-4' stroke='%236b5d54' fill='none' stroke-width='1.2'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+  padding-right: 3rem;
+}
+.sidebar-sort option {
+  background: var(--bg-card);
+  color: var(--text);
+}
+
+/* ─── Main Grid Area ─── */
+.coll-main {
+  flex: 1;
+  min-width: 0;
+  padding: var(--s5) 0 var(--s10) var(--s5);
+  border-left: 1px solid var(--border);
+}
+
+/* Top bar: count */
+.coll-main__top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--s4);
+  padding-bottom: var(--s2);
+  border-bottom: 1px solid var(--border);
+}
+.coll-main__count {
+  font-family: var(--font-mono);
+  font-size: 1.1rem;
+  letter-spacing: 0.1em;
+  color: var(--muted);
+}
+
+/* Grid: 3 columns with sidebar */
+.coll-main__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--s4) var(--s3);
+}
+
+/* ─── Mobile Filter Drawer Toggle ─── */
+.coll-filter-toggle {
+  display: none;
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  width: 100%;
+  background: rgba(20,20,20,0.88);
+  backdrop-filter: blur(12px) saturate(1.2);
+  -webkit-backdrop-filter: blur(12px) saturate(1.2);
+  border-bottom: 1px solid var(--border);
+  padding: var(--s2) var(--s3);
+  align-items: center;
+  justify-content: space-between;
+}
+.coll-filter-toggle__btn {
+  font-family: var(--font-mono);
+  font-size: 1.1rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--text);
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+.coll-filter-toggle__btn svg {
+  width: 16px;
+  height: 16px;
+  stroke: var(--gold);
+  fill: none;
+  stroke-width: 1.5;
+}
+.coll-filter-toggle__count {
+  font-family: var(--font-mono);
+  font-size: 1.1rem;
+  color: var(--muted);
+}
+
+/* ─── Responsive: 1024px ─── */
+@media (max-width: 1024px) {
+  .coll-main__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .coll-sidebar {
+    width: 200px;
+  }
+}
+
+/* ─── Responsive: 749px ─── */
+@media (max-width: 749px) {
+  .coll-hero {
+    height: 42vh;
+    min-height: 260px;
+    margin-top: -5.4rem;
+  }
+  .coll-hero__content {
+    padding: 0 var(--s3) var(--s4);
+  }
+  .coll-hero__title {
+    font-size: clamp(3rem, 8vw, 4.4rem);
+  }
+  .coll-hero__desc {
+    font-size: 1.3rem;
+  }
+
+  /* Show mobile toggle */
+  .coll-filter-toggle {
+    display: flex;
+  }
+
+  .coll-layout {
+    flex-direction: column;
+    padding: 0 var(--s2);
+  }
+
+  /* Sidebar becomes drawer */
+  .coll-sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 80vw;
+    max-width: 320px;
+    height: 100vh;
+    max-height: 100vh;
+    z-index: 200;
+    background: var(--bg);
+    padding: var(--s5) var(--s3);
+    transform: translateX(-100%);
+    transition: transform 0.35s var(--ease-out);
+    border-right: 1px solid var(--border);
+    overflow-y: auto;
+  }
+  .coll-sidebar--open {
+    transform: translateX(0);
+  }
+
+  /* Overlay backdrop */
+  .coll-sidebar-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 199;
+    background: rgba(0,0,0,0.55);
+  }
+  .coll-sidebar-overlay--visible {
+    display: block;
+  }
+
+  /* Close button inside drawer */
+  .coll-sidebar__close {
+    font-family: var(--font-mono);
+    font-size: 1.1rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: var(--s4);
+    padding-bottom: var(--s3);
+    border-bottom: 1px solid var(--border);
+    display: block;
+    width: 100%;
+    text-align: right;
+    transition: color var(--t-fast);
+  }
+  .coll-sidebar__close:hover {
+    color: var(--text);
+  }
+
+  .coll-main {
+    padding: var(--s3) 0 var(--s5);
+    border-left: none;
+  }
+
+  .coll-main__grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--s3) var(--s2);
+  }
+}
+
+/* Desktop: hide mobile-only elements */
+@media (min-width: 750px) {
+  .coll-sidebar__close { display: none; }
+  .coll-sidebar-overlay { display: none !important; }
+}

@@ -198,6 +198,12 @@
   font-family: var(--font-mono);
   font-size: 1.3rem; color: var(--gold);
 }
+.product-card__compare {
+  color: var(--muted);
+  text-decoration: line-through;
+  font-size: 1.2rem;
+  margin-right: 0.4rem;
+}
 
 /* ---- Collections 4-Column Grid (Milk Makeup style) ---- */
 .collections-grid {

@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Complete Beginner's Guide to Candle Magick | WuZuo Alice</title>
+  <meta name="description" content="Everything you need to know before lighting your first ritual candle — intention setting, lunar timing, color correspondences, and the ancient practice of inscribing symbols into wax.">
+  <link rel="icon" href="../wecom-temp-1125392-b563a96a377dca72efa8b2ccff82af5b.png" type="image/png">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Space+Mono:wght@400;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="styles/tokens.css">
+  <link rel="stylesheet" href="styles/base.css">
+  <link rel="stylesheet" href="styles/nav.css">
+  <link rel="stylesheet" href="styles/community.css">
+  <link rel="stylesheet" href="styles/footer.css">
+  <link rel="stylesheet" href="styles/blog.css">
+  <link rel="stylesheet" href="styles/blog-post.css">
+</head>
+<body>
+
+<!-- Grain Overlay -->
+<div class="grain" aria-hidden="true"></div>
+
+<!-- Star Canvas -->
+<canvas id="starCanvas" aria-hidden="true"></canvas>
+
+<!-- Background Ghost Images -->
+<div class="bg-ghosts" aria-hidden="true">
+  <img src="../Public/_DSC3826.JPG" alt="" class="bg-ghost" style="top:8%;left:-5%;width:210px;transform:rotate(-5deg);">
+  <img src="../Public/_DSC3929.JPG" alt="" class="bg-ghost" style="top:45%;right:-5%;width:210px;transform:rotate(5deg);">
+  <img src="../Public/_DSC3906.JPG" alt="" class="bg-ghost" style="top:75%;left:-5%;width:210px;transform:rotate(-5deg);">
+</div>
+
+<!-- ======== Announcement Bar ======== -->
+<div class="announcement" id="announcementBar">
+  <div class="announcement__track" id="announcementTrack">
+    <div class="announcement__slide announcement__slide--active">Free Global Shipping on Orders $89+</div>
+    <div class="announcement__slide"><a href="#">Sign Up for 10% Off Your First Order</a></div>
+    <div class="announcement__slide">Ancient Rituals, Modern Magick — Handcrafted with Intention</div>
+  </div>
+</div>
+
+<!-- ======== Header ======== -->
+<header class="header" id="header">
+  <div class="header__row">
+    <a href="index.html" class="header__logo">
+      <img src="../wecom-temp-1125392-b563a96a377dca72efa8b2ccff82af5b.png" alt="WuZuo Alice">
+    </a>
+    <nav class="header__nav">
+      <div class="header__nav-item header__nav-item--mega">
+        <a href="collection.html" class="header__nav-link">Ritual Candles
+          <svg class="header__chevron" viewBox="0 0 10 6"><path d="M1 1l4 4 4-4" stroke="currentColor" fill="none" stroke-width="1.5"/></svg>
+        </a>
+        <div class="mega-menu">
+          <div class="mega-menu__inner">
+            <div class="mega-menu__col">
+              <h4 class="mega-menu__heading">By Intention</h4>
+              <a href="#" class="mega-menu__link">Love &amp; Binding</a>
+              <a href="#" class="mega-menu__link">Wealth &amp; Fortune</a>
+              <a href="#" class="mega-menu__link">Protection &amp; Cleanse</a>
+              <a href="#" class="mega-menu__link">Career &amp; Success</a>
+              <a href="#" class="mega-menu__link">Health &amp; Healing</a>
+            </div>
+            <div class="mega-menu__col">
+              <h4 class="mega-menu__heading">By Type</h4>
+              <a href="#" class="mega-menu__link">Pyramid Candles</a>
+              <a href="#" class="mega-menu__link">Figurine Candles</a>
+              <a href="#" class="mega-menu__link">Pillar Candles</a>
+              <a href="#" class="mega-menu__link">Zodiac Candles</a>
+            </div>
+            <div class="mega-menu__col mega-menu__col--featured">
+              <h4 class="mega-menu__heading">Bestsellers</h4>
+              <div class="mega-menu__products">
+                <a href="#" class="mega-menu__product"><img src="../Public/_DSC3826.JPG" alt="All-Seeing Eye Pyramid" loading="lazy"><span>All-Seeing Eye Pyramid</span><span class="mega-menu__product-price">$29.99</span></a>
+                <a href="#" class="mega-menu__product"><img src="../Public/_DSC3906.JPG" alt="Golden Serpent Egg" loading="lazy"><span>Golden Serpent Egg</span><span class="mega-menu__product-price">$34.99</span></a>
+                <a href="#" class="mega-menu__product"><img src="../Public/_DSC3954.JPG" alt="Dragon Fortune" loading="lazy"><span>Dragon Fortune</span><span class="mega-menu__product-price">$28.99</span></a>
+                <a href="#" class="mega-menu__product"><img src="../Public/_DSC3850.JPG" alt="Money Tree Vase" loading="lazy"><span>Money Tree Vase</span><span class="mega-menu__product-price">$39.99</span></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="header__nav-item header__nav-item--mega">
+        <a href="#" class="header__nav-link">Collections
+          <svg class="header__chevron" viewBox="0 0 10 6"><path d="M1 1l4 4 4-4" stroke="currentColor" fill="none" stroke-width="1.5"/></svg>
+        </a>
+        <div class="mega-menu">
+          <div class="mega-menu__inner">
+            <div class="mega-menu__col">
+              <h4 class="mega-menu__heading">Collections</h4>
+              <a href="#" class="mega-menu__link">New Arrivals</a>
+              <a href="#" class="mega-menu__link">Best Sellers</a>
+              <a href="#" class="mega-menu__link">Limited Edition</a>
+              <a href="#" class="mega-menu__link">Gift Sets</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="header__nav-item"><a href="#" class="header__nav-link">About</a></div>
+      <div class="header__nav-item"><a href="#" class="header__nav-link">Ritual Guide</a></div>
+      <div class="header__nav-item"><a href="blog.html" class="header__nav-link">Blog</a></div>
+      <div class="header__nav-item"><a href="#" class="header__nav-link">Contact</a></div>
+    </nav>
+    <div class="header__actions">
+      <a href="#" class="header__subscribe-btn">
+        <span class="header__subscribe-glow"></span>
+        <span class="header__subscribe-glow header__subscribe-glow--2"></span>
+        <span class="header__subscribe-text">&#10023; Subscribe</span>
+      </a>
+      <button class="header__action-btn" aria-label="Search"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.35-4.35"/></svg></button>
+      <button class="header__action-btn" aria-label="Account"><svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></button>
+      <button class="header__action-btn" aria-label="Cart"><svg viewBox="0 0 24 24"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg></button>
+      <button class="header__menu-btn header__action-btn" id="menuBtn" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<!-- Mobile menu -->
+<nav class="mobile-menu" id="mobileMenu" aria-hidden="true">
+  <button class="mobile-menu__close" id="menuClose">Close &#10005;</button>
+  <a href="collection.html" class="mobile-menu__link">Ritual Candles</a>
+  <a href="#" class="mobile-menu__link">Collections</a>
+  <a href="#" class="mobile-menu__link">About</a>
+  <a href="#" class="mobile-menu__link">Ritual Guide</a>
+  <a href="blog.html" class="mobile-menu__link">Blog</a>
+  <a href="#" class="mobile-menu__link">Contact</a>
+</nav>
+
+<!-- ======== Article Hero ======== -->
+<section class="post-hero">
+  <div class="post-hero__bg">
+    <img src="../Public/_DSC3835.JPG" alt="Ritual candle setup for candle magick">
+    <div class="post-hero__overlay"></div>
+  </div>
+  <div class="post-hero__content reveal">
+    <div class="post-hero__meta">
+      <span class="post-hero__tag">Ritual Guide</span>
+      <span class="post-hero__dot"></span>
+      <span class="post-hero__date">March 8, 2026</span>
+      <span class="post-hero__dot"></span>
+      <span class="post-hero__reading">8 min read</span>
+    </div>
+    <h1 class="post-hero__title">The Complete Beginner's Guide to Candle Magick</h1>
+  </div>
+</section>
+
+<!-- ======== Article Body ======== -->
+<article class="post-body reveal">
+
+  <p>Candle magick is one of the oldest and most accessible forms of ritual practice. Long before electricity, humans gathered around flame to pray, to heal, and to manifest — trusting that fire could carry intention from this world to the next. Today, the practice remains essentially unchanged. A candle, an intention, and your focused will are all you need to begin.</p>
+
+  <p>But like any craft, there is depth beneath the surface. The color of your candle, the phase of the moon, the symbols inscribed into wax — each detail amplifies or redirects the energy you send into the universe. This guide will walk you through the fundamentals so your first ritual carries genuine power.</p>
+
+  <h2>What Is Candle Magick?</h2>
+
+  <p>At its core, candle magick is the practice of focusing your intention through the act of lighting and burning a candle. The flame serves as a bridge — a transmutation point where thought becomes energy, and energy becomes action in the unseen world.</p>
+
+  <p>Unlike more complex ritual traditions, candle magick requires no formal training, no expensive tools, and no particular religious affiliation. It belongs to no single culture. Variations appear in Hoodoo, Wicca, Catholicism, Hinduism, and dozens of folk traditions worldwide.</p>
+
+  <blockquote>
+    <p>The flame does not create your intention — it reveals it. What you bring to the fire is what the fire carries forward.</p>
+    <cite>— Elena Vasquez, The Witch's Flame (1987)</cite>
+  </blockquote>
+
+  <h2>Choosing Your Candle</h2>
+
+  <p>The first decision is <strong>color</strong>. Each color carries a specific vibrational frequency that aligns with different intentions:</p>
+
+  <ul>
+    <li><strong>Red</strong> — Passion, love, courage, sexual energy</li>
+    <li><strong>Pink</strong> — Romance, emotional healing, self-love, reconciliation</li>
+    <li><strong>Green</strong> — Wealth, abundance, growth, career advancement</li>
+    <li><strong>White</strong> — Purity, protection, cleansing, universal substitute</li>
+    <li><strong>Black</strong> — Banishing, protection from negativity, absorbing harm</li>
+    <li><strong>Gold</strong> — Solar energy, success, confidence, masculine power</li>
+    <li><strong>Purple</strong> — Spiritual growth, psychic ability, wisdom</li>
+  </ul>
+
+  <p>The second consideration is <strong>shape</strong>. Tapered candles burn quickly — ideal for focused, single-session rituals. Pillar candles burn slowly over days, sustaining energy for long-term manifestation. Figurine candles (like our Cupid) channel energy through symbolic form, adding another layer of intention to your practice.</p>
+
+  <div class="post-infobox">
+    <span class="post-infobox__label">Pro Tip</span>
+    <p>If you're unsure which color to choose, <strong>white is the universal substitute</strong>. It can stand in for any color in any ritual. However, a candle specifically aligned with your intention will always carry stronger resonance.</p>
+  </div>
+
+  <h2>The Role of Lunar Timing</h2>
+
+  <p>The moon governs the tides, the harvest, and — in ritual practice — the flow of energy available for your work. Aligning your candle ritual with the correct lunar phase dramatically amplifies its power.</p>
+
+  <ol>
+    <li><strong>New Moon</strong> — Fresh starts, new intentions, planting seeds. Light your candle to initiate something new.</li>
+    <li><strong>Waxing Moon</strong> — Growth, attraction, building. Light candles for drawing things toward you: love, money, opportunity.</li>
+    <li><strong>Full Moon</strong> — Peak power, completion, celebration. The strongest night for any ritual. Charge crystals and candles under its light.</li>
+    <li><strong>Waning Moon</strong> — Release, banishing, letting go. Light candles to remove obstacles, bad habits, or toxic relationships.</li>
+  </ol>
+
+  <figure>
+    <img src="../Public/_DSC3838.JPG" alt="Ritual setup with candles and crystals under moonlight" loading="lazy">
+    <figcaption>A ritual space prepared during the waxing moon — rose quartz and inscribed candle aligned for a love intention.</figcaption>
+  </figure>
+
+  <h2>Inscribing Symbols into Wax</h2>
+
+  <p>This is where candle magick becomes deeply personal. Carving symbols, names, dates, or sigils into the wax of your candle charges it with specific, targeted energy. The act of inscription itself is a meditative practice — your focused attention during carving is part of the ritual.</p>
+
+  <p>At WuZuo Alice, every candle arrives pre-inscribed with <a href="#">ancient planetary symbols</a> corresponding to its intention. Our Cupid candle, for example, bears the sigil of Venus — the planet of love, beauty, and harmony — carved by hand during the new moon.</p>
+
+  <h3>Common Symbols and Their Meanings</h3>
+
+  <p>Venus sigils draw romantic energy. Mars symbols fuel courage and action. Jupiter signs attract abundance and expansion. Saturn glyphs create boundaries and protection. You can also inscribe personal symbols — your initials, a meaningful date, or a word that encapsulates your desire.</p>
+
+  <h2>The Ritual: Step by Step</h2>
+
+  <p>Now that you understand the elements, here is a simple but complete ritual you can perform tonight:</p>
+
+  <ol>
+    <li><strong>Cleanse your space.</strong> Light sage, palo santo, or incense. Walk the smoke through the room where you'll perform your ritual.</li>
+    <li><strong>Set your intention.</strong> Write it down on paper. Be specific. "I want love" is weak. "I want to reconnect with [name] in a spirit of mutual healing" is powerful.</li>
+    <li><strong>Dress your candle.</strong> Anoint it with a few drops of essential oil — rose for love, cinnamon for wealth, frankincense for protection. Stroke the oil from the center outward.</li>
+    <li><strong>Light the candle.</strong> As the wick catches, speak your intention aloud. Say it three times. Feel the words leaving your body and entering the flame.</li>
+    <li><strong>Meditate.</strong> Sit with the flame for at least 10 minutes. Visualize your intention as already accomplished. See it, feel it, believe it.</li>
+    <li><strong>Let it burn.</strong> If possible, allow the candle to burn completely in a single session. If you must extinguish it, use a snuffer — never blow it out. Blowing scatters the energy.</li>
+  </ol>
+
+  <blockquote>
+    <p>Never blow out a ritual candle. The breath that extinguishes the flame also disperses the intention you've placed within it.</p>
+    <cite>— Traditional folk wisdom</cite>
+  </blockquote>
+
+  <h2>Reading the Signs</h2>
+
+  <p>After your candle has burned, the remnants carry messages. A clean burn with no wax residue suggests your intention has been received clearly. Wax pooling on one side may indicate resistance or an area that needs more work. Soot on the glass (for container candles) often points to negative energy that was cleansed during the ritual.</p>
+
+  <p>This practice — called <em>ceromancy</em> — is an art unto itself. We'll cover it in depth in a future article.</p>
+
+  <hr>
+
+  <p>Candle magick is not about superstition. It's about focused intention, symbolic action, and the ancient human relationship with fire. Whether you approach it as spiritual practice, meditative ritual, or simply a beautiful way to slow down and reflect — the flame is waiting for you.</p>
+
+  <p>Ready to begin? Explore our <a href="collection.html">full collection of ritual candles</a>, each hand-poured and inscribed with intention.</p>
+
+  <!-- Tags -->
+  <div class="post-tags">
+    <span class="post-tags__label">Tags:</span>
+    <a href="#" class="post-tags__item">Candle Magick</a>
+    <a href="#" class="post-tags__item">Beginner</a>
+    <a href="#" class="post-tags__item">Ritual Guide</a>
+    <a href="#" class="post-tags__item">Lunar Timing</a>
+    <a href="#" class="post-tags__item">Symbols</a>
+  </div>
+
+
+</article>
+
+<!-- ======== Prev / Next ======== -->
+<nav class="post-nav reveal">
+  <a href="#" class="post-nav__item">
+    <span class="post-nav__dir">&larr; Previous</span>
+    <span class="post-nav__title">Venus Sigils: The Symbols on Every Cupid Candle</span>
+  </a>
+  <a href="#" class="post-nav__item post-nav__item--next">
+    <span class="post-nav__dir">Next &rarr;</span>
+    <span class="post-nav__title">March New Moon: A Portal for Love Intentions</span>
+  </a>
+</nav>
+
+<!-- ======== Related Posts ======== -->
+<section class="post-related">
+  <div class="section-heading reveal">
+    <div class="section-heading__label">Keep Reading</div>
+    <h2 class="section-heading__title">Related Articles</h2>
+    <div class="section-heading__line"></div>
+  </div>
+  <div class="post-related__grid">
+
+    <a href="#" class="blog-card reveal reveal-d1">
+      <div class="blog-card__img">
+        <img src="../Public/_DSC3850.JPG" alt="Wax reading" loading="lazy">
+      </div>
+      <div class="blog-card__meta">
+        <span class="blog-card__tag">Guides</span>
+        <span class="blog-card__dot"></span>
+        <span class="blog-card__date">Feb 2, 2026</span>
+      </div>
+      <h3 class="blog-card__title">How to Read Your Candle Wax After a Wealth Ritual</h3>
+      <p class="blog-card__excerpt">The shapes left behind by your fortune candle carry messages. Learn the ancient art of ceromancy.</p>
+      <span class="blog-card__read">Read More <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+    </a>
+
+    <a href="#" class="blog-card reveal reveal-d2">
+      <div class="blog-card__img">
+        <img src="../Public/_DSC3878.JPG" alt="Crystal grid" loading="lazy">
+      </div>
+      <div class="blog-card__meta">
+        <span class="blog-card__tag">Crystals</span>
+        <span class="blog-card__dot"></span>
+        <span class="blog-card__date">Jan 22, 2026</span>
+      </div>
+      <h3 class="blog-card__title">5 Crystal Pairings That Amplify Your Candle Ritual</h3>
+      <p class="blog-card__excerpt">Rose quartz for love, citrine for wealth, black tourmaline for protection — the right crystal beside your candle.</p>
+      <span class="blog-card__read">Read More <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+    </a>
+
+    <a href="#" class="blog-card reveal reveal-d3">
+      <div class="blog-card__img">
+        <img src="../Public/_DSC3954.JPG" alt="Lunar calendar" loading="lazy">
+      </div>
+      <div class="blog-card__meta">
+        <span class="blog-card__tag">Lunar Wisdom</span>
+        <span class="blog-card__dot"></span>
+        <span class="blog-card__date">Dec 15, 2025</span>
+      </div>
+      <h3 class="blog-card__title">2026 Lunar Calendar: Best Dates for Every Ritual Type</h3>
+      <p class="blog-card__excerpt">Plan your entire year of ritual practice with our comprehensive moon phase calendar.</p>
+      <span class="blog-card__read">Read More <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+    </a>
+
+  </div>
+</section>
+
+<!-- ======== Newsletter + Footer ======== -->
+<div class="site-bottom">
+  <section class="newsletter reveal">
+    <h3 class="newsletter__title">Join the Coven</h3>
+    <p class="newsletter__desc">Sign up for exclusive releases, ritual guides, and lunar calendars delivered to your inbox.</p>
+    <form class="newsletter__form" onsubmit="return false;">
+      <input type="email" placeholder="Enter your email" aria-label="Email address">
+      <button type="submit">Subscribe</button>
+    </form>
+  </section>
+
+  <footer class="footer">
+    <div class="footer__top">
+      <a href="index.html" class="footer__logo">
+        <img src="../wecom-temp-1125392-b563a96a377dca72efa8b2ccff82af5b.png" alt="WuZuo Alice">
+      </a>
+      <div class="footer__columns">
+        <div class="footer__col footer__col-d1">
+          <span class="footer__col-title">Shop</span>
+          <a href="collection.html">All Candles</a>
+          <a href="#">Love &amp; Binding</a>
+          <a href="#">Wealth &amp; Fortune</a>
+          <a href="#">Protection</a>
+        </div>
+        <div class="footer__col footer__col-d2">
+          <span class="footer__col-title">Help</span>
+          <a href="#">Shipping</a>
+          <a href="#">Returns</a>
+          <a href="#">Candle Care</a>
+          <a href="#">FAQ</a>
+        </div>
+        <div class="footer__col footer__col-d3">
+          <span class="footer__col-title">About</span>
+          <a href="#">Our Story</a>
+          <a href="#">Ritual Guide</a>
+          <a href="blog.html">Blog</a>
+          <a href="#">Contact</a>
+        </div>
+        <div class="footer__col footer__col-d4">
+          <span class="footer__col-title">Connect</span>
+          <a href="#">Instagram</a>
+          <a href="#">TikTok</a>
+          <a href="#">Pinterest</a>
+          <a href="#">Facebook</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer__social">
+      <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+      <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="12" cy="12" r="5" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="17.5" cy="6.5" r="1.5"/></svg></a>
+      <a href="#" aria-label="TikTok"><svg viewBox="0 0 24 24"><path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"/></svg></a>
+      <a href="#" aria-label="Pinterest"><svg viewBox="0 0 24 24"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.236 2.636 7.855 6.356 9.312-.088-.791-.167-2.005.035-2.868.181-.78 1.172-4.97 1.172-4.97s-.299-.598-.299-1.482c0-1.388.806-2.425 1.81-2.425.852 0 1.264.64 1.264 1.408 0 .858-.546 2.14-.828 3.33-.236.995.5 1.807 1.48 1.807 1.778 0 3.144-1.874 3.144-4.58 0-2.393-1.72-4.068-4.177-4.068-2.845 0-4.515 2.134-4.515 4.34 0 .859.331 1.781.745 2.281a.3.3 0 0 1 .069.288l-.278 1.133c-.044.183-.145.222-.335.134-1.249-.581-2.03-2.407-2.03-3.874 0-3.154 2.292-6.052 6.608-6.052 3.469 0 6.165 2.473 6.165 5.776 0 3.447-2.173 6.22-5.19 6.22-1.013 0-1.965-.527-2.291-1.148l-.623 2.378c-.226.869-.835 1.958-1.244 2.621.937.29 1.931.446 2.962.446 5.523 0 10-4.477 10-10S17.523 2 12 2z"/></svg></a>
+    </div>
+    <div class="footer__bottom">
+      <div class="footer__legal">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+        <a href="#">Refund Policy</a>
+      </div>
+      <div class="footer__copy">&copy; 2026, WuZuo Alice. Powered by Shopify</div>
+    </div>
+  </footer>
+</div>
+
+<!-- ======== Scripts ======== -->
+<script>
+/* --- Star Canvas --- */
+(function() {
+  var c = document.getElementById('starCanvas');
+  if (!c) return;
+  var ctx = c.getContext('2d');
+  var stars = [];
+  var count = window.innerWidth < 750 ? 24 : 66;
+  var W, H;
+  function resize() { W = window.innerWidth; H = window.innerHeight; c.width = W; c.height = H; }
+  resize();
+  window.addEventListener('resize', function() { resize(); stars = []; for (var i=0;i<count;i++){var s=makeStar();s.age=Math.random()*s.life;stars.push(s);} });
+  function makeStar() {
+    return { x: Math.random()*W, y: Math.random()*H, r: Math.random()*1.5+0.5, a: Math.random()*Math.PI*2, s: Math.random()*0.018+0.005, base: Math.random()*0.2+0.05, life: Math.random()*700+300, age: 0 };
+  }
+  for (var i = 0; i < count; i++) { var st = makeStar(); st.age = Math.random()*st.life; stars.push(st); }
+  function draw() {
+    ctx.clearRect(0,0,W,H);
+    for (var i = 0; i < stars.length; i++) {
+      var st = stars[i]; st.a += st.s; st.age++;
+      if (st.age >= st.life) { stars[i] = makeStar(); continue; }
+      var lr = st.age/st.life;
+      var fade = lr < 0.15 ? lr/0.15 : lr > 0.8 ? (1-lr)/0.2 : 1;
+      var pulse = Math.sin(st.a);
+      var alpha = (st.base + Math.abs(pulse)*0.65)*fade;
+      ctx.beginPath(); ctx.arc(st.x,st.y,st.r*3,0,Math.PI*2);
+      ctx.fillStyle = 'rgba(232,215,180,'+(alpha*0.12)+')'; ctx.fill();
+      ctx.beginPath(); ctx.arc(st.x,st.y,st.r,0,Math.PI*2);
+      ctx.fillStyle = 'rgba(232,215,180,'+alpha+')'; ctx.fill();
+      if (st.r > 1.1) {
+        var arm = st.r * (3.5 + Math.abs(pulse)*2);
+        ctx.save();
+        ctx.strokeStyle = 'rgba(232,215,180,'+(alpha*0.45)+')';
+        ctx.lineWidth = st.r*0.3; ctx.lineCap = 'round';
+        ctx.beginPath();
+        ctx.moveTo(st.x-arm,st.y); ctx.lineTo(st.x+arm,st.y);
+        ctx.moveTo(st.x,st.y-arm); ctx.lineTo(st.x,st.y+arm);
+        ctx.stroke(); ctx.restore();
+      }
+    }
+    requestAnimationFrame(draw);
+  }
+  draw();
+})();
+
+/* --- Announcement Carousel --- */
+(function() {
+  var slides = document.querySelectorAll('.announcement__slide');
+  if (slides.length < 2) return;
+  var idx = 0;
+  setInterval(function() {
+    slides[idx].classList.remove('announcement__slide--active');
+    idx = (idx+1) % slides.length;
+    slides[idx].classList.add('announcement__slide--active');
+  }, 3000);
+})();
+
+/* --- Header: scroll hide/show --- */
+(function() {
+  var header = document.getElementById('header');
+  var lastY = 0, ticking = false;
+  window.addEventListener('scroll', function() {
+    if (!ticking) {
+      requestAnimationFrame(function() {
+        var y = window.scrollY;
+        if (y > 120 && y > lastY) header.classList.add('header--hidden');
+        else header.classList.remove('header--hidden');
+        header.classList.toggle('header--scrolled', y > 60);
+        lastY = y; ticking = false;
+      });
+      ticking = true;
+    }
+  }, { passive: true });
+})();
+
+/* --- Mega Menu --- */
+(function() {
+  var items = document.querySelectorAll('.header__nav-item--mega');
+  var header = document.getElementById('header');
+  var timer, activeItem = null;
+  function lockScroll() { document.body.style.overflow = 'hidden'; }
+  function unlockScroll() { document.body.style.overflow = ''; }
+  function openItem(item) {
+    clearTimeout(timer);
+    items.forEach(function(i) { if (i !== item) i.classList.remove('mega-open'); });
+    var bottom = header.getBoundingClientRect().bottom;
+    item.querySelectorAll('.mega-menu').forEach(function(m) { m.style.top = bottom + 'px'; });
+    item.classList.add('mega-open'); activeItem = item; lockScroll();
+  }
+  function scheduleClose() {
+    timer = setTimeout(function() { if (activeItem) { activeItem.classList.remove('mega-open'); activeItem = null; } unlockScroll(); }, 300);
+  }
+  items.forEach(function(item) {
+    item.addEventListener('mouseenter', function() { openItem(item); });
+    item.addEventListener('mouseleave', scheduleClose);
+    var panel = item.querySelector('.mega-menu');
+    if (panel) { panel.addEventListener('mouseenter', function() { clearTimeout(timer); }); panel.addEventListener('mouseleave', scheduleClose); }
+  });
+  document.addEventListener('keydown', function(e) { if (e.key === 'Escape' && activeItem) { clearTimeout(timer); activeItem.classList.remove('mega-open'); activeItem = null; unlockScroll(); } });
+  document.addEventListener('click', function(e) { if (activeItem && !e.target.closest('.header__nav-item--mega')) { clearTimeout(timer); activeItem.classList.remove('mega-open'); activeItem = null; unlockScroll(); } });
+})();
+
+/* --- Mobile Menu --- */
+(function() {
+  var btn = document.getElementById('menuBtn'), close = document.getElementById('menuClose'), menu = document.getElementById('mobileMenu'), header = document.getElementById('header');
+  function open() { menu.classList.add('mobile-menu--open'); menu.setAttribute('aria-hidden','false'); header.classList.add('header--menu-open'); }
+  function closeMenu() { menu.classList.remove('mobile-menu--open'); menu.setAttribute('aria-hidden','true'); header.classList.remove('header--menu-open'); }
+  if (btn) btn.addEventListener('click', open);
+  if (close) close.addEventListener('click', closeMenu);
+})();
+
+/* --- Scroll Reveal --- */
+(function() {
+  var els = document.querySelectorAll('.reveal');
+  if ('IntersectionObserver' in window) {
+    var obs = new IntersectionObserver(function(entries) {
+      entries.forEach(function(e) { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
+    }, { threshold: 0.08, rootMargin: '0px 0px -24px 0px' });
+    els.forEach(function(el) { obs.observe(el); });
+  } else { els.forEach(function(el) { el.classList.add('visible'); }); }
+})();
+
+/* --- Footer clip-path reveal --- */
+(function() {
+  var cols = document.querySelectorAll('.footer__col');
+  if ('IntersectionObserver' in window) {
+    var obs = new IntersectionObserver(function(entries) {
+      entries.forEach(function(e) { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
+    }, { threshold: 0.1 });
+    cols.forEach(function(el) { obs.observe(el); });
+  } else { cols.forEach(function(el) { el.classList.add('visible'); }); }
+})();
+
+/* --- Lazy image load --- */
+(function() {
+  var imgs = document.querySelectorAll('img[loading="lazy"]');
+  imgs.forEach(function(img) {
+    if (img.complete && img.naturalWidth > 0) { img.classList.add('img-loaded'); return; }
+    img.addEventListener('load', function() { img.classList.add('img-loaded'); });
+  });
+})();
+</script>
+
+</body>
+</html>
