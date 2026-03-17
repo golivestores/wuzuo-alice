@@ -1,0 +1,1431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Sacred Space | WuZuo Alice</title>
+  <meta name="description" content="Enter the Sacred Space — choose your path between Wiccan natural magic and Classical ceremonial magic. An immersive ritual experience.">
+  <link rel="icon" href="../wecom-temp-1125392-b563a96a377dca72efa8b2ccff82af5b.png" type="image/png">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Space+Mono:wght@400;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+
+  <!-- Shared Styles -->
+  <link rel="stylesheet" href="styles/tokens.css">
+  <link rel="stylesheet" href="styles/base.css">
+  <link rel="stylesheet" href="styles/nav.css">
+  <link rel="stylesheet" href="styles/ritual-v2.css">
+  <link rel="stylesheet" href="styles/footer.css">
+
+  <!-- GSAP + ScrollTrigger -->
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js" defer></script>
+
+  <!-- Candle cursor -->
+  <style>
+    body {
+      cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='52' viewBox='0 0 32 52'%3E%3Cdefs%3E%3CradialGradient id='fl' cx='50%25' cy='30%25' r='55%25'%3E%3Cstop offset='0%25' stop-color='%23fff8dd'/%3E%3Cstop offset='25%25' stop-color='%23ffe066'/%3E%3Cstop offset='60%25' stop-color='%23f4a830'/%3E%3Cstop offset='100%25' stop-color='%23e85d04' stop-opacity='0'/%3E%3C/radialGradient%3E%3ClinearGradient id='wax' x1='0' y1='0' x2='0' y2='1'%3E%3Cstop offset='0%25' stop-color='%23ede3d0'/%3E%3Cstop offset='50%25' stop-color='%23e0d4bc'/%3E%3Cstop offset='100%25' stop-color='%23d0c0a0'/%3E%3C/linearGradient%3E%3C/defs%3E%3Cpath d='M16 1c-1 2.5-5.5 6-5.5 10 0 3 2.5 5.2 5.5 5.2s5.5-2.2 5.5-5.2C21.5 7 17 3.5 16 1z' fill='url(%23fl)'/%3E%3Cpath d='M16 5c-0.6 1.5-2.5 3.5-2.5 6 0 1.5 1.1 2.8 2.5 2.8s2.5-1.3 2.5-2.8C18.5 8.5 16.6 6.5 16 5z' fill='%23fff4c2' opacity='.75'/%3E%3Cpath d='M10 21c0.2 0.5 0.5 4 0.3 8c-0.1 2 0.2 6 0.5 10c0.3 2.5 1.5 3 3 3.2c1.2 0.2 2.8 0.2 4.2 0c1.5-0.2 2.7-0.7 3-3.2c0.3-4 0.6-8 0.5-10c-0.2-4 0.1-7.5 0.3-8c-1.5-0.8-3.5-1.2-5.8-1.2s-4.3 0.4-6 1.2z' fill='url(%23wax)'/%3E%3C/svg%3E") 16 1, auto;
+    }
+    a, button, [role="button"], input, select, textarea, label, [onclick] { cursor: inherit !important; }
+    @media (max-width: 749px) {
+      body { cursor: auto !important; }
+      a, button, [role="button"], input, select, textarea, label, [onclick] { cursor: auto !important; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- Grain Overlay -->
+<div class="grain" aria-hidden="true"></div>
+
+<!-- Star Canvas -->
+<canvas id="starCanvas" aria-hidden="true"></canvas>
+
+<!-- ======== Announcement Bar ======== -->
+<div class="announcement" id="announcementBar">
+  <div class="announcement__track" id="announcementTrack">
+    <div class="announcement__slide announcement__slide--active">Free Global Shipping on Orders $89+</div>
+    <div class="announcement__slide"><a href="#">Sign Up for 10% Off Your First Order</a></div>
+    <div class="announcement__slide">Ancient Rituals, Modern Magick — Handcrafted with Intention</div>
+  </div>
+</div>
+
+<!-- ======== Header ======== -->
+<header class="header" id="header">
+  <div class="header__row">
+    <a href="v3-2-index.html" class="header__logo">
+      <img src="../wecom-temp-1125392-b563a96a377dca72efa8b2ccff82af5b.png" alt="WuZuo Alice">
+    </a>
+    <nav class="header__nav">
+      <div class="header__nav-item header__nav-item--mega">
+        <a href="#" class="header__nav-link">Ritual Candles
+          <svg class="header__chevron" viewBox="0 0 10 6"><path d="M1 1l4 4 4-4" stroke="currentColor" fill="none" stroke-width="1.5"/></svg>
+        </a>
+        <div class="mega-menu">
+          <div class="mega-menu__inner">
+            <div class="mega-menu__col">
+              <h4 class="mega-menu__heading">By Intention</h4>
+              <a href="#" class="mega-menu__link">Love &amp; Binding</a>
+              <a href="#" class="mega-menu__link">Wealth &amp; Fortune</a>
+              <a href="#" class="mega-menu__link">Protection &amp; Cleanse</a>
+              <a href="#" class="mega-menu__link">Career &amp; Success</a>
+              <a href="#" class="mega-menu__link">Health &amp; Healing</a>
+              <a href="#" class="mega-menu__link mega-menu__link--all">View All &rarr;</a>
+            </div>
+            <div class="mega-menu__col">
+              <h4 class="mega-menu__heading">By Type</h4>
+              <a href="#" class="mega-menu__link">Pyramid Candles</a>
+              <a href="#" class="mega-menu__link">Pillar Candles</a>
+              <a href="#" class="mega-menu__link">Figurine Candles</a>
+              <a href="#" class="mega-menu__link">Jar Candles</a>
+              <a href="#" class="mega-menu__link mega-menu__link--all">View All &rarr;</a>
+            </div>
+            <div class="mega-menu__col mega-menu__col--featured">
+              <h4 class="mega-menu__heading">Featured</h4>
+              <div class="mega-menu__products">
+                <a href="#" class="mega-menu__product">
+                  <div class="mega-menu__product-img" style="background-color:rgba(201,168,76,0.1)"></div>
+                  <span>All-Seeing Eye</span>
+                </a>
+                <a href="#" class="mega-menu__product">
+                  <div class="mega-menu__product-img" style="background-color:rgba(201,168,76,0.1)"></div>
+                  <span>Golden Serpent Egg</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <a href="#" class="header__nav-link">The Ritual Path</a>
+      <a href="ritual-v2.html" class="header__nav-link header__nav-link--active">The Sacred Space</a>
+      <a href="#" class="header__nav-link">Journal</a>
+      <a href="#" class="header__nav-link">About</a>
+    </nav>
+    <div class="header__actions">
+      <button class="header__icon" aria-label="Search">
+        <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M21 21l-4.35-4.35" stroke="currentColor" stroke-width="1.5" fill="none"/></svg>
+      </button>
+      <button class="header__icon" aria-label="Account">
+        <svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="12" cy="7" r="4" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>
+      </button>
+      <button class="header__icon header__cart" aria-label="Cart">
+        <svg viewBox="0 0 24 24"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M3 6h18" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M16 10a4 4 0 0 1-8 0" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>
+        <span class="header__cart-count">0</span>
+      </button>
+      <button class="header__hamburger" aria-label="Menu" id="mobileMenuBtn">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+
+<!-- ============================================================
+     SECTION 1: THE GATE — Choose Your Path
+     ============================================================ -->
+<section class="rv2-gate" id="theGate">
+  <!-- Ambient background particles -->
+  <canvas class="rv2-gate__particles" id="gateParticles" aria-hidden="true"></canvas>
+
+  <!-- Central content -->
+  <div class="rv2-gate__content">
+    <span class="rv2-gate__label">☽ Aperiatur Terra ✦ Et Germinet Magicam ☾</span>
+    <h1 class="rv2-gate__title">The Sacred Space Awaits</h1>
+    <p class="rv2-gate__desc">Before you stand two gates, each forged in a different fire.<br>One answers to the Moon. The other, to the Stars.<br>Choose — and the ritual begins.</p>
+  </div>
+
+  <!-- Two doors -->
+  <div class="rv2-gate__doors">
+    <!-- Wicca Door -->
+    <button class="rv2-gate__door rv2-gate__door--wicca" id="doorWicca" aria-label="Enter Wicca Path">
+      <div class="rv2-gate__door-glow"></div>
+      <div class="rv2-gate__door-frame">
+        <svg class="rv2-gate__door-arch" viewBox="0 0 240 360" fill="none">
+          <!-- Gothic arch shape -->
+          <path d="M20,360 L20,140 Q20,20 120,20 Q220,20 220,140 L220,360" stroke="rgba(80,160,60,0.4)" stroke-width="2" fill="none"/>
+          <path d="M35,360 L35,145 Q35,35 120,35 Q205,35 205,145 L205,360" stroke="rgba(80,160,60,0.2)" stroke-width="1" fill="none"/>
+          <!-- Pentacle symbol -->
+          <circle cx="120" cy="140" r="45" stroke="rgba(80,160,60,0.35)" stroke-width="1.5" fill="none"/>
+          <polygon points="120,97 131,128 164,128 137,148 146,179 120,160 94,179 103,148 76,128 109,128" stroke="rgba(80,160,60,0.3)" stroke-width="1" fill="rgba(80,160,60,0.05)"/>
+          <!-- Crescent moon -->
+          <path d="M110,70 A15,15 0 1,1 130,70 A10,10 0 1,0 110,70" fill="rgba(80,160,60,0.25)"/>
+        </svg>
+        <div class="rv2-gate__door-info">
+          <span class="rv2-gate__door-symbol">☽</span>
+          <h2 class="rv2-gate__door-title">The Wiccan Path</h2>
+          <p class="rv2-gate__door-subtitle">Natural Magic · Earth &amp; Moon</p>
+          <p class="rv2-gate__door-hint">Draw power from lunar cycles, sacred herbs, and the living elements. Walk the way of the Wise.</p>
+        </div>
+      </div>
+    </button>
+
+    <!-- Divider -->
+    <div class="rv2-gate__divider">
+      <div class="rv2-gate__divider-line"></div>
+      <span class="rv2-gate__divider-or">or</span>
+      <div class="rv2-gate__divider-line"></div>
+    </div>
+
+    <!-- Classical Door -->
+    <button class="rv2-gate__door rv2-gate__door--classical" id="doorClassical" aria-label="Enter Classical Path">
+      <div class="rv2-gate__door-glow"></div>
+      <div class="rv2-gate__door-frame">
+        <svg class="rv2-gate__door-arch" viewBox="0 0 240 360" fill="none">
+          <!-- Gothic arch shape -->
+          <path d="M20,360 L20,140 Q20,20 120,20 Q220,20 220,140 L220,360" stroke="rgba(70,70,180,0.4)" stroke-width="2" fill="none"/>
+          <path d="M35,360 L35,145 Q35,35 120,35 Q205,35 205,145 L205,360" stroke="rgba(70,70,180,0.2)" stroke-width="1" fill="none"/>
+          <!-- Solomon's Seal (hexagram) -->
+          <circle cx="120" cy="140" r="45" stroke="rgba(70,70,180,0.35)" stroke-width="1.5" fill="none"/>
+          <polygon points="120,97 152,175 88,175" stroke="rgba(70,70,180,0.3)" stroke-width="1" fill="none"/>
+          <polygon points="120,183 88,105 152,105" stroke="rgba(70,70,180,0.3)" stroke-width="1" fill="none"/>
+          <!-- Star -->
+          <circle cx="120" cy="68" r="5" fill="rgba(70,70,180,0.3)" stroke="rgba(70,70,180,0.4)" stroke-width="1"/>
+        </svg>
+        <div class="rv2-gate__door-info">
+          <span class="rv2-gate__door-symbol">✦</span>
+          <h2 class="rv2-gate__door-title">The Classical Path</h2>
+          <p class="rv2-gate__door-subtitle">Ceremonial Magic · Stars &amp; Seals</p>
+          <p class="rv2-gate__door-hint">Command planetary forces through ancient grimoires, Solomon's seals, and celestial invocations.</p>
+        </div>
+      </div>
+    </button>
+  </div>
+
+  <!-- Scroll hint -->
+  <div class="rv2-gate__scroll-hint" id="gateScrollHint" style="display:none;">
+    <span>Scroll to explore</span>
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12l7 7 7-7" stroke="currentColor" stroke-width="1.5"/></svg>
+  </div>
+
+  <!-- Switch path button (shown after choosing) -->
+  <button class="rv2-gate__switch" id="gateSwitchPath" style="display:none;">
+    ↩ Choose a different path
+  </button>
+</section>
+
+
+<!-- ============================================================
+     PATH SECTIONS (shown after choosing a door)
+     ============================================================ -->
+
+<!-- Wicca Path sections will go here -->
+<div class="rv2-path rv2-path--wicca-content" id="wiccaPath">
+
+  <!-- ============================================================
+       SECTION 2: THE ALTAR — Interactive Top-Down Wicca Altar
+       ============================================================ -->
+  <section class="rv2-altar" id="theAltar">
+    <div class="rv2-altar__header">
+      <span class="rv2-altar__label">☽ The Altar</span>
+      <h2 class="rv2-altar__title">Prepare Your Sacred Space</h2>
+      <p class="rv2-altar__desc">Every object holds intention. Touch each element to reveal its purpose in the Wiccan rite.</p>
+    </div>
+
+    <div class="rv2-altar__scene">
+      <!-- Altar table background (SVG circle + cloth) -->
+      <div class="rv2-altar__table">
+        <svg class="rv2-altar__circle-svg" viewBox="0 0 700 700">
+          <circle cx="350" cy="350" r="330" fill="none" stroke="rgba(80,160,60,0.12)" stroke-width="1"/>
+          <circle cx="350" cy="350" r="280" fill="none" stroke="rgba(80,160,60,0.08)" stroke-width="1" stroke-dasharray="4 8"/>
+          <!-- Pentacle in center -->
+          <circle cx="350" cy="350" r="80" fill="none" stroke="rgba(80,160,60,0.2)" stroke-width="1.5"/>
+          <polygon points="350,272 368,328 428,328 380,362 396,418 350,386 304,418 320,362 272,328 332,328"
+            fill="none" stroke="rgba(80,160,60,0.15)" stroke-width="1"/>
+        </svg>
+
+        <!-- Interactive hotspots -->
+        <button class="rv2-altar__item rv2-altar__item--candle-n" data-altar="candle" aria-label="Ritual Candle">
+          <div class="rv2-altar__item-icon">🕯️</div>
+          <div class="rv2-altar__item-pulse"></div>
+        </button>
+
+        <button class="rv2-altar__item rv2-altar__item--chalice" data-altar="chalice" aria-label="Chalice">
+          <div class="rv2-altar__item-icon">🏆</div>
+          <div class="rv2-altar__item-pulse"></div>
+        </button>
+
+        <button class="rv2-altar__item rv2-altar__item--herbs" data-altar="herbs" aria-label="Sacred Herbs">
+          <div class="rv2-altar__item-icon">🌿</div>
+          <div class="rv2-altar__item-pulse"></div>
+        </button>
+
+        <button class="rv2-altar__item rv2-altar__item--crystal" data-altar="crystal" aria-label="Crystal">
+          <div class="rv2-altar__item-icon">💎</div>
+          <div class="rv2-altar__item-pulse"></div>
+        </button>
+
+        <button class="rv2-altar__item rv2-altar__item--pentacle" data-altar="pentacle" aria-label="Pentacle">
+          <div class="rv2-altar__item-icon">⛤</div>
+          <div class="rv2-altar__item-pulse"></div>
+        </button>
+
+        <button class="rv2-altar__item rv2-altar__item--athame" data-altar="athame" aria-label="Athame">
+          <div class="rv2-altar__item-icon">🗡️</div>
+          <div class="rv2-altar__item-pulse"></div>
+        </button>
+
+        <button class="rv2-altar__item rv2-altar__item--incense" data-altar="incense" aria-label="Incense">
+          <div class="rv2-altar__item-icon">🌫️</div>
+          <div class="rv2-altar__item-pulse"></div>
+        </button>
+
+        <button class="rv2-altar__item rv2-altar__item--book" data-altar="book" aria-label="Book of Shadows">
+          <div class="rv2-altar__item-icon">📖</div>
+          <div class="rv2-altar__item-pulse"></div>
+        </button>
+      </div>
+
+      <!-- Info panel (appears on item click) -->
+      <div class="rv2-altar__info" id="altarInfo">
+        <button class="rv2-altar__info-close" id="altarInfoClose" aria-label="Close">&times;</button>
+        <div class="rv2-altar__info-icon" id="altarInfoIcon"></div>
+        <h3 class="rv2-altar__info-title" id="altarInfoTitle">Select an Element</h3>
+        <p class="rv2-altar__info-element" id="altarInfoElement"></p>
+        <p class="rv2-altar__info-text" id="altarInfoText">Touch any object on the altar to discover its magical significance.</p>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       SECTION 3: THE MOON CYCLE — Circular Moon Phase Navigation
+       ============================================================ -->
+  <section class="rv2-moon" id="theMoonCycle">
+    <div class="rv2-moon__header">
+      <span class="rv2-moon__label">☽ The Moon Cycle</span>
+      <h2 class="rv2-moon__title">Lunar Rhythms of Power</h2>
+      <p class="rv2-moon__desc">The Moon governs all Wiccan rites. Each phase carries unique energy — learn when to cast, when to rest, and when to release.</p>
+    </div>
+
+    <div class="rv2-moon__wheel-wrap">
+      <!-- Circular wheel (SVG + JS positioned phases) -->
+      <div class="rv2-moon__wheel" id="moonWheel">
+        <svg class="rv2-moon__wheel-svg" viewBox="0 0 500 500">
+          <!-- Outer decorative ring -->
+          <circle cx="250" cy="250" r="240" fill="none" stroke="rgba(201,168,76,0.1)" stroke-width="1"/>
+          <circle cx="250" cy="250" r="235" fill="none" stroke="rgba(201,168,76,0.06)" stroke-width="1" stroke-dasharray="3 6"/>
+          <!-- Inner ring -->
+          <circle cx="250" cy="250" r="140" fill="none" stroke="rgba(201,168,76,0.08)" stroke-width="1"/>
+          <!-- Center decorative -->
+          <circle cx="250" cy="250" r="35" fill="none" stroke="rgba(201,168,76,0.15)" stroke-width="1"/>
+          <circle cx="250" cy="250" r="5" fill="rgba(201,168,76,0.3)"/>
+        </svg>
+
+        <!-- 8 Moon phase buttons (positioned by CSS around the circle) -->
+        <button class="rv2-moon__phase rv2-moon__phase--new" data-phase="0" aria-label="New Moon">
+          <svg class="rv2-moon__phase-icon" viewBox="0 0 40 40"><circle cx="20" cy="20" r="16" fill="none" stroke="rgba(201,168,76,0.5)" stroke-width="1.5"/></svg>
+          <span class="rv2-moon__phase-name">New Moon</span>
+        </button>
+        <button class="rv2-moon__phase rv2-moon__phase--wax-cres" data-phase="1" aria-label="Waxing Crescent">
+          <svg class="rv2-moon__phase-icon" viewBox="0 0 40 40"><circle cx="20" cy="20" r="16" fill="none" stroke="rgba(201,168,76,0.5)" stroke-width="1.5"/><path d="M20,4 A16,16 0 0,1 20,36 A10,16 0 0,0 20,4" fill="rgba(201,168,76,0.5)"/></svg>
+          <span class="rv2-moon__phase-name">Waxing Crescent</span>
+        </button>
+        <button class="rv2-moon__phase rv2-moon__phase--first-q" data-phase="2" aria-label="First Quarter">
+          <svg class="rv2-moon__phase-icon" viewBox="0 0 40 40"><circle cx="20" cy="20" r="16" fill="none" stroke="rgba(201,168,76,0.5)" stroke-width="1.5"/><path d="M20,4 A16,16 0 0,1 20,36 L20,4 Z" fill="rgba(201,168,76,0.5)"/></svg>
+          <span class="rv2-moon__phase-name">First Quarter</span>
+        </button>
+        <button class="rv2-moon__phase rv2-moon__phase--wax-gib" data-phase="3" aria-label="Waxing Gibbous">
+          <svg class="rv2-moon__phase-icon" viewBox="0 0 40 40"><circle cx="20" cy="20" r="16" fill="rgba(201,168,76,0.5)"/><path d="M20,4 A16,16 0 0,0 20,36 A10,16 0 0,1 20,4" fill="#1a1a1a" opacity="0.85"/></svg>
+          <span class="rv2-moon__phase-name">Waxing Gibbous</span>
+        </button>
+        <button class="rv2-moon__phase rv2-moon__phase--full" data-phase="4" aria-label="Full Moon">
+          <svg class="rv2-moon__phase-icon" viewBox="0 0 40 40"><circle cx="20" cy="20" r="16" fill="rgba(201,168,76,0.6)" stroke="rgba(201,168,76,0.7)" stroke-width="1"/></svg>
+          <span class="rv2-moon__phase-name">Full Moon</span>
+        </button>
+        <button class="rv2-moon__phase rv2-moon__phase--wan-gib" data-phase="5" aria-label="Waning Gibbous">
+          <svg class="rv2-moon__phase-icon" viewBox="0 0 40 40"><circle cx="20" cy="20" r="16" fill="rgba(201,168,76,0.5)"/><path d="M20,4 A16,16 0 0,1 20,36 A10,16 0 0,0 20,4" fill="#1a1a1a" opacity="0.85"/></svg>
+          <span class="rv2-moon__phase-name">Waning Gibbous</span>
+        </button>
+        <button class="rv2-moon__phase rv2-moon__phase--last-q" data-phase="6" aria-label="Last Quarter">
+          <svg class="rv2-moon__phase-icon" viewBox="0 0 40 40"><circle cx="20" cy="20" r="16" fill="none" stroke="rgba(201,168,76,0.5)" stroke-width="1.5"/><path d="M20,4 A16,16 0 0,0 20,36 L20,4 Z" fill="rgba(201,168,76,0.5)"/></svg>
+          <span class="rv2-moon__phase-name">Last Quarter</span>
+        </button>
+        <button class="rv2-moon__phase rv2-moon__phase--wan-cres" data-phase="7" aria-label="Waning Crescent">
+          <svg class="rv2-moon__phase-icon" viewBox="0 0 40 40"><circle cx="20" cy="20" r="16" fill="none" stroke="rgba(201,168,76,0.5)" stroke-width="1.5"/><path d="M20,4 A16,16 0 0,0 20,36 A10,16 0 0,1 20,4" fill="rgba(201,168,76,0.5)"/></svg>
+          <span class="rv2-moon__phase-name">Waning Crescent</span>
+        </button>
+      </div>
+
+      <!-- Moon phase detail panel -->
+      <div class="rv2-moon__detail" id="moonDetail">
+        <h3 class="rv2-moon__detail-title" id="moonDetailTitle">New Moon</h3>
+        <p class="rv2-moon__detail-energy" id="moonDetailEnergy">Energy: Rebirth &amp; New Beginnings</p>
+        <p class="rv2-moon__detail-text" id="moonDetailText">The darkest night holds the seed of all creation. Set intentions, plant wishes, and begin new magical workings. The veil is thin — whisper your desires to the void.</p>
+        <div class="rv2-moon__detail-rituals">
+          <span class="rv2-moon__detail-rituals-label">Ideal Rituals:</span>
+          <ul class="rv2-moon__detail-list" id="moonDetailList">
+            <li>Intention setting &amp; manifestation</li>
+            <li>Divination &amp; scrying</li>
+            <li>Cleansing &amp; banishing</li>
+          </ul>
+        </div>
+        <div class="rv2-moon__detail-candle" id="moonDetailCandle">
+          <span>Candle Color:</span>
+          <span class="rv2-moon__detail-color" id="moonDetailColor" style="background:#1a1a1a; border:1px solid rgba(201,168,76,0.3);"></span>
+          <span id="moonDetailColorName">Black</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       SECTION 4: THE OFFERING (Wicca) — Ritual Product Gallery
+       ============================================================ -->
+  <section class="rv2-offering rv2-offering--wicca" id="offeringWicca">
+    <div class="rv2-offering__header">
+      <span class="rv2-offering__label">☽ The Offering</span>
+      <h2 class="rv2-offering__title">Vessels of Natural Power</h2>
+      <p class="rv2-offering__desc">Each candle is a sealed intention — herbs, oils, and wax fused under the proper lunar phase. Choose the vessel that speaks to your rite.</p>
+    </div>
+
+    <div class="rv2-offering__grid">
+      <div class="rv2-offering__card" data-intention="love">
+        <div class="rv2-offering__card-img" style="background-image:url('candle-1.jpg');">
+          <div class="rv2-offering__card-badge">Love &amp; Binding</div>
+        </div>
+        <div class="rv2-offering__card-body">
+          <h3 class="rv2-offering__card-name">Golden Serpent Egg</h3>
+          <p class="rv2-offering__card-ritual">Ideal for: Waxing Moon love rituals, binding spells</p>
+          <div class="rv2-offering__card-price">$34.99</div>
+          <button class="rv2-offering__card-btn">Add to Altar</button>
+        </div>
+      </div>
+
+      <div class="rv2-offering__card" data-intention="wealth">
+        <div class="rv2-offering__card-img" style="background-image:url('candle-2.jpg');">
+          <div class="rv2-offering__card-badge">Wealth &amp; Fortune</div>
+        </div>
+        <div class="rv2-offering__card-body">
+          <h3 class="rv2-offering__card-name">All-Seeing Eye Pyramid</h3>
+          <p class="rv2-offering__card-ritual">Ideal for: Full Moon abundance rituals, prosperity altars</p>
+          <div class="rv2-offering__card-price">$29.99</div>
+          <button class="rv2-offering__card-btn">Add to Altar</button>
+        </div>
+      </div>
+
+      <div class="rv2-offering__card" data-intention="protection">
+        <div class="rv2-offering__card-img" style="background-image:url('candle-3.jpg');">
+          <div class="rv2-offering__card-badge">Protection</div>
+        </div>
+        <div class="rv2-offering__card-body">
+          <h3 class="rv2-offering__card-name">Pentacle Grimoire Candle</h3>
+          <p class="rv2-offering__card-ritual">Ideal for: Waning Moon banishing, circle casting</p>
+          <div class="rv2-offering__card-price">$36.99</div>
+          <button class="rv2-offering__card-btn">Add to Altar</button>
+        </div>
+      </div>
+
+      <div class="rv2-offering__card" data-intention="wealth">
+        <div class="rv2-offering__card-img" style="background-image:url('candle-4.jpg');">
+          <div class="rv2-offering__card-badge">Wealth &amp; Fortune</div>
+        </div>
+        <div class="rv2-offering__card-body">
+          <h3 class="rv2-offering__card-name">Fortune Bag Candle</h3>
+          <p class="rv2-offering__card-ritual">Ideal for: New Moon intention setting, money spells</p>
+          <div class="rv2-offering__card-price">$24.99</div>
+          <button class="rv2-offering__card-btn">Add to Altar</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<!-- Classical Path sections will go here -->
+<div class="rv2-path rv2-path--classical-content" id="classicalPath">
+
+  <!-- ============================================================
+       SECTION 5: THE CHAMBER — Solomon's Circle + 7 Planetary Candles
+       ============================================================ -->
+  <section class="rv2-chamber" id="theChamber">
+    <div class="rv2-chamber__header">
+      <span class="rv2-chamber__label">✦ The Chamber</span>
+      <h2 class="rv2-chamber__title">The Planetary Temple</h2>
+      <p class="rv2-chamber__desc">Seven celestial bodies, seven flames. Each planetary candle channels a distinct cosmic force. Touch a flame to reveal its dominion.</p>
+    </div>
+
+    <div class="rv2-chamber__scene">
+      <!-- Solomon's Circle -->
+      <div class="rv2-chamber__circle">
+        <svg class="rv2-chamber__circle-svg" viewBox="0 0 700 700">
+          <!-- Outer protective circle -->
+          <circle cx="350" cy="350" r="330" fill="none" stroke="rgba(120,120,220,0.25)" stroke-width="1.5"/>
+          <circle cx="350" cy="350" r="320" fill="none" stroke="rgba(120,120,220,0.15)" stroke-width="1" stroke-dasharray="6 4"/>
+          <!-- Inner circle -->
+          <circle cx="350" cy="350" r="240" fill="none" stroke="rgba(120,120,220,0.3)" stroke-width="1"/>
+          <!-- Hexagram (Star of David / Solomon's Seal) -->
+          <polygon points="350,120 530,430 170,430" fill="none" stroke="rgba(130,130,230,0.35)" stroke-width="1.5"/>
+          <polygon points="350,580 170,270 530,270" fill="none" stroke="rgba(130,130,230,0.35)" stroke-width="1.5"/>
+          <!-- Inner hexagram -->
+          <circle cx="350" cy="350" r="120" fill="none" stroke="rgba(120,120,220,0.2)" stroke-width="1"/>
+          <!-- Center eye -->
+          <circle cx="350" cy="350" r="30" fill="none" stroke="rgba(140,140,230,0.35)" stroke-width="1"/>
+          <circle cx="350" cy="350" r="8" fill="rgba(140,140,230,0.4)"/>
+          <!-- Rune text around circle -->
+          <defs><path id="chamberRunePath" d="M350,30 A320,320 0 1,1 349.9,30"/></defs>
+          <text fill="rgba(140,140,230,0.22)" font-size="13" font-family="serif" letter-spacing="6">
+            <textPath href="#chamberRunePath">✦ SATURNUS ✦ JUPITER ✦ MARS ✦ SOL ✦ VENUS ✦ MERCURIUS ✦ LUNA ✦ SATURNUS ✦ JUPITER ✦ MARS ✦ SOL</textPath>
+          </text>
+        </svg>
+
+        <!-- 7 Planetary candle buttons -->
+        <button class="rv2-chamber__planet rv2-chamber__planet--sun" data-planet="0" aria-label="Sun">
+          <div class="rv2-chamber__planet-flame" style="--flame-color: #ffd700;"></div>
+          <span class="rv2-chamber__planet-symbol">☉</span>
+          <span class="rv2-chamber__planet-name">Sun</span>
+        </button>
+
+        <button class="rv2-chamber__planet rv2-chamber__planet--moon" data-planet="1" aria-label="Moon">
+          <div class="rv2-chamber__planet-flame" style="--flame-color: #c0c0e0;"></div>
+          <span class="rv2-chamber__planet-symbol">☽</span>
+          <span class="rv2-chamber__planet-name">Moon</span>
+        </button>
+
+        <button class="rv2-chamber__planet rv2-chamber__planet--mars" data-planet="2" aria-label="Mars">
+          <div class="rv2-chamber__planet-flame" style="--flame-color: #cc3333;"></div>
+          <span class="rv2-chamber__planet-symbol">♂</span>
+          <span class="rv2-chamber__planet-name">Mars</span>
+        </button>
+
+        <button class="rv2-chamber__planet rv2-chamber__planet--mercury" data-planet="3" aria-label="Mercury">
+          <div class="rv2-chamber__planet-flame" style="--flame-color: #e0a030;"></div>
+          <span class="rv2-chamber__planet-symbol">☿</span>
+          <span class="rv2-chamber__planet-name">Mercury</span>
+        </button>
+
+        <button class="rv2-chamber__planet rv2-chamber__planet--jupiter" data-planet="4" aria-label="Jupiter">
+          <div class="rv2-chamber__planet-flame" style="--flame-color: #4040cc;"></div>
+          <span class="rv2-chamber__planet-symbol">♃</span>
+          <span class="rv2-chamber__planet-name">Jupiter</span>
+        </button>
+
+        <button class="rv2-chamber__planet rv2-chamber__planet--venus" data-planet="5" aria-label="Venus">
+          <div class="rv2-chamber__planet-flame" style="--flame-color: #40cc70;"></div>
+          <span class="rv2-chamber__planet-symbol">♀</span>
+          <span class="rv2-chamber__planet-name">Venus</span>
+        </button>
+
+        <button class="rv2-chamber__planet rv2-chamber__planet--saturn" data-planet="6" aria-label="Saturn">
+          <div class="rv2-chamber__planet-flame" style="--flame-color: #666688;"></div>
+          <span class="rv2-chamber__planet-symbol">♄</span>
+          <span class="rv2-chamber__planet-name">Saturn</span>
+        </button>
+      </div>
+
+      <!-- Planet detail panel -->
+      <div class="rv2-chamber__info" id="chamberInfo">
+        <h3 class="rv2-chamber__info-title" id="chamberInfoTitle">The Sun</h3>
+        <p class="rv2-chamber__info-domain" id="chamberInfoDomain">Dominion: Vitality, Authority, Success</p>
+        <p class="rv2-chamber__info-text" id="chamberInfoText">The Sun rules the conscious self — willpower, ambition, and the outward expression of the soul. Its candle is lit for spells of leadership, healing, and divine favor. Sunday is its sacred day; gold is its metal.</p>
+        <div class="rv2-chamber__info-attrs">
+          <div class="rv2-chamber__info-attr">
+            <span class="rv2-chamber__info-attr-label">Day</span>
+            <span class="rv2-chamber__info-attr-val" id="chamberInfoDay">Sunday</span>
+          </div>
+          <div class="rv2-chamber__info-attr">
+            <span class="rv2-chamber__info-attr-label">Metal</span>
+            <span class="rv2-chamber__info-attr-val" id="chamberInfoMetal">Gold</span>
+          </div>
+          <div class="rv2-chamber__info-attr">
+            <span class="rv2-chamber__info-attr-label">Color</span>
+            <span class="rv2-chamber__info-attr-val" id="chamberInfoColor">
+              <span class="rv2-chamber__info-swatch" id="chamberInfoSwatch" style="background:#ffd700;"></span> Gold
+            </span>
+          </div>
+          <div class="rv2-chamber__info-attr">
+            <span class="rv2-chamber__info-attr-label">Incense</span>
+            <span class="rv2-chamber__info-attr-val" id="chamberInfoIncense">Frankincense</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       SECTION 6: THE GRIMOIRE — Interactive Magical Book
+       ============================================================ -->
+  <section class="rv2-grimoire" id="theGrimoire">
+    <div class="rv2-grimoire__header">
+      <span class="rv2-grimoire__label">✦ The Grimoire</span>
+      <h2 class="rv2-grimoire__title">The Book of Ars Notoria</h2>
+      <p class="rv2-grimoire__desc">Within these pages lie the keys to ceremonial practice — planetary seals, invocations, and the sacred geometry of the cosmos.</p>
+    </div>
+
+    <div class="rv2-grimoire__book">
+      <!-- Page navigation -->
+      <button class="rv2-grimoire__nav rv2-grimoire__nav--prev" id="grimPrev" aria-label="Previous page">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M15 18l-6-6 6-6" stroke="currentColor" stroke-width="1.5"/></svg>
+      </button>
+
+      <div class="rv2-grimoire__pages" id="grimPages">
+        <!-- Page 0: Cover -->
+        <div class="rv2-grimoire__page rv2-grimoire__page--active" data-page="0">
+          <div class="rv2-grimoire__page-ornament">✦</div>
+          <h3 class="rv2-grimoire__page-title">Liber Stellarum</h3>
+          <p class="rv2-grimoire__page-subtitle">The Book of Stars</p>
+          <div class="rv2-grimoire__page-seal">
+            <svg viewBox="0 0 120 120"><circle cx="60" cy="60" r="55" fill="none" stroke="rgba(140,140,230,0.3)" stroke-width="1"/><polygon points="60,8 73,45 112,45 80,68 91,106 60,83 29,106 40,68 8,45 47,45" fill="none" stroke="rgba(140,140,230,0.25)" stroke-width="1"/></svg>
+          </div>
+          <p class="rv2-grimoire__page-hint">Turn the page to begin ―›</p>
+        </div>
+
+        <!-- Page 1: The Seven Seals -->
+        <div class="rv2-grimoire__page" data-page="1">
+          <span class="rv2-grimoire__page-chapter">Chapter I</span>
+          <h3 class="rv2-grimoire__page-title">The Seven Planetary Seals</h3>
+          <p class="rv2-grimoire__page-text">Each planet possesses a unique sigil — a geometric key that unlocks its influence. These seals are drawn on parchment, carved into candles, or inscribed upon talismans during the planet's ruling hour.</p>
+          <div class="rv2-grimoire__page-symbols">
+            <span title="Sun">☉</span><span title="Moon">☽</span><span title="Mars">♂</span><span title="Mercury">☿</span><span title="Jupiter">♃</span><span title="Venus">♀</span><span title="Saturn">♄</span>
+          </div>
+          <p class="rv2-grimoire__page-text">The seal must be drawn in one unbroken line, beginning at the planet's number on the Magic Square, while reciting the corresponding divine name.</p>
+        </div>
+
+        <!-- Page 2: The Hours of Power -->
+        <div class="rv2-grimoire__page" data-page="2">
+          <span class="rv2-grimoire__page-chapter">Chapter II</span>
+          <h3 class="rv2-grimoire__page-title">The Planetary Hours</h3>
+          <p class="rv2-grimoire__page-text">Time is not neutral. Each hour of the day falls under the governance of a celestial body. To cast a spell of love, work in the hour of Venus. For wisdom, Mercury. For banishing, Saturn.</p>
+          <div class="rv2-grimoire__page-table">
+            <div class="rv2-grimoire__page-row"><span>Dawn</span><span>Sun → Venus → Mercury</span></div>
+            <div class="rv2-grimoire__page-row"><span>Morning</span><span>Moon → Saturn → Jupiter</span></div>
+            <div class="rv2-grimoire__page-row"><span>Noon</span><span>Mars → Sun → Venus</span></div>
+            <div class="rv2-grimoire__page-row"><span>Afternoon</span><span>Mercury → Moon → Saturn</span></div>
+            <div class="rv2-grimoire__page-row"><span>Dusk</span><span>Jupiter → Mars → Sun</span></div>
+            <div class="rv2-grimoire__page-row"><span>Night</span><span>Venus → Mercury → Moon</span></div>
+          </div>
+          <p class="rv2-grimoire__page-note">* Sequence begins with the planet ruling the day (e.g., Sunday = Sun first)</p>
+        </div>
+
+        <!-- Page 3: The Circle of Art -->
+        <div class="rv2-grimoire__page" data-page="3">
+          <span class="rv2-grimoire__page-chapter">Chapter III</span>
+          <h3 class="rv2-grimoire__page-title">The Circle of Art</h3>
+          <p class="rv2-grimoire__page-text">Before any invocation, the magician must construct the Circle of Art — a sacred boundary that protects the operator and contains the summoned force. The circle is drawn with the point of a consecrated sword, nine feet in diameter.</p>
+          <p class="rv2-grimoire__page-text">At each cardinal point, inscribe the name of the ruling archangel:</p>
+          <div class="rv2-grimoire__page-directions">
+            <div><strong>East</strong> — Raphael (Air)</div>
+            <div><strong>South</strong> — Michael (Fire)</div>
+            <div><strong>West</strong> — Gabriel (Water)</div>
+            <div><strong>North</strong> — Uriel (Earth)</div>
+          </div>
+        </div>
+
+        <!-- Page 4: Invocation -->
+        <div class="rv2-grimoire__page" data-page="4">
+          <span class="rv2-grimoire__page-chapter">Chapter IV</span>
+          <h3 class="rv2-grimoire__page-title">The Art of Invocation</h3>
+          <p class="rv2-grimoire__page-text">Invocation draws a force inward — into the self, the candle, or the talisman. Unlike evocation (which summons externally), invocation merges the magician's will with the planetary intelligence.</p>
+          <blockquote class="rv2-grimoire__page-quote">
+            "I invoke thee, O great and mighty ☉ SOL, by the sacred names IAO, ABRAXAS, and SABAO. Fill this vessel with thy golden light. Let thy power flow through this flame as it burns."
+          </blockquote>
+          <p class="rv2-grimoire__page-text">Light the candle as you speak the final word. The flame is the bridge between worlds.</p>
+        </div>
+
+        <!-- Page 5: Closing -->
+        <div class="rv2-grimoire__page" data-page="5">
+          <div class="rv2-grimoire__page-ornament">✦</div>
+          <h3 class="rv2-grimoire__page-title">Finis Operis</h3>
+          <p class="rv2-grimoire__page-subtitle">The Work is Complete</p>
+          <p class="rv2-grimoire__page-text" style="text-align:center; margin-top:2rem;">The grimoire closes, but the knowledge endures. Return to the Chamber and choose your planetary candle to begin your first ceremonial working.</p>
+          <div class="rv2-grimoire__page-seal">
+            <svg viewBox="0 0 120 120"><circle cx="60" cy="60" r="55" fill="none" stroke="rgba(140,140,230,0.3)" stroke-width="1"/><circle cx="60" cy="60" r="35" fill="none" stroke="rgba(140,140,230,0.2)" stroke-width="1"/><circle cx="60" cy="60" r="8" fill="rgba(140,140,230,0.3)"/></svg>
+          </div>
+        </div>
+      </div>
+
+      <button class="rv2-grimoire__nav rv2-grimoire__nav--next" id="grimNext" aria-label="Next page">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M9 18l6-6-6-6" stroke="currentColor" stroke-width="1.5"/></svg>
+      </button>
+    </div>
+
+    <!-- Page indicator -->
+    <div class="rv2-grimoire__dots" id="grimDots">
+      <span class="rv2-grimoire__dot rv2-grimoire__dot--active" data-dot="0"></span>
+      <span class="rv2-grimoire__dot" data-dot="1"></span>
+      <span class="rv2-grimoire__dot" data-dot="2"></span>
+      <span class="rv2-grimoire__dot" data-dot="3"></span>
+      <span class="rv2-grimoire__dot" data-dot="4"></span>
+      <span class="rv2-grimoire__dot" data-dot="5"></span>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       SECTION 7: THE OFFERING (Classical) — Ritual Product Gallery
+       ============================================================ -->
+  <section class="rv2-offering rv2-offering--classical" id="offeringClassical">
+    <div class="rv2-offering__header">
+      <span class="rv2-offering__label">✦ The Offering</span>
+      <h2 class="rv2-offering__title">Instruments of Celestial Will</h2>
+      <p class="rv2-offering__desc">Forged under planetary alignment — each candle carries a seal of power. Select the instrument that matches your invocation.</p>
+    </div>
+
+    <div class="rv2-offering__grid">
+      <div class="rv2-offering__card" data-intention="wealth">
+        <div class="rv2-offering__card-img" style="background-image:url('candle-5.jpg');">
+          <div class="rv2-offering__card-badge">Jupiter · Wealth</div>
+        </div>
+        <div class="rv2-offering__card-body">
+          <h3 class="rv2-offering__card-name">Horseshoe Fortune Candle</h3>
+          <p class="rv2-offering__card-ritual">Best burned: Thursday, hour of Jupiter, waxing moon</p>
+          <div class="rv2-offering__card-price">$42.99</div>
+          <button class="rv2-offering__card-btn">Add to Circle</button>
+        </div>
+      </div>
+
+      <div class="rv2-offering__card" data-intention="wealth">
+        <div class="rv2-offering__card-img" style="background-image:url('candle-1.jpg');">
+          <div class="rv2-offering__card-badge">Sun · Success</div>
+        </div>
+        <div class="rv2-offering__card-body">
+          <h3 class="rv2-offering__card-name">Celestial Horse Pillar</h3>
+          <p class="rv2-offering__card-ritual">Best burned: Sunday, hour of the Sun, full moon</p>
+          <div class="rv2-offering__card-price">$38.99</div>
+          <button class="rv2-offering__card-btn">Add to Circle</button>
+        </div>
+      </div>
+
+      <div class="rv2-offering__card" data-intention="wealth">
+        <div class="rv2-offering__card-img" style="background-image:url('candle-3.jpg');">
+          <div class="rv2-offering__card-badge">Mars · Power</div>
+        </div>
+        <div class="rv2-offering__card-body">
+          <h3 class="rv2-offering__card-name">Dragon Fortune Candle</h3>
+          <p class="rv2-offering__card-ritual">Best burned: Tuesday, hour of Mars, waning moon</p>
+          <div class="rv2-offering__card-price">$28.99</div>
+          <button class="rv2-offering__card-btn">Add to Circle</button>
+        </div>
+      </div>
+
+      <div class="rv2-offering__card" data-intention="wealth">
+        <div class="rv2-offering__card-img" style="background-image:url('candle-4.jpg');">
+          <div class="rv2-offering__card-badge">Venus · Harmony</div>
+        </div>
+        <div class="rv2-offering__card-body">
+          <h3 class="rv2-offering__card-name">Money Tree Prosperity Vase</h3>
+          <p class="rv2-offering__card-ritual">Best burned: Friday, hour of Venus, new moon</p>
+          <div class="rv2-offering__card-price">$39.99</div>
+          <button class="rv2-offering__card-btn">Add to Circle</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<!-- ============================================================
+     SECTION 8: THE SEAL — Personalized Sigil Generator (shared)
+     ============================================================ -->
+<section class="rv2-seal" id="theSeal">
+  <div class="rv2-seal__header">
+    <span class="rv2-seal__label">✦ The Seal ✦</span>
+    <h2 class="rv2-seal__title">Forge Your Sigil</h2>
+    <p class="rv2-seal__desc">Speak your intention. The ancient algorithm of the Rose Cross will transform your words into a personal seal of power.</p>
+  </div>
+
+  <div class="rv2-seal__workspace">
+    <!-- Input -->
+    <div class="rv2-seal__input-area">
+      <label class="rv2-seal__input-label" for="sigilInput">Your Intention</label>
+      <input class="rv2-seal__input" id="sigilInput" type="text" placeholder="e.g. I attract abundance and wisdom" maxlength="80" autocomplete="off">
+      <button class="rv2-seal__generate" id="sigilGenerate">Generate Sigil</button>
+      <p class="rv2-seal__input-hint">Vowels and repeating letters are removed — the essence remains.</p>
+    </div>
+
+    <!-- Sigil display -->
+    <div class="rv2-seal__display">
+      <svg class="rv2-seal__svg" id="sigilSVG" viewBox="0 0 400 400">
+        <!-- Rose Cross base grid (3x3) -->
+        <circle cx="200" cy="200" r="185" fill="none" stroke="rgba(201,168,76,0.12)" stroke-width="1"/>
+        <circle cx="200" cy="200" r="150" fill="none" stroke="rgba(201,168,76,0.08)" stroke-width="1" stroke-dasharray="4 6"/>
+        <!-- Grid dots (letter positions) -->
+        <g id="sigilGrid" opacity="0.3"></g>
+        <!-- Generated sigil path -->
+        <path id="sigilPath" fill="none" stroke="var(--gold)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" opacity="0"/>
+        <!-- Start/end markers -->
+        <circle id="sigilStart" cx="0" cy="0" r="6" fill="var(--gold)" opacity="0"/>
+        <circle id="sigilEnd" cx="0" cy="0" r="4" fill="none" stroke="var(--gold)" stroke-width="2" opacity="0"/>
+      </svg>
+      <p class="rv2-seal__reduced" id="sigilReduced"></p>
+    </div>
+
+    <!-- Actions -->
+    <div class="rv2-seal__actions" id="sigilActions" style="display:none;">
+      <button class="rv2-seal__action-btn" id="sigilDownload">Download SVG</button>
+      <button class="rv2-seal__action-btn rv2-seal__action-btn--secondary" id="sigilReset">New Sigil</button>
+    </div>
+  </div>
+</section>
+
+
+<!-- ======== Newsletter + Footer ======== -->
+<div class="site-bottom">
+  <section class="newsletter reveal">
+    <h3 class="newsletter__title">Join the Coven</h3>
+    <p class="newsletter__desc">Sign up for exclusive releases, ritual guides, and lunar calendars delivered to your inbox.</p>
+    <form class="newsletter__form" onsubmit="return false;">
+      <input type="email" placeholder="Enter your email" aria-label="Email address">
+      <button type="submit">Subscribe</button>
+    </form>
+  </section>
+
+  <footer class="footer">
+    <div class="footer__top">
+      <a href="v3-2-index.html" class="footer__logo">
+        <img src="../wecom-temp-1125392-b563a96a377dca72efa8b2ccff82af5b.png" alt="WuZuo Alice">
+      </a>
+      <div class="footer__columns">
+        <div class="footer__col footer__col-d1">
+          <span class="footer__col-title">Shop</span>
+          <a href="#">All Candles</a>
+          <a href="#">Love &amp; Binding</a>
+          <a href="#">Wealth &amp; Fortune</a>
+          <a href="#">Protection</a>
+        </div>
+        <div class="footer__col footer__col-d2">
+          <span class="footer__col-title">Help</span>
+          <a href="#">Shipping</a>
+          <a href="#">Returns</a>
+          <a href="#">Candle Care</a>
+          <a href="#">FAQ</a>
+        </div>
+        <div class="footer__col footer__col-d3">
+          <span class="footer__col-title">About</span>
+          <a href="#">Our Story</a>
+          <a href="#">Ritual Guide</a>
+          <a href="#">Blog</a>
+          <a href="#">Contact</a>
+        </div>
+        <div class="footer__col footer__col-d4">
+          <span class="footer__col-title">Connect</span>
+          <a href="#">Instagram</a>
+          <a href="#">TikTok</a>
+          <a href="#">Pinterest</a>
+          <a href="#">Facebook</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer__social">
+      <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+      <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="12" cy="12" r="5" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="17.5" cy="6.5" r="1.5"/></svg></a>
+      <a href="#" aria-label="TikTok"><svg viewBox="0 0 24 24"><path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"/></svg></a>
+      <a href="#" aria-label="Pinterest"><svg viewBox="0 0 24 24"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.236 2.636 7.855 6.356 9.312-.088-.791-.167-2.005.035-2.868.181-.78 1.172-4.97 1.172-4.97s-.299-.598-.299-1.482c0-1.388.806-2.425 1.81-2.425.852 0 1.264.64 1.264 1.408 0 .858-.546 2.14-.828 3.33-.236.995.5 1.807 1.48 1.807 1.778 0 3.144-1.874 3.144-4.58 0-2.393-1.72-4.068-4.177-4.068-2.845 0-4.515 2.134-4.515 4.34 0 .859.331 1.781.745 2.281a.3.3 0 0 1 .069.288l-.278 1.133c-.044.183-.145.222-.335.134-1.249-.581-2.03-2.407-2.03-3.874 0-3.154 2.292-6.052 6.608-6.052 3.469 0 6.165 2.473 6.165 5.776 0 3.447-2.173 6.22-5.19 6.22-1.013 0-1.965-.527-2.291-1.148l-.623 2.378c-.226.869-.835 1.958-1.244 2.621.937.29 1.931.446 2.962.446 5.523 0 10-4.477 10-10S17.523 2 12 2z"/></svg></a>
+    </div>
+    <div class="footer__bottom">
+      <div class="footer__legal">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+        <a href="#">Refund Policy</a>
+      </div>
+      <div class="footer__copy">&copy; 2026, WuZuo Alice. Powered by Shopify</div>
+    </div>
+  </footer>
+</div>
+
+
+<!-- ======== Scripts ======== -->
+<script>
+(function() {
+  'use strict';
+
+  /* ── Gate particle background ── */
+  var gateCanvas = document.getElementById('gateParticles');
+  if (gateCanvas) {
+    var ctx = gateCanvas.getContext('2d');
+    var particles = [];
+    var particleCount = 60;
+
+    function resizeCanvas() {
+      gateCanvas.width = window.innerWidth;
+      gateCanvas.height = window.innerHeight;
+    }
+    resizeCanvas();
+    window.addEventListener('resize', resizeCanvas);
+
+    for (var i = 0; i < particleCount; i++) {
+      particles.push({
+        x: Math.random() * window.innerWidth,
+        y: Math.random() * window.innerHeight,
+        size: Math.random() * 2 + 0.5,
+        speedY: -(Math.random() * 0.5 + 0.1),
+        speedX: (Math.random() - 0.5) * 0.3,
+        opacity: Math.random() * 0.5 + 0.1,
+        flicker: Math.random() * Math.PI * 2
+      });
+    }
+
+    function drawParticles() {
+      ctx.clearRect(0, 0, gateCanvas.width, gateCanvas.height);
+      particles.forEach(function(p) {
+        p.y += p.speedY;
+        p.x += p.speedX;
+        p.flicker += 0.02;
+        var alpha = p.opacity * (0.6 + 0.4 * Math.sin(p.flicker));
+        if (p.y < -10) { p.y = gateCanvas.height + 10; p.x = Math.random() * gateCanvas.width; }
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+        ctx.fillStyle = 'rgba(201,168,76,' + alpha + ')';
+        ctx.fill();
+      });
+      requestAnimationFrame(drawParticles);
+    }
+    drawParticles();
+  }
+
+  /* ── Door selection logic ── */
+  var doorWicca = document.getElementById('doorWicca');
+  var doorClassical = document.getElementById('doorClassical');
+  var gateSection = document.getElementById('theGate');
+  var scrollHint = document.getElementById('gateScrollHint');
+
+  var pathAnimated = { wicca: false, classical: false };
+
+  function choosePath(path) {
+    document.body.classList.remove('rv2-path--wicca', 'rv2-path--classical');
+    document.body.classList.add('rv2-path--' + path);
+
+    // Animate gate out
+    gateSection.classList.add('rv2-gate--chosen');
+    if (scrollHint) scrollHint.style.display = 'flex';
+    if (switchBtn) switchBtn.style.display = 'inline-block';
+
+    // Scroll to path content after transition, then init animations
+    setTimeout(function() {
+      var target = document.getElementById(path + 'Path');
+      if (target) {
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+      // Init scroll animations for this path (only once)
+      if (!pathAnimated[path]) {
+        pathAnimated[path] = true;
+        initPathAnimations(path);
+      }
+    }, 800);
+  }
+
+  function initPathAnimations(path) {
+    if (typeof gsap === 'undefined') return;
+
+    if (path === 'classical') {
+      var chamberTL = gsap.timeline({ delay: 0.2 });
+      chamberTL
+        .from('.rv2-chamber__header', { opacity: 0, y: 50, duration: 0.8, ease: 'power2.out', clearProps: 'all' })
+        .from('.rv2-chamber__circle-svg', { opacity: 0, rotation: 30, duration: 1.2, ease: 'power3.out', clearProps: 'all' }, '-=0.4')
+        .from('.rv2-chamber__planet', { opacity: 0, duration: 0.35, ease: 'power2.out', stagger: 0.08, clearProps: 'opacity' }, '-=0.5')
+        .from('.rv2-chamber__info', { opacity: 0, y: 30, duration: 0.7, ease: 'power2.out', clearProps: 'all' }, '-=0.4');
+
+      // Grimoire scroll reveal
+      gsap.registerPlugin(ScrollTrigger);
+      ScrollTrigger.refresh();
+
+      var grimTL = gsap.timeline({
+        scrollTrigger: { trigger: '.rv2-grimoire', start: 'top 80%', toggleActions: 'play none none none' }
+      });
+      grimTL
+        .from('.rv2-grimoire__header', { opacity: 0, y: 40, duration: 0.8, ease: 'power2.out', clearProps: 'all' })
+        .from('.rv2-grimoire__book', { opacity: 0, y: 30, duration: 0.8, ease: 'power2.out', clearProps: 'all' }, '-=0.3');
+
+      // Classical Offering scroll reveal
+      var offerCTL = gsap.timeline({
+        scrollTrigger: { trigger: '#offeringClassical', start: 'top 80%', toggleActions: 'play none none none' }
+      });
+      offerCTL
+        .from('#offeringClassical .rv2-offering__header', { opacity: 0, y: 40, duration: 0.8, ease: 'power2.out', clearProps: 'all' })
+        .from('#offeringClassical .rv2-offering__card', { opacity: 0, y: 30, duration: 0.5, ease: 'power2.out', stagger: 0.1, clearProps: 'all' }, '-=0.3');
+    }
+
+    if (path === 'wicca') {
+      // Altar: direct timeline (elements already in/near viewport after scroll)
+      var altarTL = gsap.timeline({ delay: 0.2 });
+      altarTL
+        .from('.rv2-altar__header', { opacity: 0, y: 50, duration: 0.8, ease: 'power2.out', clearProps: 'all' })
+        .from('.rv2-altar__table .rv2-altar__circle-svg', { opacity: 0, duration: 1, ease: 'power2.out', clearProps: 'all' }, '-=0.4')
+        .from('.rv2-altar__item', { opacity: 0, duration: 0.35, ease: 'power2.out', stagger: 0.08, clearProps: 'opacity' }, '-=0.5');
+
+      // Moon Cycle: ScrollTrigger (further down, needs scroll to reveal)
+      gsap.registerPlugin(ScrollTrigger);
+      ScrollTrigger.refresh();
+
+      var moonTL = gsap.timeline({
+        scrollTrigger: { trigger: '.rv2-moon', start: 'top 80%', toggleActions: 'play none none none' }
+      });
+      moonTL
+        .from('.rv2-moon__header', { opacity: 0, y: 50, duration: 0.8, ease: 'power2.out', clearProps: 'all' })
+        .from('.rv2-moon__wheel-svg', { opacity: 0, rotation: -30, duration: 1.2, ease: 'power3.out', clearProps: 'all' }, '-=0.3')
+        .from('.rv2-moon__phase', { opacity: 0, duration: 0.3, ease: 'power2.out', stagger: 0.07, clearProps: 'opacity' }, '-=0.6')
+        .from('.rv2-moon__detail', { opacity: 0, y: 30, duration: 0.7, ease: 'power2.out', clearProps: 'all' }, '-=0.5');
+
+      // Wicca Offering scroll reveal
+      var offerWTL = gsap.timeline({
+        scrollTrigger: { trigger: '#offeringWicca', start: 'top 80%', toggleActions: 'play none none none' }
+      });
+      offerWTL
+        .from('#offeringWicca .rv2-offering__header', { opacity: 0, y: 40, duration: 0.8, ease: 'power2.out', clearProps: 'all' })
+        .from('#offeringWicca .rv2-offering__card', { opacity: 0, y: 30, duration: 0.5, ease: 'power2.out', stagger: 0.1, clearProps: 'all' }, '-=0.3');
+    }
+
+    // Shared: The Seal scroll reveal (both paths)
+    gsap.registerPlugin(ScrollTrigger);
+    setTimeout(function() {
+      ScrollTrigger.refresh();
+      var sealTL = gsap.timeline({
+        scrollTrigger: { trigger: '.rv2-seal', start: 'top 80%', toggleActions: 'play none none none' }
+      });
+      sealTL
+        .from('.rv2-seal__header', { opacity: 0, y: 40, duration: 0.8, ease: 'power2.out', clearProps: 'all' })
+        .from('.rv2-seal__workspace', { opacity: 0, y: 30, duration: 0.8, ease: 'power2.out', clearProps: 'all' }, '-=0.3');
+    }, 200);
+  }
+
+  var switchBtn = document.getElementById('gateSwitchPath');
+
+  if (doorWicca) {
+    doorWicca.addEventListener('click', function() { choosePath('wicca'); });
+  }
+  if (doorClassical) {
+    doorClassical.addEventListener('click', function() { choosePath('classical'); });
+  }
+
+  // Switch path: reset and go back to gate
+  if (switchBtn) {
+    switchBtn.addEventListener('click', function() {
+      document.body.classList.remove('rv2-path--wicca', 'rv2-path--classical');
+      gateSection.classList.remove('rv2-gate--chosen');
+      switchBtn.style.display = 'none';
+      if (scrollHint) scrollHint.style.display = 'none';
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      // Re-show doors with animation
+      if (typeof gsap !== 'undefined') {
+        gsap.set('.rv2-gate__door--wicca', { opacity: 0, x: -120 });
+        gsap.set('.rv2-gate__door--classical', { opacity: 0, x: 120 });
+        gsap.set('.rv2-gate__divider', { opacity: 0 });
+        setTimeout(function() {
+          gsap.to('.rv2-gate__door--wicca', { opacity: 1, x: 0, duration: 0.8, ease: 'power3.out' });
+          gsap.to('.rv2-gate__door--classical', { opacity: 1, x: 0, duration: 0.8, ease: 'power3.out', delay: 0.15 });
+          gsap.to('.rv2-gate__divider', { opacity: 0.4, duration: 0.5, delay: 0.3 });
+        }, 400);
+      }
+    });
+  }
+
+  /* ── Door hover parallax (stronger 3D) ── */
+  var doors = document.querySelectorAll('.rv2-gate__door');
+  doors.forEach(function(door) {
+    door.addEventListener('mousemove', function(e) {
+      var rect = door.getBoundingClientRect();
+      var x = (e.clientX - rect.left) / rect.width - 0.5;
+      var y = (e.clientY - rect.top) / rect.height - 0.5;
+      var frame = door.querySelector('.rv2-gate__door-frame');
+      if (frame) {
+        frame.style.transform = 'perspective(600px) rotateY(' + (x * 18) + 'deg) rotateX(' + (-y * 12) + 'deg) scale(1.03)';
+      }
+    });
+    door.addEventListener('mouseleave', function() {
+      var frame = door.querySelector('.rv2-gate__door-frame');
+      if (frame) {
+        frame.style.transform = 'perspective(600px) rotateY(0deg) rotateX(0deg) scale(1)';
+      }
+    });
+  });
+
+  /* ── GSAP entrance animation (use window.onload to ensure GSAP is loaded) ── */
+  window.addEventListener('load', function() {
+    if (typeof gsap === 'undefined') return;
+
+    // Initially hide elements for animation
+    gsap.set('.rv2-gate__door--wicca', { opacity: 0, x: -120 });
+    gsap.set('.rv2-gate__door--classical', { opacity: 0, x: 120 });
+    gsap.set('.rv2-gate__divider', { opacity: 0, scaleY: 0 });
+
+    var tl = gsap.timeline({ delay: 0.2 });
+    tl.from('.rv2-gate__label', { opacity: 0, y: -20, duration: 0.8, ease: 'power2.out' })
+      .from('.rv2-gate__title', { opacity: 0, y: 40, duration: 1.1, ease: 'power2.out' }, '-=0.4')
+      .from('.rv2-gate__desc', { opacity: 0, y: 25, duration: 0.8, ease: 'power2.out' }, '-=0.5')
+      .to('.rv2-gate__door--wicca', { opacity: 1, x: 0, duration: 1.2, ease: 'power3.out' }, '-=0.3')
+      .to('.rv2-gate__door--classical', { opacity: 1, x: 0, duration: 1.2, ease: 'power3.out' }, '-=1.0')
+      .to('.rv2-gate__divider', { opacity: 0.4, scaleY: 1, duration: 0.6, ease: 'power2.out' }, '-=0.6');
+  });
+
+  /* ── THE ALTAR: Interactive hotspot data ── */
+  var altarData = {
+    candle: {
+      icon: '🕯️', title: 'The Ritual Candle', element: 'Element: Fire',
+      text: 'Fire is the transformer. A lit candle on the altar channels intention into the universe. Color, scent, and carving all shape the spell — white for purity, red for passion, black for banishing.'
+    },
+    chalice: {
+      icon: '🏆', title: 'The Chalice', element: 'Element: Water',
+      text: 'The chalice represents the womb of the Goddess — receptivity, intuition, and the subconscious mind. Filled with water, wine, or herbal infusions during ritual, it holds the essence of emotional magic.'
+    },
+    herbs: {
+      icon: '🌿', title: 'Sacred Herbs', element: 'Element: Earth',
+      text: 'Rosemary for remembrance, mugwort for visions, lavender for peace. Herbs are the oldest form of magic — burned, brewed, or bundled, they carry the green power of the living Earth.'
+    },
+    crystal: {
+      icon: '💎', title: 'The Crystal', element: 'Element: Spirit',
+      text: 'Crystals are condensed Earth energy. Clear quartz amplifies intention, amethyst opens the third eye, obsidian provides psychic shielding. Place them at cardinal points to anchor your circle.'
+    },
+    pentacle: {
+      icon: '⛤', title: 'The Pentacle', element: 'All Five Elements',
+      text: 'The five-pointed star within a circle: Earth, Air, Fire, Water, and Spirit united. It is the Wiccan shield and focus — placed at the altar\'s center to consecrate objects and ground energy.'
+    },
+    athame: {
+      icon: '🗡️', title: 'The Athame', element: 'Element: Air',
+      text: 'A ceremonial blade never used to cut physical things. The athame directs energy, casts the circle, and parts the veil between worlds. It is the witch\'s wand of will and authority.'
+    },
+    incense: {
+      icon: '🌫️', title: 'The Incense', element: 'Element: Air & Fire',
+      text: 'Rising smoke carries prayers upward. Frankincense purifies, sandalwood invites spirits, dragon\'s blood empowers spells. The interplay of fire and air creates the bridge between worlds.'
+    },
+    book: {
+      icon: '📖', title: 'The Book of Shadows', element: 'Personal Grimoire',
+      text: 'Every witch keeps a Book of Shadows — a handwritten record of spells, dreams, rituals, and revelations. It is both diary and grimoire, growing with the practitioner\'s journey through the Craft.'
+    }
+  };
+
+  var altarItems = document.querySelectorAll('.rv2-altar__item');
+  var altarInfo = document.getElementById('altarInfo');
+  var altarInfoClose = document.getElementById('altarInfoClose');
+
+  altarItems.forEach(function(item) {
+    item.addEventListener('click', function() {
+      var key = item.dataset.altar;
+      var data = altarData[key];
+      if (!data) return;
+
+      altarItems.forEach(function(i) { i.classList.remove('rv2-altar__item--active'); });
+      item.classList.add('rv2-altar__item--active');
+
+      document.getElementById('altarInfoIcon').textContent = data.icon;
+      document.getElementById('altarInfoTitle').textContent = data.title;
+      document.getElementById('altarInfoElement').textContent = data.element;
+      document.getElementById('altarInfoText').textContent = data.text;
+      altarInfo.classList.add('rv2-altar__info--visible');
+    });
+  });
+
+  if (altarInfoClose) {
+    altarInfoClose.addEventListener('click', function() {
+      altarInfo.classList.remove('rv2-altar__info--visible');
+      altarItems.forEach(function(i) { i.classList.remove('rv2-altar__item--active'); });
+    });
+  }
+
+  /* ── THE MOON CYCLE: Phase data ── */
+  var moonPhases = [
+    { title: 'New Moon', energy: 'Energy: Rebirth & New Beginnings',
+      text: 'The darkest night holds the seed of all creation. Set intentions, plant wishes, and begin new magical workings. The veil is thin — whisper your desires to the void.',
+      rituals: ['Intention setting & manifestation', 'Divination & scrying', 'Cleansing & banishing'],
+      color: '#1a1a1a', colorBorder: 'rgba(201,168,76,0.3)', colorName: 'Black' },
+    { title: 'Waxing Crescent', energy: 'Energy: Hope & Momentum',
+      text: 'The first sliver of returning light. Your intentions gain form. Take the first small action — light a candle, speak an affirmation, gather your materials. Momentum builds from here.',
+      rituals: ['Attraction spells', 'Courage workings', 'Creative projects'],
+      color: '#c0c0c0', colorBorder: 'transparent', colorName: 'Silver' },
+    { title: 'First Quarter', energy: 'Energy: Action & Decision',
+      text: 'Half-light, half-dark — a threshold of choice. Obstacles may appear. Push through with decisive action. This is the phase of commitment: strengthen your resolve or release what no longer serves.',
+      rituals: ['Strength & motivation spells', 'Overcoming obstacles', 'Decision rituals'],
+      color: '#cc3333', colorBorder: 'transparent', colorName: 'Red' },
+    { title: 'Waxing Gibbous', energy: 'Energy: Refinement & Patience',
+      text: 'Nearly full, the moon teaches patience. Refine your work, adjust your spell, trust the process. This is not the time for new workings — tend what you have already planted.',
+      rituals: ['Spell adjustment & refinement', 'Patience meditations', 'Gratitude rituals'],
+      color: '#ffd700', colorBorder: 'transparent', colorName: 'Gold' },
+    { title: 'Full Moon', energy: 'Energy: Maximum Power & Illumination',
+      text: 'The moon at her zenith — all magic amplified. Charge crystals, perform your most powerful rites, celebrate the Esbat. What was hidden is now revealed under the Goddess\'s silver gaze.',
+      rituals: ['High magic & complex spells', 'Crystal charging & consecration', 'Esbat celebration & communion'],
+      color: '#f5f5f5', colorBorder: 'transparent', colorName: 'White' },
+    { title: 'Waning Gibbous', energy: 'Energy: Gratitude & Sharing',
+      text: 'The light begins to recede — share what you have gained. Teach, give thanks, and reflect on the fullness of the cycle. Disseminate knowledge and release attachment to outcomes.',
+      rituals: ['Gratitude offerings', 'Teaching & mentoring', 'Divination & reflection'],
+      color: '#9370db', colorBorder: 'transparent', colorName: 'Purple' },
+    { title: 'Last Quarter', energy: 'Energy: Release & Forgiveness',
+      text: 'Half-dark returns. Let go of grudges, habits, and energies that weigh you down. Break hexes, sever cords, and forgive — including yourself. The cauldron must be emptied before it can be filled again.',
+      rituals: ['Banishing & cord-cutting', 'Breaking bad habits', 'Forgiveness rituals'],
+      color: '#4a4a4a', colorBorder: 'rgba(201,168,76,0.2)', colorName: 'Grey' },
+    { title: 'Waning Crescent', energy: 'Energy: Rest & Surrender',
+      text: 'The Crone\'s phase — the thinnest sliver before darkness. Rest. Surrender to the void. Dream deeply, journal, and prepare your soul for the rebirth that comes with the next New Moon.',
+      rituals: ['Rest & recuperation', 'Dream magic & journaling', 'Ancestor communication'],
+      color: '#2d1b4e', colorBorder: 'rgba(201,168,76,0.2)', colorName: 'Dark Violet' }
+  ];
+
+  var moonBtns = document.querySelectorAll('.rv2-moon__phase');
+  function showMoonPhase(idx) {
+    var p = moonPhases[idx];
+    if (!p) return;
+
+    moonBtns.forEach(function(b, i) {
+      b.classList.toggle('rv2-moon__phase--active', i === idx);
+    });
+
+    document.getElementById('moonDetailTitle').textContent = p.title;
+    document.getElementById('moonDetailEnergy').textContent = p.energy;
+    document.getElementById('moonDetailText').textContent = p.text;
+
+    var list = document.getElementById('moonDetailList');
+    list.innerHTML = '';
+    p.rituals.forEach(function(r) {
+      var li = document.createElement('li');
+      li.textContent = r;
+      list.appendChild(li);
+    });
+
+    var colorEl = document.getElementById('moonDetailColor');
+    colorEl.style.background = p.color;
+    colorEl.style.border = p.colorBorder !== 'transparent' ? '1px solid ' + p.colorBorder : 'none';
+    document.getElementById('moonDetailColorName').textContent = p.colorName;
+  }
+
+  moonBtns.forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      showMoonPhase(parseInt(btn.dataset.phase, 10));
+    });
+  });
+
+  // Default: show New Moon
+  showMoonPhase(0);
+
+  /* ── THE CHAMBER: Planet data ── */
+  var planets = [
+    { title: 'The Sun', domain: 'Dominion: Vitality, Authority, Success',
+      text: 'The Sun rules the conscious self — willpower, ambition, and the outward expression of the soul. Its candle is lit for spells of leadership, healing, and divine favor. Sunday is its sacred day; gold is its metal.',
+      day: 'Sunday', metal: 'Gold', color: '#ffd700', colorName: 'Gold', incense: 'Frankincense' },
+    { title: 'The Moon', domain: 'Dominion: Intuition, Dreams, Psychic Power',
+      text: 'The Moon governs the subconscious — dreams, emotions, and the hidden tides of the soul. Its candle opens the third eye and enhances divination. Monday is its day; silver is its metal.',
+      day: 'Monday', metal: 'Silver', color: '#c0c0e0', colorName: 'Silver', incense: 'Jasmine' },
+    { title: 'Mars', domain: 'Dominion: Courage, Conflict, Protection',
+      text: 'Mars is the warrior planet — aggression channeled into courage, defense, and righteous action. Light its red candle for protection rites, banishing enemies, and fueling the will to fight. Tuesday is its day; iron is its metal.',
+      day: 'Tuesday', metal: 'Iron', color: '#cc3333', colorName: 'Red', incense: 'Dragon\'s Blood' },
+    { title: 'Mercury', domain: 'Dominion: Communication, Knowledge, Travel',
+      text: 'Mercury rules the mind — intellect, speech, commerce, and the written word. Its candle aids examinations, negotiations, and any magic requiring clarity of thought. Wednesday is its day; quicksilver is its metal.',
+      day: 'Wednesday', metal: 'Quicksilver', color: '#e0a030', colorName: 'Orange', incense: 'Lavender' },
+    { title: 'Jupiter', domain: 'Dominion: Expansion, Wealth, Justice',
+      text: 'Jupiter is the great benefactor — abundance, wisdom, and the favor of kings. Its blue candle draws wealth, legal victories, and spiritual growth. Thursday is its day; tin is its metal.',
+      day: 'Thursday', metal: 'Tin', color: '#4040cc', colorName: 'Royal Blue', incense: 'Cedar' },
+    { title: 'Venus', domain: 'Dominion: Love, Beauty, Harmony',
+      text: 'Venus governs the heart — desire, attraction, art, and all forms of beauty. Its green candle ignites love spells, reconciliation rites, and creative inspiration. Friday is its day; copper is its metal.',
+      day: 'Friday', metal: 'Copper', color: '#40cc70', colorName: 'Green', incense: 'Rose' },
+    { title: 'Saturn', domain: 'Dominion: Discipline, Boundaries, Endings',
+      text: 'Saturn is the teacher of limits — time, death, karma, and hard-won wisdom. Its leaden candle enforces boundaries, binds oaths, and severs what must end. Saturday is its day; lead is its metal.',
+      day: 'Saturday', metal: 'Lead', color: '#666688', colorName: 'Dark Grey', incense: 'Myrrh' }
+  ];
+
+  var planetBtns = document.querySelectorAll('.rv2-chamber__planet');
+  function showPlanet(idx) {
+    var p = planets[idx];
+    if (!p) return;
+    planetBtns.forEach(function(b, i) {
+      b.classList.toggle('rv2-chamber__planet--active', i === idx);
+    });
+    document.getElementById('chamberInfoTitle').textContent = p.title;
+    document.getElementById('chamberInfoDomain').textContent = p.domain;
+    document.getElementById('chamberInfoText').textContent = p.text;
+    document.getElementById('chamberInfoDay').textContent = p.day;
+    document.getElementById('chamberInfoMetal').textContent = p.metal;
+    var swatch = document.getElementById('chamberInfoSwatch');
+    swatch.style.background = p.color;
+    swatch.nextSibling.textContent = ' ' + p.colorName;
+    document.getElementById('chamberInfoIncense').textContent = p.incense;
+  }
+  planetBtns.forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      showPlanet(parseInt(btn.dataset.planet, 10));
+    });
+  });
+  showPlanet(0);
+
+  /* ── THE GRIMOIRE: Page flip ── */
+  var grimPages = document.querySelectorAll('.rv2-grimoire__page');
+  var grimDots = document.querySelectorAll('.rv2-grimoire__dot');
+  var grimPrev = document.getElementById('grimPrev');
+  var grimNext = document.getElementById('grimNext');
+  var currentGrimPage = 0;
+
+  function showGrimPage(idx) {
+    if (idx < 0 || idx >= grimPages.length) return;
+    grimPages.forEach(function(p, i) {
+      p.classList.toggle('rv2-grimoire__page--active', i === idx);
+      p.classList.toggle('rv2-grimoire__page--exit', i === currentGrimPage && i !== idx);
+    });
+    grimDots.forEach(function(d, i) {
+      d.classList.toggle('rv2-grimoire__dot--active', i === idx);
+    });
+    currentGrimPage = idx;
+    grimPrev.style.opacity = idx === 0 ? '0.3' : '1';
+    grimNext.style.opacity = idx === grimPages.length - 1 ? '0.3' : '1';
+  }
+
+  if (grimPrev) grimPrev.addEventListener('click', function() { showGrimPage(currentGrimPage - 1); });
+  if (grimNext) grimNext.addEventListener('click', function() { showGrimPage(currentGrimPage + 1); });
+  grimDots.forEach(function(dot) {
+    dot.addEventListener('click', function() { showGrimPage(parseInt(dot.dataset.dot, 10)); });
+  });
+
+  /* ── THE SEAL: Sigil Generator ── */
+  // Rose Cross layout: 26 letters mapped to positions on concentric circles
+  var letterPositions = {};
+  (function() {
+    var alphabet = 'BCDFGHJKLMNPQRSTVWXYZ'; // consonants
+    var cx = 200, cy = 200, r = 130;
+    alphabet.split('').forEach(function(ch, i) {
+      var angle = (i / alphabet.length) * Math.PI * 2 - Math.PI / 2;
+      letterPositions[ch] = {
+        x: cx + r * Math.cos(angle),
+        y: cy + r * Math.sin(angle)
+      };
+    });
+    // Draw grid dots
+    var grid = document.getElementById('sigilGrid');
+    if (grid) {
+      alphabet.split('').forEach(function(ch) {
+        var pos = letterPositions[ch];
+        var dot = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+        dot.setAttribute('cx', pos.x);
+        dot.setAttribute('cy', pos.y);
+        dot.setAttribute('r', '3');
+        dot.setAttribute('fill', 'rgba(201,168,76,0.4)');
+        grid.appendChild(dot);
+        var label = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+        label.setAttribute('x', pos.x);
+        label.setAttribute('y', pos.y - 10);
+        label.setAttribute('text-anchor', 'middle');
+        label.setAttribute('fill', 'rgba(201,168,76,0.25)');
+        label.setAttribute('font-size', '9');
+        label.setAttribute('font-family', "'Space Mono', monospace");
+        label.textContent = ch;
+        grid.appendChild(label);
+      });
+    }
+  })();
+
+  function reduceSigil(text) {
+    // Remove vowels, spaces, duplicates
+    var upper = text.toUpperCase().replace(/[^A-Z]/g, '');
+    var noVowels = upper.replace(/[AEIOU]/g, '');
+    var seen = {};
+    var result = '';
+    for (var i = 0; i < noVowels.length; i++) {
+      if (!seen[noVowels[i]]) {
+        seen[noVowels[i]] = true;
+        result += noVowels[i];
+      }
+    }
+    return result;
+  }
+
+  function generateSigil(reduced) {
+    var points = [];
+    for (var i = 0; i < reduced.length; i++) {
+      var pos = letterPositions[reduced[i]];
+      if (pos) points.push(pos);
+    }
+    if (points.length < 2) return null;
+    return points;
+  }
+
+  function animateSigil(points) {
+    var pathEl = document.getElementById('sigilPath');
+    var startEl = document.getElementById('sigilStart');
+    var endEl = document.getElementById('sigilEnd');
+    if (!pathEl || points.length < 2) return;
+
+    // Build path
+    var d = 'M' + points[0].x.toFixed(1) + ',' + points[0].y.toFixed(1);
+    for (var i = 1; i < points.length; i++) {
+      d += ' L' + points[i].x.toFixed(1) + ',' + points[i].y.toFixed(1);
+    }
+    pathEl.setAttribute('d', d);
+
+    // Start/end markers
+    startEl.setAttribute('cx', points[0].x);
+    startEl.setAttribute('cy', points[0].y);
+    endEl.setAttribute('cx', points[points.length - 1].x);
+    endEl.setAttribute('cy', points[points.length - 1].y);
+
+    // Animate stroke drawing
+    var len = pathEl.getTotalLength();
+    pathEl.style.strokeDasharray = len;
+    pathEl.style.strokeDashoffset = len;
+    pathEl.setAttribute('opacity', '1');
+    startEl.setAttribute('opacity', '1');
+    endEl.setAttribute('opacity', '0');
+
+    if (typeof gsap !== 'undefined') {
+      gsap.to(pathEl.style, {
+        strokeDashoffset: 0, duration: 1.5, ease: 'power2.inOut',
+        onComplete: function() { endEl.setAttribute('opacity', '1'); }
+      });
+    } else {
+      pathEl.style.strokeDashoffset = '0';
+      pathEl.style.transition = 'stroke-dashoffset 1.5s ease';
+      setTimeout(function() { endEl.setAttribute('opacity', '1'); }, 1600);
+    }
+  }
+
+  var sigilInput = document.getElementById('sigilInput');
+  var sigilGenBtn = document.getElementById('sigilGenerate');
+  var sigilActions = document.getElementById('sigilActions');
+  var sigilReducedEl = document.getElementById('sigilReduced');
+
+  if (sigilGenBtn) {
+    sigilGenBtn.addEventListener('click', function() {
+      var text = sigilInput.value.trim();
+      if (!text) return;
+      var reduced = reduceSigil(text);
+      if (reduced.length < 2) { sigilReducedEl.textContent = 'Need at least 2 consonants'; return; }
+      sigilReducedEl.textContent = 'Reduced: ' + reduced;
+      var points = generateSigil(reduced);
+      if (points) {
+        animateSigil(points);
+        sigilActions.style.display = 'flex';
+      }
+    });
+  }
+
+  // Enter key triggers generate
+  if (sigilInput) {
+    sigilInput.addEventListener('keydown', function(e) {
+      if (e.key === 'Enter') sigilGenBtn.click();
+    });
+  }
+
+  // Download SVG
+  var sigilDownload = document.getElementById('sigilDownload');
+  if (sigilDownload) {
+    sigilDownload.addEventListener('click', function() {
+      var svg = document.getElementById('sigilSVG');
+      var clone = svg.cloneNode(true);
+      clone.setAttribute('xmlns', 'http://www.w3.org/2000/svg');
+      // Clean up: set gold color explicitly
+      clone.querySelectorAll('[stroke="var(--gold)"]').forEach(function(el) { el.setAttribute('stroke', '#c9a84c'); });
+      clone.querySelectorAll('[fill="var(--gold)"]').forEach(function(el) { el.setAttribute('fill', '#c9a84c'); });
+      var blob = new Blob([clone.outerHTML], { type: 'image/svg+xml' });
+      var url = URL.createObjectURL(blob);
+      var a = document.createElement('a');
+      a.href = url; a.download = 'my-sigil.svg';
+      a.click();
+      URL.revokeObjectURL(url);
+    });
+  }
+
+  // Reset
+  var sigilReset = document.getElementById('sigilReset');
+  if (sigilReset) {
+    sigilReset.addEventListener('click', function() {
+      sigilInput.value = '';
+      sigilReducedEl.textContent = '';
+      document.getElementById('sigilPath').setAttribute('opacity', '0');
+      document.getElementById('sigilStart').setAttribute('opacity', '0');
+      document.getElementById('sigilEnd').setAttribute('opacity', '0');
+      sigilActions.style.display = 'none';
+    });
+  }
+
+
+})();
+</script>
+
+
+</body>
+</html>

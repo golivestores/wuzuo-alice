@@ -1,0 +1,1545 @@
+/* =============================================================
+   WuZuo Alice — Ritual Landing Page V2: "The Sacred Space"
+   Naming: .rv2-{section}__{element}--{modifier}
+   ============================================================= */
+
+/* ─── Global V2 atmosphere ─── */
+body {
+  background: var(--bg-dark, #0e0e0e);
+}
+
+/* Path visibility toggle */
+.rv2-path { display: none; }
+body.rv2-path--wicca .rv2-path--wicca-content { display: block; }
+body.rv2-path--classical .rv2-path--classical-content { display: block; }
+
+/* Hide footer/newsletter/seal until path is chosen */
+.site-bottom { display: none; }
+.rv2-seal { display: none; }
+body.rv2-path--wicca .site-bottom,
+body.rv2-path--classical .site-bottom { display: block; }
+body.rv2-path--wicca .rv2-seal,
+body.rv2-path--classical .rv2-seal { display: block; }
+
+
+/* =============================================================
+   SECTION 1: THE GATE
+   ============================================================= */
+.rv2-gate {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: var(--s8) var(--s4);
+  overflow: hidden;
+  z-index: 10;
+}
+
+/* Particle canvas */
+.rv2-gate__particles {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ── Central content ── */
+.rv2-gate__content {
+  text-align: center;
+  margin-bottom: var(--s8);
+  position: relative;
+  z-index: 2;
+}
+.rv2-gate__label {
+  font-family: var(--font-mono);
+  font-size: clamp(1rem, 1.3vw, 1.2rem);
+  letter-spacing: 0.4em;
+  text-transform: uppercase;
+  color: var(--gold);
+  display: block;
+  margin-bottom: var(--s3);
+  opacity: 0.8;
+}
+.rv2-gate__title {
+  font-family: var(--font-display);
+  font-size: clamp(3.2rem, 6vw, 5.5rem);
+  font-weight: 300;
+  color: var(--text);
+  line-height: 1.05;
+  margin: 0 0 var(--s3);
+}
+.rv2-gate__desc {
+  font-size: clamp(1.2rem, 2vw, 1.5rem);
+  color: var(--muted);
+  line-height: 1.8;
+  max-width: 600px;
+  margin: 0 auto;
+  font-style: italic;
+}
+
+/* ── Two doors container ── */
+.rv2-gate__doors {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--s6);
+  position: relative;
+  z-index: 2;
+}
+
+/* ── Single door ── */
+.rv2-gate__door {
+  position: relative;
+  background: none;
+  border: none;
+  padding: 0;
+  width: clamp(240px, 26vw, 340px);
+  transition: transform 0.4s ease;
+}
+.rv2-gate__door:hover {
+  transform: translateY(-8px);
+}
+
+/* Door glow (ambient background) */
+.rv2-gate__door-glow {
+  position: absolute;
+  top: 25%; left: 50%;
+  width: 350px; height: 350px;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  pointer-events: none;
+  filter: blur(70px);
+  opacity: 0.3;
+  transition: opacity 0.5s ease, filter 0.5s ease;
+}
+.rv2-gate__door:hover .rv2-gate__door-glow {
+  opacity: 0.65;
+  filter: blur(80px);
+}
+.rv2-gate__door--wicca .rv2-gate__door-glow {
+  background: radial-gradient(circle, rgba(80,160,60,0.6), transparent 70%);
+}
+.rv2-gate__door--classical .rv2-gate__door-glow {
+  background: radial-gradient(circle, rgba(70,70,200,0.6), transparent 70%);
+}
+
+/* Door frame (3D tilt container) */
+.rv2-gate__door-frame {
+  position: relative;
+  transition: transform 0.3s ease;
+  transform-style: preserve-3d;
+}
+
+/* Door arch SVG */
+.rv2-gate__door-arch {
+  width: 100%;
+  height: auto;
+  display: block;
+  filter: drop-shadow(0 0 15px rgba(201,168,76,0.1));
+  transition: filter 0.4s ease;
+}
+.rv2-gate__door--wicca:hover .rv2-gate__door-arch {
+  filter: drop-shadow(0 0 35px rgba(80,160,60,0.45)) drop-shadow(0 0 80px rgba(80,160,60,0.15));
+}
+.rv2-gate__door--classical:hover .rv2-gate__door-arch {
+  filter: drop-shadow(0 0 35px rgba(70,70,200,0.45)) drop-shadow(0 0 80px rgba(70,70,200,0.15));
+}
+
+/* Door info overlay */
+.rv2-gate__door-info {
+  position: absolute;
+  bottom: 15%;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  width: 80%;
+}
+.rv2-gate__door-symbol {
+  font-size: 3.2rem;
+  display: block;
+  margin-bottom: var(--s2);
+  opacity: 0.7;
+  transition: opacity 0.4s, text-shadow 0.4s, transform 0.4s;
+}
+.rv2-gate__door:hover .rv2-gate__door-symbol {
+  transform: scale(1.15);
+}
+.rv2-gate__door:hover .rv2-gate__door-symbol {
+  opacity: 1;
+}
+.rv2-gate__door--wicca:hover .rv2-gate__door-symbol {
+  text-shadow: 0 0 30px rgba(80,160,60,0.7), 0 0 60px rgba(80,160,60,0.3);
+}
+.rv2-gate__door--classical:hover .rv2-gate__door-symbol {
+  text-shadow: 0 0 30px rgba(70,70,200,0.7), 0 0 60px rgba(70,70,200,0.3);
+}
+.rv2-gate__door-title {
+  font-family: var(--font-display);
+  font-size: clamp(2.2rem, 3vw, 3rem);
+  font-weight: 300;
+  color: var(--text);
+  margin: 0 0 0.5rem;
+  letter-spacing: 0.05em;
+}
+.rv2-gate__door-subtitle {
+  font-family: var(--font-mono);
+  font-size: clamp(0.8rem, 1vw, 0.95rem);
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin: 0 0 1rem;
+}
+.rv2-gate__door-hint {
+  font-size: clamp(0.95rem, 1.1vw, 1.1rem);
+  color: var(--muted);
+  line-height: 1.6;
+  margin: 0;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+.rv2-gate__door:hover .rv2-gate__door-hint {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ── Divider between doors ── */
+.rv2-gate__divider {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--s2);
+  opacity: 0.4;
+}
+.rv2-gate__divider-line {
+  width: 1px;
+  height: 60px;
+  background: linear-gradient(to bottom, transparent, var(--gold), transparent);
+}
+.rv2-gate__divider-or {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+/* ── Gate transition (after door chosen) ── */
+.rv2-gate--chosen {
+  min-height: auto;
+  padding: var(--s12) var(--s4) var(--s6);
+}
+.rv2-gate--chosen .rv2-gate__doors {
+  opacity: 0;
+  transform: translateY(-30px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+  pointer-events: none;
+}
+.rv2-gate--chosen .rv2-gate__content {
+  opacity: 0;
+  transform: translateY(-20px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+.rv2-gate--chosen .rv2-gate__particles {
+  opacity: 0;
+  transition: opacity 1s ease;
+}
+
+/* Scroll hint */
+.rv2-gate__scroll-hint {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: var(--s6);
+  color: var(--muted);
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  animation: rv2-bounce 2s infinite;
+  z-index: 2;
+  position: relative;
+}
+.rv2-gate__scroll-hint svg {
+  stroke: var(--gold);
+  opacity: 0.6;
+}
+@keyframes rv2-bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(8px); }
+}
+
+/* Switch path button */
+.rv2-gate__switch {
+  position: relative;
+  z-index: 2;
+  margin-top: var(--s4);
+  padding: 8px 24px;
+  background: transparent;
+  border: 1px solid rgba(201,168,76,0.2);
+  border-radius: 6px;
+  color: var(--muted);
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.15em;
+  cursor: pointer;
+  transition: color 0.3s, border-color 0.3s;
+}
+.rv2-gate__switch:hover {
+  color: var(--gold);
+  border-color: rgba(201,168,76,0.4);
+}
+
+/* Hide chosen door's counterpart */
+body.rv2-path--wicca .rv2-gate__door--classical { display: none; }
+body.rv2-path--classical .rv2-gate__door--wicca { display: none; }
+body.rv2-path--wicca .rv2-gate__divider,
+body.rv2-path--classical .rv2-gate__divider { display: none; }
+
+/* Show the selected door centered as a "you chose" state */
+body.rv2-path--wicca .rv2-gate--chosen .rv2-gate__doors,
+body.rv2-path--classical .rv2-gate--chosen .rv2-gate__doors {
+  opacity: 1;
+  transform: none;
+  pointer-events: none;
+}
+body.rv2-path--wicca .rv2-gate--chosen .rv2-gate__door--wicca,
+body.rv2-path--classical .rv2-gate--chosen .rv2-gate__door--classical {
+  opacity: 0.6;
+  transform: scale(0.8);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+
+/* =============================================================
+   SECTION 2: THE ALTAR
+   ============================================================= */
+.rv2-altar {
+  position: relative;
+  padding: var(--s12) var(--s4) var(--s10);
+  z-index: 10;
+}
+
+/* Section header (shared pattern for Wicca sections) */
+.rv2-altar__header,
+.rv2-moon__header {
+  text-align: center;
+  max-width: 680px;
+  margin: 0 auto var(--s8);
+}
+.rv2-altar__label,
+.rv2-moon__label {
+  font-family: var(--font-mono);
+  font-size: clamp(0.95rem, 1.2vw, 1.1rem);
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: var(--gold);
+  display: block;
+  margin-bottom: var(--s2);
+  opacity: 0.8;
+}
+.rv2-altar__title,
+.rv2-moon__title {
+  font-family: var(--font-display);
+  font-size: clamp(2.8rem, 5vw, 4.5rem);
+  font-weight: 300;
+  color: var(--text);
+  line-height: 1.1;
+  margin: 0 0 var(--s3);
+}
+.rv2-altar__desc,
+.rv2-moon__desc {
+  font-size: clamp(1.1rem, 1.5vw, 1.35rem);
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+/* ── Altar scene (interactive area) ── */
+.rv2-altar__scene {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--s8);
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* Altar table (the circular interactive zone) */
+.rv2-altar__table {
+  position: relative;
+  width: clamp(380px, 45vw, 550px);
+  height: clamp(380px, 45vw, 550px);
+  flex-shrink: 0;
+}
+.rv2-altar__circle-svg {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0; left: 0;
+  animation: rv2-altar-rotate 120s linear infinite;
+}
+@keyframes rv2-altar-rotate {
+  to { transform: rotate(360deg); }
+}
+
+/* ── Altar items (hotspots) ── */
+.rv2-altar__item {
+  position: absolute;
+  background: rgba(25,25,20,0.85);
+  border: 1px solid rgba(80,160,60,0.35);
+  border-radius: 50%;
+  width: 68px; height: 68px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: scale 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+  z-index: 2;
+  box-shadow: 0 0 15px rgba(80,160,60,0.1);
+}
+.rv2-altar__item:hover,
+.rv2-altar__item--active {
+  scale: 1.15;
+  border-color: rgba(80,160,60,0.6);
+  box-shadow: 0 0 25px rgba(80,160,60,0.3), 0 0 60px rgba(80,160,60,0.1);
+}
+.rv2-altar__item-icon {
+  font-size: 2rem;
+  line-height: 1;
+  filter: brightness(1.2);
+}
+.rv2-altar__item-pulse {
+  position: absolute;
+  width: 100%; height: 100%;
+  border-radius: 50%;
+  border: 1px solid rgba(80,160,60,0.3);
+  animation: rv2-pulse 3s ease-in-out infinite;
+}
+@keyframes rv2-pulse {
+  0%, 100% { transform: scale(1); opacity: 0.5; }
+  50% { transform: scale(1.5); opacity: 0; }
+}
+
+/* Hotspot positions (clock-like around center) */
+.rv2-altar__item--candle-n  { top: 5%;  left: 50%; transform: translateX(-50%); }
+.rv2-altar__item--chalice   { top: 18%; right: 8%; }
+.rv2-altar__item--herbs     { top: 50%; right: 2%; transform: translateY(-50%); }
+.rv2-altar__item--crystal   { bottom: 18%; right: 8%; }
+.rv2-altar__item--pentacle  { top: 50%; left: 50%; transform: translate(-50%, -50%); }
+.rv2-altar__item--athame    { bottom: 18%; left: 8%; }
+.rv2-altar__item--incense   { top: 50%; left: 2%; transform: translateY(-50%); }
+.rv2-altar__item--book      { top: 18%; left: 8%; }
+
+/* ── Altar info panel ── */
+.rv2-altar__info {
+  flex: 1;
+  max-width: 420px;
+  min-width: 300px;
+  padding: var(--s6);
+  border: 1px solid rgba(80,160,60,0.15);
+  border-radius: 12px;
+  background: rgba(15,15,15,0.8);
+  backdrop-filter: blur(10px);
+  position: relative;
+}
+.rv2-altar__info--visible {
+  border-color: rgba(80,160,60,0.3);
+  box-shadow: 0 0 30px rgba(80,160,60,0.08);
+}
+.rv2-altar__info-close {
+  position: absolute;
+  top: 12px; right: 16px;
+  background: none; border: none;
+  color: var(--muted);
+  font-size: 1.6rem;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+.rv2-altar__info-close:hover { color: var(--gold); }
+.rv2-altar__info-icon {
+  font-size: 3rem;
+  margin-bottom: var(--s2);
+}
+.rv2-altar__info-title {
+  font-family: var(--font-display);
+  font-size: clamp(1.8rem, 2.5vw, 2.4rem);
+  font-weight: 300;
+  color: var(--text);
+  margin: 0 0 0.4rem;
+}
+.rv2-altar__info-element {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(80,160,60,0.7);
+  margin: 0 0 var(--s3);
+}
+.rv2-altar__info-text {
+  font-size: 1.1rem;
+  color: var(--muted);
+  line-height: 1.7;
+  margin: 0;
+}
+
+
+/* =============================================================
+   SECTION 3: THE MOON CYCLE
+   ============================================================= */
+.rv2-moon {
+  position: relative;
+  padding: var(--s12) var(--s4) var(--s10);
+  z-index: 10;
+}
+
+/* ── Moon wheel layout ── */
+.rv2-moon__wheel-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--s8);
+  max-width: 1100px;
+  margin: 0 auto;
+}
+.rv2-moon__wheel {
+  position: relative;
+  width: clamp(340px, 40vw, 480px);
+  height: clamp(340px, 40vw, 480px);
+  flex-shrink: 0;
+}
+.rv2-moon__wheel-svg {
+  width: 100%; height: 100%;
+  position: absolute;
+  top: 0; left: 0;
+}
+
+/* ── Moon phase buttons (positioned around circle) ── */
+.rv2-moon__phase {
+  position: absolute;
+  background: rgba(20,20,20,0.5);
+  border: 1px solid rgba(201,168,76,0.15);
+  border-radius: 50%;
+  width: 72px; height: 72px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: scale 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+  z-index: 2;
+}
+.rv2-moon__phase:hover,
+.rv2-moon__phase--active {
+  scale: 1.15;
+  border-color: rgba(201,168,76,0.5);
+  box-shadow: 0 0 25px rgba(201,168,76,0.25), 0 0 60px rgba(201,168,76,0.08);
+}
+.rv2-moon__phase-icon {
+  width: 32px; height: 32px;
+}
+.rv2-moon__phase-name {
+  position: absolute;
+  bottom: -22px;
+  white-space: nowrap;
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+.rv2-moon__phase:hover .rv2-moon__phase-name,
+.rv2-moon__phase--active .rv2-moon__phase-name {
+  opacity: 1;
+}
+
+/* Phase positions (8 points on a circle, top = 0°, clockwise) */
+.rv2-moon__phase--new      { top: 2%;  left: 50%; transform: translateX(-50%); }
+.rv2-moon__phase--wax-cres { top: 14%; right: 10%; }
+.rv2-moon__phase--first-q  { top: 50%; right: 0%;  transform: translateY(-50%); }
+.rv2-moon__phase--wax-gib  { bottom: 14%; right: 10%; }
+.rv2-moon__phase--full     { bottom: 2%; left: 50%; transform: translateX(-50%); }
+.rv2-moon__phase--wan-gib  { bottom: 14%; left: 10%; }
+.rv2-moon__phase--last-q   { top: 50%; left: 0%;  transform: translateY(-50%); }
+.rv2-moon__phase--wan-cres { top: 14%; left: 10%; }
+
+/* ── Moon detail panel ── */
+.rv2-moon__detail {
+  flex: 1;
+  max-width: 440px;
+  min-width: 300px;
+  padding: var(--s6);
+  border: 1px solid rgba(201,168,76,0.12);
+  border-radius: 12px;
+  background: rgba(15,15,15,0.8);
+  backdrop-filter: blur(10px);
+}
+.rv2-moon__detail-title {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 3vw, 2.8rem);
+  font-weight: 300;
+  color: var(--text);
+  margin: 0 0 0.5rem;
+}
+.rv2-moon__detail-energy {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin: 0 0 var(--s3);
+}
+.rv2-moon__detail-text {
+  font-size: 1.1rem;
+  color: var(--muted);
+  line-height: 1.7;
+  margin: 0 0 var(--s4);
+}
+.rv2-moon__detail-rituals {
+  margin-bottom: var(--s4);
+}
+.rv2-moon__detail-rituals-label {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--gold);
+  opacity: 0.7;
+  display: block;
+  margin-bottom: var(--s1);
+}
+.rv2-moon__detail-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.rv2-moon__detail-list li {
+  font-size: 1rem;
+  color: var(--muted);
+  padding: 0.4rem 0;
+  border-bottom: 1px solid rgba(201,168,76,0.06);
+}
+.rv2-moon__detail-list li::before {
+  content: '◇ ';
+  color: var(--gold);
+  opacity: 0.5;
+}
+.rv2-moon__detail-candle {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 0.95rem;
+  color: var(--muted);
+}
+.rv2-moon__detail-color {
+  display: inline-block;
+  width: 18px; height: 18px;
+  border-radius: 50%;
+  vertical-align: middle;
+}
+
+
+/* =============================================================
+   SECTION 4: THE OFFERING (shared by Wicca & Classical)
+   ============================================================= */
+.rv2-offering {
+  position: relative;
+  padding: var(--s12) var(--s4) var(--s10);
+  z-index: 10;
+}
+.rv2-offering__header {
+  text-align: center;
+  max-width: 680px;
+  margin: 0 auto var(--s8);
+}
+.rv2-offering__label {
+  font-family: var(--font-mono);
+  font-size: clamp(0.95rem, 1.2vw, 1.1rem);
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: var(--gold);
+  display: block;
+  margin-bottom: var(--s2);
+  opacity: 0.8;
+}
+.rv2-offering__title {
+  font-family: var(--font-display);
+  font-size: clamp(2.8rem, 5vw, 4.5rem);
+  font-weight: 300;
+  color: var(--text);
+  line-height: 1.1;
+  margin: 0 0 var(--s3);
+}
+.rv2-offering__desc {
+  font-size: clamp(1.1rem, 1.5vw, 1.35rem);
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+/* ── Product grid ── */
+.rv2-offering__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--s4);
+  max-width: 1100px;
+  margin: 0 auto;
+}
+.rv2-offering__card {
+  border: 1px solid rgba(201,168,76,0.1);
+  border-radius: 12px;
+  background: rgba(15,15,15,0.6);
+  overflow: hidden;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+.rv2-offering__card:hover {
+  border-color: rgba(201,168,76,0.25);
+  box-shadow: 0 0 30px rgba(201,168,76,0.08);
+}
+.rv2-offering__card-img {
+  position: relative;
+  aspect-ratio: 1;
+  background-color: rgba(25,22,18,1);
+  background-size: cover;
+  background-position: center;
+}
+.rv2-offering__card-badge {
+  position: absolute;
+  top: 12px; left: 12px;
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold);
+  background: rgba(0,0,0,0.6);
+  padding: 4px 10px;
+  border-radius: 4px;
+  border: 1px solid rgba(201,168,76,0.15);
+}
+.rv2-offering__card-body {
+  padding: var(--s3);
+}
+.rv2-offering__card-name {
+  font-family: var(--font-display);
+  font-size: clamp(1.3rem, 1.8vw, 1.6rem);
+  font-weight: 300;
+  color: var(--text);
+  margin: 0 0 0.5rem;
+}
+.rv2-offering__card-ritual {
+  font-size: 0.85rem;
+  color: var(--muted);
+  line-height: 1.5;
+  margin: 0 0 var(--s2);
+  opacity: 0.7;
+}
+.rv2-offering__card-price {
+  font-family: var(--font-mono);
+  font-size: 1.1rem;
+  color: var(--gold);
+  margin-bottom: var(--s2);
+}
+.rv2-offering__card-btn {
+  width: 100%;
+  padding: 10px;
+  background: transparent;
+  border: 1px solid rgba(201,168,76,0.3);
+  border-radius: 6px;
+  color: var(--gold);
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background 0.3s, border-color 0.3s;
+}
+.rv2-offering__card-btn:hover {
+  background: rgba(201,168,76,0.1);
+  border-color: rgba(201,168,76,0.5);
+}
+
+
+/* =============================================================
+   SECTION 5: THE CHAMBER
+   ============================================================= */
+.rv2-chamber {
+  position: relative;
+  padding: var(--s12) var(--s4) var(--s10);
+  z-index: 10;
+}
+.rv2-chamber__header {
+  text-align: center;
+  max-width: 680px;
+  margin: 0 auto var(--s8);
+}
+.rv2-chamber__label {
+  font-family: var(--font-mono);
+  font-size: clamp(0.95rem, 1.2vw, 1.1rem);
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: var(--gold);
+  display: block;
+  margin-bottom: var(--s2);
+  opacity: 0.8;
+}
+.rv2-chamber__title {
+  font-family: var(--font-display);
+  font-size: clamp(2.8rem, 5vw, 4.5rem);
+  font-weight: 300;
+  color: var(--text);
+  line-height: 1.1;
+  margin: 0 0 var(--s3);
+}
+.rv2-chamber__desc {
+  font-size: clamp(1.1rem, 1.5vw, 1.35rem);
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+/* ── Chamber scene ── */
+.rv2-chamber__scene {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--s8);
+  max-width: 1100px;
+  margin: 0 auto;
+}
+.rv2-chamber__circle {
+  position: relative;
+  width: clamp(380px, 45vw, 550px);
+  height: clamp(380px, 45vw, 550px);
+  flex-shrink: 0;
+}
+.rv2-chamber__circle-svg {
+  width: 100%; height: 100%;
+  position: absolute;
+  top: 0; left: 0;
+  animation: rv2-chamber-rotate 180s linear infinite;
+}
+@keyframes rv2-chamber-rotate {
+  to { transform: rotate(360deg); }
+}
+
+/* ── Planetary candle buttons ── */
+.rv2-chamber__planet {
+  position: absolute;
+  background: rgba(20,20,35,0.85);
+  border: 1px solid rgba(120,120,220,0.4);
+  border-radius: 50%;
+  width: 72px; height: 72px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: scale 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+  z-index: 2;
+  box-shadow: 0 0 12px rgba(120,120,220,0.12);
+}
+.rv2-chamber__planet:hover,
+.rv2-chamber__planet--active {
+  scale: 1.15;
+  border-color: rgba(140,140,240,0.7);
+  box-shadow: 0 0 30px rgba(120,120,220,0.35), 0 0 60px rgba(120,120,220,0.1);
+}
+
+/* CSS mini flame on each candle */
+.rv2-chamber__planet-flame {
+  width: 12px; height: 18px;
+  border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+  background: var(--flame-color, #ffd700);
+  opacity: 0.8;
+  animation: rv2-flame-flicker 1.5s ease-in-out infinite alternate;
+  margin-bottom: 2px;
+  filter: blur(1px);
+}
+@keyframes rv2-flame-flicker {
+  0% { transform: scaleY(1) scaleX(1); opacity: 0.7; }
+  50% { transform: scaleY(1.15) scaleX(0.9); opacity: 0.9; }
+  100% { transform: scaleY(0.9) scaleX(1.05); opacity: 0.75; }
+}
+.rv2-chamber__planet-symbol {
+  font-size: 1.4rem;
+  line-height: 1;
+  color: var(--text);
+}
+.rv2-chamber__planet-name {
+  position: absolute;
+  bottom: -20px;
+  white-space: nowrap;
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+.rv2-chamber__planet:hover .rv2-chamber__planet-name,
+.rv2-chamber__planet--active .rv2-chamber__planet-name {
+  opacity: 1;
+}
+
+/* 7 planet positions (heptagram layout, top = Sun) */
+.rv2-chamber__planet--sun     { top: 3%;  left: 50%; transform: translateX(-50%); }
+.rv2-chamber__planet--moon    { top: 18%; right: 5%; }
+.rv2-chamber__planet--mars    { top: 55%; right: 0%; }
+.rv2-chamber__planet--mercury { bottom: 8%; right: 18%; }
+.rv2-chamber__planet--jupiter { bottom: 8%; left: 18%; }
+.rv2-chamber__planet--venus   { top: 55%; left: 0%; }
+.rv2-chamber__planet--saturn  { top: 18%; left: 5%; }
+
+/* ── Chamber info panel ── */
+.rv2-chamber__info {
+  flex: 1;
+  max-width: 440px;
+  min-width: 300px;
+  padding: var(--s6);
+  border: 1px solid rgba(120,120,220,0.2);
+  border-radius: 12px;
+  background: rgba(14,14,24,0.9);
+  backdrop-filter: blur(10px);
+  position: relative;
+}
+.rv2-chamber__info-title {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 3vw, 2.8rem);
+  font-weight: 300;
+  color: var(--text);
+  margin: 0 0 0.5rem;
+}
+.rv2-chamber__info-domain {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(150,150,240,0.9);
+  margin: 0 0 var(--s3);
+}
+.rv2-chamber__info-text {
+  font-size: 1.1rem;
+  color: var(--muted);
+  line-height: 1.7;
+  margin: 0 0 var(--s4);
+}
+.rv2-chamber__info-attrs {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--s2);
+}
+.rv2-chamber__info-attr {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+.rv2-chamber__info-attr-label {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--gold);
+  opacity: 0.6;
+}
+.rv2-chamber__info-attr-val {
+  font-size: 1rem;
+  color: var(--muted);
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+.rv2-chamber__info-swatch {
+  display: inline-block;
+  width: 14px; height: 14px;
+  border-radius: 50%;
+}
+
+
+/* =============================================================
+   SECTION 6: THE GRIMOIRE
+   ============================================================= */
+.rv2-grimoire {
+  position: relative;
+  padding: var(--s12) var(--s4) var(--s10);
+  z-index: 10;
+}
+.rv2-grimoire__header {
+  text-align: center;
+  max-width: 680px;
+  margin: 0 auto var(--s8);
+}
+.rv2-grimoire__label {
+  font-family: var(--font-mono);
+  font-size: clamp(0.95rem, 1.2vw, 1.1rem);
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: var(--gold);
+  display: block;
+  margin-bottom: var(--s2);
+  opacity: 0.8;
+}
+.rv2-grimoire__title {
+  font-family: var(--font-display);
+  font-size: clamp(2.8rem, 5vw, 4.5rem);
+  font-weight: 300;
+  color: var(--text);
+  line-height: 1.1;
+  margin: 0 0 var(--s3);
+}
+.rv2-grimoire__desc {
+  font-size: clamp(1.1rem, 1.5vw, 1.35rem);
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+/* ── Book container ── */
+.rv2-grimoire__book {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--s4);
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+/* Nav arrows */
+.rv2-grimoire__nav {
+  background: rgba(20,20,30,0.6);
+  border: 1px solid rgba(140,140,230,0.2);
+  border-radius: 50%;
+  width: 48px; height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: var(--muted);
+  transition: border-color 0.3s, color 0.3s, background 0.3s;
+  flex-shrink: 0;
+}
+.rv2-grimoire__nav:hover {
+  border-color: rgba(140,140,230,0.5);
+  color: var(--text);
+  background: rgba(30,30,50,0.8);
+}
+
+/* ── Pages container ── */
+.rv2-grimoire__pages {
+  position: relative;
+  width: 100%;
+  min-height: 480px;
+  border: 1px solid rgba(140,140,230,0.15);
+  border-radius: 12px;
+  background: rgba(14,14,24,0.9);
+  padding: var(--s6) var(--s6);
+  overflow: hidden;
+}
+
+/* Single page */
+.rv2-grimoire__page {
+  display: none;
+  animation: rv2-page-in 0.5s ease forwards;
+}
+.rv2-grimoire__page--active {
+  display: block;
+}
+@keyframes rv2-page-in {
+  from { opacity: 0; transform: translateX(20px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+/* Page elements */
+.rv2-grimoire__page-ornament {
+  text-align: center;
+  font-size: 2rem;
+  color: rgba(140,140,230,0.4);
+  margin-bottom: var(--s3);
+}
+.rv2-grimoire__page-chapter {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: rgba(150,150,240,0.7);
+  display: block;
+  margin-bottom: var(--s2);
+}
+.rv2-grimoire__page-title {
+  font-family: var(--font-display);
+  font-size: clamp(1.8rem, 3vw, 2.6rem);
+  font-weight: 300;
+  color: var(--text);
+  margin: 0 0 var(--s1);
+}
+.rv2-grimoire__page-subtitle {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(150,150,240,0.6);
+  margin: 0 0 var(--s4);
+  text-align: center;
+}
+.rv2-grimoire__page-text {
+  font-size: 1.05rem;
+  color: var(--muted);
+  line-height: 1.8;
+  margin: 0 0 var(--s3);
+}
+.rv2-grimoire__page-hint {
+  text-align: center;
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  color: var(--gold);
+  opacity: 0.6;
+  margin-top: var(--s4);
+}
+.rv2-grimoire__page-seal {
+  display: flex;
+  justify-content: center;
+  margin: var(--s4) 0;
+}
+.rv2-grimoire__page-seal svg {
+  width: 100px; height: 100px;
+  animation: rv2-seal-spin 30s linear infinite;
+}
+@keyframes rv2-seal-spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Symbols row */
+.rv2-grimoire__page-symbols {
+  display: flex;
+  justify-content: center;
+  gap: var(--s3);
+  margin: var(--s4) 0;
+}
+.rv2-grimoire__page-symbols span {
+  font-size: 2rem;
+  color: rgba(150,150,240,0.6);
+  cursor: default;
+  transition: color 0.3s;
+}
+.rv2-grimoire__page-symbols span:hover {
+  color: rgba(180,180,255,1);
+}
+
+/* Table rows */
+.rv2-grimoire__page-table {
+  margin: var(--s3) 0;
+}
+.rv2-grimoire__page-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid rgba(140,140,230,0.08);
+  font-size: 0.95rem;
+}
+.rv2-grimoire__page-row span:first-child {
+  color: rgba(150,150,240,0.7);
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+.rv2-grimoire__page-row span:last-child {
+  color: var(--muted);
+}
+.rv2-grimoire__page-note {
+  font-size: 0.8rem;
+  color: var(--muted);
+  opacity: 0.5;
+  font-style: italic;
+  margin: var(--s2) 0 0;
+}
+
+/* Directions grid */
+.rv2-grimoire__page-directions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--s2);
+  margin: var(--s3) 0;
+  font-size: 1rem;
+  color: var(--muted);
+  line-height: 1.6;
+}
+.rv2-grimoire__page-directions strong {
+  color: rgba(150,150,240,0.8);
+}
+
+/* Blockquote */
+.rv2-grimoire__page-quote {
+  border-left: 2px solid rgba(140,140,230,0.25);
+  padding-left: var(--s3);
+  margin: var(--s4) 0;
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-style: italic;
+  color: var(--text);
+  line-height: 1.7;
+  opacity: 0.85;
+}
+
+/* ── Page dots ── */
+.rv2-grimoire__dots {
+  display: flex;
+  justify-content: center;
+  gap: 0.6rem;
+  margin-top: var(--s4);
+}
+.rv2-grimoire__dot {
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  background: rgba(140,140,230,0.2);
+  cursor: pointer;
+  transition: background 0.3s, transform 0.3s;
+}
+.rv2-grimoire__dot--active {
+  background: rgba(150,150,240,0.7);
+  transform: scale(1.3);
+}
+.rv2-grimoire__dot:hover {
+  background: rgba(150,150,240,0.5);
+}
+
+
+/* =============================================================
+   SECTION 8: THE SEAL (Sigil Generator)
+   ============================================================= */
+.rv2-seal {
+  position: relative;
+  padding: var(--s12) var(--s4) var(--s10);
+  z-index: 10;
+}
+.rv2-seal__header {
+  text-align: center;
+  max-width: 680px;
+  margin: 0 auto var(--s8);
+}
+.rv2-seal__label {
+  font-family: var(--font-mono);
+  font-size: clamp(0.95rem, 1.2vw, 1.1rem);
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: var(--gold);
+  display: block;
+  margin-bottom: var(--s2);
+  opacity: 0.8;
+}
+.rv2-seal__title {
+  font-family: var(--font-display);
+  font-size: clamp(2.8rem, 5vw, 4.5rem);
+  font-weight: 300;
+  color: var(--text);
+  line-height: 1.1;
+  margin: 0 0 var(--s3);
+}
+.rv2-seal__desc {
+  font-size: clamp(1.1rem, 1.5vw, 1.35rem);
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+/* ── Workspace ── */
+.rv2-seal__workspace {
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--s5);
+}
+
+/* Input area */
+.rv2-seal__input-area {
+  text-align: center;
+  width: 100%;
+  max-width: 480px;
+}
+.rv2-seal__input-label {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold);
+  display: block;
+  margin-bottom: var(--s2);
+  opacity: 0.7;
+}
+.rv2-seal__input {
+  width: 100%;
+  padding: 14px 20px;
+  background: rgba(15,15,15,0.8);
+  border: 1px solid rgba(201,168,76,0.2);
+  border-radius: 8px;
+  color: var(--text);
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  letter-spacing: 0.05em;
+  outline: none;
+  transition: border-color 0.3s;
+}
+.rv2-seal__input:focus {
+  border-color: rgba(201,168,76,0.5);
+}
+.rv2-seal__input::placeholder {
+  color: var(--muted);
+  opacity: 0.4;
+}
+.rv2-seal__generate {
+  margin-top: var(--s3);
+  padding: 12px 40px;
+  background: transparent;
+  border: 1px solid rgba(201,168,76,0.4);
+  border-radius: 6px;
+  color: var(--gold);
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background 0.3s, border-color 0.3s, box-shadow 0.3s;
+}
+.rv2-seal__generate:hover {
+  background: rgba(201,168,76,0.1);
+  border-color: rgba(201,168,76,0.6);
+  box-shadow: 0 0 20px rgba(201,168,76,0.1);
+}
+.rv2-seal__input-hint {
+  font-size: 0.8rem;
+  color: var(--muted);
+  opacity: 0.5;
+  margin-top: var(--s2);
+}
+
+/* Sigil display */
+.rv2-seal__display {
+  width: clamp(300px, 50vw, 420px);
+  text-align: center;
+}
+.rv2-seal__svg {
+  width: 100%;
+  height: auto;
+}
+.rv2-seal__reduced {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  letter-spacing: 0.3em;
+  color: var(--gold);
+  opacity: 0.6;
+  margin-top: var(--s2);
+  min-height: 1.2em;
+}
+
+/* Actions */
+.rv2-seal__actions {
+  display: flex;
+  gap: var(--s3);
+  justify-content: center;
+}
+.rv2-seal__action-btn {
+  padding: 10px 28px;
+  background: transparent;
+  border: 1px solid rgba(201,168,76,0.3);
+  border-radius: 6px;
+  color: var(--gold);
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background 0.3s, border-color 0.3s;
+}
+.rv2-seal__action-btn:hover {
+  background: rgba(201,168,76,0.1);
+  border-color: rgba(201,168,76,0.5);
+}
+.rv2-seal__action-btn--secondary {
+  border-color: rgba(201,168,76,0.15);
+  color: var(--muted);
+}
+
+
+/* =============================================================
+   RESPONSIVE
+   ============================================================= */
+
+/* ── Tablet (1024px) ── */
+@media (max-width: 1024px) {
+  .rv2-gate__door {
+    width: clamp(220px, 30vw, 280px);
+  }
+  .rv2-offering__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .rv2-altar__table, .rv2-chamber__circle {
+    width: clamp(320px, 40vw, 420px);
+    height: clamp(320px, 40vw, 420px);
+  }
+  .rv2-moon__wheel {
+    width: clamp(300px, 38vw, 400px);
+    height: clamp(300px, 38vw, 400px);
+  }
+  .rv2-grimoire__pages { min-height: 440px; }
+}
+
+/* ── Mobile (749px) ── */
+@media (max-width: 749px) {
+  .rv2-gate {
+    padding: var(--s6) var(--s3);
+    min-height: 100svh;
+  }
+  .rv2-gate__content {
+    margin-bottom: var(--s5);
+  }
+  .rv2-gate__title {
+    font-size: clamp(2.4rem, 8vw, 3.2rem);
+  }
+  .rv2-gate__desc {
+    font-size: 1rem;
+  }
+
+  /* Stack doors vertically on mobile */
+  .rv2-gate__doors {
+    flex-direction: column;
+    gap: var(--s3);
+  }
+  .rv2-gate__door {
+    width: clamp(200px, 60vw, 260px);
+  }
+
+  /* Divider horizontal on mobile */
+  .rv2-gate__divider {
+    flex-direction: row;
+    gap: var(--s3);
+  }
+  .rv2-gate__divider-line {
+    width: 50px;
+    height: 1px;
+    background: linear-gradient(to right, transparent, var(--gold), transparent);
+  }
+
+  /* Show hint text on mobile always */
+  .rv2-gate__door-hint {
+    opacity: 0.7;
+    transform: none;
+  }
+
+  /* ── Seal mobile ── */
+  .rv2-seal { padding: var(--s8) var(--s3) var(--s6); }
+  .rv2-seal__display { width: clamp(280px, 80vw, 360px); }
+  .rv2-seal__input { font-size: 1rem; }
+
+  /* ── Grimoire mobile ── */
+  .rv2-grimoire { padding: var(--s8) var(--s3) var(--s6); }
+  .rv2-grimoire__pages { min-height: 400px; padding: var(--s4); }
+  .rv2-grimoire__nav { width: 40px; height: 40px; }
+  .rv2-grimoire__page-symbols { gap: var(--s2); }
+  .rv2-grimoire__page-symbols span { font-size: 1.5rem; }
+  .rv2-grimoire__page-directions { grid-template-columns: 1fr; }
+  .rv2-grimoire__page-row { font-size: 0.85rem; }
+
+  /* ── Offering mobile: horizontal swipe ── */
+  .rv2-offering { padding: var(--s8) 0 var(--s6); }
+  .rv2-offering__header { padding: 0 var(--s3); }
+  .rv2-offering__grid {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    gap: var(--s3);
+    padding: 0 var(--s3);
+    scrollbar-width: none;
+  }
+  .rv2-offering__grid::-webkit-scrollbar { display: none; }
+  .rv2-offering__card {
+    flex: 0 0 75vw;
+    max-width: 300px;
+    scroll-snap-align: center;
+  }
+
+  /* ── Chamber mobile ── */
+  .rv2-chamber { padding: var(--s8) var(--s3) var(--s6); }
+  .rv2-chamber__scene {
+    flex-direction: column;
+    gap: var(--s5);
+  }
+  .rv2-chamber__circle {
+    width: clamp(300px, 85vw, 400px);
+    height: clamp(300px, 85vw, 400px);
+  }
+  .rv2-chamber__planet { width: 58px; height: 58px; }
+  .rv2-chamber__planet-symbol { font-size: 1.1rem; }
+  .rv2-chamber__planet-flame { width: 10px; height: 14px; }
+  .rv2-chamber__info { max-width: 100%; min-width: auto; }
+
+  /* ── Altar mobile ── */
+  .rv2-altar { padding: var(--s8) var(--s3) var(--s6); }
+  .rv2-altar__scene {
+    flex-direction: column;
+    gap: var(--s5);
+  }
+  .rv2-altar__table {
+    width: clamp(300px, 85vw, 400px);
+    height: clamp(300px, 85vw, 400px);
+  }
+  .rv2-altar__item {
+    width: 52px; height: 52px;
+  }
+  .rv2-altar__item-icon { font-size: 1.4rem; }
+  .rv2-altar__info {
+    max-width: 100%;
+    opacity: 1;
+    transform: none;
+  }
+
+  /* ── Moon Cycle mobile ── */
+  .rv2-moon { padding: var(--s8) var(--s3) var(--s6); }
+  .rv2-moon__wheel-wrap {
+    flex-direction: column;
+    gap: var(--s5);
+  }
+  .rv2-moon__wheel {
+    width: clamp(300px, 85vw, 380px);
+    height: clamp(300px, 85vw, 380px);
+  }
+  .rv2-moon__phase {
+    width: 58px; height: 58px;
+  }
+  .rv2-moon__phase-icon { width: 26px; height: 26px; }
+  .rv2-moon__phase-name { font-size: 0.55rem; bottom: -18px; }
+  .rv2-moon__detail { max-width: 100%; }
+}
+
+/* ── Small phone (420px) ── */
+@media (max-width: 420px) {
+  .rv2-gate__title {
+    font-size: 2.2rem;
+  }
+  .rv2-gate__door {
+    width: 220px;
+  }
+  .rv2-gate__door-title {
+    font-size: 1.6rem;
+  }
+  .rv2-altar__table {
+    width: 290px;
+    height: 290px;
+  }
+  .rv2-altar__item { width: 44px; height: 44px; }
+  .rv2-altar__item-icon { font-size: 1.2rem; }
+  .rv2-moon__wheel { width: 280px; height: 280px; }
+  .rv2-moon__phase { width: 48px; height: 48px; }
+  .rv2-offering__card { flex: 0 0 80vw; }
+  .rv2-chamber__circle { width: 280px; height: 280px; }
+  .rv2-chamber__planet { width: 48px; height: 48px; }
+  .rv2-chamber__planet-symbol { font-size: 0.95rem; }
+  .rv2-grimoire__pages { min-height: 360px; padding: var(--s3); }
+  .rv2-grimoire__page-title { font-size: 1.5rem; }
+  .rv2-grimoire__page-quote { font-size: 1rem; }
+  .rv2-seal__display { width: 270px; }
+  .rv2-seal__actions { flex-direction: column; align-items: center; }
+}
