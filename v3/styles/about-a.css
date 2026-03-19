@@ -1,0 +1,573 @@
+/* =============================================================
+   WuZuo Alice V3 — About Version A: "The Scroll"
+   Brand Story + Wholesale/Custom Services
+   Breakpoints: 1024px (tablet), 749px (mobile), 420px (small)
+   ============================================================= */
+
+/* ======== About Hero ======== */
+.about-hero {
+  position: relative; z-index: 10;
+  height: 100vh; min-height: 600px;
+  display: flex; align-items: center; justify-content: center;
+  overflow: hidden;
+}
+.about-hero__bg {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%; object-fit: cover;
+}
+.about-hero__overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(20,20,20,0.55) 0%,
+    rgba(20,20,20,0.75) 100%
+  );
+}
+.about-hero__content {
+  position: relative; z-index: 2;
+  text-align: center; max-width: 72rem;
+  padding: 0 var(--s4);
+}
+.about-hero__label {
+  font-family: var(--font-mono);
+  font-size: 1.1rem; letter-spacing: 0.3em;
+  text-transform: uppercase; color: var(--gold);
+  display: block; margin-bottom: var(--s2);
+}
+.about-hero__title {
+  font-family: var(--font-display);
+  font-size: clamp(3.4rem, 7vw, 7.2rem);
+  font-weight: 300; line-height: 1.05;
+  color: var(--text); margin-bottom: var(--s3);
+}
+.about-hero__desc {
+  font-size: 1.5rem; color: var(--muted);
+  line-height: 1.7; margin-bottom: var(--s4);
+  max-width: 48rem; margin-left: auto; margin-right: auto;
+}
+.about-hero__ctas {
+  display: flex; gap: var(--s2);
+  justify-content: center; flex-wrap: wrap;
+}
+.about-hero__btn {
+  font-family: var(--font-mono);
+  font-size: 1.1rem; letter-spacing: 0.18em;
+  text-transform: uppercase;
+  padding: 1.3rem 3.6rem; border-radius: 2px;
+  transition: opacity var(--t-fast), background var(--t-fast), color var(--t-fast);
+}
+.about-hero__btn--primary {
+  background: var(--gold); color: var(--bg);
+}
+.about-hero__btn--primary:hover { opacity: 0.85; }
+.about-hero__btn--outline {
+  border: 1px solid var(--gold-mid); color: var(--text);
+}
+.about-hero__btn--outline:hover {
+  background: var(--gold); color: var(--bg); border-color: var(--gold);
+}
+
+/* ======== The Origin (left image + right text) ======== */
+.about-origin {
+  display: grid;
+  grid-template-columns: 2fr 3fr;
+  gap: var(--s8);
+  align-items: center;
+  max-width: 1280px; margin: 0 auto;
+  padding: var(--s12) var(--s4);
+  position: relative; z-index: 10;
+}
+.about-origin__image {
+  border-radius: 2px; overflow: hidden;
+}
+.about-origin__image img {
+  width: 100%; aspect-ratio: 3 / 4; object-fit: cover;
+  transition: transform 0.8s var(--ease-out);
+}
+.about-origin__image:hover img { transform: scale(1.03); }
+.about-origin__label {
+  font-family: var(--font-mono);
+  font-size: 1.0rem; letter-spacing: 0.3em;
+  text-transform: uppercase; color: var(--gold);
+  display: block; margin-bottom: var(--s1);
+}
+.about-origin__title {
+  font-family: var(--font-display);
+  font-size: clamp(2.8rem, 4.5vw, 5.2rem);
+  font-weight: 300; line-height: 1.1;
+  color: var(--text); margin-bottom: var(--s2);
+}
+.about-origin__desc {
+  font-family: var(--font-display);
+  font-size: 1.8rem; font-style: italic;
+  color: var(--gold); margin-bottom: var(--s3);
+}
+.about-origin__body {
+  font-size: 1.45rem; color: var(--muted);
+  line-height: 1.8; margin-bottom: var(--s2);
+}
+.about-origin__body:last-child { margin-bottom: 0; }
+
+/* ======== The Craft (left text + right image, mirrored) ======== */
+.about-craft {
+  display: grid;
+  grid-template-columns: 3fr 2fr;
+  gap: var(--s8);
+  align-items: center;
+  max-width: 1280px; margin: 0 auto;
+  padding: var(--s12) var(--s4);
+  position: relative; z-index: 10;
+}
+.about-craft__label {
+  font-family: var(--font-mono);
+  font-size: 1.0rem; letter-spacing: 0.3em;
+  text-transform: uppercase; color: var(--gold);
+  display: block; margin-bottom: var(--s1);
+}
+.about-craft__title {
+  font-family: var(--font-display);
+  font-size: clamp(2.8rem, 4.5vw, 5.2rem);
+  font-weight: 300; line-height: 1.1;
+  color: var(--text); margin-bottom: var(--s2);
+}
+.about-craft__desc {
+  font-family: var(--font-display);
+  font-size: 1.8rem; font-style: italic;
+  color: var(--gold); margin-bottom: var(--s4);
+}
+.about-craft__steps {
+  display: flex; flex-direction: column; gap: var(--s2);
+}
+.about-craft__step {
+  display: flex; gap: var(--s3); align-items: flex-start;
+  padding: var(--s2) 0;
+  border-bottom: 1px solid var(--border);
+}
+.about-craft__step:last-child { border-bottom: none; }
+.about-craft__step-num {
+  font-family: var(--font-mono);
+  font-size: 1.2rem; color: var(--gold);
+  min-width: 3.2rem; padding-top: 0.2rem;
+  letter-spacing: 0.1em;
+}
+.about-craft__step-title {
+  font-family: var(--font-display);
+  font-size: 1.8rem; font-weight: 400;
+  color: var(--text); margin-bottom: 0.3rem;
+}
+.about-craft__step-desc {
+  font-size: 1.3rem; color: var(--muted); line-height: 1.7;
+}
+.about-craft__image {
+  border-radius: 2px; overflow: hidden;
+}
+.about-craft__image img {
+  width: 100%; aspect-ratio: 3 / 4; object-fit: cover;
+  transition: transform 0.8s var(--ease-out);
+}
+.about-craft__image:hover img { transform: scale(1.03); }
+
+/* ======== The Philosophy (centered manifesto) ======== */
+.about-philo {
+  position: relative; z-index: 10;
+  padding: var(--s10) var(--s4);
+}
+.about-philo__inner {
+  max-width: 72rem; margin: 0 auto;
+  text-align: center;
+}
+.about-philo__label {
+  font-family: var(--font-mono);
+  font-size: 1.0rem; letter-spacing: 0.3em;
+  text-transform: uppercase; color: var(--gold);
+  display: block; margin-bottom: var(--s1);
+}
+.about-philo__title {
+  font-family: var(--font-display);
+  font-size: clamp(2.8rem, 4.5vw, 5.2rem);
+  font-weight: 300; line-height: 1.1;
+  color: var(--text); margin-bottom: var(--s3);
+}
+.about-philo__rule {
+  width: 8rem; height: 1px;
+  background: var(--gold-mid);
+  margin: 0 auto var(--s3);
+}
+.about-philo__quote {
+  font-family: var(--font-display);
+  font-size: clamp(2.4rem, 4vw, 4.4rem);
+  font-weight: 300; font-style: italic;
+  color: var(--gold);
+  line-height: 1.2;
+  margin: 0 0 var(--s4);
+}
+.about-philo__body {
+  font-size: 1.45rem; color: var(--muted);
+  line-height: 1.8; margin-bottom: var(--s2);
+  text-align: left;
+}
+.about-philo__body--mission {
+  text-align: center;
+  color: var(--text); font-style: italic;
+  font-size: 1.5rem;
+  margin-top: var(--s3); margin-bottom: var(--s4);
+}
+
+/* ======== Services Overview (2-column cards) ======== */
+.about-services {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--s4);
+  max-width: 1280px; margin: 0 auto;
+  padding: 0 var(--s4) var(--s8);
+  position: relative; z-index: 10;
+}
+.about-svc {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 2px;
+  padding: var(--s4);
+  transition: border-color var(--t-fast), transform var(--t-fast);
+}
+.about-svc:hover {
+  border-color: var(--gold-mid);
+  transform: translateY(-3px);
+}
+.about-svc__icon {
+  font-size: 2.8rem; color: var(--gold);
+  display: block; margin-bottom: var(--s1);
+}
+.about-svc__tag {
+  font-family: var(--font-mono);
+  font-size: 0.95rem; letter-spacing: 0.25em;
+  text-transform: uppercase; color: var(--gold);
+  display: block; margin-bottom: var(--s1);
+}
+.about-svc__title {
+  font-family: var(--font-display);
+  font-size: clamp(2.2rem, 3vw, 3.2rem);
+  font-weight: 300; color: var(--text);
+  line-height: 1.1; margin-bottom: var(--s2);
+}
+.about-svc__desc {
+  font-size: 1.35rem; color: var(--muted);
+  line-height: 1.75; margin-bottom: var(--s2);
+}
+.about-svc__list {
+  display: flex; flex-direction: column; gap: 0.6rem;
+}
+.about-svc__list li {
+  font-size: 1.25rem; color: var(--text);
+  padding-left: 2rem; position: relative;
+}
+.about-svc__list li::before {
+  content: '\2726';
+  position: absolute; left: 0;
+  color: var(--gold); font-size: 0.9rem;
+}
+
+/* ======== How It Works (horizontal timeline) ======== */
+.about-process {
+  position: relative; z-index: 10;
+  max-width: 1280px; margin: 0 auto;
+  padding: var(--s8) var(--s4);
+  text-align: center;
+}
+.about-process__label {
+  font-family: var(--font-mono);
+  font-size: 1.0rem; letter-spacing: 0.3em;
+  text-transform: uppercase; color: var(--gold);
+  display: block; margin-bottom: var(--s1);
+}
+.about-process__title {
+  font-family: var(--font-display);
+  font-size: clamp(2.8rem, 4.5vw, 5.2rem);
+  font-weight: 300; color: var(--text);
+  margin-bottom: var(--s6);
+}
+.about-process__timeline {
+  display: flex; align-items: flex-start;
+  justify-content: center;
+}
+.about-process__step {
+  flex: 1; max-width: 24rem;
+  text-align: center;
+}
+.about-process__node {
+  width: 5.2rem; height: 5.2rem;
+  border-radius: 50%;
+  border: 1px solid var(--gold);
+  display: flex; align-items: center; justify-content: center;
+  margin: 0 auto var(--s2);
+  font-family: var(--font-mono);
+  font-size: 1.5rem; color: var(--gold);
+  transition: background var(--t-fast), color var(--t-fast);
+}
+.about-process__step:hover .about-process__node {
+  background: var(--gold); color: var(--bg);
+}
+.about-process__step-title {
+  font-family: var(--font-display);
+  font-size: 1.8rem; font-weight: 400;
+  color: var(--text); margin-bottom: 0.6rem;
+}
+.about-process__step-desc {
+  font-size: 1.25rem; color: var(--muted);
+  line-height: 1.7; padding: 0 var(--s1);
+}
+.about-process__connector {
+  flex-shrink: 0;
+  width: 5rem; height: 1px;
+  background: repeating-linear-gradient(
+    90deg, var(--gold-mid) 0, var(--gold-mid) 6px, transparent 6px, transparent 12px
+  );
+  margin-top: 2.6rem;
+}
+
+/* ======== Partner Cases (4-col grid) ======== */
+.about-cases {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--s3);
+  max-width: 1280px; margin: 0 auto;
+  padding: 0 var(--s4) var(--s8);
+  position: relative; z-index: 10;
+}
+.about-case {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 2px;
+  overflow: hidden;
+  transition: border-color var(--t-fast), transform var(--t-fast);
+}
+.about-case:hover {
+  border-color: var(--gold-mid);
+  transform: translateY(-3px);
+}
+.about-case__img {
+  overflow: hidden; aspect-ratio: 4 / 3;
+}
+.about-case__img img {
+  width: 100%; height: 100%; object-fit: cover;
+  transition: transform 0.6s var(--ease-out);
+}
+.about-case:hover .about-case__img img { transform: scale(1.05); }
+.about-case__tag {
+  font-family: var(--font-mono);
+  font-size: 0.85rem; letter-spacing: 0.2em;
+  text-transform: uppercase; color: var(--gold);
+  display: inline-block;
+  margin: var(--s2) var(--s2) var(--s1);
+  padding: 0.25rem 0.7rem;
+  border: 1px solid var(--gold-mid);
+  border-radius: 2px;
+}
+.about-case__name {
+  font-family: var(--font-display);
+  font-size: 1.7rem; font-weight: 400;
+  color: var(--text);
+  padding: 0 var(--s2); margin-bottom: 0.2rem;
+}
+.about-case__role {
+  font-size: 1.1rem; color: var(--muted);
+  padding: 0 var(--s2); margin-bottom: var(--s2);
+}
+.about-case__quote {
+  font-size: 1.2rem; color: var(--muted);
+  font-style: italic; line-height: 1.65;
+  padding: var(--s2) var(--s2) var(--s2);
+  border-top: 1px solid var(--border);
+  margin: 0;
+}
+
+/* ======== CTA (full-width dark block) ======== */
+.about-cta {
+  position: relative; z-index: 10;
+  background: var(--bg-card);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  padding: var(--s10) var(--s4);
+  text-align: center;
+}
+.about-cta__inner {
+  max-width: 64rem; margin: 0 auto;
+}
+.about-cta__label {
+  font-family: var(--font-mono);
+  font-size: 1.0rem; letter-spacing: 0.3em;
+  text-transform: uppercase; color: var(--gold);
+  display: block; margin-bottom: var(--s2);
+}
+.about-cta__title {
+  font-family: var(--font-display);
+  font-size: clamp(2.8rem, 5vw, 5.6rem);
+  font-weight: 300; color: var(--text);
+  line-height: 1.1; margin-bottom: var(--s2);
+}
+.about-cta__desc {
+  font-size: 1.45rem; color: var(--muted);
+  line-height: 1.7; margin-bottom: var(--s4);
+}
+.about-cta__btn {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 1.15rem; letter-spacing: 0.18em;
+  text-transform: uppercase;
+  background: var(--gold); color: var(--bg);
+  padding: 1.4rem 4.4rem; border-radius: 2px;
+  transition: opacity var(--t-fast);
+  margin-bottom: var(--s2);
+}
+.about-cta__btn:hover { opacity: 0.85; }
+.about-cta__email {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 1.15rem; color: var(--muted);
+  letter-spacing: 0.1em;
+}
+
+
+/* =============================================================
+   Tablet — 1024px
+   ============================================================= */
+@media (max-width: 1024px) {
+  .about-origin { gap: var(--s5); padding: var(--s8) var(--s3); }
+  .about-craft  { gap: var(--s5); padding: var(--s8) var(--s3); }
+  .about-philo  { padding: var(--s8) var(--s3); }
+  .about-services { padding: 0 var(--s3) var(--s6); }
+  .about-process { padding: var(--s6) var(--s3); }
+  .about-cases { grid-template-columns: repeat(2, 1fr); padding: 0 var(--s3) var(--s6); }
+  .about-cta { padding: var(--s8) var(--s3); }
+}
+
+
+/* =============================================================
+   Mobile — 749px
+   ============================================================= */
+@media (max-width: 749px) {
+  /* Hero */
+  .about-hero { min-height: 440px; height: 75vh; }
+  .about-hero__content { padding: 0 var(--s2); }
+  .about-hero__label { font-size: 0.95rem; margin-bottom: var(--s1); }
+  .about-hero__desc { font-size: 1.35rem; margin-bottom: var(--s3); }
+  .about-hero__ctas { flex-direction: column; align-items: center; gap: var(--s1); }
+  .about-hero__btn { width: 100%; max-width: 26rem; text-align: center; padding: 1.1rem 2rem; font-size: 1rem; }
+
+  /* Origin */
+  .about-origin {
+    grid-template-columns: 1fr;
+    gap: var(--s3); padding: var(--s5) var(--s2);
+  }
+  .about-origin__image img { aspect-ratio: 16 / 9; }
+  .about-origin__title { margin-bottom: var(--s1); }
+  .about-origin__desc { font-size: 1.6rem; margin-bottom: var(--s2); }
+  .about-origin__body { font-size: 1.35rem; line-height: 1.7; margin-bottom: var(--s1); }
+
+  /* Craft */
+  .about-craft {
+    grid-template-columns: 1fr;
+    gap: var(--s3); padding: var(--s5) var(--s2);
+  }
+  .about-craft__image { order: -1; }
+  .about-craft__image img { aspect-ratio: 16 / 9; }
+  .about-craft__desc { font-size: 1.6rem; margin-bottom: var(--s2); }
+  .about-craft__steps { gap: 0; }
+  .about-craft__step { padding: var(--s1) 0; gap: var(--s2); }
+  .about-craft__step-title { font-size: 1.6rem; }
+  .about-craft__step-desc { font-size: 1.2rem; }
+
+  /* Philosophy */
+  .about-philo { padding: var(--s5) var(--s2); }
+  .about-philo__title { margin-bottom: var(--s2); }
+  .about-philo__rule { margin-bottom: var(--s2); }
+  .about-philo__quote { margin-bottom: var(--s3); }
+  .about-philo__body { font-size: 1.35rem; line-height: 1.7; margin-bottom: var(--s1); }
+  .about-philo__body--mission { font-size: 1.4rem; margin-top: var(--s2); margin-bottom: var(--s3); }
+
+  /* Services */
+  .about-services {
+    grid-template-columns: 1fr;
+    gap: var(--s2);
+    padding: 0 var(--s2) var(--s5);
+  }
+  .about-svc { padding: var(--s3); }
+  .about-svc__icon { font-size: 2.4rem; margin-bottom: var(--s1); }
+  .about-svc__title { margin-bottom: var(--s1); }
+  .about-svc__desc { font-size: 1.25rem; margin-bottom: var(--s2); }
+  .about-svc__list li { font-size: 1.15rem; }
+
+  /* Process */
+  .about-process { padding: var(--s5) var(--s2); }
+  .about-process__title { margin-bottom: var(--s4); }
+  .about-process__timeline {
+    flex-direction: column; align-items: center; gap: 0;
+  }
+  .about-process__connector {
+    width: 1px; height: 2rem;
+    background: repeating-linear-gradient(
+      180deg, var(--gold-mid) 0, var(--gold-mid) 6px, transparent 6px, transparent 12px
+    );
+    margin-top: 0;
+  }
+  .about-process__step { max-width: 30rem; }
+  .about-process__node { width: 4.4rem; height: 4.4rem; font-size: 1.3rem; }
+  .about-process__step-title { font-size: 1.6rem; margin-bottom: 0.4rem; }
+  .about-process__step-desc { font-size: 1.15rem; padding: 0; }
+
+  /* Cases — horizontal scroll on mobile instead of stacking */
+  .about-cases {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    gap: var(--s2);
+    padding: 0 var(--s2) var(--s5);
+  }
+  .about-cases::-webkit-scrollbar { display: none; }
+  .about-case {
+    flex: 0 0 78vw;
+    min-width: 78vw;
+    scroll-snap-align: start;
+  }
+  .about-case__name { font-size: 1.6rem; }
+  .about-case__role { font-size: 1.05rem; }
+  .about-case__quote { font-size: 1.15rem; line-height: 1.6; }
+
+  /* CTA */
+  .about-cta { padding: var(--s5) var(--s2); }
+  .about-cta__desc { font-size: 1.35rem; }
+  .about-cta__btn { padding: 1.2rem 3.2rem; font-size: 1.05rem; }
+  .about-cta__email { font-size: 1.05rem; }
+
+  /* Section headings tighten */
+  .section-heading { padding: var(--s4) var(--s2) var(--s2); }
+}
+
+
+/* =============================================================
+   Small phone — 420px
+   ============================================================= */
+@media (max-width: 420px) {
+  .about-hero { min-height: 380px; height: 70vh; }
+  .about-hero__title { font-size: 3rem; }
+  .about-hero__desc { font-size: 1.25rem; }
+
+  .about-origin { padding: var(--s4) var(--s2); }
+  .about-origin__body { font-size: 1.25rem; }
+
+  .about-craft { padding: var(--s4) var(--s2); }
+  .about-craft__step-desc { font-size: 1.15rem; }
+
+  .about-philo { padding: var(--s4) var(--s2); }
+  .about-philo__body { font-size: 1.25rem; }
+
+  .about-services { padding: 0 var(--s2) var(--s4); }
+  .about-svc__desc { font-size: 1.15rem; }
+
+  .about-process { padding: var(--s4) var(--s2); }
+
+  .about-case { flex: 0 0 85vw; min-width: 85vw; }
+
+  .about-cta { padding: var(--s4) var(--s2); }
+  .about-cta__btn { width: 100%; max-width: 28rem; text-align: center; }
+}
